@@ -1,0 +1,20 @@
+{
+  "name": "repoManager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.3",
+    "json5": "^2.2.3",
+    "lowdb": "^7.0.1",
+    "radash": "^12.1.0"
+  }
+}

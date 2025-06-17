@@ -1,0 +1,8 @@
+{
+  "code-runner.executorMap": {
+    "typescript": "cd $dir && npx tsx $fullFileName"
+  },
+  "code-runner.executorMapByFileExtension": {
+    ".ts": "cd $dir && npx tsx $fullFileName"
+  }
+}
