@@ -65,7 +65,7 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const ROOT_DIR = ['C:\AppData\code', 'G:\\'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\AppData\\code', 'G:\\'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
@@ -75,6 +75,7 @@ const MAX_DEPTH = 5;
     console.log(`Starting: target:${ROOT_DIR}`)
     if (!ROOT_DIR) {
         console.error('not find target folder, please set it and retry again')
+    } else {
+        await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
     }
-    await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
 })();

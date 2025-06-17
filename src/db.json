@@ -177,7 +177,8 @@
     "branch": {
       "master": {
         "remote": "origin",
-        "merge": "refs/heads/master"
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
       }
     }
   },
@@ -201,7 +202,11 @@
     "branch": {
       "master": {
         "remote": "origin",
-        "merge": "refs/heads/master"
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      },
+      "text": {
+        "vscode-merge-base": "origin/master"
       }
     }
   },
@@ -316,13 +321,17 @@
       "logallrefupdates": true,
       "symlinks": false,
       "ignorecase": true,
-      "hooksPath": ".husky"
+      "hooksPath": ".husky/_"
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/tsharp/vite-plugin-monkey.git",
+        "url": "https://github.com/lisonge/vite-plugin-monkey.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*",
-        "pushurl": "https://gitee.com/tsharp/vite-plugin-monkey.git"
+        "pushurl": "https://github.com/lisonge/vite-plugin-monkey.git"
+      },
+      "origin2": {
+        "url": "https://gitee.com/tsharp/vite-plugin-monkey.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin2/*"
       }
     },
     "branch": {
@@ -654,7 +663,7 @@
     },
     "remote": {
       "origin": {
-        "url": "git@github.com:abpframework/abp.git",
+        "url": "https://github.com/abpframework/abp.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -680,12 +689,18 @@
       "origin": {
         "url": "https://gitee.com/zuohuaijun/Admin.NET.git",
         "fetch": "+refs/heads/next:refs/remotes/origin/next"
+      },
+      "myorigin": {
+        "url": "https://gitee.com/cnjimbo/Admin.NET.git",
+        "fetch": "+refs/heads/*:refs/remotes/myorigin/*"
       }
     },
     "branch": {
       "next": {
         "remote": "origin",
-        "merge": "refs/heads/next"
+        "merge": "refs/heads/next",
+        "vscode-merge-base": "origin/next",
+        "gk-merge-base": "origin/next"
       }
     }
   },
@@ -1060,9 +1075,9 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/codeshelter/module-shop.git",
+        "url": "https://github.com/trueai-org/module-shop.git",
         "fetch": "+refs/heads/master:refs/remotes/origin/master",
-        "pushurl": "https://gitee.com/codeshelter/module-shop.git"
+        "pushurl": "https://github.com/trueai-org/module-shop.git"
       },
       "origin1": {
         "url": "https://github.com/trueai-org/module-shop.git",
@@ -1445,7 +1460,8 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
@@ -1463,7 +1479,7 @@
     "remote": {
       "origin": {
         "url": "https://gitee.com/izory/ZrAdminNetCore.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+        "fetch": "+refs/heads/net8:refs/remotes/origin/net8"
       }
     },
     "branch": {
@@ -1473,8 +1489,12 @@
       },
       "net8": {
         "remote": "origin",
-        "merge": "refs/heads/net8"
+        "merge": "refs/heads/net8",
+        "vscode-merge-base": "origin/net8"
       }
+    },
+    "submodule": {
+      "active": "."
     }
   },
   "\\code-Pfizer\\00_ChinaBidding": {
@@ -1599,7 +1619,8 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
@@ -1647,7 +1668,8 @@
     "branch": {
       "master": {
         "remote": "origin",
-        "merge": "refs/heads/master"
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
       }
     }
   },
@@ -1675,7 +1697,8 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
@@ -1699,13 +1722,14 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
   "\\code-vPress\\cnjimbo.github.io": {
     "__processorName": ".git",
-    "name": "cnjimbo.github.io.git",
+    "name": "ripplejourney.github.io.git",
     "core": {
       "repositoryformatversion": "0",
       "filemode": false,
@@ -1722,17 +1746,208 @@
       "upstream": {
         "url": "https://github.com/VitePressAwesome/sugar-blog.git",
         "fetch": "+refs/heads/*:refs/remotes/upstream/*"
+      },
+      "calmripple": {
+        "url": "git@github.com:ripplejourney/ripplejourney.github.io.git",
+        "fetch": "+refs/heads/*:refs/remotes/calmripple/*",
+        "pushurl": "git@github.com:ripplejourney/ripplejourney.github.io.git"
       }
     },
     "branch": {
       "master": {
-        "remote": "origin",
+        "remote": "calmripple",
         "merge": "refs/heads/master",
-        "github-pr-owner-number": "VitePressAwesome#sugar-blog#1"
+        "github-pr-owner-number": "VitePressAwesome#sugar-blog#1",
+        "vscode-merge-base": "calmripple/master",
+        "gk-merge-base": "calmripple/master"
       },
       "try-use-tsup": {
         "remote": "origin",
         "merge": "refs/heads/try-use-tsup"
+      },
+      "fixture/delete-gitee-actions": {
+        "vscode-merge-base": "origin/master",
+        "gk-merge-base": "origin/master"
+      },
+      "feature/remove-gitee-sync-action": {
+        "vscode-merge-base": "origin/fixture/delete-gitee-actions",
+        "gk-merge-base": "origin/fixture/delete-gitee-actions"
+      },
+      "feature/add-knowledge": {
+        "vscode-merge-base": "origin/master",
+        "gk-merge-base": "origin/master",
+        "gk-target-base": "origin/master"
+      },
+      "fix/update-Deploy-preview": {
+        "vscode-merge-base": "calmripple/features/update-upstream-1",
+        "remote": "calmripple",
+        "merge": "refs/heads/fix/update-Deploy-preview",
+        "gk-target-base": "calmripple/master"
+      },
+      "upstream/20250124": {
+        "remote": "calmripple",
+        "merge": "refs/heads/upstream/20250124",
+        "vscode-merge-base": "calmripple/upstream/20250124"
+      },
+      "upstream/25012401": {
+        "vscode-merge-base": "calmripple/upstream/20250124",
+        "remote": "calmripple",
+        "merge": "refs/heads/upstream/25012401"
+      },
+      "upstream/25012402": {
+        "vscode-merge-base": "calmripple/upstream/25012401",
+        "remote": "calmripple",
+        "merge": "refs/heads/upstream/25012402"
+      },
+      "upstream/25012403": {
+        "vscode-merge-base": "calmripple/upstream/25012402",
+        "remote": "calmripple",
+        "merge": "refs/heads/upstream/25012403"
+      },
+      "upstream/25012404": {
+        "vscode-merge-base": "calmripple/upstream/25012403",
+        "remote": "calmripple",
+        "merge": "refs/heads/upstream/25012404"
+      },
+      "feat/update-cover-image-logic": {
+        "remote": "calmripple",
+        "merge": "refs/heads/feat/update-cover-image-logic",
+        "vscode-merge-base": "calmripple/feat/update-cover-image-logic"
+      },
+      "feat/upate-reconmendextension": {
+        "vscode-merge-base": "calmripple/feat/update-cover-image-logic",
+        "remote": "calmripple",
+        "merge": "refs/heads/feat/upate-reconmendextension"
+      },
+      "chore(workflows)/change-pull-request-merge-method": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore(workflows)/change-pull-request-merge-method"
+      },
+      "chore/remove-obsolete-Event-JSON-workflow-file": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/remove-obsolete-Event-JSON-workflow-file"
+      },
+      "fix-/update-conditions-for-checkout-and-pull-request-creation": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/fix-/update-conditions-for-checkout-and-pull-request-creation"
+      },
+      "fix/improve-workflow-conditions": {
+        "remote": "calmripple",
+        "merge": "refs/heads/fix/improve-workflow-conditions",
+        "vscode-merge-base": "calmripple/fix/improve-workflow-conditions"
+      },
+      "feat/enhanced-PR-handling": {
+        "remote": "calmripple",
+        "merge": "refs/heads/feat/enhanced-PR-handling",
+        "vscode-merge-base": "calmripple/feat/enhanced-PR-handling"
+      },
+      "fix/update-VSCode-extensions": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/fix/update-VSCode-extensions"
+      },
+      "chore/remove-unnecessary-VSCode-extensions": {
+        "vscode-merge-base": "calmripple/master"
+      },
+      "chore/Update-VSCode-extensions-and-workspace-settings": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/Update-VSCode-extensions-and-workspace-settings"
+      },
+      "chore/update-dependencies-and-fix-some-log-messages": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/update-dependencies-and-fix-some-log-messages"
+      },
+      "chore/250318-update-VSCode-extensions-and-workspace-settings": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/250318-update-VSCode-extensions-and-workspace-settings"
+      },
+      "chore(renovate)/update-renovate-configuration": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore(renovate)/update-renovate-configuration-to-include-additional-configs-and-assignee-settings"
+      },
+      "chore(renovate)/update-renovate-configuration-1": {
+        "vscode-merge-base": "calmripple/chore(renovate)/update-renovate-configuration-to-include-additional-configs-and-assignee-settings",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore(renovate)/update-renovate-configuration-1"
+      },
+      "chore(vscode)/remove-unnecessary-extensions": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore(vscode)/remove-unnecessary-extensions",
+        "gk-merge-base": "calmripple/master",
+        "gk-target-base": "calmripple/master"
+      },
+      "feat/update-upstream-250423": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/feat/update-upstream-250423"
+      },
+      "chore/remove-unused-VS-Code-extensions": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/remove-unused-VS-Code-extensions"
+      },
+      "refactor/simplify-renovate-configuration-and-update-workspace-settings": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/refactor/simplify-renovate-configuration-and-update-workspace-settings"
+      },
+      "chore/update-renovate-config-with-group-name--fix-": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/update-renovate-config-with-group-name--fix-#167"
+      },
+      "refactor/remove-all-dependencies-group-from-renovate-config": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/refactor/remove-all-dependencies-group-from-renovate-config"
+      },
+      "chore/update-renovate-configuration-for-versioning-and-updates": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/update-renovate-configuration-for-versioning-and-updates"
+      },
+      "chore/disable-major-dependency-group-name-in-renovate-config": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/disable-major-dependency-group-name-in-renovate-config"
+      },
+      "chore/update-npm-config-and-vscode-extensions": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/update-npm-config-and-vscode-extensions"
+      },
+      "chore/更新开发依赖和VSCode配置": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/更新开发依赖和VSCode配置"
+      },
+      "chore/将postinstall脚本中的npx替换为pnpm": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/将postinstall脚本中的npx替换为pnpm"
+      },
+      "chore/update-VSCode-settings-and-code-runner-configuration": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/update-VSCode-settings-and-code-runner-configuration"
+      },
+      "style/Update-tswindows$dot$code-profile-settings-and-extensions": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/style/Update-tswindows.code-profile-settings-and-extensions"
+      },
+      "chore/20250604001": {
+        "vscode-merge-base": "calmripple/master",
+        "remote": "calmripple",
+        "merge": "refs/heads/chore/20250604001"
       }
     }
   },
@@ -1756,7 +1971,8 @@
     "branch": {
       "master": {
         "remote": "origin",
-        "merge": "refs/heads/master"
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
       }
     }
   },
@@ -1955,14 +2171,20 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/VitePressAwesome/sugar-blog.git",
-        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+        "url": "git@github.com:ATQQ/sugar-blog.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.com:ATQQ/sugar-blog.git"
+      },
+      "origin1": {
+        "url": "https://github.com/VitepressAwesome/sugar-blog.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin1/*"
       }
     },
     "branch": {
       "master": {
         "remote": "origin",
-        "merge": "refs/heads/master"
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
       }
     }
   },
@@ -2167,7 +2389,8 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
@@ -2397,7 +2620,8 @@
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
       }
     }
   },
@@ -2462,14 +2686,20 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/microsoft/vscode-extension-samples.git",
+        "url": "https://github.com/cnjimbo/vscode-extension-samples.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
     "branch": {
       "main": {
         "remote": "origin",
-        "merge": "refs/heads/main"
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      },
+      "main-pnpm": {
+        "remote": "origin",
+        "merge": "refs/heads/main-pnpm",
+        "vscode-merge-base": "origin/main-pnpm"
       }
     }
   },
@@ -8214,5 +8444,1656 @@
       }
     },
     "name": "ZiuChen.github.io.git"
+  },
+  "\\code-ai\\ailearn": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/ailearn.git",
+        "fetch": "+refs/heads/main:refs/remotes/origin/main"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "ailearn.git"
+  },
+  "\\code-ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git"
+  },
+  "\\code-ai\\Data-Analysis": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "lfs": {
+      "repositoryformatversion": "0"
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/Data-Analysis.git",
+        "fetch": "+refs/heads/plotly_only:refs/remotes/origin/plotly_only"
+      }
+    },
+    "branch": {
+      "plotly_only": {
+        "remote": "origin",
+        "merge": "refs/heads/plotly_only"
+      }
+    },
+    "name": "Data-Analysis.git"
+  },
+  "\\code-ai\\keract": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/keract.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "keract.git"
+  },
+  "\\code-ai\\keras-io": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/keras-team/keras-io.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "keras-io.git"
+  },
+  "\\code-ai\\tensorflow2_tutorials": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow2_tutorials.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "tensorflow2_tutorials.git"
+  },
+  "\\code-ai\\tensorflow2_tutorials_chinese": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:ainiubility/tensorflow2_tutorials_chinese.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "master",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code-ai/tensorflow2_tutorials_chinese/.git/hooks"
+      }
+    },
+    "name": "tensorflow2_tutorials_chinese.git"
+  },
+  "\\code-ai\\Time-Series-Analysis-Tutorial": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/Time-Series-Analysis-Tutorial.git",
+        "fetch": "+refs/heads/beta:refs/remotes/origin/beta"
+      }
+    },
+    "branch": {
+      "beta": {
+        "remote": "origin",
+        "merge": "refs/heads/beta"
+      },
+      "develop": {
+        "vscode-merge-base": "origin/beta",
+        "remote": "origin",
+        "merge": "refs/heads/develop"
+      }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "beta",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": "C:/AppData/code-ai/Time-Series-Analysis-Tutorial/.git/hooks"
+      }
+    },
+    "name": "Time-Series-Analysis-Tutorial.git"
+  },
+  "\\code-comm\\awesome-aop": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/awesome-aop.git",
+        "fetch": "+refs/heads/master:refs/remotes/origin/master"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "awesome-aop.git"
+  },
+  "\\code-comm\\Bonobo.Git.Server": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "http://git.tsharp.org/Bonobo.Git.Server.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "Bonobo.Git.Server.git"
+  },
+  "\\code-comm\\certificate-toolbox": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/certificate-toolbox.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "certificate-toolbox.git"
+  },
+  "\\code-comm\\cnjimbo": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:calmripple/calmripple.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.com:calmripple/calmripple.git"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "calmripple.git"
+  },
+  "\\code-comm\\DbContextScope": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitydotnet/DbContextScope.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      },
+      "upstream": {
+        "url": "https://github.com/yegor-mialyk/DbContextScope.git",
+        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
+      },
+      "github-desktop-Fignum": {
+        "url": "https://github.com/Fignum/DbContextScope.git",
+        "fetch": "+refs/heads/*:refs/remotes/github-desktop-Fignum/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "DbContextScope.git"
+  },
+  "\\code-comm\\dependency-update-action": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/dependency-update-action.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "dependency-update-action.git"
+  },
+  "\\code-comm\\DisruptiveSoftware.Cryptography.Tools1": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "DisruptiveSoftware.Cryptography.Tools.git"
+  },
+  "\\code-comm\\dmsrs": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/dmsrs.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      },
+      "develop": {
+        "remote": "origin",
+        "merge": "refs/heads/develop"
+      }
+    },
+    "name": "dmsrs.git"
+  },
+  "\\code-comm\\DmsrsAwesome": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/DmsrsAwesome.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "https://gitee.com/dmsrs/DmsrsAwesome.git"
+      },
+      "originw": {
+        "url": "https://github.com/niubilitynetcore/DmsrsAwesome.git",
+        "fetch": "+refs/heads/*:refs/remotes/originw/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "DmsrsAwesome.git"
+  },
+  "\\code-comm\\DotNetCorePlugins": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "dev": {
+        "remote": "origin",
+        "merge": "refs/heads/dev"
+      }
+    },
+    "name": "DotNetCorePlugins.git"
+  },
+  "\\code-comm\\EmitMapper": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "gui": {
+      "wmstate": "zoomed",
+      "geometry": "841x483+104+104 509 538"
+    },
+    "user": {
+      "name": "Jimbo Tang",
+      "email": "happycoder@foxmail.com"
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitynetcore/EmitMapper.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.com:niubilitynetcore/EmitMapper.git"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      },
+      "v2$dot$1": {
+        "remote": "origin",
+        "merge": "refs/heads/v2.1"
+      },
+      "v2$dot$2": {
+        "remote": "origin",
+        "merge": "refs/heads/v2.2"
+      },
+      "net8$dot$0": {
+        "remote": "origin",
+        "merge": "refs/heads/net8.0"
+      }
+    },
+    "name": "EmitMapper.git"
+  },
+  "\\code-comm\\ETL": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/ETL.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "https://gitee.com/dmsrs/ETL.git"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "ETL.git"
+  },
+  "\\code-comm\\Ext-EDF-Web-MVC": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "gui": {
+      "wmstate": "normal",
+      "geometry": "1920x483+-76+144 470 436"
+    },
+    "remote": {
+      "origin": {
+        "url": "http://code.tsharp.org/Ext-EDF-Web-MVC.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "Ext-EDF-Web-MVC.git"
+  },
+  "\\code-comm\\FastExpressionCompiler": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitynetcore/FastExpressionCompiler.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      },
+      "cached_typeof_tmp": {
+        "remote": "origin",
+        "merge": "refs/heads/cached_typeof_tmp"
+      },
+      "cached_typeof": {
+        "remote": "origin",
+        "merge": "refs/heads/cached_typeof"
+      }
+    },
+    "name": "FastExpressionCompiler.git"
+  },
+  "\\code-comm\\git-awesome": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/git-awesome.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      },
+      "feature1": {
+        "remote": "origin",
+        "merge": "refs/heads/feature1"
+      },
+      "feature2": {
+        "remote": "origin",
+        "merge": "refs/heads/feature2"
+      }
+    },
+    "name": "git-awesome.git"
+  },
+  "\\code-comm\\IniFile": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/netniubility/IniFile.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "IniFile.git"
+  },
+  "\\code-comm\\my-repo": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/cnjimbo/vite-templates.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "vite-templates.git"
+  },
+  "\\code-comm\\repoManager": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-open/repoManager.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "repoManager.git"
+  },
+  "\\code-comm\\router": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/router.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "https://github.com/frontendniubility/router.git"
+      },
+      "github": {
+        "url": "https://github.com/frontendniubility/router.git",
+        "fetch": "+refs/heads/*:refs/remotes/github/*"
+      },
+      "giteee": {
+        "url": "https://gitee.com/dmsrs/router.git",
+        "fetch": "+refs/heads/*:refs/remotes/giteee/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      },
+      "main": {
+        "vscode-merge-base": "origin/master",
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      },
+      "squash-test": {
+        "vscode-merge-base": "origin/master",
+        "remote": "origin",
+        "merge": "refs/heads/squash-test"
+      },
+      "develop": {
+        "remote": "origin",
+        "merge": "refs/heads/develop"
+      },
+      "feature/240304_support_submodules": {
+        "remote": "origin",
+        "merge": "refs/heads/feature/240304_support_submodules",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "master"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "versiontag": "",
+        "bugfix": "bugfix/",
+        "support": "support/"
+      },
+      "path": {
+        "hooks": "C:/ScriptsApplications/code/router/.git/hooks"
+      },
+      "branch$dot$feature/240304_support_submodules": {
+        "base": "main"
+      }
+    },
+    "name": "router.git"
+  },
+  "\\code-comm\\TSharp": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilityappbox/TSharp.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "TSharp.git"
+  },
+  "\\code-comm\\vba": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "gui": {
+      "wmstate": "normal",
+      "geometry": "841x483+500+77 189 218"
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/vba.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      },
+      "http": {
+        "url": "https://github.com/niubilities/vba.git",
+        "fetch": "+refs/heads/*:refs/remotes/http/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "vba.git"
+  },
+  "\\code-front\\learn-vue3-wechat": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/learn-vue3-wechat.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "learn-vue3-wechat.git"
+  },
+  "\\code-front\\lodash": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/lodash/lodash.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "lodash.git"
+  },
+  "\\code-front\\radash": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/sodiray/radash.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "radash.git"
+  },
+  "\\code-front\\unoCss-learn": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:frontendniubility/unoCss-learn.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.com:frontendniubility/unoCss-learn.git"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "unoCss-learn.git"
+  },
+  "\\code-vPress\\experimentation": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "vscode-merge-base": "origin/main",
+        "merge": "refs/heads/main"
+      }
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.calmripple:ripplejourney/experimentation.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.calmripple:ripplejourney/experimentation.git"
+      }
+    },
+    "name": "experimentation.git"
+  },
+  "\\code-vPress\\integrations": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true,
+      "quotepath": false
+    },
+    "branch": {
+      "main": {
+        "vscode-merge-base": "origin/main",
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      },
+      "fixture/test": {
+        "remote": "origin",
+        "merge": "refs/heads/fixture/test",
+        "vscode-merge-base": "origin/main",
+        "github-pr-owner-number": "nolebase#integrations#291"
+      }
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/integrations.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      },
+      "upstream": {
+        "url": "https://github.com/nolebase/integrations.git",
+        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
+      }
+    },
+    "name": "integrations.git"
+  },
+  "\\code-vPress\\modern-typescript-monorepo-example": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true,
+      "hooksPath": ".husky/_"
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/bakeruk/modern-typescript-monorepo-example.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      },
+      "develop": {
+        "github-pr-base-branch": "bakeruk#modern-typescript-monorepo-example#main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "gitflow": {
+      "branch": {
+        "master": "main",
+        "develop": "develop"
+      },
+      "prefix": {
+        "feature": "feature/",
+        "bugfix": "bugfix/",
+        "release": "release/",
+        "hotfix": "hotfix/",
+        "support": "support/",
+        "versiontag": ""
+      },
+      "path": {
+        "hooks": ".husky"
+      }
+    },
+    "name": "modern-typescript-monorepo-example.git"
+  },
+  "\\code-vPress\\nolebase": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true,
+      "quotepath": false
+    },
+    "branch": {
+      "main": {
+        "vscode-merge-base": "origin/main",
+        "github-pr-base-branch": "cnjimbo#nolebase#fix/JavaScript-heap-out-of-memory"
+      },
+      "fix/JavaScript-heap-out-of-memory": {
+        "github-pr-base-branch": "nolebase#nolebase#main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/nolebase/nolebase.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "name": "nolebase.git"
+  },
+  "\\code-vPress\\preview": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:ripplejourney/preview.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github.com:ripplejourney/preview.git"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "preview.git"
+  },
+  "\\code-vPress\\radash-study": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/Roqee/radash-study.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "radash-study.git"
+  },
+  "\\code-vPress\\unocss": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/unocss/unocss.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "unocss.git"
+  },
+  "\\code-vPress\\vitepress-theme-open17": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vitepress-theme-open17.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "template": {
+        "remote": "origin",
+        "merge": "refs/heads/template"
+      }
+    },
+    "name": "vitepress-theme-open17.git"
+  },
+  "\\code-vsextension\\pnpm-vscode-helper": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/pnpm-vscode-helper.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "pnpm-vscode-helper.git"
+  },
+  "\\code-vsextension\\reactive-meta-gen": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "branch": {
+      "main": {
+        "vscode-merge-base": "origin/main",
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      },
+      "dev/v0$dot$3$dot$2": {
+        "vscode-merge-base": "origin/main",
+        "remote": "origin",
+        "merge": "refs/heads/dev/v0.3.2"
+      },
+      "release/v0$dot$3$dot$1": {
+        "vscode-merge-base": "origin/release/v0.3.1",
+        "remote": "origin",
+        "merge": "refs/heads/release/v0.3.1"
+      },
+      "dev/v0$dot$3$dot$3": {
+        "vscode-merge-base": "origin/main",
+        "remote": "origin",
+        "merge": "refs/heads/dev/v0.3.3"
+      }
+    },
+    "submodule": {
+      "fixtures/i18n-ally": {
+        "active": true,
+        "url": "https://github.com/lokalise/i18n-ally"
+      },
+      "fixtures/vscode-iconify": {
+        "active": true,
+        "url": "https://github.com/antfu/vscode-iconify"
+      },
+      "fixtures/vscode-iconify-fork": {
+        "active": true,
+        "url": "https://github.com/kvoon3/vscode-iconify-fork"
+      },
+      "fixtures/vscode-smart-clicks": {
+        "active": true,
+        "url": "https://github.com/antfu/vscode-smart-clicks"
+      },
+      "fixtures/vscode-which-key": {
+        "active": true,
+        "url": "https://github.com/VSpaceCode/vscode-which-key.git"
+      }
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github:calmripple/reactive-meta-gen.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*",
+        "pushurl": "git@github:calmripple/reactive-meta-gen.git"
+      },
+      "origin1": {
+        "url": "https://github.com/open-dmsrs/reactive-meta-gen.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin1/*"
+      }
+    },
+    "name": "reactive-meta-gen.git"
+  },
+  "\\code-vsextension\\reactive-vscode": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/KermanX/reactive-vscode.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "reactive-vscode.git"
+  },
+  "\\code-vsextension\\starter-vscode": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu/starter-vscode.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "starter-vscode.git"
+  },
+  "\\code-vsextension\\taze": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu-collective/taze.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "taze.git"
+  },
+  "\\code-vsextension\\vscode-babel-compile-on-save": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "gui": {
+      "wmstate": "normal",
+      "geometry": "841x483+620+143 189 218"
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitytools/vscode-babel-compile-on-save.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      },
+      "upstream": {
+        "url": "https://github.com/asvetliakov/vscode-babel-compile-on-save.git",
+        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "github-pr-owner-number": "asvetliakov#vscode-babel-compile-on-save#3"
+      }
+    },
+    "name": "vscode-babel-compile-on-save.git"
+  },
+  "\\code-vsextension\\vscode-file-nesting-config": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.calmripple:frontendniubility/vscode-file-nesting-config.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "vscode-file-nesting-config.git"
+  },
+  "\\code-vsextension\\vscode-hide-comments": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/estruyf/vscode-hide-comments.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "vscode-hide-comments.git"
+  },
+  "\\code-vsextension\\vscode-iconify": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu/vscode-iconify.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "vscode-iconify.git"
+  },
+  "\\code-vsextension\\vscode-pnpm-catalog-lens": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu/vscode-pnpm-catalog-lens.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "vscode-pnpm-catalog-lens.git"
+  },
+  "\\code-vsextension\\vscode-project-config-updater": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/vscode-project-config-updater.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "vscode-project-config-updater.git"
+  },
+  "\\code-vsextension\\vscode-runonsave": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/emeraldwalk/vscode-runonsave.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "vscode-runonsave.git"
+  },
+  "\\code-vsextension\\vscode-smart-clicks": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu/vscode-smart-clicks.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main"
+      }
+    },
+    "name": "vscode-smart-clicks.git"
+  },
+  "\\code-wechat\\CoreShop": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-wechat/CoreShop.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "CoreShop.git"
+  },
+  "\\code-wechat\\hioshop-miniprogram": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-wechat/hioshop-miniprogram.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master"
+      }
+    },
+    "name": "hioshop-miniprogram.git"
+  },
+  "\\code-wechat\\TOGO_School_Miniprograme": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-wechat/TOGO_School_Miniprograme.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "master": {
+        "remote": "origin",
+        "merge": "refs/heads/master",
+        "vscode-merge-base": "origin/master"
+      }
+    },
+    "name": "TOGO_School_Miniprograme.git"
   }
 }
