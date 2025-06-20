@@ -7,13 +7,15 @@ import { extend, upgradeConfig } from './utils'
 import { factory } from './factory';
 
 async function restoreRepo(_ctx: Context) {
-    return Object.entries(_ctx.db.data).map(async ([relativePath, repo]) => {
+    const entries = Object.entries(_ctx.db.data);
+    return entries.map(async ([relativePath, repo],idx, data) => {
 
         if (relativePath == '__version') return;
 
         let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
         let p = factory.find(async p => await p.shouldRestore(ctx, repo));
         if (p) {
+            console.log(`🚀 ~ current restoring  ${idx}/${data.length} `)
             // 定义一个GitRepo对象，用于存储git库的信息
             return await p.restoreRepo(ctx, repo)
         }
