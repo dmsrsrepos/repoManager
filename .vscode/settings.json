@@ -5,5 +5,9 @@
   },
   "code-runner.executorMapByFileExtension": {
     ".ts": "cd $dir && npx tsx $fullFileName"
-  }
+  },
+  "codingcopilot.enableCloseCompletionShortcutTip": true,
+  "codingcopilot.modelResponseLanguage": "中文",
+  "codingcopilot.CommitMessageStyle": "ConventionalCommits",
+  "codingcopilot.commitMessageLanguage": "en"
 }
