@@ -16,11 +16,11 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
     // 遍历所有文件和子目录
     for (let file of files) {
         // 拼接完整的路径
-        let curDirPath = path.join(dirFullPath, file);
-        let key = curDirPath.replace(ctx.rootDirFullPath, '')
-        ctx.curDirFullPath = curDirPath;
+        let curDirFullPath = path.join(dirFullPath, file);
+        let key = curDirFullPath.replace(ctx.rootDirFullPath, '')
+        ctx.curDirFullPath = curDirFullPath;
         // 一次性获取目录信息，避免多次调用 fs.statSync
-        const isDir = fs.existsSync(curDirPath) && fs.statSync(curDirPath)?.isDirectory();
+        const isDir = fs.existsSync(curDirFullPath) && fs.statSync(curDirFullPath)?.isDirectory();
         // 如果是目录，判断是否是git库
         if (isDir) {
             let isGitRepo = false;
@@ -37,7 +37,7 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                 }
             }
             if (!isGitRepo) {
-                await findRepos(curDirPath, depth - 1, ctx);
+                await findRepos(curDirFullPath, depth - 1, ctx);
             }
         }
     }

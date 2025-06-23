@@ -146,8 +146,8 @@ const MAPPER = {
         keys: ['code'],
     }
 }
-function getTopLevelDir(inputPath: string): string {
-    const processedPath = path.normalize(inputPath);
+function getTopLevelDir(relateviePath: string): string {
+    const processedPath = path.normalize(relateviePath);
     const isAbsolute = path.isAbsolute(processedPath);
     const sep = path.sep;
 
@@ -178,19 +178,23 @@ function getTopLevelDir(inputPath: string): string {
     // 对于Windows绝对路径，顶层目录是 parts[0] + '\'（如果parts[0]是驱动器）
     if (isAbsolute && sep === '\\') {
         // 检查是否是驱动器路径（如 'C:'）
-        if (parts[0].length === 2 && parts[0][1] === ':') {
-            return `${parts[0]}\\${parts[1]}`;
-        } else {
-            // 其他绝对路径（如 '\\server\share\path'）
-            return parts[0];
-        }
+        // if (parts[0].length === 2 && parts[0][1] === ':') {
+        //     return `${parts[0]}\\${parts[1]}`;
+        // } else {
+        //     // 其他绝对路径（如 '\\server\share\path'）
+        //     return parts[0];
+        // }
+        return parts[0];
     }
     Object.entries(MAPPER).forEach(([key, value]) => {
-        if (value.keys.findIndex(p => p.startsWith(parts[0]) || p.includes(parts[0]) || p.endsWith(parts[0]))) {
+        if (value.keys.findIndex(p => p.startsWith(parts[0]) || p.includes(parts[0]) || p.endsWith(parts[0])) > -1) {
             parts[0] = key;
         } else if (new RegExp(value.pattern).test(parts[0])) {
             parts[0] = key;
-        } else {
+        } else if (value.keys.findIndex(p => p.startsWith(relateviePath) || p.includes(relateviePath) || p.endsWith(relateviePath)) > -1) {
+            parts[0] = key;
+        }
+        else {
             parts[0] = 'code';
         }
     })
@@ -233,7 +237,8 @@ export default {
     removeDuplicates,
     getNextCharacter,
     extractQuotedValue,
-    upgradeConfig
+    upgradeConfig,
+    getTopLevelDir
 }
 
 function test_extend() {
