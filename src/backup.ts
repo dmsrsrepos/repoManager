@@ -6,20 +6,19 @@ import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './factory';
 import { upgradeConfig, extend } from './utils';
 
-
-async function findRepos(dir: string, depth: number, ctx: Context): Promise<void> {
+async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
     if (depth === 0) {
         return;
     }
 
-    const files = await fs.promises.readdir(dir);
+    const files = await fs.promises.readdir(dirFullPath);
 
     // 遍历所有文件和子目录
     for (let file of files) {
         // 拼接完整的路径
-        let curDirPath = path.join(dir, file);
-        let key = curDirPath.replace(ctx.rootDir, '')
-        ctx.curDir = curDirPath;
+        let curDirPath = path.join(dirFullPath, file);
+        let key = curDirPath.replace(ctx.rootDirFullPath, '')
+        ctx.curDirFullPath = curDirPath;
         // 一次性获取目录信息，避免多次调用 fs.statSync
         const isDir = fs.existsSync(curDirPath) && fs.statSync(curDirPath)?.isDirectory();
         // 如果是目录，判断是否是git库
@@ -44,24 +43,24 @@ async function findRepos(dir: string, depth: number, ctx: Context): Promise<void
     }
 }
 
-export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
+export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
             await upgradeConfig(db);
             const ctx: Context = {
-                curDir: rootDir,
+                curDirFullPath: rootDirFullPath,
                 db,
-                rootDir: rootDir
+                rootDirFullPath: rootDirFullPath
             };
-            await findRepos(rootDir, maxDepth, ctx);
+            await findRepos(rootDirFullPath, maxDepth, ctx);
             return ctx;
         })
         .then(async ctx => {
             await ctx.db.write()
             return ctx;
         })
-        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 

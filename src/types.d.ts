@@ -18,9 +18,9 @@ export type Proccessor = {
 }
 export type Factory = Set<Proccessor>;
 export type Context = {
-    curDir: string;
+    curDirFullPath: string;
     db: Low<Repos>;
-    rootDir: string;
+    rootDirFullPath: string;
 }
 export interface MergeOptions {
     // 如果为 true，则进行深度合并，否则仅浅层合并

@@ -11,15 +11,15 @@ export class GitRepoProcessor implements Proccessor {
     }
 
     async shouldBackup(ctx: Context) {
-        return fs.existsSync(path.join(ctx.curDir, '.git'));
+        return fs.existsSync(path.join(ctx.curDirFullPath, '.git'));
     }
     async backupRepo(ctx: Context) {
         // 定义一个GitRepo对象，用于存储git库的信息
         let repo: Repo = {
             name: 'unknown'
         };
-        console.log(`Backuping... git配置文件：${ctx.curDir}`)
-        let configPath = path.join(ctx.curDir, '.git', 'config')
+        console.log(`Backuping... git配置文件：${ctx.curDirFullPath}`)
+        let configPath = path.join(ctx.curDirFullPath, '.git', 'config')
 
         repo = readGitConfig(configPath)
         return repo;
