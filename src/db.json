@@ -1,5 +1,5 @@
 {
-  "\\code-ai\\face-api-demo-vue": {
+  "\\ai\\face-api-demo-vue": {
     "__processorName": ".git",
     "name": "face-api-demo-vue.git",
     "core": {
@@ -24,7 +24,7 @@
       }
     }
   },
-  "\\code-ai\\ReactComputerVisionTemplate": {
+  "\\ai\\ReactComputerVisionTemplate": {
     "__processorName": ".git",
     "name": "ReactComputerVisionTemplate.git",
     "core": {
@@ -48,7 +48,7 @@
       "versiontag": ""
     },
     "gitflow \"path\"": {
-      "hooks": "C:/ScriptsApplications/code-ai/ReactComputerVisionTemplate/.git/hooks"
+      "hooks": "C:/ScriptsApplications/ai/ReactComputerVisionTemplate/.git/hooks"
     },
     "remote": {
       "origin": {
@@ -81,11 +81,11 @@
         "versiontag": ""
       },
       "path": {
-        "hooks": "C:/ScriptsApplications/code-ai/ReactComputerVisionTemplate/.git/hooks"
+        "hooks": "C:/ScriptsApplications/ai/ReactComputerVisionTemplate/.git/hooks"
       }
     }
   },
-  "\\code-ai\\tensorflow-handbook-javascript": {
+  "\\ai\\tensorflow-handbook-javascript": {
     "__processorName": ".git",
     "name": "tensorflow-handbook-javascript.git",
     "core": {
@@ -109,7 +109,7 @@
       }
     }
   },
-  "\\code-ai\\tfjs_quick_start_course_2020": {
+  "\\ai\\tfjs_quick_start_course_2020": {
     "__processorName": ".git",
     "name": "tfjs_quick_start_course_2020.git",
     "core": {
@@ -133,7 +133,7 @@
       }
     }
   },
-  "\\code-ai\\time-series-forecasting-tensorflowjs": {
+  "\\ai\\time-series-forecasting-tensorflowjs": {
     "__processorName": ".git",
     "name": "time-series-forecasting-tensorflowjs.git",
     "core": {
@@ -157,7 +157,7 @@
       }
     }
   },
-  "\\code-front\\best-resume-ever": {
+  "\\front\\best-resume-ever": {
     "__processorName": ".git",
     "name": "best-resume-ever.git",
     "core": {
@@ -182,7 +182,7 @@
       }
     }
   },
-  "\\code-front\\isotope": {
+  "\\front\\isotope": {
     "__processorName": ".git",
     "name": "isotope.git",
     "core": {
@@ -210,7 +210,7 @@
       }
     }
   },
-  "\\code-front\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts": {
+  "\\front\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts": {
     "__processorName": ".git",
     "name": "Isotope-JQuery-Plugin-Filtering-Sorting-Layouts.git",
     "core": {
@@ -234,7 +234,7 @@
       }
     }
   },
-  "\\code-front\\masonry-packery-isotope-demo": {
+  "\\front\\masonry-packery-isotope-demo": {
     "__processorName": ".git",
     "name": "masonry-packery-isotope-demo.git",
     "core": {
@@ -258,7 +258,7 @@
       }
     }
   },
-  "\\code-front\\userscripts": {
+  "\\front\\userscripts": {
     "__processorName": ".git",
     "name": "userscripts.git",
     "core": {
@@ -311,7 +311,7 @@
       }
     }
   },
-  "\\code-front\\vite-plugin-monkey": {
+  "\\front\\vite-plugin-monkey": {
     "__processorName": ".git",
     "name": "vite-plugin-monkey.git",
     "core": {
@@ -348,7 +348,7 @@
       "active": "."
     }
   },
-  "\\code-front\\vite-plugin-userscript": {
+  "\\front\\vite-plugin-userscript": {
     "__processorName": ".git",
     "name": "vite-plugin-userscript.git",
     "core": {
@@ -375,7 +375,7 @@
       "active": "."
     }
   },
-  "\\code-front\\vite-templates": {
+  "\\front\\vite-templates": {
     "__processorName": ".git",
     "name": "vite-templates.git",
     "core": {
@@ -388,7 +388,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/cnjimbo/vite-templates.git",
+        "url": "https://gitee.com/frontendniubility/vite-templates.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -437,7 +437,7 @@
       }
     }
   },
-  "\\code-front\\vite-userscript-plugin": {
+  "\\front\\vite-userscript-plugin": {
     "__processorName": ".git",
     "name": "vite-userscript-plugin.git",
     "core": {
@@ -467,7 +467,7 @@
       "active": "."
     }
   },
-  "\\code-front\\vitelearn-allin": {
+  "\\front\\vitelearn-allin": {
     "__processorName": ".git",
     "name": "vitelearn-allin.git",
     "core": {
@@ -495,7 +495,7 @@
       }
     }
   },
-  "\\code-front\\vscode-babel-compile-on-save": {
+  "\\front\\vscode-babel-compile-on-save": {
     "__processorName": ".git",
     "name": "vscode-babel-compile-on-save.git",
     "core": {
@@ -528,7 +528,7 @@
       }
     }
   },
-  "\\code-front\\vue-modern-resume": {
+  "\\front\\vue-modern-resume": {
     "__processorName": ".git",
     "name": "vue-modern-resume.git",
     "core": {
@@ -552,7 +552,7 @@
       }
     }
   },
-  "\\code-front\\vue-resume": {
+  "\\front\\vue-resume": {
     "__processorName": ".git",
     "name": "vue-resume.git",
     "core": {
@@ -580,7 +580,7 @@
       }
     }
   },
-  "\\code-front\\vuetify-admin": {
+  "\\front\\vuetify-admin": {
     "__processorName": ".git",
     "name": "vuetify-admin.git",
     "core": {
@@ -604,7 +604,7 @@
       }
     }
   },
-  "\\code-front\\Vuetify-Resume": {
+  "\\front\\Vuetify-Resume": {
     "__processorName": ".git",
     "name": "Vuetify-Resume.git",
     "core": {
@@ -632,7 +632,7 @@
       }
     }
   },
-  "\\code-front\\wx聊天应用\\chat-app-backend": {
+  "\\front\\wx聊天应用\\chat-app-backend": {
     "__processorName": ".git",
     "name": "damp-brushlands-96654.git",
     "core": {
@@ -650,7 +650,7 @@
       }
     }
   },
-  "\\code-learn\\abp": {
+  "\\learn\\abp": {
     "__processorName": ".git",
     "name": "abp.git",
     "core": {
@@ -674,7 +674,7 @@
       }
     }
   },
-  "\\code-learn\\Admin.NET": {
+  "\\learn\\Admin.NET": {
     "__processorName": ".git",
     "name": "Admin.NET.git",
     "core": {
@@ -704,7 +704,7 @@
       }
     }
   },
-  "\\code-learn\\adnc": {
+  "\\learn\\adnc": {
     "__processorName": ".git",
     "name": "adnc.git",
     "core": {
@@ -728,7 +728,7 @@
       }
     }
   },
-  "\\code-learn\\aspnetcore-modular-monolith": {
+  "\\learn\\aspnetcore-modular-monolith": {
     "__processorName": ".git",
     "name": "aspnetcore-modular-monolith.git",
     "core": {
@@ -752,7 +752,7 @@
       }
     }
   },
-  "\\code-learn\\AuditLogging": {
+  "\\learn\\AuditLogging": {
     "__processorName": ".git",
     "name": "AuditLogging.git",
     "core": {
@@ -779,7 +779,7 @@
       "active": "."
     }
   },
-  "\\code-learn\\dockpanelsuite": {
+  "\\learn\\dockpanelsuite": {
     "__processorName": ".git",
     "name": "dockpanelsuite.git",
     "core": {
@@ -803,7 +803,7 @@
       }
     }
   },
-  "\\code-learn\\DotnetSpider": {
+  "\\learn\\DotnetSpider": {
     "__processorName": ".git",
     "name": "DotnetSpider.git",
     "core": {
@@ -827,7 +827,7 @@
       }
     }
   },
-  "\\code-learn\\Elements": {
+  "\\learn\\Elements": {
     "__processorName": ".git",
     "name": "Elements.git",
     "core": {
@@ -851,7 +851,7 @@
       }
     }
   },
-  "\\code-learn\\EventBus\\CAP": {
+  "\\learn\\EventBus\\CAP": {
     "__processorName": ".git",
     "name": "CAP.git",
     "core": {
@@ -875,7 +875,7 @@
       }
     }
   },
-  "\\code-learn\\EventBus\\MediatR": {
+  "\\learn\\EventBus\\MediatR": {
     "__processorName": ".git",
     "name": "MediatR.git",
     "core": {
@@ -899,7 +899,7 @@
       }
     }
   },
-  "\\code-learn\\EventBus\\RedBus": {
+  "\\learn\\EventBus\\RedBus": {
     "__processorName": ".git",
     "name": "RedBus.git",
     "core": {
@@ -934,7 +934,7 @@
       "active": "."
     }
   },
-  "\\code-learn\\Furion": {
+  "\\learn\\Furion": {
     "__processorName": ".git",
     "name": "Furion.git",
     "core": {
@@ -958,7 +958,7 @@
       }
     }
   },
-  "\\code-learn\\git-gears-cs": {
+  "\\learn\\git-gears-cs": {
     "__processorName": ".git",
     "name": "git-gears-cs.git",
     "core": {
@@ -986,7 +986,7 @@
       "active": "."
     }
   },
-  "\\code-learn\\mavonEditor": {
+  "\\learn\\mavonEditor": {
     "__processorName": ".git",
     "name": "mavonEditor.git",
     "core": {
@@ -1014,7 +1014,7 @@
       }
     }
   },
-  "\\code-learn\\modify-source-webpack-plugin": {
+  "\\learn\\modify-source-webpack-plugin": {
     "__processorName": ".git",
     "name": "modify-source-webpack-plugin.git",
     "core": {
@@ -1038,7 +1038,7 @@
       }
     }
   },
-  "\\code-learn\\modular-monolith-aspnet-core-sample": {
+  "\\learn\\modular-monolith-aspnet-core-sample": {
     "__processorName": ".git",
     "name": "modular-monolith-aspnet-core-sample.git",
     "core": {
@@ -1062,7 +1062,7 @@
       }
     }
   },
-  "\\code-learn\\module-shop": {
+  "\\learn\\module-shop": {
     "__processorName": ".git",
     "name": "module-shop.git",
     "core": {
@@ -1091,7 +1091,7 @@
       }
     }
   },
-  "\\code-learn\\NetCoreMicroservicesSample": {
+  "\\learn\\NetCoreMicroservicesSample": {
     "__processorName": ".git",
     "name": "NetCoreMicroservicesSample.git",
     "core": {
@@ -1115,7 +1115,7 @@
       }
     }
   },
-  "\\code-learn\\nopCommerce": {
+  "\\learn\\nopCommerce": {
     "__processorName": ".git",
     "name": "nopCommerce.git",
     "core": {
@@ -1139,7 +1139,7 @@
       }
     }
   },
-  "\\code-learn\\OpenAuth.Net": {
+  "\\learn\\OpenAuth.Net": {
     "__processorName": ".git",
     "name": "OpenAuth.Net.git",
     "core": {
@@ -1163,7 +1163,7 @@
       }
     }
   },
-  "\\code-learn\\OrchardCore": {
+  "\\learn\\OrchardCore": {
     "__processorName": ".git",
     "name": "OrchardCore.git",
     "core": {
@@ -1187,7 +1187,7 @@
       }
     }
   },
-  "\\code-learn\\osharp": {
+  "\\learn\\osharp": {
     "__processorName": ".git",
     "name": "osharp.git",
     "core": {
@@ -1211,7 +1211,7 @@
       }
     }
   },
-  "\\code-learn\\osharp-vben-admin": {
+  "\\learn\\osharp-vben-admin": {
     "__processorName": ".git",
     "name": "osharp-vben-admin.git",
     "core": {
@@ -1236,7 +1236,7 @@
       }
     }
   },
-  "\\code-learn\\RibbonWinForms": {
+  "\\learn\\RibbonWinForms": {
     "__processorName": ".git",
     "name": "RibbonWinForms.git",
     "core": {
@@ -1260,7 +1260,7 @@
       }
     }
   },
-  "\\code-learn\\sentry-dotnet": {
+  "\\learn\\sentry-dotnet": {
     "__processorName": ".git",
     "name": "sentry-dotnet.git",
     "core": {
@@ -1284,7 +1284,7 @@
       }
     }
   },
-  "\\code-learn\\Serenity": {
+  "\\learn\\Serenity": {
     "__processorName": ".git",
     "name": "Serenity.git",
     "core": {
@@ -1308,7 +1308,7 @@
       }
     }
   },
-  "\\code-learn\\Smartstore": {
+  "\\learn\\Smartstore": {
     "__processorName": ".git",
     "name": "Smartstore.git",
     "core": {
@@ -1332,7 +1332,7 @@
       }
     }
   },
-  "\\code-learn\\Util": {
+  "\\learn\\Util": {
     "__processorName": ".git",
     "name": "Util.git",
     "core": {
@@ -1356,7 +1356,7 @@
       }
     }
   },
-  "\\code-learn\\vc-platform": {
+  "\\learn\\vc-platform": {
     "__processorName": ".git",
     "name": "vc-platform.git",
     "core": {
@@ -1380,7 +1380,7 @@
       }
     }
   },
-  "\\code-learn\\vc-storefront": {
+  "\\learn\\vc-storefront": {
     "__processorName": ".git",
     "name": "vc-storefront.git",
     "core": {
@@ -1404,7 +1404,7 @@
       }
     }
   },
-  "\\code-learn\\War3Net": {
+  "\\learn\\War3Net": {
     "__processorName": ".git",
     "name": "War3Net.git",
     "core": {
@@ -1440,7 +1440,7 @@
       }
     }
   },
-  "\\code-learn\\ZRAdmin-vue": {
+  "\\learn\\ZRAdmin-vue": {
     "__processorName": ".git",
     "name": "ZRAdmin-vue.git",
     "core": {
@@ -1465,7 +1465,7 @@
       }
     }
   },
-  "\\code-learn\\ZrAdminNetCore": {
+  "\\learn\\ZrAdminNetCore": {
     "__processorName": ".git",
     "name": "ZrAdminNetCore.git",
     "core": {
@@ -1497,7 +1497,7 @@
       "active": "."
     }
   },
-  "\\code-Pfizer\\00_ChinaBidding": {
+  "\\Pfizer\\00_ChinaBidding": {
     "__processorName": ".git",
     "name": "ChinaBidding.git",
     "core": {
@@ -1531,7 +1531,7 @@
       "active": "."
     }
   },
-  "\\code-Pfizer\\00_TNT": {
+  "\\Pfizer\\00_TNT": {
     "__processorName": ".git",
     "name": "TNT.git",
     "core": {
@@ -1561,7 +1561,7 @@
       "active": "."
     }
   },
-  "\\code-Pfizer\\ChinaDigitalHub": {
+  "\\Pfizer\\ChinaDigitalHub": {
     "__processorName": ".git",
     "name": "ChinaDigitalHub.git",
     "core": {
@@ -1595,7 +1595,7 @@
       "active": "."
     }
   },
-  "\\code-vPress\\99_ruanyf-weekly": {
+  "\\vPress\\99_ruanyf-weekly": {
     "__processorName": ".git",
     "name": "ruanyf-weekly.git",
     "core": {
@@ -1624,7 +1624,7 @@
       }
     }
   },
-  "\\code-vPress\\adocs": {
+  "\\vPress\\adocs": {
     "__processorName": ".git",
     "name": "adocs.git",
     "core": {
@@ -1648,7 +1648,7 @@
       }
     }
   },
-  "\\code-vPress\\blog": {
+  "\\vPress\\blog": {
     "__processorName": ".git",
     "name": "blog.git",
     "core": {
@@ -1673,7 +1673,7 @@
       }
     }
   },
-  "\\code-vPress\\blog-theme": {
+  "\\vPress\\blog-theme": {
     "__processorName": ".git",
     "name": "blog-theme.git",
     "core": {
@@ -1702,7 +1702,7 @@
       }
     }
   },
-  "\\code-vPress\\charles7c.github.io": {
+  "\\vPress\\charles7c.github.io": {
     "__processorName": ".git",
     "name": "charles7c.github.io.git",
     "core": {
@@ -1727,7 +1727,7 @@
       }
     }
   },
-  "\\code-vPress\\cnjimbo.github.io": {
+  "\\vPress\\ripplejourney.github.io": {
     "__processorName": ".git",
     "name": "ripplejourney.github.io.git",
     "core": {
@@ -1740,218 +1740,13 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/cnjimbo.github.io.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      },
-      "upstream": {
-        "url": "https://github.com/VitePressAwesome/sugar-blog.git",
-        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
-      },
-      "calmripple": {
         "url": "git@github.com:ripplejourney/ripplejourney.github.io.git",
         "fetch": "+refs/heads/*:refs/remotes/calmripple/*",
         "pushurl": "git@github.com:ripplejourney/ripplejourney.github.io.git"
       }
-    },
-    "branch": {
-      "master": {
-        "remote": "calmripple",
-        "merge": "refs/heads/master",
-        "github-pr-owner-number": "VitePressAwesome#sugar-blog#1",
-        "vscode-merge-base": "calmripple/master",
-        "gk-merge-base": "calmripple/master"
-      },
-      "try-use-tsup": {
-        "remote": "origin",
-        "merge": "refs/heads/try-use-tsup"
-      },
-      "fixture/delete-gitee-actions": {
-        "vscode-merge-base": "origin/master",
-        "gk-merge-base": "origin/master"
-      },
-      "feature/remove-gitee-sync-action": {
-        "vscode-merge-base": "origin/fixture/delete-gitee-actions",
-        "gk-merge-base": "origin/fixture/delete-gitee-actions"
-      },
-      "feature/add-knowledge": {
-        "vscode-merge-base": "origin/master",
-        "gk-merge-base": "origin/master",
-        "gk-target-base": "origin/master"
-      },
-      "fix/update-Deploy-preview": {
-        "vscode-merge-base": "calmripple/features/update-upstream-1",
-        "remote": "calmripple",
-        "merge": "refs/heads/fix/update-Deploy-preview",
-        "gk-target-base": "calmripple/master"
-      },
-      "upstream/20250124": {
-        "remote": "calmripple",
-        "merge": "refs/heads/upstream/20250124",
-        "vscode-merge-base": "calmripple/upstream/20250124"
-      },
-      "upstream/25012401": {
-        "vscode-merge-base": "calmripple/upstream/20250124",
-        "remote": "calmripple",
-        "merge": "refs/heads/upstream/25012401"
-      },
-      "upstream/25012402": {
-        "vscode-merge-base": "calmripple/upstream/25012401",
-        "remote": "calmripple",
-        "merge": "refs/heads/upstream/25012402"
-      },
-      "upstream/25012403": {
-        "vscode-merge-base": "calmripple/upstream/25012402",
-        "remote": "calmripple",
-        "merge": "refs/heads/upstream/25012403"
-      },
-      "upstream/25012404": {
-        "vscode-merge-base": "calmripple/upstream/25012403",
-        "remote": "calmripple",
-        "merge": "refs/heads/upstream/25012404"
-      },
-      "feat/update-cover-image-logic": {
-        "remote": "calmripple",
-        "merge": "refs/heads/feat/update-cover-image-logic",
-        "vscode-merge-base": "calmripple/feat/update-cover-image-logic"
-      },
-      "feat/upate-reconmendextension": {
-        "vscode-merge-base": "calmripple/feat/update-cover-image-logic",
-        "remote": "calmripple",
-        "merge": "refs/heads/feat/upate-reconmendextension"
-      },
-      "chore(workflows)/change-pull-request-merge-method": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore(workflows)/change-pull-request-merge-method"
-      },
-      "chore/remove-obsolete-Event-JSON-workflow-file": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/remove-obsolete-Event-JSON-workflow-file"
-      },
-      "fix-/update-conditions-for-checkout-and-pull-request-creation": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/fix-/update-conditions-for-checkout-and-pull-request-creation"
-      },
-      "fix/improve-workflow-conditions": {
-        "remote": "calmripple",
-        "merge": "refs/heads/fix/improve-workflow-conditions",
-        "vscode-merge-base": "calmripple/fix/improve-workflow-conditions"
-      },
-      "feat/enhanced-PR-handling": {
-        "remote": "calmripple",
-        "merge": "refs/heads/feat/enhanced-PR-handling",
-        "vscode-merge-base": "calmripple/feat/enhanced-PR-handling"
-      },
-      "fix/update-VSCode-extensions": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/fix/update-VSCode-extensions"
-      },
-      "chore/remove-unnecessary-VSCode-extensions": {
-        "vscode-merge-base": "calmripple/master"
-      },
-      "chore/Update-VSCode-extensions-and-workspace-settings": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/Update-VSCode-extensions-and-workspace-settings"
-      },
-      "chore/update-dependencies-and-fix-some-log-messages": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/update-dependencies-and-fix-some-log-messages"
-      },
-      "chore/250318-update-VSCode-extensions-and-workspace-settings": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/250318-update-VSCode-extensions-and-workspace-settings"
-      },
-      "chore(renovate)/update-renovate-configuration": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore(renovate)/update-renovate-configuration-to-include-additional-configs-and-assignee-settings"
-      },
-      "chore(renovate)/update-renovate-configuration-1": {
-        "vscode-merge-base": "calmripple/chore(renovate)/update-renovate-configuration-to-include-additional-configs-and-assignee-settings",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore(renovate)/update-renovate-configuration-1"
-      },
-      "chore(vscode)/remove-unnecessary-extensions": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore(vscode)/remove-unnecessary-extensions",
-        "gk-merge-base": "calmripple/master",
-        "gk-target-base": "calmripple/master"
-      },
-      "feat/update-upstream-250423": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/feat/update-upstream-250423"
-      },
-      "chore/remove-unused-VS-Code-extensions": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/remove-unused-VS-Code-extensions"
-      },
-      "refactor/simplify-renovate-configuration-and-update-workspace-settings": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/refactor/simplify-renovate-configuration-and-update-workspace-settings"
-      },
-      "chore/update-renovate-config-with-group-name--fix-": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/update-renovate-config-with-group-name--fix-#167"
-      },
-      "refactor/remove-all-dependencies-group-from-renovate-config": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/refactor/remove-all-dependencies-group-from-renovate-config"
-      },
-      "chore/update-renovate-configuration-for-versioning-and-updates": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/update-renovate-configuration-for-versioning-and-updates"
-      },
-      "chore/disable-major-dependency-group-name-in-renovate-config": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/disable-major-dependency-group-name-in-renovate-config"
-      },
-      "chore/update-npm-config-and-vscode-extensions": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/update-npm-config-and-vscode-extensions"
-      },
-      "chore/更新开发依赖和VSCode配置": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/更新开发依赖和VSCode配置"
-      },
-      "chore/将postinstall脚本中的npx替换为pnpm": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/将postinstall脚本中的npx替换为pnpm"
-      },
-      "chore/update-VSCode-settings-and-code-runner-configuration": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/update-VSCode-settings-and-code-runner-configuration"
-      },
-      "style/Update-tswindows$dot$code-profile-settings-and-extensions": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/style/Update-tswindows.code-profile-settings-and-extensions"
-      },
-      "chore/20250604001": {
-        "vscode-merge-base": "calmripple/master",
-        "remote": "calmripple",
-        "merge": "refs/heads/chore/20250604001"
-      }
     }
   },
-  "\\code-vPress\\codeteenager.github.io": {
+  "\\vPress\\codeteenager.github.io": {
     "__processorName": ".git",
     "name": "codeteenager.github.io.git",
     "core": {
@@ -1976,7 +1771,7 @@
       }
     }
   },
-  "\\code-vPress\\flypeng-tool": {
+  "\\vPress\\flypeng-tool": {
     "__processorName": ".git",
     "name": "flypeng-tool.git",
     "core": {
@@ -2005,7 +1800,7 @@
       }
     }
   },
-  "\\code-vPress\\hdu-cs-wiki": {
+  "\\vPress\\hdu-cs-wiki": {
     "__processorName": ".git",
     "name": "hdu-cs-wiki.git",
     "core": {
@@ -2029,7 +1824,7 @@
       }
     }
   },
-  "\\code-vPress\\liuly0322.github.io": {
+  "\\vPress\\liuly0322.github.io": {
     "__processorName": ".git",
     "name": "liuly0322.github.io.git",
     "core": {
@@ -2057,7 +1852,7 @@
       }
     }
   },
-  "\\code-vPress\\mtgjson-website": {
+  "\\vPress\\mtgjson-website": {
     "__processorName": ".git",
     "name": "mtgjson-website.git",
     "core": {
@@ -2081,7 +1876,7 @@
       }
     }
   },
-  "\\code-vPress\\npm-vue3": {
+  "\\vPress\\npm-vue3": {
     "__processorName": ".git",
     "name": "npm-vue3.git",
     "core": {
@@ -2110,7 +1905,7 @@
       }
     }
   },
-  "\\code-vPress\\qisi007.github.io": {
+  "\\vPress\\qisi007.github.io": {
     "__processorName": ".git",
     "name": "qisi007.github.io.git",
     "core": {
@@ -2134,7 +1929,7 @@
       }
     }
   },
-  "\\code-vPress\\strongQ.github.io": {
+  "\\vPress\\strongQ.github.io": {
     "__processorName": ".git",
     "name": "strongQ.github.io.git",
     "core": {
@@ -2158,7 +1953,7 @@
       }
     }
   },
-  "\\code-vPress\\sugar-blog": {
+  "\\vPress\\sugar-blog": {
     "__processorName": ".git",
     "name": "sugar-blog.git",
     "core": {
@@ -2188,7 +1983,7 @@
       }
     }
   },
-  "\\code-vPress\\test": {
+  "\\vPress\\test": {
     "__processorName": ".git",
     "name": "unknown",
     "core": {
@@ -2201,7 +1996,7 @@
     },
     "desc": "error:{}"
   },
-  "\\code-vPress\\vite-plugin-vitepress-auto-sidebar": {
+  "\\vPress\\vite-plugin-vitepress-auto-sidebar": {
     "__processorName": ".git",
     "name": "vite-plugin-vitepress-auto-sidebar.git",
     "core": {
@@ -2225,7 +2020,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-blog-pure": {
+  "\\vPress\\vitepress-blog-pure": {
     "__processorName": ".git",
     "name": "vitepress-blog-pure.git",
     "core": {
@@ -2249,7 +2044,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-blog-starter": {
+  "\\vPress\\vitepress-blog-starter": {
     "__processorName": ".git",
     "name": "vitepress-blog-starter.git",
     "core": {
@@ -2273,7 +2068,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-blogmate": {
+  "\\vPress\\vitepress-blogmate": {
     "__processorName": ".git",
     "name": "vitepress-blogmate.git",
     "core": {
@@ -2297,7 +2092,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-doc": {
+  "\\vPress\\vitepress-doc": {
     "__processorName": ".git",
     "name": "vitepress-doc.git",
     "core": {
@@ -2321,7 +2116,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-docs": {
+  "\\vPress\\vitepress-docs": {
     "__processorName": ".git",
     "name": "vitepress-docs.git",
     "core": {
@@ -2345,7 +2140,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-export-pdf": {
+  "\\vPress\\vitepress-export-pdf": {
     "__processorName": ".git",
     "name": "vitepress-export-pdf.git",
     "core": {
@@ -2369,7 +2164,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-fun": {
+  "\\vPress\\vitepress-fun": {
     "__processorName": ".git",
     "name": "vitepress-fun.git",
     "core": {
@@ -2394,7 +2189,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-theme-reco": {
+  "\\vPress\\vitepress-theme-reco": {
     "__processorName": ".git",
     "name": "vitepress-theme-reco.git",
     "core": {
@@ -2424,7 +2219,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-theme-sakura": {
+  "\\vPress\\vitepress-theme-sakura": {
     "__processorName": ".git",
     "name": "vitepress-theme-sakura.git",
     "core": {
@@ -2448,7 +2243,7 @@
       }
     }
   },
-  "\\code-vPress\\vitepress-theme-vuetom": {
+  "\\vPress\\vitepress-theme-vuetom": {
     "__processorName": ".git",
     "name": "vitepress-theme-vuetom.git",
     "core": {
@@ -2476,7 +2271,7 @@
       }
     }
   },
-  "\\code-vPress\\vuepress-theme-reco": {
+  "\\vPress\\vuepress-theme-reco": {
     "__processorName": ".git",
     "name": "vuepress-theme-reco.git",
     "core": {
@@ -2500,7 +2295,7 @@
       }
     }
   },
-  "\\code-vPress\\website": {
+  "\\vPress\\website": {
     "__processorName": ".git",
     "name": "website.git",
     "core": {
@@ -2524,7 +2319,7 @@
       }
     }
   },
-  "\\code-vPress\\yuque-vitepress": {
+  "\\vPress\\yuque-vitepress": {
     "__processorName": ".git",
     "name": "yuque-vitepress.git",
     "core": {
@@ -2548,7 +2343,7 @@
       }
     }
   },
-  "\\code-vPress\\ZiuChen.github.io": {
+  "\\vPress\\ZiuChen.github.io": {
     "__processorName": ".git",
     "name": "ZiuChen.github.io.git",
     "core": {
@@ -2576,7 +2371,7 @@
       }
     }
   },
-  "\\code-vsextension\\npm-scripts-auto-node": {
+  "\\vsextension\\npm-scripts-auto-node": {
     "__processorName": ".git",
     "name": "npm-scripts-auto-node.git",
     "core": {
@@ -2600,7 +2395,7 @@
       }
     }
   },
-  "\\code-vsextension\\script-buttons": {
+  "\\vsextension\\script-buttons": {
     "__processorName": ".git",
     "name": "script-buttons.git",
     "core": {
@@ -2625,7 +2420,7 @@
       }
     }
   },
-  "\\code-vsextension\\vscode-commit-message-editor": {
+  "\\vsextension\\vscode-commit-message-editor": {
     "__processorName": ".git",
     "name": "vscode-commit-message-editor.git",
     "core": {
@@ -2649,7 +2444,7 @@
       }
     }
   },
-  "\\code-vsextension\\vscode-conventional-commits": {
+  "\\vsextension\\vscode-conventional-commits": {
     "__processorName": ".git",
     "name": "vscode-conventional-commits.git",
     "core": {
@@ -2672,38 +2467,8 @@
         "merge": "refs/heads/master"
       }
     }
-  },
-  "\\code-vsextension\\vscode-extension-samples": {
-    "__processorName": ".git",
-    "name": "vscode-extension-samples.git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://github.com/cnjimbo/vscode-extension-samples.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "main": {
-        "remote": "origin",
-        "merge": "refs/heads/main",
-        "vscode-merge-base": "origin/main"
-      },
-      "main-pnpm": {
-        "remote": "origin",
-        "merge": "refs/heads/main-pnpm",
-        "vscode-merge-base": "origin/main-pnpm"
-      }
-    }
-  },
-  "\\code-vsextension\\vscode-npm-scripts": {
+  }, 
+  "\\vsextension\\vscode-npm-scripts": {
     "__processorName": ".git",
     "name": "vscode-npm-scripts.git",
     "core": {
@@ -2960,7 +2725,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
+        "url": "https://gitee.com/shelter/DotNetCorePlugins.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3103,39 +2868,7 @@
     "submodule": {
       "active": "."
     }
-  },
-  "\\code\\git-awesome": {
-    "__processorName": ".git",
-    "name": "git-awesome.git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://github.com/cnjimbo/git-awesome.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "main": {
-        "remote": "origin",
-        "merge": "refs/heads/main"
-      },
-      "feature1": {
-        "remote": "origin",
-        "merge": "refs/heads/feature1"
-      },
-      "feature2": {
-        "remote": "origin",
-        "merge": "refs/heads/feature2"
-      }
-    }
-  },
+  }, 
   "\\code\\router": {
     "__processorName": ".git",
     "name": "router.git",
@@ -3295,30 +3028,6 @@
     "build": [],
     "version": "1.0.0"
   },
-  "\\code\\my-repo": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://gitee.com/cnjimbo/vite-templates.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "master": {
-        "remote": "origin",
-        "merge": "refs/heads/master"
-      }
-    },
-    "name": "vite-templates.git"
-  },
   "code\\awesome-aop": {
     "__processorName": ".git",
     "core": {
@@ -3469,7 +3178,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
+        "url": "https://gitee.com/shelter/DotNetCorePlugins.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3496,7 +3205,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
+        "url": "https://gitee.com/shelter/DotNetCorePlugins.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3524,7 +3233,7 @@
         "pushurl": "https://github.com/niubilitynetcore/EmitMapper.git"
       },
       "origin2": {
-        "url": "https://gitee.com/code-shelter/EmitMapper.git",
+        "url": "https://gitee.com/shelter/EmitMapper.git",
         "fetch": "+refs/heads/*:refs/remotes/origin2/*"
       }
     },
@@ -3583,7 +3292,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/GM_config.git",
+        "url": "https://github.com/frontendniubility/GM_config.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3656,7 +3365,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/ReactiveETL.git",
+        "url": "https://github.com/dmsrsrepos/ReactiveETL.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3797,7 +3506,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/vue-modern-resume.git",
+        "url": "https://github.com/frontendniubility/vue-modern-resume.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -3958,9 +3667,9 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/command-line-api.git",
+        "url": "https://github.com/aweniubility/command-line-api.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*",
-        "pushurl": "https://github.com/cnjimbo/command-line-api.git"
+        "pushurl": "https://github.com/aweniubility/command-line-api.git"
       }
     },
     "branch": {
@@ -4031,7 +3740,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/cnjimbo/MediatR.git",
+        "url": "https://github.com/aweniubility/MediatR.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -4204,60 +3913,6 @@
     },
     "name": "1595901624.github.io.git"
   },
-  "vPress\\1cnjimbo.github.io": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "ignorecase": true
-    },
-    "branch": {
-      "master": {
-        "github-pr-owner-number": "VitePressAwesome#sugar-blog#1"
-      }
-    },
-    "remote": {
-      "upstream": {
-        "url": "https://github.com/VitePressAwesome/sugar-blog.git",
-        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
-      },
-      "origin2": {
-        "url": "https://github.com/cnjimbo/cnjimbo.github.io.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin2/*"
-      }
-    },
-    "name": "sugar-blog.git"
-  },
-  "vPress\\abackup_cnjimbo.github.io": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://github.com/cnjimbo/cnjimbo.github.io.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      },
-      "upstream": {
-        "url": "https://github.com/VitePressAwesome/sugar-blog.git",
-        "fetch": "+refs/heads/*:refs/remotes/upstream/*"
-      }
-    },
-    "branch": {
-      "master": {
-        "remote": "origin",
-        "merge": "refs/heads/master",
-        "github-pr-owner-number": "VitePressAwesome#sugar-blog#1"
-      }
-    },
-    "name": "cnjimbo.github.io.git"
-  },
   "vPress\\blog-theme": {
     "__processorName": ".git",
     "core": {
@@ -4311,34 +3966,6 @@
       }
     },
     "name": "charles7c.github.io.git"
-  },
-  "vPress\\cnjimbo.github.io": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://github.com/cnjimbo/cnjimbo.github.io.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "master": {
-        "remote": "origin",
-        "merge": "refs/heads/master"
-      },
-      "try-use-tsup": {
-        "vscode-merge-base": "origin/master",
-        "remote": "origin",
-        "merge": "refs/heads/try-use-tsup"
-      }
-    },
-    "name": "cnjimbo.github.io.git"
   },
   "vPress\\codeteenager.github.io": {
     "__processorName": ".git",
@@ -4614,29 +4241,6 @@
     },
     "name": "sujit-168.github.io.git"
   },
-  "vPress\\test\\cnjimbo.github.io": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "git@github.com:cnjimbo/cnjimbo.github.io.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "master": {
-        "remote": "origin",
-        "merge": "refs/heads/master"
-      }
-    },
-    "name": "cnjimbo.github.io.git"
-  },
   "vPress\\vitepress-theme-reco": {
     "__processorName": ".git",
     "core": {
@@ -4838,7 +4442,7 @@
     },
     "name": "ZiuChen.github.io.git"
   },
-  "\\code-ai\\tf-electron": {
+  "\\ai\\tf-electron": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4862,7 +4466,7 @@
     },
     "name": "tf-electron.git"
   },
-  "\\code-front\\vscode-run-scripts-configurations": {
+  "\\front\\vscode-run-scripts-configurations": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4886,7 +4490,7 @@
     },
     "name": "vscode-run-scripts-configurations.git"
   },
-  "code-ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+  "ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4909,7 +4513,7 @@
     },
     "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git"
   },
-  "code-ai\\keract": {
+  "ai\\keract": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4932,7 +4536,7 @@
     },
     "name": "keract.git"
   },
-  "\\code-ai\\ailearn": {
+  "\\ai\\ailearn": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4956,7 +4560,7 @@
     },
     "name": "ailearn.git"
   },
-  "\\code-ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+  "\\ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -4980,7 +4584,7 @@
     },
     "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git"
   },
-  "\\code-ai\\Data-Analysis": {
+  "\\ai\\Data-Analysis": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5007,7 +4611,7 @@
     },
     "name": "Data-Analysis.git"
   },
-  "\\code-ai\\keract": {
+  "\\ai\\keract": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5031,7 +4635,7 @@
     },
     "name": "keract.git"
   },
-  "\\code-ai\\keras-io": {
+  "\\ai\\keras-io": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5058,7 +4662,7 @@
     },
     "name": "keras-io.git"
   },
-  "\\code-ai\\tensorflow2_tutorials": {
+  "\\ai\\tensorflow2_tutorials": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5082,7 +4686,7 @@
     },
     "name": "tensorflow2_tutorials.git"
   },
-  "\\code-ai\\tensorflow2_tutorials_chinese": {
+  "\\ai\\tensorflow2_tutorials_chinese": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5118,12 +4722,12 @@
         "versiontag": ""
       },
       "path": {
-        "hooks": "C:/ScriptsApplications/code-ai/tensorflow2_tutorials_chinese/.git/hooks"
+        "hooks": "C:/ScriptsApplications/ai/tensorflow2_tutorials_chinese/.git/hooks"
       }
     },
     "name": "tensorflow2_tutorials_chinese.git"
   },
-  "\\code-ai\\Time-Series-Analysis-Tutorial": {
+  "\\ai\\Time-Series-Analysis-Tutorial": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5164,12 +4768,12 @@
         "versiontag": ""
       },
       "path": {
-        "hooks": "C:/AppData/code-ai/Time-Series-Analysis-Tutorial/.git/hooks"
+        "hooks": "C:/AppData/ai/Time-Series-Analysis-Tutorial/.git/hooks"
       }
     },
     "name": "Time-Series-Analysis-Tutorial.git"
   },
-  "\\code-comm\\awesome-aop": {
+  "\\comm\\awesome-aop": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5193,7 +4797,7 @@
     },
     "name": "awesome-aop.git"
   },
-  "\\code-comm\\Bonobo.Git.Server": {
+  "\\comm\\Bonobo.Git.Server": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5217,7 +4821,7 @@
     },
     "name": "Bonobo.Git.Server.git"
   },
-  "\\code-comm\\certificate-toolbox": {
+  "\\comm\\certificate-toolbox": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5241,7 +4845,7 @@
     },
     "name": "certificate-toolbox.git"
   },
-  "\\code-comm\\cnjimbo": {
+  "\\comm\\calmripple": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5266,7 +4870,7 @@
     },
     "name": "calmripple.git"
   },
-  "\\code-comm\\DbContextScope": {
+  "\\comm\\DbContextScope": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5302,7 +4906,7 @@
     },
     "name": "DbContextScope.git"
   },
-  "\\code-comm\\dependency-update-action": {
+  "\\comm\\dependency-update-action": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5327,7 +4931,7 @@
     },
     "name": "dependency-update-action.git"
   },
-  "\\code-comm\\DisruptiveSoftware.Cryptography.Tools1": {
+  "\\comm\\DisruptiveSoftware.Cryptography.Tools1": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5354,7 +4958,7 @@
     },
     "name": "DisruptiveSoftware.Cryptography.Tools.git"
   },
-  "\\code-comm\\dmsrs": {
+  "\\comm\\dmsrs": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5382,7 +4986,7 @@
     },
     "name": "dmsrs.git"
   },
-  "\\code-comm\\DmsrsAwesome": {
+  "\\comm\\DmsrsAwesome": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5411,7 +5015,7 @@
     },
     "name": "DmsrsAwesome.git"
   },
-  "\\code-comm\\DotNetCorePlugins": {
+  "\\comm\\DotNetCorePlugins": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5423,7 +5027,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git",
+        "url": "https://gitee.com/shelter/DotNetCorePlugins.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -5435,7 +5039,7 @@
     },
     "name": "DotNetCorePlugins.git"
   },
-  "\\code-comm\\EmitMapper": {
+  "\\comm\\EmitMapper": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5480,7 +5084,7 @@
     },
     "name": "EmitMapper.git"
   },
-  "\\code-comm\\ETL": {
+  "\\comm\\ETL": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5505,7 +5109,7 @@
     },
     "name": "ETL.git"
   },
-  "\\code-comm\\Ext-EDF-Web-MVC": {
+  "\\comm\\Ext-EDF-Web-MVC": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5533,7 +5137,7 @@
     },
     "name": "Ext-EDF-Web-MVC.git"
   },
-  "\\code-comm\\FastExpressionCompiler": {
+  "\\comm\\FastExpressionCompiler": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5568,39 +5172,7 @@
     },
     "name": "FastExpressionCompiler.git"
   },
-  "\\code-comm\\git-awesome": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://github.com/cnjimbo/git-awesome.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "main": {
-        "remote": "origin",
-        "merge": "refs/heads/main"
-      },
-      "feature1": {
-        "remote": "origin",
-        "merge": "refs/heads/feature1"
-      },
-      "feature2": {
-        "remote": "origin",
-        "merge": "refs/heads/feature2"
-      }
-    },
-    "name": "git-awesome.git"
-  },
-  "\\code-comm\\IniFile": {
+  "\\comm\\IniFile": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5624,31 +5196,7 @@
     },
     "name": "IniFile.git"
   },
-  "\\code-comm\\my-repo": {
-    "__processorName": ".git",
-    "core": {
-      "repositoryformatversion": "0",
-      "filemode": false,
-      "bare": false,
-      "logallrefupdates": true,
-      "symlinks": false,
-      "ignorecase": true
-    },
-    "remote": {
-      "origin": {
-        "url": "https://gitee.com/cnjimbo/vite-templates.git",
-        "fetch": "+refs/heads/*:refs/remotes/origin/*"
-      }
-    },
-    "branch": {
-      "master": {
-        "remote": "origin",
-        "merge": "refs/heads/master"
-      }
-    },
-    "name": "vite-templates.git"
-  },
-  "\\code-comm\\repoManager": {
+  "\\comm\\repoManager": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5660,7 +5208,7 @@
     },
     "remote": {
       "origin": {
-        "url": "git@github.com:dmsrs-open/repoManager.git",
+        "url": "git@github.com:dmsrsrepos/repoManager.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -5676,7 +5224,7 @@
       "active": "."
     }
   },
-  "\\code-comm\\router": {
+  "\\comm\\router": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5748,7 +5296,7 @@
     },
     "name": "router.git"
   },
-  "\\code-comm\\TSharp": {
+  "\\comm\\TSharp": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5772,7 +5320,7 @@
     },
     "name": "TSharp.git"
   },
-  "\\code-comm\\vba": {
+  "\\comm\\vba": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5804,7 +5352,7 @@
     },
     "name": "vba.git"
   },
-  "\\code-front\\learn-vue3-wechat": {
+  "\\front\\learn-vue3-wechat": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5829,7 +5377,7 @@
     },
     "name": "learn-vue3-wechat.git"
   },
-  "\\code-front\\lodash": {
+  "\\front\\lodash": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5853,7 +5401,7 @@
     },
     "name": "lodash.git"
   },
-  "\\code-front\\radash": {
+  "\\front\\radash": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5878,7 +5426,7 @@
     },
     "name": "radash.git"
   },
-  "\\code-front\\unoCss-learn": {
+  "\\front\\unoCss-learn": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5903,7 +5451,7 @@
     },
     "name": "unoCss-learn.git"
   },
-  "\\code-vPress\\experimentation": {
+  "\\vPress\\experimentation": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5929,7 +5477,7 @@
     },
     "name": "experimentation.git"
   },
-  "\\code-vPress\\integrations": {
+  "\\vPress\\integrations": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -5965,7 +5513,7 @@
     },
     "name": "integrations.git"
   },
-  "\\code-vPress\\modern-typescript-monorepo-example": {
+  "\\vPress\\modern-typescript-monorepo-example": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6011,7 +5559,7 @@
     },
     "name": "modern-typescript-monorepo-example.git"
   },
-  "\\code-vPress\\nolebase": {
+  "\\vPress\\nolebase": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6024,8 +5572,7 @@
     },
     "branch": {
       "main": {
-        "vscode-merge-base": "origin/main",
-        "github-pr-base-branch": "cnjimbo#nolebase#fix/JavaScript-heap-out-of-memory"
+        "vscode-merge-base": "origin/main"
       },
       "fix/JavaScript-heap-out-of-memory": {
         "github-pr-base-branch": "nolebase#nolebase#main",
@@ -6040,7 +5587,7 @@
     },
     "name": "nolebase.git"
   },
-  "\\code-vPress\\preview": {
+  "\\vPress\\preview": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6069,7 +5616,7 @@
     },
     "name": "preview.git"
   },
-  "\\code-vPress\\radash-study": {
+  "\\vPress\\radash-study": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6094,7 +5641,7 @@
     },
     "name": "radash-study.git"
   },
-  "\\code-vPress\\unocss": {
+  "\\vPress\\unocss": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6119,7 +5666,7 @@
     },
     "name": "unocss.git"
   },
-  "\\code-vPress\\vitepress-theme-open17": {
+  "\\vPress\\vitepress-theme-open17": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6143,7 +5690,7 @@
     },
     "name": "vitepress-theme-open17.git"
   },
-  "\\code-vsextension\\pnpm-vscode-helper": {
+  "\\vsextension\\pnpm-vscode-helper": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6168,7 +5715,7 @@
     },
     "name": "pnpm-vscode-helper.git"
   },
-  "\\code-vsextension\\reactive-meta-gen": {
+  "\\vsextension\\reactive-meta-gen": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6235,7 +5782,7 @@
     },
     "name": "reactive-meta-gen.git"
   },
-  "\\code-vsextension\\reactive-vscode": {
+  "\\vsextension\\reactive-vscode": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6260,7 +5807,7 @@
     },
     "name": "reactive-vscode.git"
   },
-  "\\code-vsextension\\starter-vscode": {
+  "\\vsextension\\starter-vscode": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6284,7 +5831,7 @@
     },
     "name": "starter-vscode.git"
   },
-  "\\code-vsextension\\taze": {
+  "\\vsextension\\taze": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6309,7 +5856,7 @@
     },
     "name": "taze.git"
   },
-  "\\code-vsextension\\vscode-babel-compile-on-save": {
+  "\\vsextension\\vscode-babel-compile-on-save": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6342,7 +5889,7 @@
     },
     "name": "vscode-babel-compile-on-save.git"
   },
-  "\\code-vsextension\\vscode-file-nesting-config": {
+  "\\vsextension\\vscode-file-nesting-config": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6367,7 +5914,7 @@
     },
     "name": "vscode-file-nesting-config.git"
   },
-  "\\code-vsextension\\vscode-hide-comments": {
+  "\\vsextension\\vscode-hide-comments": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6392,7 +5939,7 @@
     },
     "name": "vscode-hide-comments.git"
   },
-  "\\code-vsextension\\vscode-iconify": {
+  "\\vsextension\\vscode-iconify": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6417,7 +5964,7 @@
     },
     "name": "vscode-iconify.git"
   },
-  "\\code-vsextension\\vscode-pnpm-catalog-lens": {
+  "\\vsextension\\vscode-pnpm-catalog-lens": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6442,7 +5989,7 @@
     },
     "name": "vscode-pnpm-catalog-lens.git"
   },
-  "\\code-vsextension\\vscode-project-config-updater": {
+  "\\vsextension\\vscode-project-config-updater": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6466,7 +6013,7 @@
     },
     "name": "vscode-project-config-updater.git"
   },
-  "\\code-vsextension\\vscode-runonsave": {
+  "\\vsextension\\vscode-runonsave": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6491,7 +6038,7 @@
     },
     "name": "vscode-runonsave.git"
   },
-  "\\code-vsextension\\vscode-smart-clicks": {
+  "\\vsextension\\vscode-smart-clicks": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6515,7 +6062,7 @@
     },
     "name": "vscode-smart-clicks.git"
   },
-  "\\code-wechat\\CoreShop": {
+  "\\wechat\\CoreShop": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6539,7 +6086,7 @@
     },
     "name": "CoreShop.git"
   },
-  "\\code-wechat\\hioshop-miniprogram": {
+  "\\wechat\\hioshop-miniprogram": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
@@ -6563,7 +6110,7 @@
     },
     "name": "hioshop-miniprogram.git"
   },
-  "\\code-wechat\\TOGO_School_Miniprograme": {
+  "\\wechat\\TOGO_School_Miniprograme": {
     "__processorName": ".git",
     "core": {
       "repositoryformatversion": "0",
