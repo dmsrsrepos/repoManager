@@ -87,15 +87,26 @@ export async function upgradeConfig(db: Low<Repos>) {
         var version = db.data['__version'];
         console.log('config db file version:', version.raw);
         if (version === '1.0.0') {
-            // db.data['__version'] = '2.0.0'
-            // for (let key in db.data) {
-            //     let repo = db.data[key];
-            //     repo['remotes'] = repo['remotes'] || []
-            // }
+
+
+
         }
+        let data = db.data;
+        Object.entries(db.data)
+            .filter(([key, value]) => key.startsWith('test\\'))
+            .forEach(([key, value]) => {
+                delete db.data[key];
+            })
+        db.write()
+        Object.entries(db.data)
+            .filter(([key, value]) => key.startsWith('test\\'))
+            .forEach(([key, value]) => {
+                db.data[key.replace('test\\', '')] = extend({}, value, data[key.replace('test\\', '')])
+                delete db.data[key];
+            })
+        db.write()
     }
 }
-
 
 export default {
     extend,

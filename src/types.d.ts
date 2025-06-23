@@ -5,7 +5,8 @@ import semver from 'semver';
 
 export type Repos = {
     [dir: string]: Repo;
-} & { "__version"?: semver; };
+    "__version"?: semver;
+} 
 
 export type Proccessor = {
     name: string;
