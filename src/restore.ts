@@ -4,9 +4,8 @@ import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getClassifiedPath, upgradeConfig } from './utils'
-import { factory } from './factory';
+import { factory } from './components/factory';
 import { RestoreAlias } from './alias_config'
-
 
 async function restoreRepo(_ctx: Context) {
     console.log("🚀 ~ Restore categories:", RestoreAlias)
@@ -16,7 +15,7 @@ async function restoreRepo(_ctx: Context) {
         if (relativePath == '__version') return;
 
         let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
-        let p = factory.find(async p => await p.shouldRestore(ctx, repo));
+        let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
         if (p) {
             const alias = relativePath.split(path.sep)[0]
             if (RestoreAlias.includes(alias)) {

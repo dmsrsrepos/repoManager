@@ -1,5 +1,6 @@
 import { exec, execSync } from 'child_process';
-import { Repo } from './types';
+import { Repo } from '../types';
+import fs from 'node:fs';
 
 // 创建一个异步函数来执行git clone命令
 export function gitClone(repo: Repo, targetDir: string) {
@@ -13,13 +14,17 @@ export function gitClone(repo: Repo, targetDir: string) {
 }
 
 function executeCommand(command: string) {
+    console.log("🚀 ~ executeCommand:", command)
     return execSync(command, { encoding: 'utf-8' }).trim();
 }
 
 function repositoryExistsAtPath(repoPath: string): boolean {
     try {
-        executeCommand(`cd ${repoPath} && git rev-parse --git-dir`);
-        return true;
+        if (fs.existsSync(repoPath)) {
+            executeCommand(`cd ${repoPath} && git rev-parse --git-dir`);
+            return true;
+        }
+        return false;
     } catch (error) {
         return false;
     }

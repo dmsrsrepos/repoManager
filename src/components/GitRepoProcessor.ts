@@ -1,7 +1,7 @@
 import fs, { PathLike } from "node:fs";
 import path from "path";
 import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
-import { Context, Proccessor, Repo } from './types';
+import { Context, Proccessor, Repo } from '../types';
 import { gitClone } from './gitclone';
 
 export class GitRepoProcessor implements Proccessor {

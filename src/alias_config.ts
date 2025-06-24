@@ -26,4 +26,4 @@ export const MAPPER: Record<string, Alias> = {
 
 export type AliasType = keyof typeof MAPPER
 
-export const RestoreAlias: AliasType[] = ['comm']
+export const RestoreAlias: AliasType[] = Object.keys(MAPPER)

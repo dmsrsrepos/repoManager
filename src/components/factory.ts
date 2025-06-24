@@ -1,4 +1,4 @@
-import { Proccessor } from './types';
+import { Proccessor } from '../types';
 
 import { GitRepoProcessor } from "./GitRepoProcessor";
 

@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { factory } from './factory';
+import { factory } from './components/factory';
 import { upgradeConfig, extend, getClassifiedPath } from './utils';
 async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
     if (depth === 0) {
