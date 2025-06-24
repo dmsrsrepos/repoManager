@@ -3,13 +3,13 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend, upgradeConfig } from './utils'
+import { extend, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './factory';
 
 async function restoreRepo(_ctx: Context) {
     const entries = Object.entries(_ctx.db.data);
-    return entries.map(async ([relativePath, repo],idx, data) => {
-
+    return entries.map(async ([relativePath, repo], idx, data) => {
+        relativePath = getClassifiedPath(relativePath)
         if (relativePath == '__version') return;
 
         let ctx = extend({}, _ctx, { rootDir: _ctx.rootDirFullPath, curDir: path.join(_ctx.rootDirFullPath, relativePath) });

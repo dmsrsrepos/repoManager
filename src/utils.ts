@@ -2,7 +2,11 @@ import { Low } from "lowdb";
 import semver from "semver";
 import { Repos } from "./types";
 import path from 'path';
+import { MAPPER } from "./alias_config";
 
+
+
+const mappers = Object.entries(MAPPER)
 // utils.ts
 export function extend<T extends object, U, U2, U3, U4 extends object>(target, s1: U, s2?: U2, s3?: U3, s4?: U4, ...others: any): T & U & U2 & U3 & U4 {
     const isDeep = true;
@@ -109,37 +113,10 @@ export async function upgradeConfig(db: Low<Repos>) {
     }
 }
 
-type Alias = {
-    pattern?: RegExp,
-    keys: string[]
-}
-const MAPPER: Record<string, Alias> = {
-    ai: {
-
-        keys: ["ai"]
-    },
-    vPress: {
-        keys: ["vPress"],
-    },
-    frontend: {
-        keys: ["frontend"],
-    },
-    learn: {
-        pattern: /[learn]+/,
-        keys: ['learn'],
-    },
-    vsextension: {
-        keys: ['vsextension'],
-    },
-    code: {
-        keys: ['code'],
-    }
-}
-const mappers = Object.entries(MAPPER)
 export function getClassifiedPath(relateviePath: string): string {
     const processedPath = path.normalize(relateviePath);
     const sep = path.sep;
-    const otherName = 'code'
+    const otherName = 'unclassified'
     // 分割路径为部分，处理Windows的驱动器情况
     let parts: string[];
     // 相对路径，例如 'a/b/c' 或 'a\b\c'

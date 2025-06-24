@@ -48,3 +48,8 @@ export type Repo = {
     };
     submodule?: Submodule
 } & {}; // optional list of remote repositories
+
+export type Alias = {
+    pattern?: RegExp,
+    keys: string[]
+}
