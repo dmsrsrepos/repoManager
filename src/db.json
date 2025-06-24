@@ -2467,7 +2467,7 @@
         "merge": "refs/heads/master"
       }
     }
-  }, 
+  },
   "\\vsextension\\vscode-npm-scripts": {
     "__processorName": ".git",
     "name": "vscode-npm-scripts.git",
@@ -2868,7 +2868,7 @@
     "submodule": {
       "active": "."
     }
-  }, 
+  },
   "\\code\\router": {
     "__processorName": ".git",
     "name": "router.git",
@@ -5208,7 +5208,7 @@
     },
     "remote": {
       "origin": {
-        "url": "git@github.com:dmsrsrepos/repoManager.git",
+        "url": "git@github.com:dmsrs-open/repoManager.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -6134,5 +6134,33 @@
       }
     },
     "name": "TOGO_School_Miniprograme.git"
+  },
+  "code\\repoManager": {
+    "__processorName": ".git",
+    "core": {
+      "repositoryformatversion": "0",
+      "filemode": false,
+      "bare": false,
+      "logallrefupdates": true,
+      "symlinks": false,
+      "ignorecase": true
+    },
+    "submodule": {
+      "active": "."
+    },
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-open/repoManager.git",
+        "fetch": "+refs/heads/*:refs/remotes/origin/*"
+      }
+    },
+    "branch": {
+      "main": {
+        "remote": "origin",
+        "merge": "refs/heads/main",
+        "vscode-merge-base": "origin/main"
+      }
+    },
+    "name": "repoManager.git"
   }
 }

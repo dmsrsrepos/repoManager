@@ -4,8 +4,7 @@ import path from 'path';
 import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './factory';
-import { upgradeConfig, extend } from './utils';
-
+import { upgradeConfig, extend, getClassifiedPath } from './utils';
 async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
     if (depth === 0) {
         return;
@@ -17,7 +16,7 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
     for (let file of files) {
         // 拼接完整的路径
         let curDirFullPath = path.join(dirFullPath, file);
-        let key = curDirFullPath.replace(ctx.rootDirFullPath, '')
+        let key = getClassifiedPath(curDirFullPath.replace(ctx.rootDirFullPath, ''))
         ctx.curDirFullPath = curDirFullPath;
         // 一次性获取目录信息，避免多次调用 fs.statSync
         const isDir = fs.existsSync(curDirFullPath) && fs.statSync(curDirFullPath)?.isDirectory();

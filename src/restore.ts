@@ -12,7 +12,7 @@ async function restoreRepo(_ctx: Context) {
 
         if (relativePath == '__version') return;
 
-        let ctx = extend({}, _ctx, { rootDir: _ctx.rootDir, curDir: path.join(_ctx.rootDir, relativePath) });
+        let ctx = extend({}, _ctx, { rootDir: _ctx.rootDirFullPath, curDir: path.join(_ctx.rootDirFullPath, relativePath) });
         let p = factory.find(async p => await p.shouldRestore(ctx, repo));
         if (p) {
             console.log(`🚀 ~ current restoring  ${idx}/${data.length} `)
@@ -26,9 +26,9 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
             const ctx: Context = {
-                curDir: rootDir,
+                curDirFullPath: rootDir,
                 db,
-                rootDir
+                rootDirFullPath: rootDir,
             };
             await upgradeConfig(db)
             return ctx;
@@ -38,7 +38,7 @@ export async function findAndBackupRepos(rootDir: string, maxDepth: number): Pro
             await restoreRepo(ctx)
             return ctx;
         })
-        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDir + ' file for the results.'))
+        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
