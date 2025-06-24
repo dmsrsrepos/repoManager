@@ -15,7 +15,7 @@ export function gitClone(repo: Repo, targetDir: string) {
 }
 
 function executeCommand(command: string) {
-    console.log("🚀 ~ executeCommand:", command)
+    // console.log("🚀 ~ executeCommand:", command)
     return execSync(command, { encoding: 'utf-8' }).trim();
 }
 
