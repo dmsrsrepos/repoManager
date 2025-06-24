@@ -26,7 +26,7 @@ export class GitRepoProcessor implements Proccessor {
     }
 
     async restoreRepo(ctx, repo) {
-        gitClone(repo, ctx.curDir)
+        gitClone(repo, ctx.curDirFullPath)
         return false;
     }
 }
@@ -45,31 +45,19 @@ function fixSectionName(str: string) {
 function readGitConfig(configPath: PathLike) {
     // 读取.git/config文件
     let configContent = ''
-    let gitConfig: Repo = null
+    let gitConfig: Repo = {} as any;
 
     // const prefixes = ['remote', 'branch', 'submodule']
     try {
         configContent = fs.readFileSync(configPath, 'utf-8')
         // 解析ini内容为对象
         gitConfig = ini.parse(fixSectionName(configContent)) as any;
-        // Object.keys(gitConfig).map((key) => {
-        //     let prefix = prefixes.find(prefix => key.startsWith(prefix))
-        //     if (prefix) {
-        //         let subKey = extractQuotedValue(key);
-        //         if (subKey) {
-        //             if (!gitConfig[prefix]) {
-        //                 gitConfig[prefix] = {}
-        //             }
-        //             gitConfig[prefix][subKey] = extend({}, gitConfig[prefix][subKey], gitConfig[key])
-        //             delete gitConfig[key];
-        //         }
-        //     }
-        // })
+
         gitConfig.name = (
             gitConfig.remote?.origin?.url ||
             gitConfig.remote?.upstream?.url ||
-            (gitConfig.remote ? Object.values(gitConfig.remote).findLast(v => v.url)?.url : '/unknown')
-        )?.split('/')?.pop();
+            (gitConfig.remote ? Object.values(gitConfig.remote).find(v => v.url)?.url : 'unknown')
+        )?.split('/')?.pop() || "unknown";
         if (gitConfig.name == 'unknown') {
             console.error('git config would be wrong!')
             console.error(' ', 'file path:', configPath)
@@ -80,6 +68,7 @@ function readGitConfig(configPath: PathLike) {
         return gitConfig;
     } catch (err) {
         console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack)
+
         return {
             name: 'unknown',
             desc: `error:${err.message}.${err.stack}. file:${configPath}. content:${configContent}. gitConfig: ${JSON.stringify(gitConfig)}`

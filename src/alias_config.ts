@@ -18,10 +18,12 @@ export const MAPPER: Record<string, Alias> = {
     vsextension: {
         keys: ['vsextension'],
     },
-    code: {
-        keys: ['code'],
-    },
+
     comm: {
         keys: ['comm'],
     }
 }
+
+export type AliasType = keyof typeof MAPPER
+
+export const RestoreAlias: AliasType[] = ['comm']

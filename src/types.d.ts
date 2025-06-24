@@ -1,12 +1,13 @@
 
 import { Low } from 'lowdb';
 import semver from 'semver';
+import { extend } from './utils';
 
 
 export type Repos = {
     [dir: string]: Repo;
     "__version"?: semver;
-} 
+}
 
 export type Proccessor = {
     name: string;
@@ -30,24 +31,25 @@ export type Remote = {
     url: string;
     pushurl?: string;
     fetch?: string;
-} & {}
+}
+export type ModulePath = {
+    active?: boolean;
+    url: string;
+}
 export type Submodule = {
-    [path: string]: {
-        active?: boolean;
-        url: string;
-    }
+    [path: string]: ModulePath
 };
+
+
+export type Remotes = { origin?: Remote } & Record<string, Remote>;
+
 export type Repo = {
     name: string;
     __processorName?: string;
     desc?: string; // optional description of the repository
-    remote?: {
-        origin?: Remote;
-    } & {
-        [name: string]: Remote
-    };
+    remote?: Remotes;
     submodule?: Submodule
-} & {}; // optional list of remote repositories
+} // optional list of remote repositories
 
 export type Alias = {
     pattern?: RegExp,

@@ -5,6 +5,7 @@ import { Context, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './factory';
+import { RestoreAlias } from './alias_config'
 
 async function restoreRepo(_ctx: Context) {
     const entries = Object.entries(_ctx.db.data);
@@ -12,23 +13,26 @@ async function restoreRepo(_ctx: Context) {
         relativePath = getClassifiedPath(relativePath)
         if (relativePath == '__version') return;
 
-        let ctx = extend({}, _ctx, { rootDir: _ctx.rootDirFullPath, curDir: path.join(_ctx.rootDirFullPath, relativePath) });
+        let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
         let p = factory.find(async p => await p.shouldRestore(ctx, repo));
         if (p) {
-            console.log(`🚀 ~ current restoring  ${idx}/${data.length} `)
-            // 定义一个GitRepo对象，用于存储git库的信息
-            return await p.restoreRepo(ctx, repo)
+            const alias = relativePath.split(path.sep)[0]
+            if (RestoreAlias.includes(alias)) {
+                console.log(`🚀 ~ current restoring  ${idx}/${data.length} `)
+                // 定义一个GitRepo对象，用于存储git库的信息
+                return await p.restoreRepo(ctx, repo)
+            }
         }
     })
 }
-export async function findAndBackupRepos(rootDir: string, maxDepth: number): Promise<void> {
+export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     let defaultData: Repos = {};
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
             const ctx: Context = {
-                curDirFullPath: rootDir,
+                curDirFullPath: rootDirFullPath,
                 db,
-                rootDirFullPath: rootDir,
+                rootDirFullPath: rootDirFullPath,
             };
             await upgradeConfig(db)
             return ctx;
