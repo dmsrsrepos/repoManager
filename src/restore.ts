@@ -19,7 +19,8 @@ async function restoreRepo(_ctx: Context) {
         if (p) {
             const alias = relativePath.split(path.sep)[0]
             if (RestoreAlias.includes(alias)) {
-                console.log(`🚀 ~ current restoring  ${idx}/${data.length} `)
+                console.log("🚀 ~ =====")
+                console.log(`🚀 ~ Start restoring  ${idx + 1}/${data.length} `)
                 // 定义一个GitRepo对象，用于存储git库的信息
                 return await p.restoreRepo(ctx, repo)
             }

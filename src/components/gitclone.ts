@@ -7,9 +7,10 @@ export function gitClone(repo: Repo, targetDir: string) {
     if (repo.remote)
         Object.entries(repo.remote)
             .map(([name, remoteConfig]) => {
-                console.log(`=====`)
-                console.log(`Restore... ${name} = ${remoteConfig.url} to ${targetDir}`);
+                // console.log("🚀 ~ .map ~ name:", name)
+                console.log(`🚀 ~ remote name: ...  ${name} = ${remoteConfig.url} to ${targetDir}`);
                 return cloneOrAddRemote(targetDir, name, remoteConfig.url)
+
             })
 }
 
@@ -45,6 +46,7 @@ function addRemoteIfNotExists(repoPath: string, remoteName: string, remoteUrl: s
     } else {
         let msg = `Ignored. Remote ${remoteName} already exists with URL  = ${remoteUrl}.`
         // console.log(msg);
+        console.log("🚀 ~ ", msg)
         return msg;
     }
 }
@@ -54,7 +56,10 @@ function cloneOrAddRemote(repoPath: string, remoteName: string, remoteUrl: strin
 
         try {
             console.log(`Cloning...`);
-            return executeCommand(`git clone ${remoteUrl} ${repoPath} -o ${remoteName}`);
+            const cmd = `git clone ${remoteUrl} ${repoPath} -o ${remoteName}`;
+            console.log("🚀 ~ clone ~ cmd:", cmd)
+            return executeCommand(cmd);
+
 
         } catch (error) {
             return JSON.stringify(error);
