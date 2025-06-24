@@ -7,7 +7,9 @@ import { extend, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './factory';
 import { RestoreAlias } from './alias_config'
 
+
 async function restoreRepo(_ctx: Context) {
+    console.log("🚀 ~ Restore categories:", RestoreAlias)
     const entries = Object.entries(_ctx.db.data);
     return entries.map(async ([relativePath, repo], idx, data) => {
         relativePath = getClassifiedPath(relativePath)

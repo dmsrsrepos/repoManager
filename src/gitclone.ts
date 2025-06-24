@@ -3,13 +3,13 @@ import { Repo } from './types';
 
 // 创建一个异步函数来执行git clone命令
 export function gitClone(repo: Repo, targetDir: string) {
-
-    Object.entries(repo.remote)
-        .map(([name, remoteConfig]) => {
-            console.log(`=====`)
-            console.log(`Restore... ${name} = ${remoteConfig.url} to ${targetDir}`);
-            return cloneOrAddRemote(targetDir, name, remoteConfig.url)
-        })
+    if (repo.remote)
+        Object.entries(repo.remote)
+            .map(([name, remoteConfig]) => {
+                console.log(`=====`)
+                console.log(`Restore... ${name} = ${remoteConfig.url} to ${targetDir}`);
+                return cloneOrAddRemote(targetDir, name, remoteConfig.url)
+            })
 }
 
 function executeCommand(command: string) {
@@ -28,6 +28,7 @@ function repositoryExistsAtPath(repoPath: string): boolean {
 function addRemoteIfNotExists(repoPath: string, remoteName: string, remoteUrl: string) {
     const existingRemotes = executeCommand(`cd ${repoPath} && git remote -v`).split('\n');
     if (!existingRemotes.some(remote => remote.includes(`${remoteUrl}`))) {
+        console.log(`Adding remote...`);
         while (true) {
             try {
                 let result = executeCommand(`cd ${repoPath} && git remote add ${remoteName} ${remoteUrl}`);
@@ -45,11 +46,15 @@ function addRemoteIfNotExists(repoPath: string, remoteName: string, remoteUrl: s
 
 function cloneOrAddRemote(repoPath: string, remoteName: string, remoteUrl: string) {
     if (!repositoryExistsAtPath(repoPath)) {
-        console.log(`Cloning...`);
-        return executeCommand(`git clone ${remoteUrl} ${repoPath} -o ${remoteName}`);
 
+        try {
+            console.log(`Cloning...`);
+            return executeCommand(`git clone ${remoteUrl} ${repoPath} -o ${remoteName}`);
+
+        } catch (error) {
+            return JSON.stringify(error);
+        }
     } else {
-        console.log(`Adding remote...`);
         return addRemoteIfNotExists(repoPath, remoteName, remoteUrl);
     }
 }
