@@ -27,7 +27,7 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                 // 判断是否存在.git目录
                 isGitRepo = await p.shouldBackup(ctx);
                 // 如果是git库，获取其信息，并添加到数组中
-                if (isGitRepo) {                    
+                if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
                     const repo = await p.backupRepo(ctx);
                     ctx.db.data[key] = extend({ "__processorName": p.name }, ctx.db.data[key], repo);
@@ -63,7 +63,7 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const ROOT_DIR = ['C:\\AppData\\code', 'G:\\'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
