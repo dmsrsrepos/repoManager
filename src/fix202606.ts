@@ -23,6 +23,8 @@ async function restoreRepo(_ctx: Context) {
                 })
             }
             ret.desc = gitConfig.desc
+            delete repos[relativePath]
+            relativePath = getClassifiedPath(relativePath)
             repos[relativePath] = ret;
             return [relativePath, ret];
         })
