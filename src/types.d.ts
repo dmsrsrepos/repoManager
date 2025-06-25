@@ -4,10 +4,7 @@ import semver from 'semver';
 import { extend } from './utils';
 
 
-export type Repos = {
-    [dir: string]: Repo;
-    "__version"?: semver;
-}
+export type Repos = Record<string, Repo>
 
 export type Proccessor = {
     name: string;
@@ -18,9 +15,13 @@ export type Proccessor = {
     restoreRepo(ctx: Context, repo: Repo): Promise<boolean>;
 }
 export type Factory = Set<Proccessor>;
+export type Db = {
+    "__version"?: semver;
+    repos?: Repos;
+}
 export type Context = {
     curDirFullPath: string;
-    db: Low<Repos>;
+    db: Low<Db>;
     rootDirFullPath: string;
 }
 export interface MergeOptions {

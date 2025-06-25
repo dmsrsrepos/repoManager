@@ -1,12 +1,11 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Db, Repos } from './types'
+import { Context, Repos, Db } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './components/factory';
 import { RestoreAlias } from './alias_config'
-
 async function restoreRepo(_ctx: Context) {
     console.log("🚀 ~ Restore categories:", RestoreAlias)
     const entries = Object.entries(_ctx.db.data);

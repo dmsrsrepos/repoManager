@@ -1,6 +1,6 @@
 import { Low } from "lowdb";
 import semver from "semver";
-import { Repos } from "./types";
+import { Db } from "./types";
 import path from 'path';
 import { MAPPER } from "./alias_config";
 
@@ -81,33 +81,33 @@ export function extractQuotedValue(str: string): string | undefined {
     // 如果都没有找到匹配项，返回undefined
     return undefined;
 }
-export async function upgradeConfig(db: Low<Repos>) {
-    if (!Object.hasOwn(db.data, '__version')) {
-        db.data['__version'] = semver.parse('1.0.0');
-        for (let key in db.data) {
-            delete db.data[key]['remotes'];
-        }
+export async function upgradeConfig(db: Low<Db>) {
+    if (!db.data.__version) {
+        db.data.__version = semver.parse('1.0.0');
     }
     else {
-        var version = db.data['__version'];
+        var version = db.data.__version;
         console.log('config db file version:', version.raw);
         if (version === '1.0.0') {
 
 
 
         }
-        let data = db.data;
-        Object.entries(db.data)
+        if (!db.data.repos) {
+            db.data.repos = {}
+        }
+        const repos = db.data.repos;
+        Object.entries(repos)
             .filter(([key, value]) => key.startsWith('test\\'))
             .forEach(([key, value]) => {
-                delete db.data[key];
+                delete repos[key];
             })
         db.write()
-        Object.entries(db.data)
+        Object.entries(repos)
             .filter(([key, value]) => key.startsWith('test\\'))
             .forEach(([key, value]) => {
-                db.data[key.replace('test\\', '')] = extend({}, value, data[key.replace('test\\', '')])
-                delete db.data[key];
+                repos[key.replace('test\\', '')] = extend({}, value, repos[key.replace('test\\', '')])
+                delete repos[key];
             })
         db.write()
     }

@@ -1,7 +1,7 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Repos } from './types'
+import { Context, Db } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './components/factory';
 import { upgradeConfig, extend, getClassifiedPath } from './utils';
@@ -30,8 +30,11 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
                     const repo = await p.backupRepo(ctx);
-                    ctx.db.data[key] = extend({ "__processorName": p.name }, ctx.db.data[key], repo);
-                    // { ...ctx.db.data[key], "__processorName": p.name, ...repo }; //对象扩展仅仅支持浅表复制，无法深层拷贝
+                    if (!ctx.db.data.repos) {
+                        ctx.db.data.repos = {}
+                    }
+                    ctx.db.data.repos[key] = extend({ "__processorName": p.name }, ctx.db.data.repos[key], repo);
+                    // { ...ctx.db.data.repos[key], "__processorName": p.name, ...repo }; //对象扩展仅仅支持浅表复制，无法深层拷贝
                     break; // 只允许一个处理器处理当前库
                 }
             }
@@ -43,7 +46,7 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
 }
 
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
-    let defaultData: Repos = {};
+    let defaultData = {} as Db;
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
             await upgradeConfig(db);
