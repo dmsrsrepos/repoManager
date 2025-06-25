@@ -21,6 +21,14 @@ export const MAPPER: Record<string, Alias> = {
 
     comm: {
         keys: ['comm'],
+    },
+
+    net: {
+        keys: ['net'],
+    },
+
+    wx: {
+        keys: ['wechat', 'wx', '微信'],
     }
 }
 
