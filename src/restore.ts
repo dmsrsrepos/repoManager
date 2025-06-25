@@ -9,23 +9,24 @@ import { RestoreAlias } from './alias_config'
 
 async function restoreRepo(_ctx: Context) {
     console.log("🚀 ~ Restore categories:", RestoreAlias)
-    const entries = Object.entries(_ctx.db.data);
-    return entries.map(async ([relativePath, repo], idx, data) => {
-        relativePath = getClassifiedPath(relativePath)
-        if (relativePath == '__version') return;
 
-        let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
-        let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
-        if (p) {
-            const alias = relativePath.split(path.sep)[0]
-            if (RestoreAlias.includes(alias)) {
-                console.log("🚀 ~ =====")
-                console.log(`🚀 ~ Start restoring  ${idx + 1}/${data.length} `)
-                // 定义一个GitRepo对象，用于存储git库的信息
-                return await p.restoreRepo(ctx, repo)
+    if (_ctx.db.data.repos)
+        return Object.entries(_ctx.db.data.repos).map(async ([relativePath, repo], idx, data) => {
+            relativePath = getClassifiedPath(relativePath)
+            if (relativePath == '__version') return;
+
+            let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
+            let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
+            if (p) {
+                const alias = relativePath.split(path.sep)[0]
+                if (RestoreAlias.includes(alias)) {
+                    console.log("🚀 ~ =====")
+                    console.log(`🚀 ~ Start restoring  ${idx + 1}/${data.length} `)
+                    // 定义一个GitRepo对象，用于存储git库的信息
+                    return await p.restoreRepo(ctx, repo)
+                }
             }
-        }
-    })
+        })
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     let defaultData = {} as Db;
