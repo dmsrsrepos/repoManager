@@ -55,12 +55,15 @@ function readGitConfig(configPath: PathLike, unknownName) {
             gitConfig.remote?.upstream?.url ||
             (gitConfig.remote ? Object.values(gitConfig.remote).find(v => v.url)?.url : unknownName)
         )?.split('/')?.pop() || unknownName;
-        if (gitConfig.name == unknownName) {
-            console.error('git config would be wrong!')
-            console.error(' ', 'file path:', configPath)
-            console.error(' ', 'config Content', configContent)
-            console.error(' ', 'git config:', gitConfig)
-        }
+        // if (gitConfig.name == unknownName) {
+        //     console.error('git config would be wrong!')
+        //     console.error(' ', 'file path:')
+        //     console.error('--', ' ', configPath)
+        //     console.error('--', 'config Content')
+        //     console.error('--', ' ', configContent)
+        //     console.error('-', 'git config:')
+        //     console.error('--', ' ', gitConfig)
+        // }
         const ret = {} as Repo
         ret.name = gitConfig.name
         // ret.__processorName = gitConfig.__processorName
@@ -70,7 +73,7 @@ function readGitConfig(configPath: PathLike, unknownName) {
         if (ret.remote) {
             Object.entries(ret.remote).forEach(([key, value]) => {
                 if (ret.remote)
-                    ret.remote[key] = { url: value.url }
+                    ret.remote[key] = { url: value.url ?? value.pushurl }
             })
         }
         return ret;

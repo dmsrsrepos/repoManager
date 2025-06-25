@@ -13,8 +13,6 @@ async function restoreRepo(_ctx: Context) {
     if (_ctx.db.data.repos)
         return Object.entries(_ctx.db.data.repos).map(async ([relativePath, repo], idx, data) => {
             relativePath = getClassifiedPath(relativePath)
-            if (relativePath == '__version') return;
-
             let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
             let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
             if (p) {

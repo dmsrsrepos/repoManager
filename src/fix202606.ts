@@ -1,30 +1,33 @@
 // gitBackup.ts
+// 脚本修复存储的内容，移除非必要的git库配置内容，比如 core，branch，gitflow， 等等
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Repos, Db } from './types'
+import { Context, Repos, Db, Repo } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './components/factory';
 import { RestoreAlias } from './alias_config'
 async function restoreRepo(_ctx: Context) {
-    console.log("🚀 ~ Restore categories:", RestoreAlias)
-    const entries = Object.entries(_ctx.db.data);
-    return entries.map(async ([relativePath, repo], idx, data) => {
-        relativePath = getClassifiedPath(relativePath)
-        if (relativePath == '__version') return;
-
-        let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
-        let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
-        if (p) {
-            const alias = relativePath.split(path.sep)[0]
-            if (RestoreAlias.includes(alias)) {
-                console.log("🚀 ~ =====")
-                console.log(`🚀 ~ Start restoring  ${idx + 1}/${data.length} `)
-                // 定义一个GitRepo对象，用于存储git库的信息
-                return await p.restoreRepo(ctx, repo)
+    const repos = _ctx.db.data.repos
+    if (repos) {
+        Object.entries(repos).map(async ([relativePath, gitConfig], idx, data) => {
+            const ret = {} as Repo
+            ret.name = gitConfig.name
+            // ret.__processorName = gitConfig.__processorName
+            ret.desc = gitConfig.desc
+            ret.remote = gitConfig.remote
+            ret.submodule = gitConfig.submodule
+            if (ret.remote) {
+                Object.entries(ret.remote).forEach(([key, value]) => {
+                    if (ret.remote)
+                        ret.remote[key] = { url: value.url }
+                })
             }
-        }
-    })
+            repos[relativePath] = ret;
+            return [relativePath, ret];
+        })
+        _ctx.db.write();
+    }
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     let defaultData = {} as Db;
