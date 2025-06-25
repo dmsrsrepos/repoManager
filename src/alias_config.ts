@@ -27,7 +27,7 @@ export const MAPPER: Record<string, Alias> = {
         keys: ['net'],
     },
 
-    wx: {
+    wechat: {
         keys: ['wechat', 'wx', '微信'],
     }
 }
