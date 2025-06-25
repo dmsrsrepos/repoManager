@@ -12,9 +12,8 @@ async function restoreRepo(_ctx: Context) {
     if (repos) {
         Object.entries(repos).map(async ([relativePath, gitConfig], idx, data) => {
             const ret = {} as Repo
+            ret.__processorName = gitConfig.__processorName
             ret.name = gitConfig.name
-            // ret.__processorName = gitConfig.__processorName
-            ret.desc = gitConfig.desc
             ret.remote = gitConfig.remote
             ret.submodule = gitConfig.submodule
             if (ret.remote) {
@@ -23,6 +22,7 @@ async function restoreRepo(_ctx: Context) {
                         ret.remote[key] = { url: value.url }
                 })
             }
+            ret.desc = gitConfig.desc
             repos[relativePath] = ret;
             return [relativePath, ret];
         })
