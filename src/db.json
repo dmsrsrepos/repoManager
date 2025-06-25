@@ -1464,6 +1464,12 @@
       "remote": {
         "origin": {
           "url": "https://github.com/ATQQ/sugar-blog.git"
+        },
+        "origin1": {
+          "url": "git@github.com:ATQQ/sugar-blog.git"
+        },
+        "origin11": {
+          "url": "https://github.com/VitepressAwesome/sugar-blog.git"
         }
       }
     },
@@ -2566,6 +2572,9 @@
       "remote": {
         "origin": {
           "url": "https://gitee.com/zuohuaijun/Admin.NET.git"
+        },
+        "myorigin": {
+          "url": "https://gitee.com/cnjimbo/Admin.NET.git"
         }
       }
     },
@@ -3857,6 +3866,9 @@
         },
         "github-desktop-Fignum": {
           "url": "https://github.com/Fignum/DbContextScope.git"
+        },
+        "origin": {
+          "url": "https://github.com/niubilitydotnet/DbContextScope.git"
         }
       }
     },
@@ -4055,6 +4067,9 @@
       "remote": {
         "upstream": {
           "url": "https://github.com/asvetliakov/vscode-babel-compile-on-save.git"
+        },
+        "origin": {
+          "url": "git@github.com:niubilitytools/vscode-babel-compile-on-save.git"
         }
       }
     },
