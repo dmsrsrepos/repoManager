@@ -2110,6 +2110,9 @@
       "remote": {
         "origin": {
           "url": "git@github.com:dmsrsrepos/repoManager.git"
+        },
+        "origin1": {
+          "url": "git@github.com:dmsrs-open/repoManager.git"
         }
       }
     },
@@ -2389,6 +2392,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/cnjimbo/unoCss-learn.git"
+        },
+        "origin1": {
+          "url": "git@github.com:frontendniubility/unoCss-learn.git"
         }
       }
     },
@@ -3256,6 +3262,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/nolebase/integrations.git"
+        },
+        "origin1": {
+          "url": "https://github.com/VitePressAwesome/integrations.git"
         }
       }
     },
@@ -3265,6 +3274,9 @@
       "remote": {
         "origin": {
           "url": "git@github.com:VitepressAwesome/nolebase.git"
+        },
+        "origin1": {
+          "url": "https://github.com/nolebase/nolebase.git"
         }
       }
     },
@@ -3413,6 +3425,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/open-dmsrs/reactive-meta-gen.git"
+        },
+        "origin1": {
+          "url": "git@github:calmripple/reactive-meta-gen.git"
         }
       },
       "submodule": {
@@ -3526,6 +3541,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/antfu/vscode-file-nesting-config.git"
+        },
+        "origin1": {
+          "url": "git@github.calmripple:frontendniubility/vscode-file-nesting-config.git"
         }
       }
     },
@@ -3556,6 +3574,9 @@
         },
         "origin": {
           "url": "https://github.com/cnjimbo/project-kit.git"
+        },
+        "origin1": {
+          "url": "https://github.com/open-dmsrs/vscode-project-config-updater.git"
         }
       }
     },
@@ -3613,8 +3634,12 @@
     },
     "ai\\keras-io": {
       "__processorName": ".git",
-      "name": "keras-io",
-      "desc": "error:ENOENT: no such file or directory, open 'G:\\code\\ai\\keras-io\\.git\\config'.Error: ENOENT: no such file or directory, open 'G:\\code\\ai\\keras-io\\.git\\config'\n    at Object.readFileSync (node:fs:442:20)\n    at readGitConfig (g:\\code\\comm\\repoManager\\src\\components\\GitRepoProcessor.ts:49:28)\n    at GitRepoProcessor.backupRepo (g:\\code\\comm\\repoManager\\src\\components\\GitRepoProcessor.ts:22:26)\n    at findRepos (g:\\code\\comm\\repoManager\\src\\backup.ts:32:42)\n    at async findRepos (g:\\code\\comm\\repoManager\\src\\backup.ts:42:17)\n    at async <anonymous> (g:\\code\\comm\\repoManager\\src\\backup.ts:58:13)\n    at async findAndBackupRepos (g:\\code\\comm\\repoManager\\src\\backup.ts:50:5)\n    at async <anonymous> (g:\\code\\comm\\repoManager\\src\\backup.ts:80:9). file:G:\\code\\ai\\keras-io\\.git\\config. content:. gitConfig: {}"
+      "name": "keras-io.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/keras-team/keras-io.git"
+        }
+      }
     },
     "learn\\awesome-aop": {
       "__processorName": ".git",
@@ -3655,6 +3680,9 @@
         },
         "github-desktop-Fignum": {
           "url": "https://github.com/Fignum/DbContextScope.git"
+        },
+        "origin": {
+          "url": "https://github.com/niubilitydotnet/DbContextScope.git"
         }
       }
     },
@@ -3781,6 +3809,315 @@
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vue-modern-resume.git"
+        }
+      }
+    },
+    "ai\\tensorflow2_tutorials_chinese": {
+      "__processorName": ".git",
+      "name": "tensorflow2_tutorials_chinese.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:ainiubility/tensorflow2_tutorials_chinese.git"
+        }
+      }
+    },
+    "comm\\awesome-aop": {
+      "__processorName": ".git",
+      "name": "awesome-aop.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/awesome-aop.git"
+        }
+      }
+    },
+    "comm\\calmripple": {
+      "__processorName": ".git",
+      "name": "calmripple.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:calmripple/calmripple.git"
+        }
+      }
+    },
+    "comm\\certificate-toolbox": {
+      "__processorName": ".git",
+      "name": "certificate-toolbox.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/certificate-toolbox.git"
+        }
+      }
+    },
+    "comm\\DbContextScope": {
+      "__processorName": ".git",
+      "name": "DbContextScope.git",
+      "remote": {
+        "upstream": {
+          "url": "https://github.com/yegor-mialyk/DbContextScope.git"
+        },
+        "github-desktop-Fignum": {
+          "url": "https://github.com/Fignum/DbContextScope.git"
+        }
+      }
+    },
+    "comm\\dependency-update-action": {
+      "__processorName": ".git",
+      "name": "dependency-update-action.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/open-dmsrs/dependency-update-action.git"
+        }
+      }
+    },
+    "comm\\DisruptiveSoftware.Cryptography.Tools1": {
+      "__processorName": ".git",
+      "name": "DisruptiveSoftware.Cryptography.Tools.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
+        }
+      }
+    },
+    "comm\\dmsrs": {
+      "__processorName": ".git",
+      "name": "dmsrs.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/dmsrs.git"
+        }
+      }
+    },
+    "comm\\DmsrsAwesome": {
+      "__processorName": ".git",
+      "name": "DmsrsAwesome.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/DmsrsAwesome.git"
+        },
+        "originw": {
+          "url": "https://github.com/niubilitynetcore/DmsrsAwesome.git"
+        }
+      }
+    },
+    "comm\\EmitMapper": {
+      "__processorName": ".git",
+      "name": "EmitMapper.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilitynetcore/EmitMapper.git"
+        }
+      }
+    },
+    "comm\\ETL": {
+      "__processorName": ".git",
+      "name": "ETL.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/ETL.git"
+        }
+      }
+    },
+    "comm\\IniFile": {
+      "__processorName": ".git",
+      "name": "IniFile.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/netniubility/IniFile.git"
+        }
+      }
+    },
+    "comm\\router": {
+      "__processorName": ".git",
+      "name": "router.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/frontendniubility/router.git"
+        },
+        "giteee": {
+          "url": "https://gitee.com/dmsrs/router.git"
+        }
+      }
+    },
+    "comm\\vba": {
+      "__processorName": ".git",
+      "name": "vba.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/vba.git"
+        },
+        "http": {
+          "url": "https://github.com/niubilities/vba.git"
+        }
+      }
+    },
+    "frontend\\lodash": {
+      "__processorName": ".git",
+      "name": "lodash.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/lodash/lodash.git"
+        }
+      }
+    },
+    "frontend\\radash": {
+      "__processorName": ".git",
+      "name": "radash.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/sodiray/radash.git"
+        }
+      }
+    },
+    "vPress\\experimentation": {
+      "__processorName": ".git",
+      "name": "experimentation.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.calmripple:ripplejourney/experimentation.git"
+        }
+      }
+    },
+    "vPress\\modern-typescript-monorepo-example": {
+      "__processorName": ".git",
+      "name": "modern-typescript-monorepo-example.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/bakeruk/modern-typescript-monorepo-example.git"
+        }
+      }
+    },
+    "vPress\\radash-study": {
+      "__processorName": ".git",
+      "name": "radash-study.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/Roqee/radash-study.git"
+        }
+      }
+    },
+    "vPress\\unocss": {
+      "__processorName": ".git",
+      "name": "unocss.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/unocss/unocss.git"
+        }
+      }
+    },
+    "vPress\\vitepress-theme-open17": {
+      "__processorName": ".git",
+      "name": "vitepress-theme-open17.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/VitePressAwesome/vitepress-theme-open17.git"
+        }
+      }
+    },
+    "vsextension\\pnpm-vscode-helper": {
+      "__processorName": ".git",
+      "name": "pnpm-vscode-helper.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/open-dmsrs/pnpm-vscode-helper.git"
+        }
+      }
+    },
+    "vsextension\\reactive-vscode": {
+      "__processorName": ".git",
+      "name": "reactive-vscode.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/KermanX/reactive-vscode.git"
+        }
+      }
+    },
+    "vsextension\\starter-vscode": {
+      "__processorName": ".git",
+      "name": "starter-vscode.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/antfu/starter-vscode.git"
+        }
+      }
+    },
+    "vsextension\\taze": {
+      "__processorName": ".git",
+      "name": "taze.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/antfu-collective/taze.git"
+        }
+      }
+    },
+    "vsextension\\vscode-babel-compile-on-save": {
+      "__processorName": ".git",
+      "name": "vscode-babel-compile-on-save.git",
+      "remote": {
+        "upstream": {
+          "url": "https://github.com/asvetliakov/vscode-babel-compile-on-save.git"
+        }
+      }
+    },
+    "vsextension\\vscode-hide-comments": {
+      "__processorName": ".git",
+      "name": "vscode-hide-comments.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/estruyf/vscode-hide-comments.git"
+        }
+      }
+    },
+    "vsextension\\vscode-iconify": {
+      "__processorName": ".git",
+      "name": "vscode-iconify.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/antfu/vscode-iconify.git"
+        }
+      }
+    },
+    "vsextension\\vscode-pnpm-catalog-lens": {
+      "__processorName": ".git",
+      "name": "vscode-pnpm-catalog-lens.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/antfu/vscode-pnpm-catalog-lens.git"
+        }
+      }
+    },
+    "vsextension\\vscode-runonsave": {
+      "__processorName": ".git",
+      "name": "vscode-runonsave.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/emeraldwalk/vscode-runonsave.git"
+        }
+      }
+    },
+    "vsextension\\vscode-smart-clicks": {
+      "__processorName": ".git",
+      "name": "vscode-smart-clicks.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/antfu/vscode-smart-clicks.git"
+        }
+      }
+    },
+    "wechat\\CoreShop": {
+      "__processorName": ".git",
+      "name": "CoreShop.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:dmsrs-wechat/CoreShop.git"
+        }
+      }
+    },
+    "wechat\\hioshop-miniprogram": {
+      "__processorName": ".git",
+      "name": "hioshop-miniprogram.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:dmsrs-wechat/hioshop-miniprogram.git"
         }
       }
     }
