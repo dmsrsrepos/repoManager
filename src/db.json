@@ -378,6 +378,7 @@
       }
     },
     "ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras": {
+      "__processorName": ".git",
       "name": "CNN-BiLSTM-Attention-Time-Series-Prediction_Keras.git",
       "remote": {
         "origin": {
@@ -386,6 +387,7 @@
       }
     },
     "ai\\keract": {
+      "__processorName": ".git",
       "name": "keract.git",
       "remote": {
         "origin": {
