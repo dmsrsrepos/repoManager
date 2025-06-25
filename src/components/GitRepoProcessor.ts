@@ -1,7 +1,7 @@
 import fs, { PathLike } from "node:fs";
 import path from "path";
 import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
-import { Context, Proccessor, Repo } from '../types';
+import { Context, Proccessor, Remotes, Repo } from '../types';
 import { gitClone } from './gitclone';
 
 export class GitRepoProcessor implements Proccessor {
@@ -46,7 +46,7 @@ function readGitConfig(configPath: PathLike) {
     // 读取.git/config文件
     let configContent = ''
     let gitConfig: Repo = {} as any;
-
+    const unknownName = `unknown${new Date().getTime()}`
     // const prefixes = ['remote', 'branch', 'submodule']
     try {
         configContent = fs.readFileSync(configPath, 'utf-8')
@@ -56,21 +56,32 @@ function readGitConfig(configPath: PathLike) {
         gitConfig.name = (
             gitConfig.remote?.origin?.url ||
             gitConfig.remote?.upstream?.url ||
-            (gitConfig.remote ? Object.values(gitConfig.remote).find(v => v.url)?.url : 'unknown')
-        )?.split('/')?.pop() || "unknown";
-        if (gitConfig.name == 'unknown') {
+            (gitConfig.remote ? Object.values(gitConfig.remote).find(v => v.url)?.url : unknownName)
+        )?.split('/')?.pop() || unknownName;
+        if (gitConfig.name == unknownName) {
             console.error('git config would be wrong!')
             console.error(' ', 'file path:', configPath)
             console.error(' ', 'config Content', configContent)
             console.error(' ', 'git config:', gitConfig)
         }
-
-        return gitConfig;
+        const ret = {} as Repo
+        ret.name = gitConfig.name
+        // ret.__processorName = gitConfig.__processorName
+        ret.desc = gitConfig.desc
+        ret.remote = gitConfig.remote
+        ret.submodule = gitConfig.submodule
+        if (ret.remote) {
+            Object.entries(ret.remote).forEach(([key, value]) => {
+                if (ret.remote)
+                    ret.remote[key] = { url: value.url }
+            })
+        }
+        return ret;
     } catch (err) {
         console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack)
 
         return {
-            name: 'unknown',
+            name: unknownName,
             desc: `error:${err.message}.${err.stack}. file:${configPath}. content:${configContent}. gitConfig: ${JSON.stringify(gitConfig)}`
         }
     }

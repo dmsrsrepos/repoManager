@@ -29,8 +29,8 @@ export interface MergeOptions {
 }
 export type Remote = {
     url: string;
-    pushurl?: string;
-    fetch?: string;
+    // pushurl?: string;
+    // fetch?: string;
 }
 export type ModulePath = {
     active?: boolean;

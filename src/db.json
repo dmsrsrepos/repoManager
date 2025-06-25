@@ -4284,7 +4284,7 @@
     },
     "remote": {
       "origin": {
-        "url": "https://github.com/VitePressAwesome/vitepress-theme-sakura.git",
+        "url": "https://github.com/flaribbit/vitepress-theme-sakura.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -4432,6 +4432,9 @@
       "origin": {
         "url": "https://github.com/VitePressAwesome/ZiuChen.github.io.git",
         "fetch": "+refs/heads/main:refs/remotes/origin/main"
+      },
+      "upstream": {
+        "url": "https://github.com/ZiuChen/ZiuChen.github.io.git"
       }
     },
     "branch": {
@@ -6145,12 +6148,9 @@
       "symlinks": false,
       "ignorecase": true
     },
-    "submodule": {
-      "active": "."
-    },
     "remote": {
       "origin": {
-        "url": "git@github.com:dmsrs-open/repoManager.git",
+        "url": "git@github.com:dmsrsrepos/repoManager.git",
         "fetch": "+refs/heads/*:refs/remotes/origin/*"
       }
     },
@@ -6162,5 +6162,1464 @@
       }
     },
     "name": "repoManager.git"
+  },
+  "ai\\CNN-LSTM-Attention": {
+    "__processorName": ".git",
+    "name": "CNN-LSTM-Attention.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN-LSTM-Attention.git"
+      },
+      "upstream": {
+        "url": "https://github.com/wqk666999/CNN-LSTM-Attention.git"
+      }
+    }
+  },
+  "ai\\CNN_ATTENTION_models": {
+    "__processorName": ".git",
+    "name": "CNN_ATTENTION_models.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/CNN_ATTENTION_models.git"
+      }
+    }
+  },
+  "ai\\conda": {
+    "__processorName": ".git",
+    "name": "conda.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/conda.git"
+      }
+    }
+  },
+  "ai\\dlaicourse": {
+    "__processorName": ".git",
+    "name": "ailearn.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/ailearn.git"
+      }
+    }
+  },
+  "ai\\eat_tensorflow2_in_30_days": {
+    "__processorName": ".git",
+    "name": "eat_tensorflow2_in_30_days.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/eat_tensorflow2_in_30_days.git"
+      }
+    }
+  },
+  "ai\\face-api-demo-vue": {
+    "__processorName": ".git",
+    "name": "face-api-demo-vue.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/codeshelter/face-api-demo-vue.git"
+      }
+    }
+  },
+  "ai\\python-git-program-launcher": {
+    "__processorName": ".git",
+    "name": "python-git-program-launcher.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/infstellar/python-git-program-launcher.git"
+      }
+    }
+  },
+  "ai\\ReactComputerVisionTemplate": {
+    "__processorName": ".git",
+    "name": "ReactComputerVisionTemplate.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/ReactComputerVisionTemplate.git"
+      }
+    }
+  },
+  "ai\\tensorflow": {
+    "__processorName": ".git",
+    "name": "tensorflow.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/tensorflow/tensorflow.git"
+      }
+    }
+  },
+  "ai\\Tensorflow-Handbook": {
+    "__processorName": ".git",
+    "name": "Tensorflow-Handbook.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/Tensorflow-Handbook.git"
+      }
+    }
+  },
+  "ai\\tensorflow-handbook-javascript": {
+    "__processorName": ".git",
+    "name": "tensorflow-handbook-javascript.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow-handbook-javascript.git"
+      }
+    }
+  },
+  "ai\\tensorflow2.0-tutorial": {
+    "__processorName": ".git",
+    "name": "tensorflow2.0-tutorial.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow2.0-tutorial.git"
+      }
+    }
+  },
+  "ai\\tensorflow2_tutorials": {
+    "__processorName": ".git",
+    "name": "tensorflow2_tutorials.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tensorflow2_tutorials.git"
+      }
+    }
+  },
+  "ai\\tf-electron": {
+    "__processorName": ".git",
+    "name": "tf-electron.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tf-electron.git"
+      }
+    }
+  },
+  "ai\\tfjs_quick_start_course_2020": {
+    "__processorName": ".git",
+    "name": "tfjs_quick_start_course_2020.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/tfjs_quick_start_course_2020.git"
+      }
+    }
+  },
+  "ai\\Time-Series-Analysis-Tutorial": {
+    "__processorName": ".git",
+    "name": "Time-Series-Analysis-Tutorial.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ainiubility/Time-Series-Analysis-Tutorial.git"
+      }
+    }
+  },
+  "ai\\time-series-forecasting-tensorflowjs": {
+    "__processorName": ".git",
+    "name": "time-series-forecasting-tensorflowjs.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/jinglescode/time-series-forecasting-tensorflowjs.git"
+      }
+    }
+  },
+  "frontend\\best-resume-ever": {
+    "__processorName": ".git",
+    "name": "best-resume-ever.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:salomonelli/best-resume-ever.git"
+      }
+    }
+  },
+  "frontend\\BingGPT": {
+    "__processorName": ".git",
+    "name": "BingGPT.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/BingGPT.git"
+      },
+      "dice2o": {
+        "url": "https://github.com/dice2o/BingGPT.git"
+      }
+    }
+  },
+  "frontend\\git-awesome": {
+    "__processorName": ".git",
+    "name": "git-awesome.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/git-awesome.git"
+      }
+    }
+  },
+  "frontend\\GM_config": {
+    "__processorName": ".git",
+    "name": "GM_config.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/GM_config.git"
+      }
+    }
+  },
+  "frontend\\graphql-client": {
+    "__processorName": ".git",
+    "name": "graphql-client.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/graphql-dotnet/graphql-client.git"
+      }
+    }
+  },
+  "frontend\\isotope": {
+    "__processorName": ".git",
+    "name": "isotope.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/codeshelter/isotope.git"
+      }
+    }
+  },
+  "frontend\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts": {
+    "__processorName": ".git",
+    "name": "Isotope-JQuery-Plugin-Filtering-Sorting-Layouts.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilityfrontend/Isotope-JQuery-Plugin-Filtering-Sorting-Layouts.git"
+      }
+    }
+  },
+  "frontend\\learn-vue3-wechat": {
+    "__processorName": ".git",
+    "name": "learn-vue3-wechat.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/learn-vue3-wechat.git"
+      }
+    }
+  },
+  "frontend\\MarkdownPictureDownLoadAndReplace": {
+    "__processorName": ".git",
+    "name": "MarkdownPictureDownLoadAndReplace.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/superBiuBiuMan/MarkdownPictureDownLoadAndReplace.git"
+      }
+    }
+  },
+  "frontend\\masonry-packery-isotope-demo": {
+    "__processorName": ".git",
+    "name": "masonry-packery-isotope-demo.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/englishextra/masonry-packery-isotope-demo.git"
+      }
+    }
+  },
+  "frontend\\my-repo": {
+    "__processorName": ".git",
+    "name": "vite-templates.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/cnjimbo/vite-templates.git"
+      }
+    }
+  },
+  "frontend\\router": {
+    "__processorName": ".git",
+    "name": "router.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/router.git"
+      },
+      "github": {
+        "url": "https://github.com/frontendniubility/router.git"
+      }
+    }
+  },
+  "frontend\\unoCss-learn": {
+    "__processorName": ".git",
+    "name": "unoCss-learn.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/unoCss-learn.git"
+      }
+    }
+  },
+  "frontend\\userscripts": {
+    "__processorName": ".git",
+    "name": "userscripts.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/userscripts.git"
+      },
+      "origin2": {
+        "url": "https://github.com/niubilityfrontend/userscripts.git"
+      }
+    }
+  },
+  "frontend\\vite-plugin-monkey": {
+    "__processorName": ".git",
+    "name": "vite-plugin-monkey.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/tsharp/vite-plugin-monkey.git"
+      }
+    }
+  },
+  "frontend\\vite-plugin-userscript": {
+    "__processorName": ".git",
+    "name": "vite-plugin-userscript.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilityfrontend/vite-plugin-userscript.git"
+      }
+    }
+  },
+  "frontend\\vite-templates": {
+    "__processorName": ".git",
+    "name": "vite-templates.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/cnjimbo/vite-templates.git"
+      }
+    }
+  },
+  "frontend\\vite-userscript-plugin": {
+    "__processorName": ".git",
+    "name": "vite-userscript-plugin.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilityfrontend/vite-userscript-plugin.git"
+      }
+    }
+  },
+  "frontend\\vitelearn-allin": {
+    "__processorName": ".git",
+    "name": "vitelearn-allin.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/tsharp/vitelearn-allin.git"
+      }
+    }
+  },
+  "frontend\\vscode-babel-compile-on-save": {
+    "__processorName": ".git",
+    "name": "vscode-babel-compile-on-save.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitytools/vscode-babel-compile-on-save.git"
+      },
+      "upstream": {
+        "url": "https://github.com/asvetliakov/vscode-babel-compile-on-save.git"
+      }
+    }
+  },
+  "frontend\\vscode-run-scripts-configurations": {
+    "__processorName": ".git",
+    "name": "vscode-run-scripts-configurations.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/vscode-run-scripts-configurations.git"
+      }
+    }
+  },
+  "frontend\\vue-modern-resume": {
+    "__processorName": ".git",
+    "name": "vue-vuetify-modern-resume.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/vue-vuetify-modern-resume.git"
+      }
+    }
+  },
+  "frontend\\vue-resume": {
+    "__processorName": ".git",
+    "name": "vue-resume.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilityfrontend/vue-resume.git"
+      }
+    }
+  },
+  "frontend\\vue3-nuxtjs-modern-resume": {
+    "__processorName": ".git",
+    "name": "vue3-nuxtjs-modern-resume.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/vue3-nuxtjs-modern-resume.git"
+      },
+      "upstream": {
+        "url": "https://github.com/fos7er/vue-modern-resume.git"
+      }
+    }
+  },
+  "frontend\\vuetify-admin": {
+    "__processorName": ".git",
+    "name": "vuetify-admin.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:okami101/vuetify-admin.git"
+      }
+    }
+  },
+  "frontend\\Vuetify-Resume": {
+    "__processorName": ".git",
+    "name": "Vuetify-Resume.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilityfrontend/Vuetify-Resume.git"
+      },
+      "upstream": {
+        "url": "https://github.com/ashkan90/Vuetify-Resume.git"
+      }
+    }
+  },
+  "learn\\abp": {
+    "__processorName": ".git",
+    "name": "abp.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/abpframework/abp.git"
+      }
+    }
+  },
+  "learn\\abp-samples": {
+    "__processorName": ".git",
+    "name": "abp-samples.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/abpframework/abp-samples.git"
+      }
+    }
+  },
+  "learn\\Admin.NET": {
+    "__processorName": ".git",
+    "name": "Admin.NET.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/zuohuaijun/Admin.NET.git"
+      }
+    }
+  },
+  "learn\\adnc": {
+    "__processorName": ".git",
+    "name": "adnc.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/AlphaYu/adnc.git"
+      }
+    }
+  },
+  "learn\\AspectCore-Framework": {
+    "__processorName": ".git",
+    "name": "AspectCore-Framework.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/dotnetcore/AspectCore-Framework.git"
+      }
+    }
+  },
+  "learn\\aspnetcore-modular-monolith": {
+    "__processorName": ".git",
+    "name": "aspnetcore-modular-monolith.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git"
+      }
+    }
+  },
+  "learn\\AuditLogging": {
+    "__processorName": ".git",
+    "name": "AuditLogging.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:skoruba/AuditLogging.git"
+      }
+    }
+  },
+  "learn\\Blazor.Console": {
+    "__processorName": ".git",
+    "name": "Blazor.Console.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/ardacetinkaya/Blazor.Console.git"
+      }
+    }
+  },
+  "learn\\blog": {
+    "__processorName": ".git",
+    "name": "blog.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/kevinsheep/blog.git"
+      }
+    }
+  },
+  "learn\\command-line-api": {
+    "__processorName": ".git",
+    "name": "command-line-api.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/command-line-api.git"
+      }
+    },
+    "submodule": {
+      "active": "."
+    }
+  },
+  "learn\\dockpanelsuite": {
+    "__processorName": ".git",
+    "name": "dockpanelsuite.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitywindows/dockpanelsuite.git"
+      }
+    }
+  },
+  "learn\\DotnetSpider": {
+    "__processorName": ".git",
+    "name": "DotnetSpider.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dotnetcore/DotnetSpider.git"
+      }
+    }
+  },
+  "learn\\Elements": {
+    "__processorName": ".git",
+    "name": "Elements.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/FlorianFe/Elements.git"
+      }
+    }
+  },
+  "learn\\EventBus\\CAP": {
+    "__processorName": ".git",
+    "name": "CAP.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/dotnetcore/CAP.git"
+      }
+    }
+  },
+  "learn\\EventBus\\MediatR": {
+    "__processorName": ".git",
+    "name": "MediatR.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/jbogard/MediatR.git"
+      }
+    }
+  },
+  "learn\\EventBus\\RedBus": {
+    "__processorName": ".git",
+    "name": "RedBus.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/mxjones/RedBus.git"
+      }
+    }
+  },
+  "learn\\Furion": {
+    "__processorName": ".git",
+    "name": "Furion.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dotnetchina/Furion.git"
+      }
+    }
+  },
+  "learn\\git-gears-cs": {
+    "__processorName": ".git",
+    "name": "git-gears-cs.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitytools/git-gears-cs.git"
+      }
+    }
+  },
+  "learn\\IPv4-Configuration-Tool": {
+    "__processorName": ".git",
+    "name": "IPv4-Configuration-Tool.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frostyflower/IPv4-Configuration-Tool.git"
+      }
+    }
+  },
+  "learn\\magic-net": {
+    "__processorName": ".git",
+    "name": "magic-net.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/zhengguojing/magic-net.git"
+      }
+    }
+  },
+  "learn\\mavonEditor": {
+    "__processorName": ".git",
+    "name": "mavonEditor.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilityfrontend/mavonEditor.git"
+      }
+    }
+  },
+  "learn\\MediatR": {
+    "__processorName": ".git",
+    "name": "MediatR.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/MediatR.git"
+      }
+    }
+  },
+  "learn\\modify-source-webpack-plugin": {
+    "__processorName": ".git",
+    "name": "modify-source-webpack-plugin.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/artemirq/modify-source-webpack-plugin.git"
+      }
+    }
+  },
+  "learn\\modular-monolith-aspnet-core-sample": {
+    "__processorName": ".git",
+    "name": "modular-monolith-aspnet-core-sample.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git"
+      }
+    }
+  },
+  "learn\\module-shop": {
+    "__processorName": ".git",
+    "name": "module-shop.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/codeshelter/module-shop.git"
+      },
+      "origin1": {
+        "url": "https://github.com/trueai-org/module-shop.git"
+      }
+    }
+  },
+  "learn\\Nerdbank.GitVersioning": {
+    "__processorName": ".git",
+    "name": "Nerdbank.GitVersioning.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/dotnet/Nerdbank.GitVersioning.git"
+      }
+    }
+  },
+  "learn\\NetCoreMicroservicesSample": {
+    "__processorName": ".git",
+    "name": "NetCoreMicroservicesSample.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/madslundt/NetCoreMicroservicesSample.git"
+      }
+    }
+  },
+  "learn\\nopCommerce": {
+    "__processorName": ".git",
+    "name": "nopCommerce.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/nopSolutions/nopCommerce.git"
+      }
+    }
+  },
+  "learn\\OpenAuth.Net": {
+    "__processorName": ".git",
+    "name": "OpenAuth.Net.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dotnetchina/OpenAuth.Net.git"
+      }
+    }
+  },
+  "learn\\OrchardCore": {
+    "__processorName": ".git",
+    "name": "OrchardCore.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/OrchardCMS/OrchardCore.git"
+      }
+    }
+  },
+  "learn\\osharp": {
+    "__processorName": ".git",
+    "name": "osharp.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dotnetcore/osharp.git"
+      }
+    }
+  },
+  "learn\\osharp-vben-admin": {
+    "__processorName": ".git",
+    "name": "osharp-vben-admin.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:zionLZH/osharp-vben-admin.git"
+      }
+    }
+  },
+  "learn\\RibbonWinForms": {
+    "__processorName": ".git",
+    "name": "RibbonWinForms.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitywindows/RibbonWinForms.git"
+      }
+    }
+  },
+  "learn\\sentry-dotnet": {
+    "__processorName": ".git",
+    "name": "sentry-dotnet.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/getsentry/sentry-dotnet.git"
+      }
+    }
+  },
+  "learn\\Serenity": {
+    "__processorName": ".git",
+    "name": "Serenity.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/serenity-is/Serenity.git"
+      }
+    }
+  },
+  "learn\\Smartstore": {
+    "__processorName": ".git",
+    "name": "Smartstore.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/smartstore/Smartstore.git"
+      }
+    }
+  },
+  "learn\\SteamTools": {
+    "__processorName": ".git",
+    "name": "SteamTools.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/BeyondDimension/SteamTools.git"
+      }
+    }
+  },
+  "learn\\Symlinker": {
+    "__processorName": ".git",
+    "name": "Symlinker.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitywindows/Symlinker.git"
+      }
+    }
+  },
+  "learn\\Util": {
+    "__processorName": ".git",
+    "name": "Util.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitynetcore/Util.git"
+      }
+    }
+  },
+  "learn\\vc-platform": {
+    "__processorName": ".git",
+    "name": "vc-platform.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VirtoCommerce/vc-platform.git"
+      }
+    }
+  },
+  "learn\\vc-storefront": {
+    "__processorName": ".git",
+    "name": "vc-storefront.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VirtoCommerce/vc-storefront.git"
+      }
+    }
+  },
+  "learn\\Very-Simple-IP-Configurator": {
+    "__processorName": ".git",
+    "name": "Very-Simple-IP-Configurator.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/DerJusten/Very-Simple-IP-Configurator.git"
+      }
+    }
+  },
+  "learn\\War3Net": {
+    "__processorName": ".git",
+    "name": "War3Net.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/Drake53/War3Net.git"
+      }
+    }
+  },
+  "learn\\ZRAdmin-vue": {
+    "__processorName": ".git",
+    "name": "ZRAdmin-vue.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/izory/ZRAdmin-vue.git"
+      }
+    }
+  },
+  "learn\\ZrAdminNetCore": {
+    "__processorName": ".git",
+    "name": "ZrAdminNetCore.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/izory/ZrAdminNetCore.git"
+      }
+    }
+  },
+  "net\\awesome-aop": {
+    "__processorName": ".git",
+    "name": "awesome-aop.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/awesome-aop.git"
+      }
+    }
+  },
+  "net\\Bonobo.Git.Server": {
+    "__processorName": ".git",
+    "name": "Bonobo.Git.Server.git",
+    "remote": {
+      "origin": {
+        "url": "http://git.tsharp.org/Bonobo.Git.Server.git"
+      }
+    }
+  },
+  "net\\certificate-toolbox": {
+    "__processorName": ".git",
+    "name": "certificate-toolbox.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/certificate-toolbox.git"
+      }
+    }
+  },
+  "net\\cnjimbo": {
+    "__processorName": ".git",
+    "name": "cnjimbo.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/cnjimbo.git"
+      }
+    }
+  },
+  "net\\DbContextScope": {
+    "__processorName": ".git",
+    "name": "DbContextScope.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitydotnet/DbContextScope.git"
+      },
+      "upstream": {
+        "url": "https://github.com/yegor-mialyk/DbContextScope.git"
+      },
+      "github-desktop-Fignum": {
+        "url": "https://github.com/Fignum/DbContextScope.git"
+      }
+    }
+  },
+  "net\\DisruptiveSoftware.Cryptography.Tools1": {
+    "__processorName": ".git",
+    "name": "DisruptiveSoftware.Cryptography.Tools.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
+      }
+    }
+  },
+  "net\\dmsrs": {
+    "__processorName": ".git",
+    "name": "dmsrs.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/dmsrs.git"
+      }
+    }
+  },
+  "net\\DmsrsAwesome": {
+    "__processorName": ".git",
+    "name": "DmsrsAwesome.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/DmsrsAwesome.git"
+      },
+      "originw": {
+        "url": "https://github.com/niubilitynetcore/DmsrsAwesome.git"
+      }
+    }
+  },
+  "net\\dockpanelsuite": {
+    "__processorName": ".git",
+    "name": "dockpanelsuite.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitywindows/dockpanelsuite.git"
+      }
+    }
+  },
+  "net\\DotNetCorePlugins": {
+    "__processorName": ".git",
+    "name": "DotNetCorePlugins.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+      }
+    }
+  },
+  "net\\DotNetCorePlugins.git": {
+    "__processorName": ".git",
+    "name": "DotNetCorePlugins.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+      }
+    }
+  },
+  "net\\EmitMapper": {
+    "__processorName": ".git",
+    "name": "EmitMapper.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitynetcore/EmitMapper.git"
+      },
+      "origin1": {
+        "url": "https://github.com/niubilitynetcore/EmitMapper.git"
+      },
+      "origin2": {
+        "url": "https://gitee.com/code-shelter/EmitMapper.git"
+      }
+    }
+  },
+  "net\\ETL": {
+    "__processorName": ".git",
+    "name": "ETL.git",
+    "remote": {
+      "origin": {
+        "url": "https://gitee.com/dmsrs/ETL.git"
+      }
+    }
+  },
+  "net\\FastExpressionCompiler": {
+    "__processorName": ".git",
+    "name": "FastExpressionCompiler.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilitynetcore/FastExpressionCompiler.git"
+      }
+    }
+  },
+  "net\\Get_MiHome_devices_token": {
+    "__processorName": ".git",
+    "name": "Get_MiHome_devices_token.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/Maxmudjon/Get_MiHome_devices_token.git"
+      }
+    }
+  },
+  "net\\git-gears-cs": {
+    "__processorName": ".git",
+    "name": "git-gears-cs.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/KageKirin/git-gears-cs.git"
+      }
+    }
+  },
+  "net\\ReactiveETL": {
+    "__processorName": ".git",
+    "name": "ReactiveETL.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/ReactiveETL.git"
+      }
+    }
+  },
+  "net\\static": {
+    "__processorName": ".git",
+    "name": "static.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/static.git"
+      }
+    }
+  },
+  "net\\TargetFrameworkMigrator": {
+    "__processorName": ".git",
+    "name": "TargetFrameworkMigrator.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilitytools/TargetFrameworkMigrator.git"
+      }
+    }
+  },
+  "net\\TSharp": {
+    "__processorName": ".git",
+    "name": "TSharp.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/niubilityappbox/TSharp.git"
+      }
+    }
+  },
+  "net\\vba": {
+    "__processorName": ".git",
+    "name": "vba.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:niubilities/vba.git"
+      },
+      "http": {
+        "url": "https://github.com/niubilities/vba.git"
+      }
+    }
+  },
+  "net\\yxzs-service": {
+    "__processorName": ".git",
+    "name": "yxzs-service-.net.git",
+    "remote": {
+      "origin": {
+        "url": "https://e.coding.net/g-myhs3858/yxzs/yxzs-service-.net.git"
+      }
+    }
+  },
+  "vPress\\99_ruanyf-weekly": {
+    "__processorName": ".git",
+    "name": "ruanyf-weekly.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/ruanyf-weekly.git"
+      },
+      "upstream": {
+        "url": "https://github.com/plantree/ruanyf-weekly.git"
+      }
+    }
+  },
+  "vPress\\abackup_cnjimbo.github.io": {
+    "__processorName": ".git",
+    "name": "cnjimbo.github.io.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/cnjimbo.github.io.git"
+      },
+      "upstream": {
+        "url": "https://github.com/VitePressAwesome/sugar-blog.git"
+      }
+    }
+  },
+  "vPress\\adocs": {
+    "__processorName": ".git",
+    "name": "adocs.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/adocs.git"
+      }
+    }
+  },
+  "vPress\\animated-unocss": {
+    "__processorName": ".git",
+    "name": "animated-unocss.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/animated-unocss/animated-unocss.git"
+      }
+    }
+  },
+  "vPress\\code-frontend\\nolebase": {
+    "__processorName": ".git",
+    "name": "nolebase.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:VitepressAwesome/nolebase.git"
+      }
+    },
+    "submodule": {
+      "active": "."
+    }
+  },
+  "vPress\\flypeng-tool": {
+    "__processorName": ".git",
+    "name": "flypeng-tool.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/flypeng-tool.git"
+      },
+      "upstream": {
+        "url": "https://github.com/flingyp/flypeng-tool.git"
+      }
+    }
+  },
+  "vPress\\hdu-cs-wiki": {
+    "__processorName": ".git",
+    "name": "hdu-cs-wiki.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/hdu-cs-wiki.git"
+      }
+    }
+  },
+  "vPress\\integrations": {
+    "__processorName": ".git",
+    "name": "integrations.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/nolebase/integrations.git"
+      }
+    }
+  },
+  "vPress\\nolebase": {
+    "__processorName": ".git",
+    "name": "nolebase.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:VitepressAwesome/nolebase.git"
+      }
+    }
+  },
+  "vPress\\preview": {
+    "__processorName": ".git",
+    "name": "preview.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:ripplejourney/preview.git"
+      }
+    }
+  },
+  "vPress\\radash": {
+    "__processorName": ".git",
+    "name": "radash.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/sodiray/radash.git"
+      }
+    }
+  },
+  "vPress\\ripplejourney.github.io": {
+    "__processorName": ".git",
+    "name": "ripplejourney.github.io.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:ripplejourney/ripplejourney.github.io.git"
+      }
+    }
+  },
+  "vPress\\strongQ.github.io": {
+    "__processorName": ".git",
+    "name": "strongQ.github.io.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/strongQ.github.io.git"
+      }
+    }
+  },
+  "vPress\\test\\cnjimbo.github.io": {
+    "__processorName": ".git",
+    "name": "cnjimbo.github.io.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:cnjimbo/cnjimbo.github.io.git"
+      }
+    }
+  },
+  "vPress\\vite-plugin-vitepress-auto-sidebar": {
+    "__processorName": ".git",
+    "name": "vite-plugin-vitepress-auto-sidebar.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vite-plugin-vitepress-auto-sidebar.git"
+      }
+    }
+  },
+  "vPress\\vitepress-blog-starter": {
+    "__processorName": ".git",
+    "name": "vitepress-blog-starter.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vitepress-blog-starter.git"
+      }
+    }
+  },
+  "vPress\\vitepress-blogmate": {
+    "__processorName": ".git",
+    "name": "vitepress-blogmate.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vitepress-blogmate.git"
+      }
+    }
+  },
+  "vPress\\vitepress-doc": {
+    "__processorName": ".git",
+    "name": "vitepress-doc.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/Yiov/vitepress-doc.git"
+      }
+    }
+  },
+  "vPress\\vitepress-docs": {
+    "__processorName": ".git",
+    "name": "vitepress-docs.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vitepress-docs.git"
+      }
+    }
+  },
+  "vPress\\vitepress-export-pdf": {
+    "__processorName": ".git",
+    "name": "vitepress-export-pdf.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vitepress-export-pdf.git"
+      }
+    }
+  },
+  "vPress\\vitepress-fun": {
+    "__processorName": ".git",
+    "name": "vitepress-fun.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/gumingWu/vitepress-fun.git"
+      }
+    }
+  },
+  "vPress\\vscode-file-nesting-config": {
+    "__processorName": ".git",
+    "name": "vscode-file-nesting-config.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/vscode-file-nesting-config.git"
+      }
+    }
+  },
+  "vPress\\vuepress-theme-reco": {
+    "__processorName": ".git",
+    "name": "vuepress-theme-reco.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/VitePressAwesome/vuepress-theme-reco.git"
+      }
+    }
+  },
+  "vsextension\\my-extension": {
+    "__processorName": ".git",
+    "name": "unknown1750822276503"
+  },
+  "vsextension\\npm-scripts-auto-node": {
+    "__processorName": ".git",
+    "name": "npm-scripts-auto-node.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/npm-scripts-auto-node.git"
+      }
+    }
+  },
+  "vsextension\\reactive-meta-gen": {
+    "__processorName": ".git",
+    "name": "reactive-meta-gen.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/reactive-meta-gen.git"
+      }
+    },
+    "submodule": {
+      "fixtures/vscode-iconify": {
+        "url": "https://github.com/antfu/vscode-iconify",
+        "active": true
+      },
+      "fixtures/i18n-ally": {
+        "url": "https://github.com/lokalise/i18n-ally",
+        "active": true
+      },
+      "fixtures/vscode-iconify-fork": {
+        "url": "https://github.com/kvoon3/vscode-iconify-fork",
+        "active": true
+      },
+      "fixtures/vscode-smart-clicks": {
+        "url": "https://github.com/antfu/vscode-smart-clicks",
+        "active": true
+      },
+      "fixtures/vscode-which-key": {
+        "url": "https://github.com/VSpaceCode/vscode-which-key.git",
+        "active": true
+      }
+    }
+  },
+  "vsextension\\script-buttons": {
+    "__processorName": ".git",
+    "name": "script-buttons.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/script-buttons.git"
+      }
+    }
+  },
+  "vsextension\\types-autoinstaller": {
+    "__processorName": ".git",
+    "name": "types-autoinstaller.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/open-dmsrs/types-autoinstaller.git"
+      },
+      "upstream": {
+        "url": "https://github.com/jvitor83/types-autoinstaller.git"
+      }
+    }
+  },
+  "vsextension\\vscode-commit-message-editor": {
+    "__processorName": ".git",
+    "name": "vscode-commit-message-editor.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/vscode-commit-message-editor.git"
+      }
+    }
+  },
+  "vsextension\\vscode-conventional-commits": {
+    "__processorName": ".git",
+    "name": "vscode-conventional-commits.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/vscode-conventional-commits.git"
+      }
+    }
+  },
+  "vsextension\\vscode-ext-gen": {
+    "__processorName": ".git",
+    "name": "vscode-ext-gen.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/vscode-ext-gen.git"
+      }
+    },
+    "submodule": {
+      "fixtures/i18n-ally": {
+        "active": true,
+        "url": "https://github.com/lokalise/i18n-ally"
+      },
+      "fixtures/vscode-iconify": {
+        "active": true,
+        "url": "https://github.com/antfu/vscode-iconify"
+      },
+      "fixtures/vscode-iconify-fork": {
+        "active": true,
+        "url": "https://github.com/kvoon3/vscode-iconify-fork"
+      },
+      "fixtures/vscode-smart-clicks": {
+        "active": true,
+        "url": "https://github.com/antfu/vscode-smart-clicks"
+      },
+      "fixtures/vscode-which-key": {
+        "active": true,
+        "url": "https://github.com/VSpaceCode/vscode-which-key.git"
+      }
+    }
+  },
+  "vsextension\\vscode-extension-samples": {
+    "__processorName": ".git",
+    "name": "vscode-extension-samples.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/cnjimbo/vscode-extension-samples.git"
+      }
+    }
+  },
+  "vsextension\\vscode-file-nesting-config": {
+    "__processorName": ".git",
+    "name": "vscode-file-nesting-config.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/antfu/vscode-file-nesting-config.git"
+      }
+    }
+  },
+  "vsextension\\vscode-file-watcher": {
+    "__processorName": ".git",
+    "name": "vscode-file-watcher.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/appulate/vscode-file-watcher.git"
+      }
+    }
+  },
+  "vsextension\\vscode-npm-scripts": {
+    "__processorName": ".git",
+    "name": "vscode-npm-scripts.git",
+    "remote": {
+      "origin": {
+        "url": "https://github.com/frontendniubility/vscode-npm-scripts.git"
+      }
+    }
+  },
+  "vsextension\\vscode-project-config-updater": {
+    "__processorName": ".git",
+    "name": "project-kit.git",
+    "remote": {
+      "upstream": {
+        "url": "https://github.com/open-dmsrs/project-kit.git"
+      },
+      "origin": {
+        "url": "https://github.com/cnjimbo/project-kit.git"
+      }
+    }
+  },
+  "wechat\\module-shop": {
+    "__processorName": ".git",
+    "name": "module-shop.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:zhchlmm/module-shop.git"
+      },
+      "upstream": {
+        "url": "git@github.com:trueai-org/module-shop.git"
+      }
+    }
+  },
+  "wechat\\TOGO_School_Miniprograme": {
+    "__processorName": ".git",
+    "name": "TOGO_School_Miniprograme.git",
+    "remote": {
+      "origin": {
+        "url": "git@github.com:dmsrs-wechat/TOGO_School_Miniprograme.git"
+      }
+    }
+  },
+  "wechat\\yxzs-mp": {
+    "__processorName": ".git",
+    "name": "yxzs-mp.git",
+    "remote": {
+      "origin": {
+        "url": "https://e.coding.net/g-myhs3858/yxzs/yxzs-mp.git"
+      }
+    }
+  },
+  "wechat\\yxzs-service-.net": {
+    "__processorName": ".git",
+    "name": "yxzs-service-.net.git",
+    "remote": {
+      "origin": {
+        "url": "https://e.coding.net/g-myhs3858/yxzs/yxzs-service-.net.git"
+      }
+    }
+  },
+  "wechat\\阳羡招商小程序源码\\wxapp": {
+    "__processorName": ".git",
+    "name": "unknown1750822276515"
   }
 }
