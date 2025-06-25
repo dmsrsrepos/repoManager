@@ -7420,7 +7420,7 @@
     },
     "vsextension\\my-extension": {
       "__processorName": ".git",
-      "name": "unknown1750822276503"
+      "name": "my-extension"
     },
     "vsextension\\npm-scripts-auto-node": {
       "__processorName": ".git",
@@ -7621,7 +7621,7 @@
     },
     "wechat\\阳羡招商小程序源码\\wxapp": {
       "__processorName": ".git",
-      "name": "unknown1750822276515"
+      "name": "wxapp"
     }
   }
 }

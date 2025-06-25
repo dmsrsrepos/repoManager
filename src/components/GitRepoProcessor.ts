@@ -15,13 +15,11 @@ export class GitRepoProcessor implements Proccessor {
     }
     async backupRepo(ctx: Context) {
         // 定义一个GitRepo对象，用于存储git库的信息
-        let repo: Repo = {
-            name: 'unknown'
-        };
+
         console.log(`Backuping... git配置文件：${ctx.curDirFullPath}`)
         let configPath = path.join(ctx.curDirFullPath, '.git', 'config')
 
-        repo = readGitConfig(configPath)
+        let repo: Repo = readGitConfig(configPath, ctx.curDirFullPath.toString().split(path.sep).pop() || 'unknown')
         return repo;
     }
 
@@ -42,11 +40,10 @@ function fixSectionName(str: string) {
     });
 }
 
-function readGitConfig(configPath: PathLike) {
+function readGitConfig(configPath: PathLike, unknownName) {
     // 读取.git/config文件
     let configContent = ''
     let gitConfig: Repo = {} as any;
-    const unknownName = `unknown${new Date().getTime()}`
     // const prefixes = ['remote', 'branch', 'submodule']
     try {
         configContent = fs.readFileSync(configPath, 'utf-8')
