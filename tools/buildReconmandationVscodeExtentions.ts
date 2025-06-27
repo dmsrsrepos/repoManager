@@ -49,7 +49,9 @@ async function readFileToJson(filePath: string): Promise<Record<string, any>> {
 
 async function writeJsonToFile(filePath: string, target: object): Promise<void> {
   const content = JSON.stringify(target, null, '  ')
-  await fs.promises.writeFile(filePath, content, 'utf8')
+  if (content != await fs.promises.readFile(filePath, 'utf8')) {
+    await fs.promises.writeFile(filePath, content, 'utf8')
+  }
   console.log(`JSON data has been successfully written to ${filePath}`)
 }
 async function findInstalledExtensions(data): Promise<string[]> {

@@ -4,7 +4,18 @@ import JSON5 from 'json5'
 import { glob } from 'glob'
 import fs from 'fs-extra'
 import { assign } from 'radash'
+import crypto from 'crypto'
 
+function calculatesha256(str) {
+  // 创建 MD5 哈希对象
+  const hash = crypto.createHash('sha256');
+
+  // 更新哈希内容为输入字符串
+  hash.update(str);
+
+  // 计算哈希值并转换为十六进制字符串
+  return hash.digest('hex');
+}
 // import _ from 'lodash'
 function parseJsonWithComments(jsonString) {
   return JSON5.parse(jsonString)
@@ -33,7 +44,10 @@ async function writeJsonToFile(filePath, jsonObject, isJson5 = false) {
   else {
     content = JSON.stringify(jsonObject, null, 2)
   }
-  await fs.promises.writeFile(filePath, content, 'utf8')
+  if (content != await fs.promises.readFile(filePath, 'utf8')) {
+    await fs.promises.writeFile(filePath, content, 'utf8')
+  }
+
   return jsonObject
 }
 async function _findInstalledExtensions(data) {
@@ -62,9 +76,9 @@ function tryMerge(currSettings, newSettings) {
 }
 
 console.log('-----------------------------', 'start', '-----------------------------')
-const codeWorkspacePath = '**/*.code-workspace'
-const vscodeSettingsPath = path.resolve(process.cwd(), '.vscode/settings.json')
-const vscodeExtensionsPath = path.resolve(process.cwd(), '.vscode/extensions.json')
+const codeWorkspacePath = '../**/*.code-workspace'
+const vscodeSettingsPath = path.resolve(process.cwd(), '../.vscode/settings.json')
+const vscodeExtensionsPath = path.resolve(process.cwd(), '../.vscode/extensions.json')
 function main() {
   const defaultSettings = {
     'code-runner.executorMap': {
