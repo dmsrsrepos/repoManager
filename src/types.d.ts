@@ -50,7 +50,7 @@ export type Repo = {
     desc?: string; // optional description of the repository
     remote?: Remotes;
     submodule?: Submodule;
-    isPull?: Boolean;
+    isPull?: boolean;
 } // optional list of remote repositories
 
 export type Alias = {
