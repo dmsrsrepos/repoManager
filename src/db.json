@@ -20,39 +20,6 @@
         }
       }
     },
-    "learn\\00_ChinaBidding": {
-      "name": "ChinaBidding.git",
-      "remote": {
-        "origin": {
-          "url": "https://github.com/pfizer-commercial/ChinaBidding.git"
-        }
-      },
-      "submodule": {
-        "active": "."
-      }
-    },
-    "learn\\00_TNT": {
-      "name": "TNT.git",
-      "remote": {
-        "origin": {
-          "url": "https://github.com/pfizer-commercial/TNT.git"
-        }
-      },
-      "submodule": {
-        "active": "."
-      }
-    },
-    "learn\\ChinaDigitalHub": {
-      "name": "ChinaDigitalHub.git",
-      "remote": {
-        "origin": {
-          "url": "https://github.com/pfizer-commercial/ChinaDigitalHub.git"
-        }
-      },
-      "submodule": {
-        "active": "."
-      }
-    },
     "vPress\\blog": {
       "name": "blog.git",
       "remote": {
