@@ -90,9 +90,6 @@ const MAX_DEPTH = 5;
         pipeline = pipeline.then(async () => {
             console.log(``)
             console.log(``)
-            console.log(' ', '', '', '',)
-            console.log(``)
-            console.log(``)
             console.log(`Starting: target:${ROOT_DIR}`)
             if (!ROOT_DIR) {
                 console.error('not find target folder, please set it and retry again')
