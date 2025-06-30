@@ -6,10 +6,10 @@ export const MAPPER: Record<string, Alias> = {
         keys: ["ai"]
     },
     vPress: {
-        keys: ["vPress"],
+        keys: ["vPress",],
     },
     frontend: {
-        keys: ["frontend"],
+        keys: ["frontend", 'vue', 'Vue'],
     },
     learn: {
         pattern: /[learn]+/,
