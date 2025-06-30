@@ -1977,15 +1977,6 @@
         }
       }
     },
-    "ai\\keras-io": {
-      "__processorName": ".git",
-      "name": "keras-io.git",
-      "remote": {
-        "origin": {
-          "url": "https://github.com/keras-team/keras-io.git"
-        }
-      }
-    },
     "learn\\awesome-aop": {
       "__processorName": ".git",
       "name": "awesome-aop.git",
