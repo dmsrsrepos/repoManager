@@ -43,8 +43,14 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
             }
         }
     }
+
+    ctx.db.write();
 }
 
+const defaultData: Db = {
+    __version: '1.0.0',
+    repos: {}
+};
 /**
  * Finds and backs up repositories starting from the specified root directory.
  * 
@@ -54,7 +60,7 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
  * @throws Will throw an error if the backup process fails
  */
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
-    let defaultData = {} as Db;
+
     await JSONFilePreset('db.json', defaultData)
         .then(async db => {
             await upgradeConfig(db);
@@ -66,11 +72,7 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
             await findRepos(rootDirFullPath, maxDepth, ctx);
             return ctx;
         })
-        .then(async ctx => {
-            await ctx.db.write()
 
-            return ctx;
-        })
         .then(ctx => {
             console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.')
             return ctx
