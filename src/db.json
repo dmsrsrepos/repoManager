@@ -66,6 +66,7 @@
       "desc": "error:{}"
     },
     "vPress\\vitepress-blog-pure": {
+      "__processorName": ".git",
       "name": "vitepress-blog-pure.git",
       "remote": {
         "origin": {
@@ -82,10 +83,11 @@
       }
     },
     "learn\\DotNetCorePlugins": {
+      "__processorName": ".git",
       "name": "DotNetCorePlugins.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/shelter/DotNetCorePlugins.git"
+          "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
         }
       }
     },
@@ -117,10 +119,11 @@
       }
     },
     "learn\\DotNetCorePlugins.git": {
+      "__processorName": ".git",
       "name": "DotNetCorePlugins.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/shelter/DotNetCorePlugins.git"
+          "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
         }
       }
     },
@@ -274,7 +277,7 @@
           "url": "https://github.com/ATQQ/sugar-blog.git"
         },
         "origin1": {
-          "url": "git@github.com:ATQQ/sugar-blog.git"
+          "url": "https://github.com/VitepressAwesome/sugar-blog.git"
         },
         "origin11": {
           "url": "https://github.com/VitepressAwesome/sugar-blog.git"
@@ -311,6 +314,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/flaribbit/vitepress-theme-sakura.git"
+        },
+        "origin1": {
+          "url": "https://github.com/VitePressAwesome/vitepress-theme-sakura.git"
         }
       }
     },
@@ -451,11 +457,14 @@
       "name": "repoManager.git",
       "remote": {
         "origin": {
-          "url": "git@github.com:dmsrsrepos/repoManager.git"
+          "url": "git@github.com:dmsrs-open/repoManager.git"
         },
         "origin1": {
           "url": "git@github.com:dmsrs-open/repoManager.git"
         }
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "ai\\CNN-LSTM-Attention": {
@@ -745,7 +754,7 @@
       "name": "userscripts.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/dmsrs/userscripts.git"
+          "url": "https://gitee.com/tsharp/userscripts.git"
         },
         "origin2": {
           "url": "https://github.com/niubilityfrontend/userscripts.git"
@@ -755,6 +764,9 @@
         },
         "gitee1": {
           "url": "git@gitee.com:tsharp/userscripts.git"
+        },
+        "https": {
+          "url": "https://github.com/niubilityfrontend/userscripts.git"
         }
       }
     },
@@ -763,10 +775,13 @@
       "name": "vite-plugin-monkey.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/tsharp/vite-plugin-monkey.git"
+          "url": "https://github.com/lisonge/vite-plugin-monkey.git"
         },
         "origin1": {
           "url": "https://github.com/lisonge/vite-plugin-monkey.git"
+        },
+        "origin2": {
+          "url": "https://gitee.com/tsharp/vite-plugin-monkey.git"
         }
       }
     },
@@ -832,10 +847,10 @@
     },
     "frontend\\vue-modern-resume": {
       "__processorName": ".git",
-      "name": "vue-vuetify-modern-resume.git",
+      "name": "vue-modern-resume.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/frontendniubility/vue-vuetify-modern-resume.git"
+          "url": "https://github.com/evryn/vue-modern-resume.git"
         },
         "origin1": {
           "url": "https://github.com/evryn/vue-modern-resume.git"
@@ -978,9 +993,6 @@
         "origin1": {
           "url": "https://github.com/aweniubility/command-line-api.git"
         }
-      },
-      "submodule": {
-        "active": "."
       }
     },
     "learn\\dockpanelsuite": {
@@ -1033,10 +1045,10 @@
       "name": "RedBus.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/mxjones/RedBus.git"
+          "url": "https://gitee.com/codeshelter/RedBus.git"
         },
         "origin1": {
-          "url": "https://gitee.com/codeshelter/RedBus.git"
+          "url": "https://github.com/mxjones/RedBus.git"
         }
       }
     },
@@ -1054,7 +1066,7 @@
       "name": "git-gears-cs.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/niubilitytools/git-gears-cs.git"
+          "url": "https://github.com/KageKirin/git-gears-cs.git"
         },
         "origin1": {
           "url": "https://github.com/KageKirin/git-gears-cs.git"
@@ -1123,7 +1135,7 @@
       "name": "module-shop.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/codeshelter/module-shop.git"
+          "url": "https://github.com/trueai-org/module-shop.git"
         },
         "origin1": {
           "url": "https://github.com/trueai-org/module-shop.git"
@@ -1803,7 +1815,7 @@
       "name": "script-buttons.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/open-dmsrs/script-buttons.git"
+          "url": "https://github.com/frontendniubility/script-buttons.git"
         },
         "origin1": {
           "url": "https://github.com/frontendniubility/script-buttons.git"
@@ -2460,6 +2472,15 @@
       "remote": {
         "origin": {
           "url": "git@github.com:dmsrs-wechat/hioshop-miniprogram.git"
+        }
+      }
+    },
+    "learn\\my-repo": {
+      "__processorName": ".git",
+      "name": "vite-templates.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/cnjimbo/vite-templates.git"
         }
       }
     }

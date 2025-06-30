@@ -16,7 +16,7 @@ export type Proccessor = {
 }
 export type Factory = Set<Proccessor>;
 export type Db = {
-    "__version"?: semver;
+    "__version"?: semver.SemVer;
     repos?: Repos;
 }
 export type Context = {
@@ -49,7 +49,8 @@ export type Repo = {
     __processorName?: string;
     desc?: string; // optional description of the repository
     remote?: Remotes;
-    submodule?: Submodule
+    submodule?: Submodule;
+    isPull?: Boolean;
 } // optional list of remote repositories
 
 export type Alias = {

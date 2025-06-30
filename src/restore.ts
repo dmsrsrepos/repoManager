@@ -47,7 +47,7 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const ROOT_DIR = ['C:\\AppData\\test', 'G:\\code'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {

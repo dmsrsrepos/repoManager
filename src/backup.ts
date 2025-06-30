@@ -45,6 +45,14 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
     }
 }
 
+/**
+ * Finds and backs up repositories starting from the specified root directory.
+ * 
+ * @param rootDirFullPath - The full path of the root directory to start searching from
+ * @param maxDepth - Maximum depth to search for repositories
+ * @returns Promise that resolves when the backup is complete
+ * @throws Will throw an error if the backup process fails
+ */
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     let defaultData = {} as Db;
     await JSONFilePreset('db.json', defaultData)
@@ -60,23 +68,38 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
         })
         .then(async ctx => {
             await ctx.db.write()
+
             return ctx;
         })
-        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
+        .then(ctx => {
+            console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.')
+            return ctx
+        })
+
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
-const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];
+
+const ROOT_DIRs = ['C:\\AppData\\code', 'C:\\AppData\\test', 'G:\\code'].filter(val => fs.existsSync(val));
+
 const MAX_DEPTH = 5;
 
 (async () => {
-    console.log(``)
-    console.log(``)
-    console.log(' ', '', '', '',)
-    console.log(`Starting: target:${ROOT_DIR}`)
-    if (!ROOT_DIR) {
-        console.error('not find target folder, please set it and retry again')
-    } else {
-        await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
-    }
+    let pipeline = Promise.resolve()
+    ROOT_DIRs.forEach(async ROOT_DIR => {
+        pipeline = pipeline.then(async () => {
+            console.log(``)
+            console.log(``)
+            console.log(' ', '', '', '',)
+            console.log(``)
+            console.log(``)
+            console.log(`Starting: target:${ROOT_DIR}`)
+            if (!ROOT_DIR) {
+                console.error('not find target folder, please set it and retry again')
+            } else {
+                await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
+            }
+        })
+
+    })
 })();
