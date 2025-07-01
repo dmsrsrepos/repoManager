@@ -1,7 +1,7 @@
 {
   "code-runner.executorMap": {
     "typescript": "cd $dir && npx tsx $fullFileName",
-    "powershell": "pwsh -ExecutionPolicy ByPass -File",
+    "powershell": "pwsh -ExecutionPolicy ByPass -File"
   },
   "code-runner.executorMapByFileExtension": {
     ".ts": "cd $dir && npx tsx $fullFileName"

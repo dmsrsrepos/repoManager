@@ -3,7 +3,7 @@ import process from 'process'
 import JSON5 from 'json5'
 import { glob } from 'glob'
 import fs from 'fs-extra'
-import { deepmerge } from "deepmerge-ts";
+import { deepmergeCustom } from "deepmerge-ts";
 import crypto from 'crypto'
 
 function calculatesha256(str) {
@@ -69,9 +69,27 @@ function createNewSettings(settingsFilePath, newSettings) {
       return newSettings
     })
 }
+const customDeepMerge = deepmergeCustom({
+  // 合并数组时去重（支持嵌套对象）
+  mergeArrays: (arrays, utils, meta) => {
+    // console.log("🚀 ~ meta:", meta)
+    // console.log("🚀 ~ utils:", JSON.stringify(utils))
+    // console.log("🚀 ~ arrays:", arrays)
 
+    let result = utils.defaultMergeFunctions.mergeArrays(arrays);
+    // console.log("🚀 ~ result:", result)
+
+    return [...new Set(result)];
+    // // 合并基础元素（去重）
+    // const merged = deduplicate(dest, src);
+    // // 递归处理嵌套对象
+    // return merged.map(item =>
+    //     getObjectType(item) === ObjectType.RECORD ? customDeepMerge(item, item) : item
+    // );
+  }
+});
 function tryMerge(currSettings, newSettings) {
-  const merged = deepmerge(currSettings, newSettings)
+  const merged = customDeepMerge(currSettings, newSettings)
   return merged
 }
 

@@ -36,26 +36,6 @@ const customDeepMerge = deepmergeCustom({
 
 export function extend<T extends object, U, U2, U3, U4 extends object>(target: T, s1: U, s2?: U2, s3?: U3, s4?: U4, ...others: any): T & U & U2 & U3 & U4 {
     return customDeepMerge(target, s1, s2, s3, s4, ...others) as T & U & U2 & U3 & U4
-    // const isDeep = true;
-    // target = Object.assign({}, target);
-    // const sources = [s1, s2, s3, s4, ...others];
-    // for (const source of sources) {
-    //     for (const key in source as any) {
-    //         if (Object.hasOwn(source as any, key)) {
-    //             const srcVal = source[key];
-    //             const tarVal = target[key];
-
-    //             if (isDeep && typeof srcVal === 'object' && srcVal !== null && !Array.isArray(srcVal)
-    //                 && typeof tarVal === 'object' && tarVal !== null) {
-    //                 target[key] = extend(tarVal as any, srcVal as any);
-    //             } else {
-    //                 target[key] = srcVal;
-    //             }
-    //         }
-    //     }
-    // }
-
-    // return target;
 }
 
 
