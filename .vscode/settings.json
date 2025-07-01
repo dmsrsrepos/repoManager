@@ -10,5 +10,6 @@
   "codingcopilot.modelResponseLanguage": "中文",
   "codingcopilot.CommitMessageStyle": "ConventionalCommits",
   "codingcopilot.commitMessageLanguage": "en",
-  "code-runner.clearPreviousOutput": true
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.runInTerminal": true
 }
