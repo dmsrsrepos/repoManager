@@ -16,9 +16,9 @@
 #>
 
 param(
-    [string]$SearchPath = "C:\AppData\code", # 默认搜索路径
+    [string]$SearchPath = "C:\Users\tangj15\OneDrive - Pfizer\Working File\Management\98 Source Code", # 默认搜索路径
     [ValidateSet("bundle", "mirror")]
-    [string]$BackupMethod = "mirror", # 默认使用bundle方法
+    [string]$BackupMethod = "bundle", # 默认使用bundle方法
     [string]$BackupRoot = "C:\AppData\backup_code" # 默认备份目录
 )
 
