@@ -1,13 +1,14 @@
 import { Low } from "lowdb";
 import { deepmergeCustom, getObjectType, ObjectType } from 'deepmerge-ts';
-import { Db } from "./types";
+import { Context, Db } from "./types";
 import path from 'path';
-import { MAPPER, storeType } from "./config";
+import { defaultData, MAPPER, storeType } from "./config";
 import { glob } from 'glob'
 import os from 'node:os';
+import { JSONFilePreset } from "lowdb/node";
 
 export function getMachineKey() {
-    return os.hostname() + '_' + os.userInfo().username;
+    return os.hostname();// + '_' + os.userInfo().username;
 }
 
 const mappers = Object.entries(MAPPER)
@@ -289,6 +290,25 @@ function test_extend() {
     const f = { e: 10, f: 6, g: 7 };
 
     console.log(extend({}, a, b, c, d, e, f));
+}
+export async function findAllStoreFileContexts(rootDirFullPath: string) {
+    let m = await getAllStoreFiles(rootDirFullPath)
+        .then(files => {
+            return files.map(async (file) => await JSONFilePreset(file, defaultData));
+        })
+        .then(d => {
+            return d.flatMap(async (db) => {
+                const ctx: Context = {
+                    curDirFullPath: rootDirFullPath,
+                    db: await db,
+                    rootDirFullPath: rootDirFullPath,
+                };
+                return ctx;
+            });
+        });
+
+    return m;
+
 }
 
 // test_extend()

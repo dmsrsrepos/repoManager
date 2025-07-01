@@ -79,18 +79,18 @@ const ROOT_DIRs = ['C:\\AppData\\code', 'C:\\AppData\\test', 'G:\\code'].filter(
 const MAX_DEPTH = 5;
 
 (async () => {
-    let pipeline = Promise.resolve()
-    ROOT_DIRs.forEach(ROOT_DIR => {
-        pipeline = pipeline.then(async () => {
-            console.log(``)
-            console.log(``)
-            console.log(`Starting: target:${ROOT_DIR}`)
-            if (!ROOT_DIR) {
-                console.error('not find target folder, please set it and retry again')
-            } else {
-                await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
-            }
-        })
 
-    })
+    await ROOT_DIRs.reduce((prev, ROOT_DIR) => prev.then(async () => {
+        console.log(``)
+        console.log(``)
+        console.log(`Starting: target:${ROOT_DIR}`)
+        if (!ROOT_DIR) {
+            console.error('not find target folder, please set it and retry again')
+        } else {
+            await findAndBackupRepos(ROOT_DIR, MAX_DEPTH);
+        }
+
+    }), Promise.resolve())
+
+
 })();

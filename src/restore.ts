@@ -2,19 +2,18 @@
 import fs from 'node:fs';
 import path from 'path';
 import { Context, Db, Repos } from './types'
-import { JSONFilePreset } from 'lowdb/node';
 
-import { extend, getClassifiedPath, getAllStoreFiles, upgradeConfig } from './utils'
+import { extend, findAllStoreFileContexts, getClassifiedPath, upgradeConfig } from './utils'
 import { factory } from './components/factory';
-import { RestoreAlias, defaultData } from './config'
+import { RestoreAlias } from './config'
 
-async function restoreRepo(_ctx: Context) {
+async function restoreRepo(context: Context) {
     console.log("🚀 ~ Restore categories:", RestoreAlias)
 
-    if (_ctx.db.data.repos)
-        return Object.entries(_ctx.db.data.repos).map(async ([relativePath, repo], idx, data) => {
+    if (context.db.data.repos)
+        return Object.entries(context.db.data.repos).map(async ([relativePath, repo], idx, data) => {
             relativePath = getClassifiedPath(relativePath)
-            let ctx = extend({}, _ctx, { rootDirFullPath: _ctx.rootDirFullPath, curDirFullPath: path.join(_ctx.rootDirFullPath, relativePath) });
+            let ctx = extend({}, context, { rootDirFullPath: context.rootDirFullPath, curDirFullPath: path.join(context.rootDirFullPath, relativePath) });
             let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
             if (p) {
                 const alias = relativePath.split(path.sep)[0]
@@ -29,49 +28,20 @@ async function restoreRepo(_ctx: Context) {
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
 
-    await getAllStoreFiles(rootDirFullPath)
-        .then(async files => {
-            files.forEach(async file => {
-                await JSONFilePreset(file, defaultData)
-                    .then(async db => {
-                        const ctx: Context = {
-                            curDirFullPath: rootDirFullPath,
-                            db,
-                            rootDirFullPath: rootDirFullPath,
-                        };
-                        await upgradeConfig(db)
-                        return ctx;
-                    })
-                    .then(async ctx => {
-                        await restoreRepo(ctx)
-                        return ctx;
-                    })
-                    .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
-                    .catch(err => console.error('\r\n\r\n', 'Error：', err))
-            })
+    await findAllStoreFileContexts(rootDirFullPath)
+        .then(async contexts => {
+            return await contexts.reduce((prev, ctx) => {
+                return prev.then(async () => {
+                    const context = await ctx
+                    await upgradeConfig(context.db)
+                    await restoreRepo(context)
+                        .catch(err => console.error('\r\n\r\n', 'Error：', err))
+                })
+            }, Promise.resolve())
 
         })
-
-}
-
-export async function findAllStoreFileContexts(rootDirFullPath: string) {
-    let m = await getAllStoreFiles(rootDirFullPath)
-        .then(files => {
-            return files.map(async file => await JSONFilePreset(file, defaultData))
-        })
-        .then(d => {
-            return d.flatMap(async db => {
-                const ctx: Context = {
-                    curDirFullPath: rootDirFullPath,
-                    db: await db,
-                    rootDirFullPath: rootDirFullPath,
-                };
-                return ctx
-            })
-        })
-
-    return m
-
+        .then(r => console.log('\r\n\r\n', 'Done! Check the ' + rootDirFullPath + ' file for the results.'))
+        .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
 const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];

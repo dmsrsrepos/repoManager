@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import { Context, Repos, Db, Repo } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getAllStoreFiles, getClassifiedPath, upgradeConfig } from './utils'
+import { findAllStoreFileContexts } from './utils';
 async function restoreRepo(_ctx: Context) {
     const repos = _ctx.db.data.repos
     if (repos) {
@@ -34,22 +35,19 @@ async function restoreRepo(_ctx: Context) {
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
 
-    await getAllStoreFiles(rootDirFullPath)
-        .then(async db => {
-            const ctx: Context = {
-                curDirFullPath: rootDirFullPath,
-                db,
-                rootDirFullPath: rootDirFullPath,
-            };
-            await upgradeConfig(db)
-            return ctx;
-        })
-        .then(async ctx => {
+    await findAllStoreFileContexts(rootDirFullPath)
+        .then(async contexts => {
+            return await contexts.reduce((prev, ctx) => {
+                return prev.then(async () => {
+                    const context = await ctx
+                    await upgradeConfig(context.db)
+                    await restoreRepo(context)
+                        .catch(err => console.error('\r\n\r\n', 'Error：', err))
+                })
+            }, Promise.resolve())
 
-            await restoreRepo(ctx)
-            return ctx;
         })
-        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
+        .then(r => console.log('\r\n\r\n', 'Done! Check the ' + rootDirFullPath + ' file for the results.'))
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
 }
 
