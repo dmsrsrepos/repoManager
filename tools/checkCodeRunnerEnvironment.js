@@ -3,7 +3,7 @@ import process from 'process'
 import JSON5 from 'json5'
 import { glob } from 'glob'
 import fs from 'fs-extra'
-import { assign } from 'radash'
+import { deepmerge } from "deepmerge-ts";
 import crypto from 'crypto'
 
 function calculatesha256(str) {
@@ -71,7 +71,7 @@ function createNewSettings(settingsFilePath, newSettings) {
 }
 
 function tryMerge(currSettings, newSettings) {
-  const merged = assign(currSettings, newSettings)
+  const merged = deepmerge(currSettings, newSettings)
   return merged
 }
 

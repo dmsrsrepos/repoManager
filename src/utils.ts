@@ -1,34 +1,60 @@
 import { Low } from "lowdb";
-import { SemVer, parse } from "semver";
+import { deepmergeCustom, getObjectType, ObjectType } from 'deepmerge-ts';
 import { Db } from "./types";
 import path from 'path';
 import { MAPPER, storeType } from "./config";
 import { glob } from 'glob'
+import os from 'node:os';
 
+export function getMachineKey() {
+    return os.hostname() + '_' + os.userInfo().username;
+}
 
 const mappers = Object.entries(MAPPER)
-// utils.ts
-export function extend<T extends object, U, U2, U3, U4 extends object>(target, s1: U, s2?: U2, s3?: U3, s4?: U4, ...others: any): T & U & U2 & U3 & U4 {
-    const isDeep = true;
-    target = Object.assign({}, target);
-    const sources = [s1, s2, s3, s4, ...others];
-    for (const source of sources) {
-        for (const key in source as any) {
-            if (Object.hasOwn(source as any, key)) {
-                const srcVal = source[key];
-                const tarVal = target[key];
 
-                if (isDeep && typeof srcVal === 'object' && srcVal !== null && !Array.isArray(srcVal)
-                    && typeof tarVal === 'object' && tarVal !== null) {
-                    target[key] = extend(tarVal as any, srcVal as any);
-                } else {
-                    target[key] = srcVal;
-                }
-            }
-        }
+// 自定义深层合并配置
+const customDeepMerge = deepmergeCustom({
+    // 合并数组时去重（支持嵌套对象）
+    mergeArrays: (arrays, utils, meta) => {
+        console.log("🚀 ~ meta:", meta)
+        // console.log("🚀 ~ utils:", JSON.stringify(utils))
+        // console.log("🚀 ~ arrays:", arrays)
+
+        let result = utils.defaultMergeFunctions.mergeArrays(arrays);
+        // console.log("🚀 ~ result:", result)
+
+        return removeDuplicates(result) as any;
+        // // 合并基础元素（去重）
+        // const merged = deduplicate(dest, src);
+        // // 递归处理嵌套对象
+        // return merged.map(item =>
+        //     getObjectType(item) === ObjectType.RECORD ? customDeepMerge(item, item) : item
+        // );
     }
+});
 
-    return target;
+export function extend<T extends object, U, U2, U3, U4 extends object>(target: T, s1: U, s2?: U2, s3?: U3, s4?: U4, ...others: any): T & U & U2 & U3 & U4 {
+    return customDeepMerge(target, s1, s2, s3, s4, ...others) as T & U & U2 & U3 & U4
+    // const isDeep = true;
+    // target = Object.assign({}, target);
+    // const sources = [s1, s2, s3, s4, ...others];
+    // for (const source of sources) {
+    //     for (const key in source as any) {
+    //         if (Object.hasOwn(source as any, key)) {
+    //             const srcVal = source[key];
+    //             const tarVal = target[key];
+
+    //             if (isDeep && typeof srcVal === 'object' && srcVal !== null && !Array.isArray(srcVal)
+    //                 && typeof tarVal === 'object' && tarVal !== null) {
+    //                 target[key] = extend(tarVal as any, srcVal as any);
+    //             } else {
+    //                 target[key] = srcVal;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // return target;
 }
 
 
@@ -86,8 +112,13 @@ export async function upgradeConfig(db: Low<Db>) {
         db.data.__version = '1.0.0'
     }
     else {
+
         var version = db.data.__version;
-        console.log('config db file version:', version);
+        if (typeof version !== 'string') {
+            db.data.__version = '1.0.0'
+
+        }
+        console.log('config db file version:', db.data.__version);
 
         if (!db.data.repos) {
             db.data.repos = {}
@@ -188,17 +219,6 @@ function test_key() {
     console.log(grouped);
 }
 
-function test_extend() {
-    const a = undefined;
-    const b = null;
-    const c = { __processor: undefined }
-    const d = { __processor1: null }
-    const e = { e: 5, f: 6 };
-    const f = { e: 10, f: 6, g: 7 };
-
-    console.log(extend({}, a, b, c, d, e, f));
-}
-
 function test_getNextCharacter() {
     const currentChar = 'Visual Studio Code';
     let nextChar = getNextCharacter(currentChar);
@@ -217,3 +237,58 @@ function test_getNextCharacter() {
 //  test_extend()
 // 使用示例
 // test();
+
+function test_extend() {
+    const x = {
+        record: {
+            prop1: "value1",
+            prop2: "value2",
+        },
+        array: [1, 2, 3],
+        set: new Set([1, 2, 3]),
+        map: new Map([
+            ["key1", "value1"],
+            ["key2", "value2"],
+        ]),
+    };
+
+    const y = {
+        record: {
+            prop1: "changed",
+            prop3: "value3",
+        },
+        array: [2, 3, 4],
+        set: new Set([2, 3, 4]),
+        map: new Map([
+            ["key2", "changed"],
+            ["key3", "value3"],
+        ]),
+    };
+
+    const z = {
+        record: {
+            prop1: undefined,
+            prop3: undefined,
+            prop2: undefined,
+            prop4: undefined,
+        },
+        array: [4, 5],
+        set: undefined,
+        map: undefined,
+    };
+
+    const merged = extend(x, y, z);
+
+    console.log(merged);
+
+    const a = undefined;
+    const b = null;
+    const c = { __processor: undefined }
+    const d = { __processor1: null }
+    const e = { e: 5, f: 6 };
+    const f = { e: 10, f: 6, g: 7 };
+
+    console.log(extend({}, a, b, c, d, e, f));
+}
+
+// test_extend()

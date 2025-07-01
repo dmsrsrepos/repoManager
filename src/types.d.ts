@@ -49,7 +49,7 @@ export type Repo = {
     remote?: Remotes;
     submodule?: Submodule;
     isPull?: boolean;
-    originalPaths?: string[];
+    fromPaths?: Record<string, string[]>;
 } // optional list of remote repositories
 
 export type Alias = {

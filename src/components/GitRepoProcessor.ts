@@ -3,7 +3,7 @@ import path from "path";
 import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
 import { Context, Proccessor, Remotes, Repo } from '../types';
 import { gitClone } from './gitclone';
-import { extend } from "../utils";
+import { extend, getMachineKey } from "../utils";
 
 export class GitRepoProcessor implements Proccessor {
     readonly name: string = '.git';
@@ -22,7 +22,7 @@ export class GitRepoProcessor implements Proccessor {
 
         let repo: Repo = readGitConfig(gitConfigPath, ctx.curDirFullPath.toString().split(path.sep).pop() || 'unknown')
         repo = extend({ __processorName: this.name }, repo)
-        repo.originalPaths = [ctx.curDirFullPath]
+        repo.fromPaths = { [getMachineKey()]: [ctx.curDirFullPath] }
         return repo;
     }
 

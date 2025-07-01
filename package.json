@@ -13,12 +13,12 @@
   "packageManager": "pnpm@10.12.1",
   "dependencies": {
     "@types/node": "^24.0.3",
+    "deepmerge-ts": "^7.1.5",
     "fs-extra": "^11.3.0",
     "glob": "^11.0.3",
     "ini": "^5.0.0",
     "json5": "^2.2.3",
     "lowdb": "^7.0.1",
-    "radash": "^12.1.0",
     "semver": "^7.7.2",
     "tsup": "^8.5.0",
     "tsx": "^4.20.3"

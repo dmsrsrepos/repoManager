@@ -52,6 +52,25 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
 
         })
 
+}
+
+export async function findAllStoreFileContexts(rootDirFullPath: string) {
+    let m = await getAllStoreFiles(rootDirFullPath)
+        .then(files => {
+            return files.map(async file => await JSONFilePreset(file, defaultData))
+        })
+        .then(d => {
+            return d.flatMap(async db => {
+                const ctx: Context = {
+                    curDirFullPath: rootDirFullPath,
+                    db: await db,
+                    rootDirFullPath: rootDirFullPath,
+                };
+                return ctx
+            })
+        })
+
+    return m
 
 }
 
