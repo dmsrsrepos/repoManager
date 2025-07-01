@@ -4,7 +4,9 @@ import path from 'path';
 import { Context, Db } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './components/factory';
-import { upgradeConfig, extend, getClassifiedPath } from './utils';
+import { upgradeConfig, extend, getClassifiedPath, getStoreNameByPath } from './utils';
+import { defaultData } from './config'
+
 async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
     if (depth === 0) {
         return;
@@ -47,21 +49,8 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
     ctx.db.write();
 }
 
-const defaultData: Db = {
-    __version: '1.0.0',
-    repos: {}
-};
-/**
- * Finds and backs up repositories starting from the specified root directory.
- * 
- * @param rootDirFullPath - The full path of the root directory to start searching from
- * @param maxDepth - Maximum depth to search for repositories
- * @returns Promise that resolves when the backup is complete
- * @throws Will throw an error if the backup process fails
- */
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
-
-    await JSONFilePreset('db.json', defaultData)
+    await JSONFilePreset(getStoreNameByPath(rootDirFullPath), defaultData)
         .then(async db => {
             await upgradeConfig(db);
             const ctx: Context = {

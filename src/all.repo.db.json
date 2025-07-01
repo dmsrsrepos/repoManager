@@ -1,0 +1,556 @@
+{
+  "__version": {
+    "options": {},
+    "loose": false,
+    "includePrerelease": false,
+    "raw": "1.0.0",
+    "major": 1,
+    "minor": 0,
+    "patch": 0,
+    "prerelease": [],
+    "build": [],
+    "version": "1.0.0"
+  },
+  "repos": {
+    "learn\\awesome-aop": {
+      "__processorName": ".git",
+      "name": "awesome-aop.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/awesome-aop.git"
+        }
+      }
+    },
+    "learn\\BingGPT": {
+      "__processorName": ".git",
+      "name": "BingGPT.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/BingGPT.git"
+        },
+        "dice2o": {
+          "url": "https://github.com/dice2o/BingGPT.git"
+        }
+      }
+    },
+    "learn\\certificate-toolbox": {
+      "__processorName": ".git",
+      "name": "certificate-toolbox.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/certificate-toolbox.git"
+        }
+      }
+    },
+    "learn\\DisruptiveSoftware.Cryptography.Tools1": {
+      "__processorName": ".git",
+      "name": "DisruptiveSoftware.Cryptography.Tools.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/DisruptiveSoftware.Cryptography.Tools.git"
+        }
+      }
+    },
+    "learn\\dmsrs": {
+      "__processorName": ".git",
+      "name": "dmsrs.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/dmsrs.git"
+        }
+      }
+    },
+    "learn\\DmsrsAwesome": {
+      "__processorName": ".git",
+      "name": "DmsrsAwesome.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/DmsrsAwesome.git"
+        },
+        "originw": {
+          "url": "https://github.com/niubilitynetcore/DmsrsAwesome.git"
+        }
+      }
+    },
+    "learn\\DotNetCorePlugins": {
+      "__processorName": ".git",
+      "name": "DotNetCorePlugins.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+        }
+      }
+    },
+    "learn\\DotNetCorePlugins.git": {
+      "__processorName": ".git",
+      "name": "DotNetCorePlugins.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
+        }
+      }
+    },
+    "learn\\EmitMapper": {
+      "__processorName": ".git",
+      "name": "EmitMapper.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilitynetcore/EmitMapper.git"
+        },
+        "origin1": {
+          "url": "https://github.com/niubilitynetcore/EmitMapper.git"
+        },
+        "origin2": {
+          "url": "https://gitee.com/shelter/EmitMapper.git"
+        }
+      }
+    },
+    "learn\\ETL": {
+      "__processorName": ".git",
+      "name": "ETL.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/ETL.git"
+        }
+      }
+    },
+    "learn\\git-gears-cs": {
+      "__processorName": ".git",
+      "name": "git-gears-cs.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/KageKirin/git-gears-cs.git"
+        }
+      }
+    },
+    "learn\\graphql-client": {
+      "__processorName": ".git",
+      "name": "graphql-client.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/graphql-dotnet/graphql-client.git"
+        }
+      }
+    },
+    "learn\\isotope": {
+      "__processorName": ".git",
+      "name": "isotope.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/codeshelter/isotope.git"
+        }
+      }
+    },
+    "learn\\my-repo": {
+      "__processorName": ".git",
+      "name": "vite-templates.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/cnjimbo/vite-templates.git"
+        }
+      }
+    },
+    "learn\\router": {
+      "__processorName": ".git",
+      "name": "router.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/frontendniubility/router.git"
+        },
+        "giteee": {
+          "url": "https://gitee.com/dmsrs/router.git"
+        }
+      }
+    },
+    "learn\\userscripts": {
+      "__processorName": ".git",
+      "name": "userscripts.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/userscripts.git"
+        },
+        "origin2": {
+          "url": "https://github.com/niubilityfrontend/userscripts.git"
+        }
+      }
+    },
+    "learn\\vba": {
+      "__processorName": ".git",
+      "name": "vba.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilities/vba.git"
+        },
+        "http": {
+          "url": "https://github.com/niubilities/vba.git"
+        }
+      }
+    },
+    "learn\\abp": {
+      "__processorName": ".git",
+      "name": "abp.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/abpframework/abp.git"
+        }
+      }
+    },
+    "learn\\abp-samples": {
+      "__processorName": ".git",
+      "name": "abp-samples.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/abpframework/abp-samples.git"
+        }
+      }
+    },
+    "learn\\Admin.NET": {
+      "__processorName": ".git",
+      "name": "Admin.NET.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/zuohuaijun/Admin.NET.git"
+        },
+        "myorigin": {
+          "url": "https://gitee.com/cnjimbo/Admin.NET.git"
+        }
+      }
+    },
+    "learn\\adnc": {
+      "__processorName": ".git",
+      "name": "adnc.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/AlphaYu/adnc.git"
+        }
+      }
+    },
+    "learn\\AspectCore-Framework": {
+      "__processorName": ".git",
+      "name": "AspectCore-Framework.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnetcore/AspectCore-Framework.git"
+        }
+      }
+    },
+    "learn\\aspnetcore-modular-monolith": {
+      "__processorName": ".git",
+      "name": "aspnetcore-modular-monolith.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git"
+        }
+      }
+    },
+    "learn\\AuditLogging": {
+      "__processorName": ".git",
+      "name": "AuditLogging.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:skoruba/AuditLogging.git"
+        }
+      }
+    },
+    "learn\\Blazor.Console": {
+      "__processorName": ".git",
+      "name": "Blazor.Console.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/ardacetinkaya/Blazor.Console.git"
+        }
+      }
+    },
+    "learn\\blog": {
+      "__processorName": ".git",
+      "name": "blog.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/kevinsheep/blog.git"
+        }
+      }
+    },
+    "learn\\command-line-api": {
+      "__processorName": ".git",
+      "name": "command-line-api.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/cnjimbo/command-line-api.git"
+        },
+        "origin1": {
+          "url": "https://github.com/aweniubility/command-line-api.git"
+        }
+      }
+    },
+    "learn\\DbContextScope": {
+      "__processorName": ".git",
+      "name": "DbContextScope.git",
+      "remote": {
+        "upstream": {
+          "url": "https://github.com/yegor-mialyk/DbContextScope.git"
+        },
+        "github-desktop-Fignum": {
+          "url": "https://github.com/Fignum/DbContextScope.git"
+        }
+      }
+    },
+    "learn\\Elements": {
+      "__processorName": ".git",
+      "name": "Elements.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/FlorianFe/Elements.git"
+        }
+      }
+    },
+    "learn\\EventBus\\CAP": {
+      "__processorName": ".git",
+      "name": "CAP.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnetcore/CAP.git"
+        }
+      }
+    },
+    "learn\\EventBus\\MediatR": {
+      "__processorName": ".git",
+      "name": "MediatR.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/jbogard/MediatR.git"
+        }
+      }
+    },
+    "learn\\EventBus\\RedBus": {
+      "__processorName": ".git",
+      "name": "RedBus.git",
+      "remote": {
+        "origin1": {
+          "url": "https://github.com/mxjones/RedBus.git"
+        },
+        "origin": {
+          "url": "https://gitee.com/codeshelter/RedBus.git"
+        }
+      }
+    },
+    "learn\\Furion": {
+      "__processorName": ".git",
+      "name": "Furion.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dotnetchina/Furion.git"
+        }
+      }
+    },
+    "learn\\GM_config": {
+      "__processorName": ".git",
+      "name": "GM_config.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/frontendniubility/GM_config.git"
+        }
+      }
+    },
+    "learn\\magic-net": {
+      "__processorName": ".git",
+      "name": "magic-net.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/zhengguojing/magic-net.git"
+        }
+      }
+    },
+    "learn\\mavonEditor": {
+      "__processorName": ".git",
+      "name": "mavonEditor.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:niubilityfrontend/mavonEditor.git"
+        }
+      }
+    },
+    "learn\\MediatR": {
+      "__processorName": ".git",
+      "name": "MediatR.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/cnjimbo/MediatR.git"
+        },
+        "origin1": {
+          "url": "https://github.com/aweniubility/MediatR.git"
+        }
+      }
+    },
+    "learn\\modify-source-webpack-plugin": {
+      "__processorName": ".git",
+      "name": "modify-source-webpack-plugin.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/artemirq/modify-source-webpack-plugin.git"
+        }
+      }
+    },
+    "learn\\modular-monolith-aspnet-core-sample": {
+      "__processorName": ".git",
+      "name": "modular-monolith-aspnet-core-sample.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git"
+        }
+      }
+    },
+    "learn\\module-shop": {
+      "__processorName": ".git",
+      "name": "module-shop.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/trueai-org/module-shop.git"
+        }
+      }
+    },
+    "learn\\Nerdbank.GitVersioning": {
+      "__processorName": ".git",
+      "name": "Nerdbank.GitVersioning.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnet/Nerdbank.GitVersioning.git"
+        }
+      }
+    },
+    "learn\\NetCoreMicroservicesSample": {
+      "__processorName": ".git",
+      "name": "NetCoreMicroservicesSample.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/madslundt/NetCoreMicroservicesSample.git"
+        }
+      }
+    },
+    "learn\\nopCommerce": {
+      "__processorName": ".git",
+      "name": "nopCommerce.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/nopSolutions/nopCommerce.git"
+        }
+      }
+    },
+    "learn\\OpenAuth.Net": {
+      "__processorName": ".git",
+      "name": "OpenAuth.Net.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dotnetchina/OpenAuth.Net.git"
+        }
+      }
+    },
+    "learn\\OrchardCore": {
+      "__processorName": ".git",
+      "name": "OrchardCore.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/OrchardCMS/OrchardCore.git"
+        }
+      }
+    },
+    "learn\\osharp-vben-admin": {
+      "__processorName": ".git",
+      "name": "osharp-vben-admin.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:zionLZH/osharp-vben-admin.git"
+        }
+      }
+    },
+    "learn\\sentry-dotnet": {
+      "__processorName": ".git",
+      "name": "sentry-dotnet.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/getsentry/sentry-dotnet.git"
+        }
+      }
+    },
+    "learn\\Serenity": {
+      "__processorName": ".git",
+      "name": "Serenity.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/serenity-is/Serenity.git"
+        }
+      }
+    },
+    "learn\\Smartstore": {
+      "__processorName": ".git",
+      "name": "Smartstore.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/smartstore/Smartstore.git"
+        }
+      }
+    },
+    "learn\\SteamTools": {
+      "__processorName": ".git",
+      "name": "SteamTools.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/BeyondDimension/SteamTools.git"
+        }
+      }
+    },
+    "learn\\vc-platform": {
+      "__processorName": ".git",
+      "name": "vc-platform.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/VirtoCommerce/vc-platform.git"
+        }
+      }
+    },
+    "learn\\vc-storefront": {
+      "__processorName": ".git",
+      "name": "vc-storefront.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/VirtoCommerce/vc-storefront.git"
+        }
+      }
+    },
+    "learn\\vue-modern-resume": {
+      "__processorName": ".git",
+      "name": "vue-modern-resume.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/frontendniubility/vue-modern-resume.git"
+        }
+      }
+    },
+    "learn\\War3Net": {
+      "__processorName": ".git",
+      "name": "War3Net.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/Drake53/War3Net.git"
+        }
+      }
+    },
+    "learn\\ZRAdmin-vue": {
+      "__processorName": ".git",
+      "name": "ZRAdmin-vue.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/izory/ZRAdmin-vue.git"
+        }
+      }
+    },
+    "learn\\ZrAdminNetCore": {
+      "__processorName": ".git",
+      "name": "ZrAdminNetCore.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/izory/ZrAdminNetCore.git"
+        }
+      }
+    }
+  }
+}

@@ -2,8 +2,8 @@ import { Low } from "lowdb";
 import semver from "semver";
 import { Db } from "./types";
 import path from 'path';
-import { MAPPER } from "./alias_config";
-
+import { MAPPER, storeType } from "./config";
+import { glob } from 'glob'
 
 
 const mappers = Object.entries(MAPPER)
@@ -133,6 +133,35 @@ export function getClassifiedPath(relateviePath: string): string {
     // console.log("🚀 ~ getClassifiedPath ~ parts:", parts.join(sep))
     return parts.join(sep);
 }
+export function getStoreNameByPath(filePath: string): string {
+    if (storeType == 'single') {
+        return 'all.repo.db.json';
+    } else {
+        const id = path.normalize(filePath).replaceAll(path.sep, '.').replaceAll(':', '.').replaceAll('..', '.');
+        console.log("🚀 ~ findAndBackupRepos ~ id:", id)
+        let dbName = `${id}.repo.db.json`
+        // dbName = 'all.repo.db.json'
+        return dbName;
+    }
+
+}
+
+export async function getAllStoreFiles(filePath: string) {
+    return glob(`**/*.repo.db.json`, { cwd: process.cwd(), absolute: true })
+        .then(async files => {
+            console.log("🚀 ~ findAndBackupRepos ~ files:", files)
+            return files
+        })
+}
+// test_key();
+export default {
+    extend,
+    removeDuplicates,
+    getNextCharacter,
+    extractQuotedValue,
+    upgradeConfig,
+    getClassifiedPath
+}
 
 function testGroupPathsBygetClassifiedPath(paths: string[]): Record<string, string[]> {
     const groups: Record<string, string[]> = {};
@@ -161,16 +190,6 @@ const paths = [
 function test_key() {
     const grouped = testGroupPathsBygetClassifiedPath(paths);
     console.log(grouped);
-}
-
-// test_key();
-export default {
-    extend,
-    removeDuplicates,
-    getNextCharacter,
-    extractQuotedValue,
-    upgradeConfig,
-    getClassifiedPath
 }
 
 function test_extend() {

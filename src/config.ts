@@ -1,5 +1,6 @@
-import { Alias } from "./types";
+import { Alias, Db } from "./types";
 
+import * as semver from 'semver';
 export const MAPPER: Record<string, Alias> = {
     ai: {
 
@@ -35,3 +36,10 @@ export const MAPPER: Record<string, Alias> = {
 export type AliasType = keyof typeof MAPPER
 
 export const RestoreAlias: AliasType[] = Object.keys(MAPPER)
+
+export const defaultData: Db = {
+    __version: semver.parse('1.0.0'),
+    repos: {}
+};
+
+export const storeType: 'single' | 'multi' = 'single'

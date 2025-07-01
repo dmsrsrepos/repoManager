@@ -3,9 +3,10 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Db, Repos } from './types'
 import { JSONFilePreset } from 'lowdb/node';
-import { extend, getClassifiedPath, upgradeConfig } from './utils'
+
+import { extend, getClassifiedPath, getAllStoreFiles, upgradeConfig } from './utils'
 import { factory } from './components/factory';
-import { RestoreAlias } from './alias_config'
+import { RestoreAlias, defaultData } from './config'
 
 async function restoreRepo(_ctx: Context) {
     console.log("🚀 ~ Restore categories:", RestoreAlias)
@@ -27,28 +28,36 @@ async function restoreRepo(_ctx: Context) {
         })
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
-    let defaultData = {} as Db;
-    await JSONFilePreset('db.json', defaultData)
-        .then(async db => {
-            const ctx: Context = {
-                curDirFullPath: rootDirFullPath,
-                db,
-                rootDirFullPath: rootDirFullPath,
-            };
-            await upgradeConfig(db)
-            return ctx;
-        })
-        .then(async ctx => {
 
-            await restoreRepo(ctx)
-            return ctx;
+    await getAllStoreFiles(rootDirFullPath)
+        .then(async files => {
+            files.forEach(async file => {
+                await JSONFilePreset(file, defaultData)
+                    .then(async db => {
+                        const ctx: Context = {
+                            curDirFullPath: rootDirFullPath,
+                            db,
+                            rootDirFullPath: rootDirFullPath,
+                        };
+                        await upgradeConfig(db)
+                        return ctx;
+                    })
+                    .then(async ctx => {
+                        await restoreRepo(ctx)
+                        return ctx;
+                    })
+                    .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
+                    .catch(err => console.error('\r\n\r\n', 'Error：', err))
+            })
+
         })
-        .then(ctx => console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.'))
-        .catch(err => console.error('\r\n\r\n', 'Error：', err))
+
+
 }
 
 const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
+
 
 (async () => {
     console.log(``)

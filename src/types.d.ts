@@ -1,6 +1,6 @@
 
 import { Low } from 'lowdb';
-import semver from 'semver';
+import * as semver from 'semver';
 import { extend } from './utils';
 
 
