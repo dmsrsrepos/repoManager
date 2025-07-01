@@ -69,23 +69,45 @@ function createNewSettings(settingsFilePath, newSettings) {
       return newSettings
     })
 }
-const customDeepMerge = deepmergeCustom({
+function isPrimitive(value) {
+  const t = getObjectType(value);
+  if (t != 0) {
+    console.log("🚀 ~ isPrimitive ~ value:", value)
+    console.log("🚀 ~ isPrimitive ~ t:", t)
+  }
+  return t === 0
+}
+export const customDeepMerge = deepmergeCustom({
   // 合并数组时去重（支持嵌套对象）
   mergeArrays: (arrays, utils, meta) => {
-    // console.log("🚀 ~ meta:", meta)
     // console.log("🚀 ~ utils:", JSON.stringify(utils))
     // console.log("🚀 ~ arrays:", arrays)
+    const all = arrays.flatMap(i => i.flatMap(j => j))
+    // console.log("🚀 ~ meta:", meta.key)
+    // console.log("🚀 ~ all:", all)
 
-    let result = utils.defaultMergeFunctions.mergeArrays(arrays);
-    // console.log("🚀 ~ result:", result)
+    if (all.every(item => isPrimitive(item))) {
+      // console.log("🚀 ~ meta:", meta.key)
+      return [...new Set(all)]
+    }
 
-    return [...new Set(result)];
+    // let result = utils.defaultMergeFunctions.mergeArrays(arrays);
+    // // console.log("🚀 ~ result:", result)
+    // return result
+    // return [...new Set(result)];
     // // 合并基础元素（去重）
     // const merged = deduplicate(dest, src);
     // // 递归处理嵌套对象
-    // return merged.map(item =>
-    //     getObjectType(item) === ObjectType.RECORD ? customDeepMerge(item, item) : item
-    // );
+    // console.log("🚀 ~ meta:", meta?.key)
+    // if (meta?.key == "commit-message-editor.tokens") {
+
+    //     // console.log("🚀 ~ arrays:", arrays)
+    //     // console.log("🚀 ~ all:", all)
+    //     console.log("🚀 ~ arrays:", arrays.at(-1))
+    // }
+    //如果是对象，则直接返回第最后一个数组
+    return arrays.at(-1)
+    // return [customDeepMerge(...all)]
   }
 });
 function tryMerge(currSettings, newSettings) {

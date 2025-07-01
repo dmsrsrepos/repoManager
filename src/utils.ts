@@ -1,5 +1,5 @@
 import { Low } from "lowdb";
-import { deepmergeCustom, getObjectType, ObjectType } from 'deepmerge-ts';
+import { deepmergeCustom, getObjectType } from 'deepmerge-ts';
 import { Context, Db } from "./types";
 import path from 'path';
 import { defaultData, MAPPER, storeType } from "./config";
@@ -7,30 +7,52 @@ import { glob } from 'glob'
 import os from 'node:os';
 import { JSONFilePreset } from "lowdb/node";
 
+
 export function getMachineKey() {
     return os.hostname();// + '_' + os.userInfo().username;
 }
 
 const mappers = Object.entries(MAPPER)
 
-// 自定义深层合并配置
-const customDeepMerge = deepmergeCustom({
+function isPrimitive(value) {
+    const t = getObjectType(value);
+    if (t != 0) {
+        console.log("🚀 ~ isPrimitive ~ value:", value)
+        console.log("🚀 ~ isPrimitive ~ t:", t)
+    }
+    return t === 0
+}
+export const customDeepMerge = deepmergeCustom({
     // 合并数组时去重（支持嵌套对象）
     mergeArrays: (arrays, utils, meta) => {
-        // console.log("🚀 ~ meta:", meta)
         // console.log("🚀 ~ utils:", JSON.stringify(utils))
         // console.log("🚀 ~ arrays:", arrays)
+        const all = arrays.flatMap(i => i.flatMap(j => j))
+        // console.log("🚀 ~ meta:", meta.key)
+        // console.log("🚀 ~ all:", all)
 
-        let result = utils.defaultMergeFunctions.mergeArrays(arrays);
-        // console.log("🚀 ~ result:", result)
+        if (all.every(item => isPrimitive(item))) {
+            // console.log("🚀 ~ meta:", meta.key)
+            return [...new Set(all)]
+        }
 
-        return removeDuplicates(result) as any;
+        // let result = utils.defaultMergeFunctions.mergeArrays(arrays);
+        // // console.log("🚀 ~ result:", result)
+        // return result
+        // return [...new Set(result)];
         // // 合并基础元素（去重）
         // const merged = deduplicate(dest, src);
         // // 递归处理嵌套对象
-        // return merged.map(item =>
-        //     getObjectType(item) === ObjectType.RECORD ? customDeepMerge(item, item) : item
-        // );
+        // console.log("🚀 ~ meta:", meta?.key)
+        // if (meta?.key == "commit-message-editor.tokens") {
+
+        //     // console.log("🚀 ~ arrays:", arrays)
+        //     // console.log("🚀 ~ all:", all)
+        //     console.log("🚀 ~ arrays:", arrays.at(-1))
+        // }
+        //如果是对象，则直接返回第最后一个数组
+        return arrays.at(-1)
+        // return [customDeepMerge(...all)]
     }
 });
 
@@ -231,6 +253,12 @@ function test_extend() {
             ["key1", "value1"],
             ["key2", "value2"],
         ]),
+        arr: [
+            {
+                a: 1,
+                b: 2,
+            }
+        ]
     };
 
     const y = {
@@ -244,6 +272,11 @@ function test_extend() {
             ["key2", "changed"],
             ["key3", "value3"],
         ]),
+        arr: [
+            {
+                a: 2,
+                b: 3,
+            }]
     };
 
     const z = {
@@ -256,6 +289,16 @@ function test_extend() {
         array: [4, 5],
         set: undefined,
         map: undefined,
+        arr: [
+            {
+                a: 3,
+                b: 4,
+                c: 5
+            }, {
+                e: 3,
+                f: 4,
+
+            }]
     };
 
     const merged = extend(x, y, z);
