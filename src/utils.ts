@@ -17,7 +17,7 @@ const mappers = Object.entries(MAPPER)
 const customDeepMerge = deepmergeCustom({
     // 合并数组时去重（支持嵌套对象）
     mergeArrays: (arrays, utils, meta) => {
-        console.log("🚀 ~ meta:", meta)
+        // console.log("🚀 ~ meta:", meta)
         // console.log("🚀 ~ utils:", JSON.stringify(utils))
         // console.log("🚀 ~ arrays:", arrays)
 
