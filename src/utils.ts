@@ -1,5 +1,5 @@
 import { Low } from "lowdb";
-import semver from "semver";
+import { SemVer, parse } from "semver";
 import { Db } from "./types";
 import path from 'path';
 import { MAPPER, storeType } from "./config";
@@ -83,16 +83,12 @@ export function extractQuotedValue(str: string): string | undefined {
 }
 export async function upgradeConfig(db: Low<Db>) {
     if (!db.data.__version) {
-        db.data.__version = semver.parse('1.0.0');
+        db.data.__version = '1.0.0'
     }
     else {
         var version = db.data.__version;
-        console.log('config db file version:', version.raw);
-        if (version === '1.0.0') {
+        console.log('config db file version:', version);
 
-
-
-        }
         if (!db.data.repos) {
             db.data.repos = {}
         }
@@ -102,14 +98,14 @@ export async function upgradeConfig(db: Low<Db>) {
             .forEach(([key, value]) => {
                 delete repos[key];
             })
-        db.write()
+        await db.write()
         Object.entries(repos)
             .filter(([key, value]) => key.startsWith('test\\'))
             .forEach(([key, value]) => {
                 repos[key.replace('test\\', '')] = extend({}, value, repos[key.replace('test\\', '')])
                 delete repos[key];
             })
-        db.write()
+        await db.write()
     }
 }
 
@@ -135,11 +131,11 @@ export function getClassifiedPath(relateviePath: string): string {
 }
 export function getStoreNameByPath(filePath: string): string {
     if (storeType == 'single') {
-        return 'all.repo.db.json';
+        return 'repo.db.all.json';
     } else {
         const id = path.normalize(filePath).replaceAll(path.sep, '.').replaceAll(':', '.').replaceAll('..', '.');
         console.log("🚀 ~ findAndBackupRepos ~ id:", id)
-        let dbName = `${id}.repo.db.json`
+        let dbName = `repo.db.${id}.json`
         // dbName = 'all.repo.db.json'
         return dbName;
     }
@@ -147,7 +143,7 @@ export function getStoreNameByPath(filePath: string): string {
 }
 
 export async function getAllStoreFiles(filePath: string) {
-    return glob(`**/*.repo.db.json`, { cwd: process.cwd(), absolute: true })
+    return glob(`**/repo.db.*.json`, { cwd: process.cwd(), absolute: true })
         .then(async files => {
             console.log("🚀 ~ findAndBackupRepos ~ files:", files)
             return files

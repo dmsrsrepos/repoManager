@@ -1,8 +1,6 @@
 
 import { Low } from 'lowdb';
 import * as semver from 'semver';
-import { extend } from './utils';
-
 
 export type Repos = Record<string, Repo>
 
@@ -16,7 +14,7 @@ export type Proccessor = {
 }
 export type Factory = Set<Proccessor>;
 export type Db = {
-    "__version"?: semver.SemVer;
+    __version?: string;
     repos?: Repos;
 }
 export type Context = {
@@ -51,6 +49,7 @@ export type Repo = {
     remote?: Remotes;
     submodule?: Submodule;
     isPull?: boolean;
+    originalPaths?: string[];
 } // optional list of remote repositories
 
 export type Alias = {

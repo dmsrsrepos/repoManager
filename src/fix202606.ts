@@ -1,12 +1,9 @@
 // gitBackup.ts
 // 脚本修复存储的内容，移除非必要的git库配置内容，比如 core，branch，gitflow， 等等
 import fs from 'node:fs';
-import path from 'path';
 import { Context, Repos, Db, Repo } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { extend, getClassifiedPath, upgradeConfig } from './utils'
-import { factory } from './components/factory';
-import { RestoreAlias } from './alias_config'
 async function restoreRepo(_ctx: Context) {
     const repos = _ctx.db.data.repos
     if (repos) {
@@ -28,7 +25,6 @@ async function restoreRepo(_ctx: Context) {
             repos[relativePath] = ret;
             return [relativePath, ret];
         })
-        _ctx.db.write();
     }
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {

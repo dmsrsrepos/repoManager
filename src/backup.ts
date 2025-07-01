@@ -4,7 +4,7 @@ import path from 'path';
 import { Context, Db } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './components/factory';
-import { upgradeConfig, extend, getClassifiedPath, getStoreNameByPath } from './utils';
+import { upgradeConfig, extend, getClassifiedPath, getStoreNameByPath, removeDuplicates } from './utils';
 import { defaultData } from './config'
 
 async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
@@ -35,7 +35,8 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                     if (!ctx.db.data.repos) {
                         ctx.db.data.repos = {}
                     }
-                    ctx.db.data.repos[key] = extend({ "__processorName": p.name }, ctx.db.data.repos[key], repo);
+                    repo.originalPaths = removeDuplicates(new Array<string>().concat(ctx.db.data.repos[key]?.originalPaths || []).concat(repo.originalPaths ?? []))
+                    ctx.db.data.repos[key] = extend(ctx.db.data.repos[key], repo);
                     // { ...ctx.db.data.repos[key], "__processorName": p.name, ...repo }; //对象扩展仅仅支持浅表复制，无法深层拷贝
                     break; // 只允许一个处理器处理当前库
                 }
@@ -45,8 +46,6 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
             }
         }
     }
-
-    ctx.db.write();
 }
 
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
@@ -59,6 +58,8 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
                 rootDirFullPath: rootDirFullPath
             };
             await findRepos(rootDirFullPath, maxDepth, ctx);
+
+            await ctx.db.write();
             return ctx;
         })
 
@@ -77,7 +78,7 @@ const MAX_DEPTH = 5;
 
 (async () => {
     let pipeline = Promise.resolve()
-    ROOT_DIRs.forEach(async ROOT_DIR => {
+    ROOT_DIRs.forEach(ROOT_DIR => {
         pipeline = pipeline.then(async () => {
             console.log(``)
             console.log(``)

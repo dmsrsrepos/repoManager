@@ -3,6 +3,7 @@ import path from "path";
 import * as ini from 'ini'; // 需要先安装ini库，命令：npm install ini
 import { Context, Proccessor, Remotes, Repo } from '../types';
 import { gitClone } from './gitclone';
+import { extend } from "../utils";
 
 export class GitRepoProcessor implements Proccessor {
     readonly name: string = '.git';
@@ -17,9 +18,11 @@ export class GitRepoProcessor implements Proccessor {
         // 定义一个GitRepo对象，用于存储git库的信息
 
         console.log(`Backuping... git配置文件：${ctx.curDirFullPath}`)
-        let configPath = path.join(ctx.curDirFullPath, '.git', 'config')
+        let gitConfigPath = path.join(ctx.curDirFullPath, '.git', 'config')
 
-        let repo: Repo = readGitConfig(configPath, ctx.curDirFullPath.toString().split(path.sep).pop() || 'unknown')
+        let repo: Repo = readGitConfig(gitConfigPath, ctx.curDirFullPath.toString().split(path.sep).pop() || 'unknown')
+        repo = extend({ __processorName: this.name }, repo)
+        repo.originalPaths = [ctx.curDirFullPath]
         return repo;
     }
 
