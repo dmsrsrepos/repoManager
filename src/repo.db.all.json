@@ -1,14 +1,6 @@
 {
   "__version": "1.0.0",
   "repos": {
-    "frontend\\wx聊天应用\\chat-app-backend": {
-      "name": "damp-brushlands-96654.git",
-      "remote": {
-        "heroku": {
-          "url": "https://git.heroku.com/damp-brushlands-96654.git"
-        }
-      }
-    },
     "vPress\\blog": {
       "name": "blog.git",
       "remote": {
@@ -2743,13 +2735,13 @@
     },
     "vsextension\\vscode-project-config-updater": {
       "__processorName": ".git",
-      "name": "project-kit.git",
+      "name": "vscode-project-config-updater.git",
       "remote": {
         "upstream": {
           "url": "https://github.com/open-dmsrs/project-kit.git"
         },
         "origin": {
-          "url": "https://github.com/cnjimbo/project-kit.git"
+          "url": "https://github.com/open-dmsrs/vscode-project-config-updater.git"
         },
         "origin1": {
           "url": "https://github.com/open-dmsrs/vscode-project-config-updater.git"
