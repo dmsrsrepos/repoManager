@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.12.4",
   "dependencies": {
     "@types/node": "^24.0.3",
     "deepmerge-ts": "^7.1.5",
