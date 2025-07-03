@@ -22,14 +22,20 @@ async function restoreRepo(_ctx: Context) {
                     })
                 }
                 ret.desc = gitConfig.desc
+
                 ret.fromPaths = gitConfig.fromPaths
                 if (ret.fromPaths) {
                     Object.entries(ret.fromPaths).forEach(([machine, paths]) => {
-                        // ret.fromPaths![machine] = paths.filter(v => !v.startsWith('C:\\AppData\\test\\'))
+                        //1
+                        ret.fromPaths![machine] = paths.filter(v => !v.startsWith('C:\\AppData\\test\\'))
+
                     })
                 }
-                ret['originalPaths'] = undefined
+
+                delete ret['originalPaths']
+
                 delete repos[relativePath]
+
                 relativePath = getClassifiedPath(relativePath)
                 if (_ctx.db.data.repos)
                     _ctx.db.data.repos[relativePath] = ret;

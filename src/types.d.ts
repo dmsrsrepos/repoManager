@@ -13,6 +13,7 @@ export type Proccessor = {
     restoreRepo(ctx: Context, repo: Repo): Promise<boolean>;
 }
 export type Factory = Set<Proccessor>;
+export type Warnnig = {}
 export type Db = {
     __version?: string;
     repos?: Repos;
