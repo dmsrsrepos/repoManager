@@ -4,7 +4,7 @@ import path from 'path';
 import { Context, Db } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './components/factory';
-import { upgradeConfig, extend, getClassifiedPath, getStoreNameByPath, removeDuplicates, getMachineKey } from './utils';
+import { extend, getClassifiedPath, getStoreNameByPath, removeDuplicates, getMachineKey } from './utils';
 import { defaultData } from './config'
 
 async function findRepos(dirFullPath: string, depth: number, ctx: Context): Promise<void> {
@@ -53,7 +53,6 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
     await JSONFilePreset(getStoreNameByPath(rootDirFullPath), defaultData)
         .then(async db => {
-            await upgradeConfig(db);
             const ctx: Context = {
                 curDirFullPath: rootDirFullPath,
                 db,

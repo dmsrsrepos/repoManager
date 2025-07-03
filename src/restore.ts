@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'path';
 import { Context, Db, Repos } from './types'
 
-import { extend, findAllStoreFileContexts, getClassifiedPath, upgradeConfig } from './utils'
+import { extend, findAllStoreFileContexts, getClassifiedPath } from './utils'
 import { factory } from './components/factory';
 import { RestoreAlias } from './config'
 
@@ -33,7 +33,6 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
             return await contexts.reduce((prev, ctx) => {
                 return prev.then(async () => {
                     const context = await ctx
-                    await upgradeConfig(context.db)
                     await restoreRepo(context)
                         .catch(err => console.error('\r\n\r\n', 'Error：', err))
                 })
