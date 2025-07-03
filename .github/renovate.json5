@@ -6,8 +6,7 @@
   "semanticCommitScope": "deps",
   "automergeType": "pr",
   "baseBranches": [
-    "$default",
-    "master",
+    "$default"
   ],
   "packageRules": [
     {
