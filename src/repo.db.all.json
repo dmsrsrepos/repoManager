@@ -1061,6 +1061,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\my-repo"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\my-repo"
         ]
       }
     },
@@ -1704,7 +1707,9 @@
         "PC15K": [
           "G:\\code\\learn\\mavonEditor"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\mavonEditor"
+        ]
       }
     },
     "learn\\MediatR": {
@@ -1844,7 +1849,9 @@
         "PC15K": [
           "G:\\code\\learn\\OpenAuth.Net"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\OpenAuth.Net"
+        ]
       }
     },
     "learn\\OrchardCore": {
@@ -1859,7 +1866,9 @@
         "PC15K": [
           "G:\\code\\learn\\OrchardCore"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\OrchardCore"
+        ]
       }
     },
     "learn\\osharp": {
@@ -1888,7 +1897,9 @@
         "PC15K": [
           "G:\\code\\learn\\osharp-vben-admin"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\osharp-vben-admin"
+        ]
       }
     },
     "learn\\RibbonWinForms": {
@@ -1917,7 +1928,9 @@
         "PC15K": [
           "G:\\code\\learn\\sentry-dotnet"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\sentry-dotnet"
+        ]
       }
     },
     "learn\\Serenity": {
@@ -1932,7 +1945,9 @@
         "PC15K": [
           "G:\\code\\learn\\Serenity"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\Serenity"
+        ]
       }
     },
     "learn\\Smartstore": {
@@ -1947,7 +1962,9 @@
         "PC15K": [
           "G:\\code\\learn\\Smartstore"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\Smartstore"
+        ]
       }
     },
     "learn\\SteamTools": {
@@ -1962,7 +1979,9 @@
         "PC15K": [
           "G:\\code\\learn\\SteamTools"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\SteamTools"
+        ]
       }
     },
     "learn\\Symlinker": {
@@ -2005,7 +2024,9 @@
         "PC15K": [
           "G:\\code\\learn\\vc-platform"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\vc-platform"
+        ]
       }
     },
     "learn\\vc-storefront": {
@@ -2020,7 +2041,9 @@
         "PC15K": [
           "G:\\code\\learn\\vc-storefront"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\vc-storefront"
+        ]
       }
     },
     "learn\\Very-Simple-IP-Configurator": {
@@ -2049,7 +2072,9 @@
         "PC15K": [
           "G:\\code\\learn\\War3Net"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\War3Net"
+        ]
       }
     },
     "learn\\ZRAdmin-vue": {
@@ -2064,7 +2089,9 @@
         "PC15K": [
           "G:\\code\\learn\\ZRAdmin-vue"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\ZRAdmin-vue"
+        ]
       }
     },
     "learn\\ZrAdminNetCore": {
@@ -2079,7 +2106,9 @@
         "PC15K": [
           "G:\\code\\learn\\ZrAdminNetCore"
         ],
-        "APCAPoykidLPMOO": []
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\ZrAdminNetCore"
+        ]
       }
     },
     "net\\awesome-aop": {
@@ -2228,6 +2257,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\net\\DotNetCorePlugins"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\DotNetCorePlugins"
         ]
       }
     },
@@ -2242,6 +2274,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\net\\DotNetCorePlugins.git"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\DotNetCorePlugins.git"
         ]
       }
     },
@@ -2318,6 +2353,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\net\\git-gears-cs"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\git-gears-cs"
         ]
       }
     },
@@ -3944,6 +3982,312 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\ai\\keras-io"
+        ]
+      }
+    },
+    "frontend\\modify-source-webpack-plugin": {
+      "__processorName": ".git",
+      "name": "modify-source-webpack-plugin.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/artemirq/modify-source-webpack-plugin.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\modify-source-webpack-plugin"
+        ]
+      }
+    },
+    "learn\\userscripts": {
+      "__processorName": ".git",
+      "name": "userscripts.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dmsrs/userscripts.git"
+        },
+        "origin2": {
+          "url": "https://github.com/niubilityfrontend/userscripts.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\userscripts"
+        ]
+      }
+    },
+    "net\\abp": {
+      "__processorName": ".git",
+      "name": "abp.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/abpframework/abp.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\abp"
+        ]
+      }
+    },
+    "net\\abp-samples": {
+      "__processorName": ".git",
+      "name": "abp-samples.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/abpframework/abp-samples.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\abp-samples"
+        ]
+      }
+    },
+    "net\\Admin.NET": {
+      "__processorName": ".git",
+      "name": "Admin.NET.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/zuohuaijun/Admin.NET.git"
+        },
+        "myorigin": {
+          "url": "https://gitee.com/cnjimbo/Admin.NET.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\Admin.NET"
+        ]
+      }
+    },
+    "net\\adnc": {
+      "__processorName": ".git",
+      "name": "adnc.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/AlphaYu/adnc.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\adnc"
+        ]
+      }
+    },
+    "net\\AspectCore-Framework": {
+      "__processorName": ".git",
+      "name": "AspectCore-Framework.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnetcore/AspectCore-Framework.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\AspectCore-Framework"
+        ]
+      }
+    },
+    "net\\aspnetcore-modular-monolith": {
+      "__processorName": ".git",
+      "name": "aspnetcore-modular-monolith.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\aspnetcore-modular-monolith"
+        ]
+      }
+    },
+    "net\\AuditLogging": {
+      "__processorName": ".git",
+      "name": "AuditLogging.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:skoruba/AuditLogging.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\AuditLogging"
+        ]
+      }
+    },
+    "net\\Blazor.Console": {
+      "__processorName": ".git",
+      "name": "Blazor.Console.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/ardacetinkaya/Blazor.Console.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\Blazor.Console"
+        ]
+      }
+    },
+    "net\\EventBus\\CAP": {
+      "__processorName": ".git",
+      "name": "CAP.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnetcore/CAP.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\EventBus\\CAP"
+        ]
+      }
+    },
+    "net\\EventBus\\MediatR": {
+      "__processorName": ".git",
+      "name": "MediatR.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/jbogard/MediatR.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\EventBus\\MediatR"
+        ]
+      }
+    },
+    "net\\EventBus\\RedBus": {
+      "__processorName": ".git",
+      "name": "RedBus.git",
+      "remote": {
+        "origin1": {
+          "url": "https://github.com/mxjones/RedBus.git"
+        },
+        "origin": {
+          "url": "https://gitee.com/codeshelter/RedBus.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\EventBus\\RedBus"
+        ]
+      }
+    },
+    "net\\Furion": {
+      "__processorName": ".git",
+      "name": "Furion.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/dotnetchina/Furion.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\Furion"
+        ]
+      }
+    },
+    "net\\magic-net": {
+      "__processorName": ".git",
+      "name": "magic-net.git",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/zhengguojing/magic-net.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\magic-net"
+        ]
+      }
+    },
+    "net\\MediatR": {
+      "__processorName": ".git",
+      "name": "MediatR.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/cnjimbo/MediatR.git"
+        },
+        "origin1": {
+          "url": "https://github.com/aweniubility/MediatR.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\MediatR"
+        ]
+      }
+    },
+    "net\\modular-monolith-aspnet-core-sample": {
+      "__processorName": ".git",
+      "name": "modular-monolith-aspnet-core-sample.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\modular-monolith-aspnet-core-sample"
+        ]
+      }
+    },
+    "net\\module-shop": {
+      "__processorName": ".git",
+      "name": "module-shop.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/trueai-org/module-shop.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\module-shop"
+        ]
+      }
+    },
+    "net\\Nerdbank.GitVersioning": {
+      "__processorName": ".git",
+      "name": "Nerdbank.GitVersioning.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotnet/Nerdbank.GitVersioning.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\Nerdbank.GitVersioning"
+        ]
+      }
+    },
+    "net\\NetCoreMicroservicesSample": {
+      "__processorName": ".git",
+      "name": "NetCoreMicroservicesSample.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/madslundt/NetCoreMicroservicesSample.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\NetCoreMicroservicesSample"
+        ]
+      }
+    },
+    "net\\nopCommerce": {
+      "__processorName": ".git",
+      "name": "nopCommerce.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/nopSolutions/nopCommerce.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\net\\nopCommerce"
         ]
       }
     }
