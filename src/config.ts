@@ -33,7 +33,7 @@ export const CATEGORYPATTERNS: Record<string, Pattern> = {
     }
 }
 
-export const RestoreCategories: string[] = Object.keys(CATEGORYPATTERNS)
+export const RestoringCategories: string[] = Object.keys(CATEGORYPATTERNS)
 
 export const defaultData: Db = {
     __version: '0.0.1',

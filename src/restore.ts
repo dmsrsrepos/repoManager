@@ -5,10 +5,10 @@ import { Context, Db, Repos } from './types'
 
 import { extend, findAllStoreFileContexts, getClassifiedPath } from './utils'
 import { factory } from './components/factory';
-import { RestoreAlias } from './config'
+import { RestoringCategories } from './config'
 
 async function restoreRepo(context: Context) {
-    console.log("🚀 ~ Restore categories:", RestoreAlias)
+    console.log("🚀 ~ Restore categories:", RestoringCategories)
 
     if (context.db.data.repos)
         return Object.entries(context.db.data.repos).map(async ([relativePath, repo], idx, data) => {
@@ -17,7 +17,7 @@ async function restoreRepo(context: Context) {
             let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
             if (p) {
                 const alias = relativePath.split(path.sep)[0]
-                if (RestoreAlias.includes(alias)) {
+                if (RestoringCategories.includes(alias)) {
                     console.log("🚀 ~ =====")
                     console.log(`🚀 ~ Start restoring  ${idx + 1}/${data.length} `)
                     // 定义一个GitRepo对象，用于存储git库的信息
