@@ -52,7 +52,7 @@ export type Repo = {
     fromPaths?: Record<string, string[]>;
 } // optional list of remote repositories
 
-export type Alias = {
+export type Pattern = {
     pattern?: RegExp,
     keys: string[]
 }

@@ -1,7 +1,7 @@
-import { Alias, Db } from "./types";
+import { Pattern, Db } from "./types";
 
 import * as semver from 'semver';
-export const MAPPER: Record<string, Alias> = {
+export const CATEGORYPATTERNS: Record<string, Pattern> = {
     ai: {
 
         keys: ["ai"]
@@ -33,12 +33,10 @@ export const MAPPER: Record<string, Alias> = {
     }
 }
 
-export type AliasType = keyof typeof MAPPER
-
-export const RestoreAlias: AliasType[] = Object.keys(MAPPER)
+export const RestoreCategories: string[] = Object.keys(CATEGORYPATTERNS)
 
 export const defaultData: Db = {
-    __version: semver.parse('1.0.0'),
+    __version: '0.0.1',
     repos: {}
 };
 

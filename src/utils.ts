@@ -2,7 +2,7 @@ import { Low } from "lowdb";
 import { deepmergeCustom, getObjectType } from 'deepmerge-ts';
 import { Context, Db } from "./types";
 import path from 'path';
-import { defaultData, MAPPER, storeType } from "./config";
+import { defaultData, CATEGORYPATTERNS, storeType } from "./config";
 import { glob } from 'glob'
 import os from 'node:os';
 import { JSONFilePreset } from "lowdb/node";
@@ -12,7 +12,7 @@ export function getMachineKey() {
     return os.hostname();// + '_' + os.userInfo().username;
 }
 
-const mappers = Object.entries(MAPPER)
+const mappers = Object.entries(CATEGORYPATTERNS)
 
 function isPrimitive(value) {
     const t = getObjectType(value);
