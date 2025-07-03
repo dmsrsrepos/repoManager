@@ -1,6 +1,6 @@
 import { Low } from "lowdb";
 import { deepmergeCustom, getObjectType } from 'deepmerge-ts';
-import { Context, Db } from "./types";
+import { Context, Db, Pattern } from "./types";
 import path from 'path';
 import { defaultData, CATEGORYPATTERNS, storeType } from "./config";
 import { glob } from 'glob'
@@ -12,7 +12,13 @@ export function getMachineKey() {
     return os.hostname();// + '_' + os.userInfo().username;
 }
 
-const mappers = Object.entries(CATEGORYPATTERNS)
+const mapper = Object.entries(
+    Object.entries(CATEGORYPATTERNS).reduce((prev, [key, value]) => {
+        value.keys = [...new Set([...value.keys, key])]
+        prev[key] = value
+        return prev
+    }, {} as Record<string, Pattern>)
+)
 
 function isPrimitive(value) {
     const t = getObjectType(value);
@@ -119,9 +125,9 @@ export function getClassifiedPath(relateviePath: string): string {
     let parts: string[];
     // 相对路径，例如 'a/b/c' 或 'a\b\c'
     parts = processedPath.split(sep).filter(p => p !== '');
-    let alias = mappers.find(([key, value]) => value.keys.findIndex(p => p.startsWith(parts[0]) || p.includes(parts[0]) || p.endsWith(parts[0])) > -1)
-        || mappers.find(([key, value]) => value.pattern && new RegExp(value.pattern).test(parts[0]))
-        || mappers.find(([key, value]) => value.keys.findIndex(p => p.startsWith(relateviePath) || p.includes(relateviePath) || p.endsWith(relateviePath)) > -1)
+    let alias = mapper.find(([key, value]) => value.keys.findIndex(p => p.startsWith(parts[0]) || p.includes(parts[0]) || p.endsWith(parts[0])) > -1)
+        || mapper.find(([key, value]) => value.pattern && new RegExp(value.pattern).test(parts[0]))
+        || mapper.find(([key, value]) => value.keys.findIndex(p => p.startsWith(relateviePath) || p.includes(relateviePath) || p.endsWith(relateviePath)) > -1)
     if (alias) {
         parts[0] = alias[0];
     }
