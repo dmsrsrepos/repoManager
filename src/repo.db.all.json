@@ -3368,26 +3368,6 @@
         ]
       }
     },
-    "learn\\userscripts": {
-      "__processorName": ".git",
-      "name": "userscripts.git",
-      "remote": {
-        "origin": {
-          "url": "https://gitee.com/dmsrs/userscripts.git"
-        },
-        "origin2": {
-          "url": "https://github.com/niubilityfrontend/userscripts.git"
-        }
-      },
-      "fromPaths": {
-        "PC15K": [
-          "G:\\code\\learn\\userscripts"
-        ],
-        "APCAPoykidLPMOO": [
-          "C:\\AppData\\code\\learn\\userscripts"
-        ]
-      }
-    },
     "learn\\vba": {
       "__processorName": ".git",
       "name": "vba.git",
