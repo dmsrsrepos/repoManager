@@ -1,10 +1,10 @@
 // gitBackup.ts
 // 脚本修复存储的内容，移除非必要的git库配置内容，比如 core，branch，gitflow， 等等
 import fs from 'node:fs';
-import { Context, Repos, Db, Repo } from './types'
-import { JSONFilePreset } from 'lowdb/node';
-import { extend, getAllStoreFiles, getClassifiedPath, upgradeConfig } from './utils'
+import { Context, Db, Repo } from './types'
+import { extend, getClassifiedPath } from './utils'
 import { findAllStoreFileContexts } from './utils';
+import { Low } from 'lowdb';
 async function restoreRepo(_ctx: Context) {
     const repos = _ctx.db.data.repos
     if (repos) {
@@ -49,6 +49,38 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
         })
         .then(r => console.log('\r\n\r\n', 'Done! Check the ' + rootDirFullPath + ' file for the results.'))
         .catch(err => console.error('\r\n\r\n', 'Error：', err))
+}
+export async function upgradeConfig(db: Low<Db>) {
+    if (!db.data.__version) {
+        db.data.__version = '1.0.0'
+    }
+    else {
+
+        var version = db.data.__version;
+        if (typeof version !== 'string') {
+            db.data.__version = '1.0.0'
+
+        }
+        console.log('config db file version:', db.data.__version);
+
+        if (!db.data.repos) {
+            db.data.repos = {}
+        }
+        const repos = db.data.repos;
+        Object.entries(repos)
+            .filter(([key, value]) => key.startsWith('test\\'))
+            .forEach(([key, value]) => {
+                delete repos[key];
+            })
+        await db.write()
+        Object.entries(repos)
+            .filter(([key, value]) => key.startsWith('test\\'))
+            .forEach(([key, value]) => {
+                repos[key.replace('test\\', '')] = extend({}, value, repos[key.replace('test\\', '')])
+                delete repos[key];
+            })
+        await db.write()
+    }
 }
 
 const ROOT_DIR = ['C:\\AppData\\test', 'G:\\code'].filter(val => fs.existsSync(val))[0];

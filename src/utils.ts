@@ -110,38 +110,6 @@ export function extractQuotedValue(str: string): string | undefined {
     // 如果都没有找到匹配项，返回undefined
     return undefined;
 }
-export async function upgradeConfig(db: Low<Db>) {
-    if (!db.data.__version) {
-        db.data.__version = '1.0.0'
-    }
-    else {
-
-        var version = db.data.__version;
-        if (typeof version !== 'string') {
-            db.data.__version = '1.0.0'
-
-        }
-        console.log('config db file version:', db.data.__version);
-
-        if (!db.data.repos) {
-            db.data.repos = {}
-        }
-        const repos = db.data.repos;
-        Object.entries(repos)
-            .filter(([key, value]) => key.startsWith('test\\'))
-            .forEach(([key, value]) => {
-                delete repos[key];
-            })
-        await db.write()
-        Object.entries(repos)
-            .filter(([key, value]) => key.startsWith('test\\'))
-            .forEach(([key, value]) => {
-                repos[key.replace('test\\', '')] = extend({}, value, repos[key.replace('test\\', '')])
-                delete repos[key];
-            })
-        await db.write()
-    }
-}
 
 export function getClassifiedPath(relateviePath: string): string {
     const processedPath = path.normalize(relateviePath);
@@ -189,7 +157,6 @@ export default {
     removeDuplicates,
     getNextCharacter,
     extractQuotedValue,
-    upgradeConfig,
     getClassifiedPath
 }
 
