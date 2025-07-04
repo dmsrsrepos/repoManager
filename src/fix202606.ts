@@ -28,7 +28,9 @@ async function restoreRepo(_ctx: Context) {
                     Object.entries(ret.fromPaths).forEach(([machine, paths]) => {
                         //1
                         ret.fromPaths![machine] = paths.filter(v => !v.startsWith('C:\\AppData\\test\\'))
-
+                        if (paths.length > 1) {
+                            delete ret.fromPaths![machine]
+                        }
                     })
                 }
 
@@ -94,7 +96,7 @@ export async function upgradeConfig(db: Low<Db>) {
     }
 }
 
-const ROOT_DIR = ['C:\\AppData\\test', 'G:\\code'].filter(val => fs.existsSync(val))[0];
+const ROOT_DIR = ['C:\\AppData\\code', 'G:\\code'].filter(val => fs.existsSync(val))[0];
 const MAX_DEPTH = 5;
 
 (async () => {
