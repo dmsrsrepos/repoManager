@@ -4290,6 +4290,20 @@
           "C:\\AppData\\code\\net\\nopCommerce"
         ]
       }
+    },
+    "ai\\deepseek-lora-medical": {
+      "__processorName": ".git",
+      "name": "deepseek-lora-medical.git",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/cnjimbo/deepseek-lora-medical.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\ai\\deepseek-lora-medical"
+        ]
+      }
     }
   }
 }
