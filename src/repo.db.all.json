@@ -1263,7 +1263,7 @@
     },
     "frontend\\vue-modern-resume": {
       "__processorName": ".git",
-      "name": "vue-vuetify-modern-resume.git",
+      "name": "vue-modern-resume.git",
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vue-vuetify-modern-resume.git"

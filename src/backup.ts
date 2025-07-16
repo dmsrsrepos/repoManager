@@ -1,7 +1,7 @@
 // gitBackup.ts
 import fs from 'node:fs';
 import path from 'path';
-import { Context, Db } from './types'
+import { Context, Db, Remote, Repo } from './types'
 import { JSONFilePreset } from 'lowdb/node';
 import { factory } from './components/factory';
 import { extend, getClassifiedPath, getStoreNameByPath, removeDuplicates, getMachineKey } from './utils';
@@ -17,8 +17,8 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
     // 遍历所有文件和子目录
     for (let file of files) {
         // 拼接完整的路径
-        let curDirFullPath = path.join(dirFullPath, file);
-        let key = getClassifiedPath(curDirFullPath.replace(ctx.rootDirFullPath, ''))
+        const curDirFullPath = path.join(dirFullPath, file);
+        const key = getClassifiedPath(curDirFullPath.replace(ctx.rootDirFullPath, ''))
         ctx.curDirFullPath = curDirFullPath;
         // 一次性获取目录信息，避免多次调用 fs.statSync
         const isDir = fs.existsSync(curDirFullPath) && fs.statSync(curDirFullPath)?.isDirectory();
@@ -31,14 +31,35 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                 // 如果是git库，获取其信息，并添加到数组中
                 if (isGitRepo) {
                     // 定义一个GitRepo对象，用于存储git库的信息
-                    const repo = await p.backupRepo(ctx);
+                    const currentRepo = await p.backupRepo(ctx);
                     if (!ctx.db.data.repos) {
                         ctx.db.data.repos = {}
                     }
+                    const orginRepo = ctx.db.data.repos[key]
+                    const urls = new Set(Object.values(currentRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])
+                        .concat(Object.values(orginRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])).filter(v => v))
+                    // console.log("🚀 ~ findRepos ~ urls:", urls)
 
-                    // const stored = ctx.db.data.repos[key]?.fromPaths ?? {}
-                    // repo.originalPaths = removeDuplicates(new Array<string>().concat(ctx.db.data.repos[key]?.originalPaths || []).concat(repo.originalPaths ?? []))
-                    ctx.db.data.repos[key] = extend(ctx.db.data.repos[key], repo);
+                    delete currentRepo.remote
+
+                    const newRepo = extend({}, orginRepo, currentRepo)
+                    const mk = getMachineKey()
+                    urls.forEach(url => {
+                        if (url && !Object.values(newRepo.remote ?? {}).find(r => r.url === url)) {
+                            let i = 0
+                            let remoteKey = `${mk}${i++}`
+                            const keys = Object.keys(newRepo.remote ?? {})
+                            while (keys.includes(remoteKey)) {
+                                remoteKey = `${mk}${i++}`
+                            }
+                            if (!newRepo.remote)
+                                newRepo.remote = {}
+                            newRepo.remote[remoteKey] = { url: url }
+                            // console.log("🚀 ~ findRepos ~ key:", key)
+                        }
+                    })
+
+                    ctx.db.data.repos[key] = newRepo;
                     // { ...ctx.db.data.repos[key], "__processorName": p.name, ...repo }; //对象扩展仅仅支持浅表复制，无法深层拷贝
                     break; // 只允许一个处理器处理当前库
                 }

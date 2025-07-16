@@ -41,7 +41,7 @@ export type Submodule = {
 };
 
 
-export type Remotes = { origin?: Remote } & Record<string, Remote>;
+export type Remotes = Record<string, Remote>;
 
 export type Repo = {
     name: string;

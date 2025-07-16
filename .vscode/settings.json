@@ -11,5 +11,7 @@
   "codingcopilot.CommitMessageStyle": "ConventionalCommits",
   "codingcopilot.commitMessageLanguage": "en",
   "code-runner.clearPreviousOutput": true,
-  "code-runner.runInTerminal": true
+  "code-runner.runInTerminal": true,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.pullRequests.enabled": false
 }
