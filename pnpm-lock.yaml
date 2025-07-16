@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@types/node':
         specifier: ^24.0.3
-        version: 24.0.3
+        version: 24.0.10
       deepmerge-ts:
         specifier: ^7.1.5
         version: 7.1.5
@@ -328,8 +328,8 @@ packages:
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
-  '@types/node@24.0.3':
-    resolution: {integrity: sha512-R4I/kzCYAdRLzfiCabn9hxWfbuHS573x+r0dJMkkzThEa7pbrcDWK+9zu3e7aBOouf+rQAciqPFMnxwr0aWgKg==}
+  '@types/node@24.0.10':
+    resolution: {integrity: sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==}
 
   acorn@8.15.0:
     resolution: {integrity: sha512-NZyJarBfL7nWwIq+FDL6Zp/yHEhePMNnnJ0y3qfieCrmNvYct8uvtiV41UvlSe6apAfk0fY1FbWx+NwfmpvtTg==}
@@ -913,7 +913,7 @@ snapshots:
 
   '@types/estree@1.0.7': {}
 
-  '@types/node@24.0.3':
+  '@types/node@24.0.10':
     dependencies:
       undici-types: 7.8.0
 

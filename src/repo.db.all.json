@@ -342,7 +342,7 @@
           "url": "https://github.com/ATQQ/sugar-blog.git"
         },
         "origin1": {
-          "url": "https://github.com/VitepressAwesome/sugar-blog.git"
+          "url": "git@github.com:ATQQ/sugar-blog.git"
         },
         "origin11": {
           "url": "https://github.com/VitepressAwesome/sugar-blog.git"
@@ -618,7 +618,7 @@
       "name": "repoManager.git",
       "remote": {
         "origin": {
-          "url": "git@github.com:dmsrs-open/repoManager.git"
+          "url": "git@github.com:dmsrsrepos/repoManager.git"
         },
         "origin1": {
           "url": "git@github.com:dmsrs-open/repoManager.git"
@@ -1106,7 +1106,7 @@
       "name": "userscripts.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/tsharp/userscripts.git"
+          "url": "https://gitee.com/dmsrs/userscripts.git"
         },
         "origin2": {
           "url": "https://github.com/niubilityfrontend/userscripts.git"
@@ -1135,7 +1135,7 @@
       "name": "vite-plugin-monkey.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/lisonge/vite-plugin-monkey.git"
+          "url": "https://gitee.com/tsharp/vite-plugin-monkey.git"
         },
         "origin1": {
           "url": "https://github.com/lisonge/vite-plugin-monkey.git"
@@ -1263,10 +1263,10 @@
     },
     "frontend\\vue-modern-resume": {
       "__processorName": ".git",
-      "name": "vue-modern-resume.git",
+      "name": "vue-vuetify-modern-resume.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/evryn/vue-modern-resume.git"
+          "url": "https://github.com/frontendniubility/vue-vuetify-modern-resume.git"
         },
         "origin1": {
           "url": "https://github.com/evryn/vue-modern-resume.git"
@@ -1612,10 +1612,10 @@
       "name": "RedBus.git",
       "remote": {
         "origin": {
-          "url": "https://gitee.com/codeshelter/RedBus.git"
+          "url": "https://github.com/mxjones/RedBus.git"
         },
         "origin1": {
-          "url": "https://github.com/mxjones/RedBus.git"
+          "url": "https://gitee.com/codeshelter/RedBus.git"
         }
       },
       "fromPaths": {
@@ -1649,7 +1649,7 @@
       "name": "git-gears-cs.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/KageKirin/git-gears-cs.git"
+          "url": "https://github.com/niubilitytools/git-gears-cs.git"
         },
         "origin1": {
           "url": "https://github.com/KageKirin/git-gears-cs.git"
@@ -1771,7 +1771,7 @@
       "name": "module-shop.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/trueai-org/module-shop.git"
+          "url": "https://gitee.com/codeshelter/module-shop.git"
         },
         "origin1": {
           "url": "https://github.com/trueai-org/module-shop.git"
@@ -2898,7 +2898,7 @@
       "name": "script-buttons.git",
       "remote": {
         "origin": {
-          "url": "https://github.com/frontendniubility/script-buttons.git"
+          "url": "https://github.com/open-dmsrs/script-buttons.git"
         },
         "origin1": {
           "url": "https://github.com/frontendniubility/script-buttons.git"
@@ -4058,6 +4058,9 @@
       "fromPaths": {
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\userscripts"
+        ],
+        "PC15K": [
+          "G:\\code\\learn\\userscripts"
         ]
       }
     },
