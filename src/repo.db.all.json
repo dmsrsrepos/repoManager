@@ -2887,6 +2887,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\reactive-meta-gen"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\reactive-meta-gen"
         ]
       }
     },
@@ -2924,6 +2927,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\types-autoinstaller"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\types-autoinstaller"
         ]
       }
     },
@@ -3025,6 +3031,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-file-nesting-config"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-file-nesting-config"
         ]
       }
     },
@@ -3039,6 +3048,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-file-watcher"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-file-watcher"
         ]
       }
     },
@@ -3076,6 +3088,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-project-config-updater"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-project-config-updater"
         ]
       }
     },
@@ -3794,6 +3809,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\pnpm-vscode-helper"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\pnpm-vscode-helper"
         ]
       }
     },
@@ -3808,6 +3826,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\reactive-vscode"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\reactive-vscode"
         ]
       }
     },
@@ -3822,6 +3843,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\starter-vscode"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\starter-vscode"
         ]
       }
     },
@@ -3836,6 +3860,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\taze"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\taze"
         ]
       }
     },
@@ -3853,6 +3880,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-babel-compile-on-save"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-babel-compile-on-save"
         ]
       }
     },
@@ -3867,6 +3897,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-hide-comments"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-hide-comments"
         ]
       }
     },
@@ -3881,6 +3914,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-iconify"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-iconify"
         ]
       }
     },
@@ -3895,6 +3931,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-pnpm-catalog-lens"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-pnpm-catalog-lens"
         ]
       }
     },
@@ -3909,6 +3948,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-runonsave"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-runonsave"
         ]
       }
     },
@@ -3923,6 +3965,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-smart-clicks"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-smart-clicks"
         ]
       }
     },
