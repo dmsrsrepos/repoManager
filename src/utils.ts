@@ -31,14 +31,9 @@ function isPrimitive(value) {
 export const customDeepMerge = deepmergeCustom({
     // 合并数组时去重（支持嵌套对象）
     mergeArrays: (arrays, utils, meta) => {
-        // console.log("🚀 ~ utils:", JSON.stringify(utils))
-        // console.log("🚀 ~ arrays:", arrays)
         const all = arrays.flatMap(i => i.flatMap(j => j))
-        // console.log("🚀 ~ meta:", meta.key)
-        // console.log("🚀 ~ all:", all)
 
         if (all.every(item => isPrimitive(item))) {
-            // console.log("🚀 ~ meta:", meta.key)
             return [...new Set(all)]
         }
 

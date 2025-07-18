@@ -36,30 +36,30 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
                         ctx.db.data.repos = {}
                     }
                     const orginRepo = ctx.db.data.repos[key]
-                    const urls = new Set(Object.values(currentRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])
-                        .concat(Object.values(orginRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])).filter(v => v))
-                    // console.log("🚀 ~ findRepos ~ urls:", urls)
-
-                    delete currentRepo.remote
-
-                    const newRepo = extend({}, orginRepo, currentRepo)
-                    const mk = getMachineKey()
-                    urls.forEach(url => {
-                        if (url && !Object.values(newRepo.remote ?? {}).find(r => r.url === url)) {
-                            let i = 0
-                            let remoteKey = `${mk}${i++}`
-                            const keys = Object.keys(newRepo.remote ?? {})
-                            while (keys.includes(remoteKey)) {
-                                remoteKey = `${mk}${i++}`
+                    if (orginRepo) {
+                        const urls = new Set(Object.values(currentRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])
+                            .concat(Object.values(orginRepo.remote ?? {}).flatMap(r => [r.url, r.pushurl])).filter(v => v))
+                        delete currentRepo.remote
+                        const newRepo = extend({}, orginRepo, currentRepo)
+                        const mk = getMachineKey()
+                        urls.forEach(url => {
+                            if (url && !Object.values(newRepo.remote ?? {}).find(r => r.url === url)) {
+                                let i = 0
+                                let remoteKey = `${mk}${i++}`
+                                const keys = Object.keys(newRepo.remote ?? {})
+                                while (keys.includes(remoteKey)) {
+                                    remoteKey = `${mk}${i++}`
+                                }
+                                if (!newRepo.remote)
+                                    newRepo.remote = {}
+                                newRepo.remote[remoteKey] = { url: url }
+                                // console.log("🚀 ~ findRepos ~ key:", key)
                             }
-                            if (!newRepo.remote)
-                                newRepo.remote = {}
-                            newRepo.remote[remoteKey] = { url: url }
-                            // console.log("🚀 ~ findRepos ~ key:", key)
-                        }
-                    })
-
-                    ctx.db.data.repos[key] = newRepo;
+                        })
+                        ctx.db.data.repos[key] = newRepo;
+                    }
+                    else
+                        ctx.db.data.repos[key] = currentRepo;
                     // { ...ctx.db.data.repos[key], "__processorName": p.name, ...repo }; //对象扩展仅仅支持浅表复制，无法深层拷贝
                     break; // 只允许一个处理器处理当前库
                 }

@@ -4352,6 +4352,20 @@
           "C:\\AppData\\code\\ai\\deepseek-lora-medical"
         ]
       }
+    },
+    "frontend\\vue3-learn-2025": {
+      "__processorName": ".git",
+      "name": "vue3-learn-2025.git",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:frontendniubility/vue3-learn-2025.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\vue3-learn-2025"
+        ]
+      }
     }
   }
 }

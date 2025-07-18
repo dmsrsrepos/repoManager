@@ -12,6 +12,8 @@ async function restoreRepo(context: Context) {
 
     if (context.db.data.repos)
         return Object.entries(context.db.data.repos).map(async ([relativePath, repo], idx, data) => {
+            if (!repo)
+                return false
             relativePath = getClassifiedPath(relativePath)
             let ctx = extend({}, context, { rootDirFullPath: context.rootDirFullPath, curDirFullPath: path.join(context.rootDirFullPath, relativePath) });
             let p = factory.find(async (p, _idx, _all) => await p.shouldRestore(ctx, repo));
@@ -24,6 +26,7 @@ async function restoreRepo(context: Context) {
                     return await p.restoreRepo(ctx, repo)
                 }
             }
+            return false
         })
 }
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {

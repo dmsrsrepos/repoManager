@@ -2,7 +2,7 @@
 import { Low } from 'lowdb';
 import * as semver from 'semver';
 
-export type Repos = Record<string, Repo>
+export type Repos = Record<string, Repo | undefined>
 
 export type Proccessor = {
     name: string;
