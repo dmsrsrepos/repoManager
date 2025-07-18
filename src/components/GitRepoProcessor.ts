@@ -43,7 +43,7 @@ function fixSectionName(str: string) {
     });
 }
 
-function readGitConfig(configPath: PathLike, unknownName) {
+function readGitConfig(configPath: PathLike, folderName) {
     // 读取.git/config文件
     let configContent = ''
     let gitConfig: Repo = {} as any;
@@ -53,11 +53,7 @@ function readGitConfig(configPath: PathLike, unknownName) {
         // 解析ini内容为对象
         gitConfig = ini.parse(fixSectionName(configContent)) as any;
 
-        gitConfig.name = (
-            gitConfig.remote?.origin?.url ||
-            gitConfig.remote?.upstream?.url ||
-            (gitConfig.remote ? Object.values(gitConfig.remote).find(v => v.url)?.url : unknownName)
-        )?.split('/')?.pop() || unknownName;
+        gitConfig.name = folderName;
         // if (gitConfig.name == unknownName) {
         //     console.error('git config would be wrong!')
         //     console.error(' ', 'file path:')
@@ -84,7 +80,7 @@ function readGitConfig(configPath: PathLike, unknownName) {
         console.error('error on reading:', configPath, 'content:', configContent, 'error:', err.message, ',', err.stack)
 
         return {
-            name: unknownName,
+            name: folderName,
             desc: `error:${err.message}.${err.stack}. file:${configPath}. content:${configContent}. gitConfig: ${JSON.stringify(gitConfig)}`
         }
     }

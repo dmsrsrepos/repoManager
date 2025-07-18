@@ -9,39 +9,41 @@ async function restoreRepo(_ctx: Context) {
     const repos = _ctx.db.data.repos
     if (repos) {
         Object.entries(repos)
-            .map<[string, Repo]>(([relativePath, gitConfig], idx, data) => {
-                const ret = {} as Repo
-                ret.__processorName = gitConfig.__processorName
-                ret.name = gitConfig.name
-                ret.remote = gitConfig.remote
-                ret.submodule = gitConfig.submodule
-                if (ret.remote) {
-                    Object.entries(ret.remote).forEach(([key, value]) => {
-                        if (ret.remote)
-                            ret.remote[key] = { url: value.url }
-                    })
+            .map(([relativePath, gitConfig], idx, data) => {
+                if (gitConfig) {
+                    const ret = {} as Repo
+                    ret.__processorName = gitConfig.__processorName
+                    ret.name = gitConfig.name
+                    ret.remote = gitConfig.remote
+                    ret.submodule = gitConfig.submodule
+                    if (ret.remote) {
+                        Object.entries(ret.remote).forEach(([key, value]) => {
+                            if (ret.remote)
+                                ret.remote[key] = { url: value.url }
+                        })
+                    }
+                    ret.desc = gitConfig.desc
+
+                    ret.fromPaths = gitConfig.fromPaths
+                    if (ret.fromPaths) {
+                        Object.entries(ret.fromPaths).forEach(([machine, paths]) => {
+                            //1
+                            ret.fromPaths![machine] = paths.filter(v => !v.startsWith('C:\\AppData\\test\\'))
+                            if (paths.length > 1) {
+                                delete ret.fromPaths![machine]
+                            }
+                        })
+                    }
+
+                    delete ret['originalPaths']
+
+                    delete repos[relativePath]
+
+                    relativePath = getClassifiedPath(relativePath)
+                    if (_ctx.db.data.repos)
+                        _ctx.db.data.repos[relativePath] = ret;
                 }
-                ret.desc = gitConfig.desc
-
-                ret.fromPaths = gitConfig.fromPaths
-                if (ret.fromPaths) {
-                    Object.entries(ret.fromPaths).forEach(([machine, paths]) => {
-                        //1
-                        ret.fromPaths![machine] = paths.filter(v => !v.startsWith('C:\\AppData\\test\\'))
-                        if (paths.length > 1) {
-                            delete ret.fromPaths![machine]
-                        }
-                    })
-                }
-
-                delete ret['originalPaths']
-
-                delete repos[relativePath]
-
-                relativePath = getClassifiedPath(relativePath)
-                if (_ctx.db.data.repos)
-                    _ctx.db.data.repos[relativePath] = ret;
-                return [relativePath, ret];
+                return true
             })
         await _ctx.db.write()
     }
