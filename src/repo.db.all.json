@@ -9,10 +9,6 @@
         }
       }
     },
-    "vPress\\test": {
-      "name": "unknown",
-      "desc": "error:{}"
-    },
     "vPress\\vitepress-blog-pure": {
       "__processorName": ".git",
       "name": "vitepress-blog-pure",
@@ -2641,7 +2637,7 @@
         ]
       }
     },
-    "vPress\\test\\cnjimbo.github.io": {
+    "vPress\\cnjimbo.github.io": {
       "__processorName": ".git",
       "name": "cnjimbo.github.io",
       "remote": {
