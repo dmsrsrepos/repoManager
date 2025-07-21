@@ -15,7 +15,7 @@
     },
     "vPress\\vitepress-blog-pure": {
       "__processorName": ".git",
-      "name": "vitepress-blog-pure.git",
+      "name": "vitepress-blog-pure",
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vitepress-blog-pure.git"
@@ -4032,7 +4032,7 @@
     },
     "frontend\\modify-source-webpack-plugin": {
       "__processorName": ".git",
-      "name": "modify-source-webpack-plugin.git",
+      "name": "modify-source-webpack-plugin",
       "remote": {
         "origin": {
           "url": "https://github.com/artemirq/modify-source-webpack-plugin.git"
@@ -4066,7 +4066,7 @@
     },
     "net\\abp": {
       "__processorName": ".git",
-      "name": "abp.git",
+      "name": "abp",
       "remote": {
         "origin": {
           "url": "https://github.com/abpframework/abp.git"
@@ -4080,7 +4080,7 @@
     },
     "net\\abp-samples": {
       "__processorName": ".git",
-      "name": "abp-samples.git",
+      "name": "abp-samples",
       "remote": {
         "origin": {
           "url": "https://github.com/abpframework/abp-samples.git"
@@ -4094,7 +4094,7 @@
     },
     "net\\Admin.NET": {
       "__processorName": ".git",
-      "name": "Admin.NET.git",
+      "name": "Admin.NET",
       "remote": {
         "origin": {
           "url": "https://gitee.com/zuohuaijun/Admin.NET.git"
@@ -4111,7 +4111,7 @@
     },
     "net\\adnc": {
       "__processorName": ".git",
-      "name": "adnc.git",
+      "name": "adnc",
       "remote": {
         "origin": {
           "url": "https://github.com/AlphaYu/adnc.git"
@@ -4125,7 +4125,7 @@
     },
     "net\\AspectCore-Framework": {
       "__processorName": ".git",
-      "name": "AspectCore-Framework.git",
+      "name": "AspectCore-Framework",
       "remote": {
         "origin": {
           "url": "https://github.com/dotnetcore/AspectCore-Framework.git"
@@ -4139,7 +4139,7 @@
     },
     "net\\aspnetcore-modular-monolith": {
       "__processorName": ".git",
-      "name": "aspnetcore-modular-monolith.git",
+      "name": "aspnetcore-modular-monolith",
       "remote": {
         "origin": {
           "url": "https://github.com/thinktecture-labs/aspnetcore-modular-monolith.git"
@@ -4153,7 +4153,7 @@
     },
     "net\\AuditLogging": {
       "__processorName": ".git",
-      "name": "AuditLogging.git",
+      "name": "AuditLogging",
       "remote": {
         "origin": {
           "url": "git@github.com:skoruba/AuditLogging.git"
@@ -4167,7 +4167,7 @@
     },
     "net\\Blazor.Console": {
       "__processorName": ".git",
-      "name": "Blazor.Console.git",
+      "name": "Blazor.Console",
       "remote": {
         "origin": {
           "url": "https://github.com/ardacetinkaya/Blazor.Console.git"
@@ -4181,7 +4181,7 @@
     },
     "net\\EventBus\\CAP": {
       "__processorName": ".git",
-      "name": "CAP.git",
+      "name": "CAP",
       "remote": {
         "origin": {
           "url": "https://github.com/dotnetcore/CAP.git"
@@ -4195,7 +4195,7 @@
     },
     "net\\EventBus\\MediatR": {
       "__processorName": ".git",
-      "name": "MediatR.git",
+      "name": "MediatR",
       "remote": {
         "origin": {
           "url": "https://github.com/jbogard/MediatR.git"
@@ -4209,7 +4209,7 @@
     },
     "net\\EventBus\\RedBus": {
       "__processorName": ".git",
-      "name": "RedBus.git",
+      "name": "RedBus",
       "remote": {
         "origin1": {
           "url": "https://github.com/mxjones/RedBus.git"
@@ -4226,7 +4226,7 @@
     },
     "net\\Furion": {
       "__processorName": ".git",
-      "name": "Furion.git",
+      "name": "Furion",
       "remote": {
         "origin": {
           "url": "https://gitee.com/dotnetchina/Furion.git"
@@ -4240,7 +4240,7 @@
     },
     "net\\magic-net": {
       "__processorName": ".git",
-      "name": "magic-net.git",
+      "name": "magic-net",
       "remote": {
         "origin": {
           "url": "https://gitee.com/zhengguojing/magic-net.git"
@@ -4254,7 +4254,7 @@
     },
     "net\\MediatR": {
       "__processorName": ".git",
-      "name": "MediatR.git",
+      "name": "MediatR",
       "remote": {
         "origin": {
           "url": "https://github.com/cnjimbo/MediatR.git"
@@ -4271,7 +4271,7 @@
     },
     "net\\modular-monolith-aspnet-core-sample": {
       "__processorName": ".git",
-      "name": "modular-monolith-aspnet-core-sample.git",
+      "name": "modular-monolith-aspnet-core-sample",
       "remote": {
         "origin": {
           "url": "https://github.com/iammukeshm/modular-monolith-aspnet-core-sample.git"
@@ -4285,7 +4285,7 @@
     },
     "net\\module-shop": {
       "__processorName": ".git",
-      "name": "module-shop.git",
+      "name": "module-shop",
       "remote": {
         "origin": {
           "url": "https://github.com/trueai-org/module-shop.git"
@@ -4299,7 +4299,7 @@
     },
     "net\\Nerdbank.GitVersioning": {
       "__processorName": ".git",
-      "name": "Nerdbank.GitVersioning.git",
+      "name": "Nerdbank.GitVersioning",
       "remote": {
         "origin": {
           "url": "https://github.com/dotnet/Nerdbank.GitVersioning.git"
@@ -4313,7 +4313,7 @@
     },
     "net\\NetCoreMicroservicesSample": {
       "__processorName": ".git",
-      "name": "NetCoreMicroservicesSample.git",
+      "name": "NetCoreMicroservicesSample",
       "remote": {
         "origin": {
           "url": "https://github.com/madslundt/NetCoreMicroservicesSample.git"
@@ -4327,7 +4327,7 @@
     },
     "net\\nopCommerce": {
       "__processorName": ".git",
-      "name": "nopCommerce.git",
+      "name": "nopCommerce",
       "remote": {
         "origin": {
           "url": "https://github.com/nopSolutions/nopCommerce.git"
@@ -4341,7 +4341,7 @@
     },
     "ai\\deepseek-lora-medical": {
       "__processorName": ".git",
-      "name": "deepseek-lora-medical.git",
+      "name": "deepseek-lora-medical",
       "remote": {
         "origin": {
           "url": "https://github.com/cnjimbo/deepseek-lora-medical.git"
@@ -4355,7 +4355,7 @@
     },
     "frontend\\vue3-learn-2025": {
       "__processorName": ".git",
-      "name": "vue3-learn-2025.git",
+      "name": "vue3-learn-2025",
       "remote": {
         "origin": {
           "url": "git@github.com:frontendniubility/vue3-learn-2025.git"
