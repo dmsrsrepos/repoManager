@@ -314,26 +314,6 @@
         ]
       }
     },
-    "vPress\\script-buttons": {
-      "__processorName": ".git",
-      "name": "script-buttons",
-      "remote": {
-        "origin": {
-          "url": "https://github.com/frontendniubility/script-buttons.git"
-        },
-        "upstream": {
-          "url": "https://github.com/jwaterfall/script-buttons.git"
-        }
-      },
-      "fromPaths": {
-        "PC15K": [
-          "G:\\code\\vPress\\script-buttons"
-        ],
-        "APCAPoykidLPMOO": [
-          "C:\\AppData\\code\\vPress\\script-buttons"
-        ]
-      }
-    },
     "vPress\\sugar-blog": {
       "__processorName": ".git",
       "name": "sugar-blog",
