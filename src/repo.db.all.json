@@ -2820,6 +2820,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/npm-scripts-auto-node.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/shilim-developer/npm-scripts-auto-node.git"
         }
       },
       "fromPaths": {
@@ -2882,6 +2885,9 @@
         },
         "origin1": {
           "url": "https://github.com/frontendniubility/script-buttons.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/jwaterfall/script-buttons.git"
         }
       },
       "fromPaths": {
@@ -2919,6 +2925,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vscode-commit-message-editor.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/bendera/vscode-commit-message-editor.git"
         }
       },
       "fromPaths": {
@@ -2936,6 +2945,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vscode-conventional-commits.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/vivaxy/vscode-conventional-commits.git"
         }
       },
       "fromPaths": {
@@ -3040,6 +3052,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/vscode-npm-scripts.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/Duroktar/vscode-npm-scripts.git"
         }
       },
       "fromPaths": {
@@ -3784,6 +3799,9 @@
       "remote": {
         "origin": {
           "url": "https://github.com/open-dmsrs/pnpm-vscode-helper.git"
+        },
+        "PC15K0": {
+          "url": "https://github.com/LinbuduLab/pnpm-vscode-helper.git"
         }
       },
       "fromPaths": {
