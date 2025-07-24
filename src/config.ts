@@ -33,7 +33,7 @@ export const CATEGORYPATTERNS: Record<string, Pattern> = {
     }
 }
 
-export const RestoringCategories: string[] = ['vsextension']//Object.keys(CATEGORYPATTERNS)
+export const RestoringCategories: string[] = ['vPress']//Object.keys(CATEGORYPATTERNS)
 
 export const defaultData: Db = {
     __version: '0.0.1',
