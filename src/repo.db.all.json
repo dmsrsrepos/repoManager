@@ -2,11 +2,17 @@
   "__version": "1.0.0",
   "repos": {
     "vPress\\blog": {
-      "name": "blog.git",
+      "name": "blog",
       "remote": {
         "origin": {
           "url": "https://github.com/frontendniubility/blog.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\blog"
+        ]
       }
     },
     "vPress\\vitepress-blog-pure": {
@@ -19,6 +25,9 @@
       },
       "fromPaths": {
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vitepress-blog-pure"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vitepress-blog-pure"
         ]
       }
@@ -142,6 +151,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\blog-theme"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\blog-theme"
         ]
       }
     },
@@ -162,6 +174,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\charles7c.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\charles7c.github.io"
         ]
       }
     },
@@ -178,6 +193,9 @@
           "G:\\code\\vPress\\codeteenager.github.io"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\codeteenager.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\codeteenager.github.io"
         ]
       }
@@ -219,6 +237,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\liuly0322.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\liuly0322.github.io"
         ]
       }
     },
@@ -252,6 +273,9 @@
           "G:\\code\\vPress\\mtgjson-website"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\mtgjson-website"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\mtgjson-website"
         ]
       }
@@ -289,6 +313,9 @@
           "G:\\code\\vPress\\qisi007.github.io"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\qisi007.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\qisi007.github.io"
         ]
       }
@@ -330,6 +357,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\sugar-blog"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\sugar-blog"
         ]
       }
     },
@@ -370,6 +400,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-theme-reco"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-theme-reco"
         ]
       }
     },
@@ -390,6 +423,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-theme-sakura"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-theme-sakura"
         ]
       }
     },
@@ -409,6 +445,9 @@
           "G:\\code\\vPress\\vitepress-theme-vuetom"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vitepress-theme-vuetom"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vitepress-theme-vuetom"
         ]
       }
@@ -464,6 +503,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\website"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\website"
         ]
       }
     },
@@ -480,6 +522,9 @@
           "G:\\code\\vPress\\yuque-vitepress"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\yuque-vitepress"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\yuque-vitepress"
         ]
       }
@@ -501,6 +546,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\ZiuChen.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\ZiuChen.github.io"
         ]
       }
     },
@@ -517,6 +565,9 @@
           "G:\\code\\ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\ai\\CNN-BiLSTM-Attention-Time-Series-Prediction_Keras"
         ]
       }
@@ -535,43 +586,73 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\ai\\keract"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\keract"
         ]
       }
     },
     "ai\\Data-Analysis": {
-      "name": "Data-Analysis.git",
+      "name": "Data-Analysis",
       "remote": {
         "origin": {
           "url": "https://github.com/ainiubility/Data-Analysis.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\Data-Analysis"
+        ]
       }
     },
     "comm\\Bonobo.Git.Server": {
-      "name": "Bonobo.Git.Server.git",
+      "name": "Bonobo.Git.Server",
       "remote": {
         "origin": {
           "url": "http://git.tsharp.org/Bonobo.Git.Server.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\Bonobo.Git.Server"
+        ]
       }
     },
     "comm\\DotNetCorePlugins": {
-      "name": "DotNetCorePlugins.git",
+      "name": "DotNetCorePlugins",
       "remote": {
         "origin": {
           "url": "https://gitee.com/shelter/DotNetCorePlugins.git"
+        },
+        "APCAPx9Y1rTzjeE0": {
+          "url": "https://gitee.com/code-shelter/DotNetCorePlugins.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\DotNetCorePlugins"
+        ]
       }
     },
     "comm\\Ext-EDF-Web-MVC": {
-      "name": "Ext-EDF-Web-MVC.git",
+      "name": "Ext-EDF-Web-MVC",
       "remote": {
         "origin": {
           "url": "http://code.tsharp.org/Ext-EDF-Web-MVC.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\Ext-EDF-Web-MVC"
+        ]
       }
     },
     "comm\\FastExpressionCompiler": {
-      "name": "FastExpressionCompiler.git",
+      "name": "FastExpressionCompiler",
       "remote": {
         "origin": {
           "url": "git@github.com:niubilitynetcore/FastExpressionCompiler.git"
@@ -579,14 +660,26 @@
       },
       "submodule": {
         "active": "."
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\FastExpressionCompiler"
+        ]
       }
     },
     "comm\\TSharp": {
-      "name": "TSharp.git",
+      "name": "TSharp",
       "remote": {
         "origin": {
           "url": "https://github.com/niubilityappbox/TSharp.git"
         }
+      },
+      "__processorName": ".git",
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\TSharp"
+        ]
       }
     },
     "comm\\repoManager": {
@@ -608,6 +701,9 @@
           "G:\\code\\comm\\repoManager"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\comm\\repoManager"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\repoManager"
         ]
       }
@@ -699,6 +795,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\ai\\face-api-demo-vue"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\face-api-demo-vue"
         ]
       }
     },
@@ -729,6 +828,9 @@
           "G:\\code\\ai\\ReactComputerVisionTemplate"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\ai\\ReactComputerVisionTemplate"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\ai\\ReactComputerVisionTemplate"
         ]
       }
@@ -775,6 +877,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\ai\\tensorflow-handbook-javascript"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\tensorflow-handbook-javascript"
         ]
       }
     },
@@ -803,6 +908,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\ai\\tensorflow2_tutorials"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\tensorflow2_tutorials"
         ]
       }
     },
@@ -837,6 +945,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\ai\\tfjs_quick_start_course_2020"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\tfjs_quick_start_course_2020"
         ]
       }
     },
@@ -851,6 +962,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\ai\\Time-Series-Analysis-Tutorial"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\Time-Series-Analysis-Tutorial"
         ]
       }
     },
@@ -868,6 +982,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\ai\\time-series-forecasting-tensorflowjs"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\time-series-forecasting-tensorflowjs"
         ]
       }
     },
@@ -884,6 +1001,9 @@
           "G:\\code\\frontend\\best-resume-ever"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\best-resume-ever"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\frontend\\best-resume-ever"
         ]
       }
@@ -961,6 +1081,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\isotope"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\isotope"
         ]
       }
     },
@@ -978,6 +1101,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\Isotope-JQuery-Plugin-Filtering-Sorting-Layouts"
         ]
       }
     },
@@ -992,6 +1118,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\learn-vue3-wechat"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\learn-vue3-wechat"
         ]
       }
     },
@@ -1022,6 +1151,9 @@
           "G:\\code\\frontend\\masonry-packery-isotope-demo"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\masonry-packery-isotope-demo"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\frontend\\masonry-packery-isotope-demo"
         ]
       }
@@ -1074,6 +1206,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\unoCss-learn"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\unoCss-learn"
         ]
       }
     },
@@ -1103,6 +1238,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\userscripts"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\userscripts"
         ]
       }
     },
@@ -1126,7 +1264,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vite-plugin-monkey"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vite-plugin-monkey"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "frontend\\vite-plugin-userscript": {
@@ -1143,7 +1287,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vite-plugin-userscript"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vite-plugin-userscript"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "frontend\\vite-templates": {
@@ -1163,7 +1313,48 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vite-templates"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vite-templates"
         ]
+      },
+      "submodule": {
+        "js_geeker-admin": {
+          "active": true,
+          "url": "https://gitee.com/HalseySpicy/Geeker-Admin.git"
+        },
+        "vue-admin-template": {
+          "url": "https://gitee.com/panjiachen/vue-admin-template.git",
+          "active": true
+        },
+        "js_react-admin-template": {
+          "active": true,
+          "url": "https://gitee.com/asdadsaf/react-admin-template.git"
+        },
+        "jpure-admin-thin": {
+          "active": true,
+          "url": "https://gitee.com/yiming_chang/pure-admin-thin.git"
+        },
+        "vite-plugin-cdn-import-async": {
+          "active": true,
+          "url": "https://github.com/VaJoy/vite-plugin-cdn-import-async.git"
+        },
+        "vite_Vue3-TDesign-admin": {
+          "active": true,
+          "url": "https://github.com/WaliAblikim/Vue3-TDesign-admin.git"
+        },
+        "vite_admin-boilerplate": {
+          "active": true,
+          "url": "https://github.com/hiliyongke/vue3-admin-boilerplate.git"
+        },
+        "vue-pure-admin": {
+          "active": true,
+          "url": "https://gitee.com/yiming_chang/vue-pure-admin.git"
+        },
+        "vue3-vite-ts": {
+          "active": true,
+          "url": "https://gitee.com/spiketyke/vue3_vite_ts.git"
+        }
       }
     },
     "frontend\\vite-userscript-plugin": {
@@ -1180,7 +1371,16 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vite-userscript-plugin"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vite-userscript-plugin"
         ]
+      },
+      "submodule": {
+        "active": ".",
+        "examples/reatom": {
+          "url": "https://github.com/crashmax-dev/vite-userscript-template"
+        }
       }
     },
     "frontend\\vitelearn-allin": {
@@ -1196,6 +1396,9 @@
           "G:\\code\\frontend\\vitelearn-allin"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\vitelearn-allin"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\frontend\\vitelearn-allin"
         ]
       }
@@ -1234,6 +1437,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vscode-run-scripts-configurations"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vscode-run-scripts-configurations"
         ]
       }
     },
@@ -1254,6 +1460,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vue-modern-resume"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vue-modern-resume"
         ]
       }
     },
@@ -1270,6 +1479,9 @@
           "G:\\code\\frontend\\vue-resume"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\vue-resume"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\frontend\\vue-resume"
         ]
       }
@@ -1302,6 +1514,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\vuetify-admin"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\vuetify-admin"
         ]
       }
     },
@@ -1322,6 +1537,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\Vuetify-Resume"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\Vuetify-Resume"
         ]
       }
     },
@@ -1338,6 +1556,9 @@
           "G:\\code\\learn\\abp"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\abp"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\learn\\abp"
         ]
       }
@@ -1375,6 +1596,9 @@
           "G:\\code\\learn\\Admin.NET"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\Admin.NET"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\learn\\Admin.NET"
         ]
       }
@@ -1444,7 +1668,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\AuditLogging"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\AuditLogging"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "learn\\Blazor.Console": {
@@ -1545,6 +1775,9 @@
           "G:\\code\\learn\\Elements"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\Elements"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\learn\\Elements"
         ]
       }
@@ -1759,6 +1992,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\module-shop"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\module-shop"
         ]
       }
     },
@@ -1827,6 +2063,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\OpenAuth.Net"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\OpenAuth.Net"
         ]
       }
     },
@@ -1874,6 +2113,9 @@
           "G:\\code\\learn\\osharp-vben-admin"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\osharp-vben-admin"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\learn\\osharp-vben-admin"
         ]
       }
@@ -1923,6 +2165,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\Serenity"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\Serenity"
         ]
       }
     },
@@ -1939,6 +2184,9 @@
           "G:\\code\\learn\\Smartstore"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\Smartstore"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\learn\\Smartstore"
         ]
       }
@@ -2067,6 +2315,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\ZRAdmin-vue"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\ZRAdmin-vue"
         ]
       }
     },
@@ -2084,7 +2335,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\learn\\ZrAdminNetCore"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\learn\\ZrAdminNetCore"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "net\\awesome-aop": {
@@ -2439,6 +2696,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\99_ruanyf-weekly"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\99_ruanyf-weekly"
         ]
       }
     },
@@ -2524,6 +2784,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\flypeng-tool"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\flypeng-tool"
         ]
       }
     },
@@ -2540,6 +2803,9 @@
           "G:\\code\\vPress\\hdu-cs-wiki"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\hdu-cs-wiki"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\hdu-cs-wiki"
         ]
       }
@@ -2558,6 +2824,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\integrations"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\integrations"
         ]
       }
     },
@@ -2575,6 +2844,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\nolebase"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\nolebase"
         ]
       }
     },
@@ -2589,7 +2861,13 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\preview"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\preview"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "vPress\\radash": {
@@ -2634,6 +2912,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\strongQ.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\strongQ.github.io"
         ]
       }
     },
@@ -2643,11 +2924,17 @@
       "remote": {
         "origin": {
           "url": "git@github.com:cnjimbo/cnjimbo.github.io.git"
+        },
+        "APCAPx9Y1rTzjeE0": {
+          "url": "git@github.com:ripplejourney/ripplejourney.github.io.git"
         }
       },
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\test\\cnjimbo.github.io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\cnjimbo.github.io"
         ]
       }
     },
@@ -2664,6 +2951,9 @@
           "G:\\code\\vPress\\vite-plugin-vitepress-auto-sidebar"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vite-plugin-vitepress-auto-sidebar"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vite-plugin-vitepress-auto-sidebar"
         ]
       }
@@ -2682,6 +2972,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-blog-starter"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-blog-starter"
         ]
       }
     },
@@ -2698,6 +2991,9 @@
           "G:\\code\\vPress\\vitepress-blogmate"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vitepress-blogmate"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vitepress-blogmate"
         ]
       }
@@ -2716,6 +3012,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-doc"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-doc"
         ]
       }
     },
@@ -2732,6 +3031,9 @@
           "G:\\code\\vPress\\vitepress-docs"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vitepress-docs"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vitepress-docs"
         ]
       }
@@ -2750,6 +3052,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-export-pdf"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-export-pdf"
         ]
       }
     },
@@ -2766,6 +3071,9 @@
           "G:\\code\\vPress\\vitepress-fun"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\vitepress-fun"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\vitepress-fun"
         ]
       }
@@ -2869,6 +3177,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\reactive-meta-gen"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\reactive-meta-gen"
         ]
       }
     },
@@ -2891,6 +3202,9 @@
           "G:\\code\\vsextension\\script-buttons"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\script-buttons"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\script-buttons"
         ]
       }
@@ -3002,6 +3316,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vsextension\\vscode-extension-samples"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-extension-samples"
         ]
       }
     },
@@ -3021,6 +3338,9 @@
           "G:\\code\\vsextension\\vscode-file-nesting-config"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-file-nesting-config"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\vscode-file-nesting-config"
         ]
       }
@@ -3082,6 +3402,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\vscode-project-config-updater"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-project-config-updater"
         ]
       }
     },
@@ -3113,6 +3436,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\wechat\\TOGO_School_Miniprograme"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\wechat\\TOGO_School_Miniprograme"
         ]
       }
     },
@@ -3166,6 +3492,9 @@
           "G:\\code\\ai\\ailearn"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\ai\\ailearn"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\ai\\ailearn"
         ]
       }
@@ -3458,6 +3787,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\ai\\tensorflow2_tutorials_chinese"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\tensorflow2_tutorials_chinese"
         ]
       }
     },
@@ -3474,6 +3806,9 @@
           "G:\\code\\comm\\awesome-aop"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\comm\\awesome-aop"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\awesome-aop"
         ]
       }
@@ -3506,6 +3841,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\certificate-toolbox"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\certificate-toolbox"
         ]
       }
     },
@@ -3529,7 +3867,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\DbContextScope"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\DbContextScope"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "comm\\dependency-update-action": {
@@ -3545,6 +3889,9 @@
           "G:\\code\\comm\\dependency-update-action"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\comm\\dependency-update-action"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\dependency-update-action"
         ]
       }
@@ -3563,7 +3910,13 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\DisruptiveSoftware.Cryptography.Tools1"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\DisruptiveSoftware.Cryptography.Tools1"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "comm\\dmsrs": {
@@ -3579,6 +3932,9 @@
           "G:\\code\\comm\\dmsrs"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\comm\\dmsrs"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\dmsrs"
         ]
       }
@@ -3600,6 +3956,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\DmsrsAwesome"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\DmsrsAwesome"
         ]
       }
     },
@@ -3614,6 +3973,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\comm\\EmitMapper"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\EmitMapper"
         ]
       }
     },
@@ -3631,6 +3993,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\ETL"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\ETL"
         ]
       }
     },
@@ -3647,6 +4012,9 @@
           "G:\\code\\comm\\IniFile"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\comm\\IniFile"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\IniFile"
         ]
       }
@@ -3668,6 +4036,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\router"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\router"
         ]
       }
     },
@@ -3688,6 +4059,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\comm\\vba"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\vba"
         ]
       }
     },
@@ -3702,6 +4076,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\lodash"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\lodash"
         ]
       }
     },
@@ -3716,6 +4093,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\frontend\\radash"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\frontend\\radash"
         ]
       }
     },
@@ -3730,6 +4110,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\experimentation"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\experimentation"
         ]
       }
     },
@@ -3744,6 +4127,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\modern-typescript-monorepo-example"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\modern-typescript-monorepo-example"
         ]
       }
     },
@@ -3758,6 +4144,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\radash-study"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\radash-study"
         ]
       }
     },
@@ -3772,6 +4161,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\unocss"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\unocss"
         ]
       }
     },
@@ -3786,6 +4178,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\vitepress-theme-open17"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-theme-open17"
         ]
       }
     },
@@ -3806,6 +4201,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\pnpm-vscode-helper"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\pnpm-vscode-helper"
         ]
       }
     },
@@ -3822,6 +4220,9 @@
           "G:\\code\\vsextension\\reactive-vscode"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\reactive-vscode"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\reactive-vscode"
         ]
       }
@@ -3840,6 +4241,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\starter-vscode"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\starter-vscode"
         ]
       }
     },
@@ -3856,6 +4260,9 @@
           "G:\\code\\vsextension\\taze"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\taze"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\taze"
         ]
       }
@@ -3877,6 +4284,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\vscode-babel-compile-on-save"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-babel-compile-on-save"
         ]
       }
     },
@@ -3893,6 +4303,9 @@
           "G:\\code\\vsextension\\vscode-hide-comments"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-hide-comments"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\vscode-hide-comments"
         ]
       }
@@ -3911,6 +4324,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\vscode-iconify"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-iconify"
         ]
       }
     },
@@ -3927,6 +4343,9 @@
           "G:\\code\\vsextension\\vscode-pnpm-catalog-lens"
         ],
         "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\vscode-pnpm-catalog-lens"
+        ],
+        "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vsextension\\vscode-pnpm-catalog-lens"
         ]
       }
@@ -3945,6 +4364,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\vscode-runonsave"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-runonsave"
         ]
       }
     },
@@ -3962,6 +4384,9 @@
         ],
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vsextension\\vscode-smart-clicks"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vsextension\\vscode-smart-clicks"
         ]
       }
     },
@@ -3976,6 +4401,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\wechat\\CoreShop"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\wechat\\CoreShop"
         ]
       }
     },
@@ -3990,6 +4418,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\wechat\\hioshop-miniprogram"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\wechat\\hioshop-miniprogram"
         ]
       }
     },
@@ -4021,7 +4452,13 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\ai\\keras-io"
+        ],
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\ai\\keras-io"
         ]
+      },
+      "submodule": {
+        "active": "."
       }
     },
     "frontend\\modify-source-webpack-plugin": {
@@ -4358,6 +4795,48 @@
       "fromPaths": {
         "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\frontend\\vue3-learn-2025"
+        ]
+      }
+    },
+    "comm\\cnjimbo": {
+      "__processorName": ".git",
+      "name": "cnjimbo",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:calmripple/calmripple.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\cnjimbo"
+        ]
+      }
+    },
+    "comm\\git-awesome": {
+      "__processorName": ".git",
+      "name": "git-awesome",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/cnjimbo/git-awesome.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\git-awesome"
+        ]
+      }
+    },
+    "comm\\my-repo": {
+      "__processorName": ".git",
+      "name": "my-repo",
+      "remote": {
+        "origin": {
+          "url": "https://gitee.com/cnjimbo/vite-templates.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\comm\\my-repo"
         ]
       }
     }
