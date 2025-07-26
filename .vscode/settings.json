@@ -13,5 +13,10 @@
   "code-runner.clearPreviousOutput": true,
   "code-runner.runInTerminal": true,
   "gitlens.currentLine.enabled": false,
-  "gitlens.currentLine.pullRequests.enabled": false
+  "gitlens.currentLine.pullRequests.enabled": false,
+  "python.createEnvironment.contentButton": "show",
+  "python.defaultInterpreterPath": "",
+  "python.languageServer": "Pylance",
+  "python.missingPackage.severity": "Warning",
+  "python.REPL.enableREPLSmartSend": false
 }
