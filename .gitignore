@@ -4,3 +4,4 @@ cache
 **/*.json.tmp
 .env 
 **/github_repos_*.json
+.env.*
