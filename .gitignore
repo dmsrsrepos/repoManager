@@ -5,3 +5,4 @@ cache
 .env 
 **/github_repos_*.json
 .env.*
+__pycache__

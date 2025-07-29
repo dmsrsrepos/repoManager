@@ -18,5 +18,6 @@
   "python.defaultInterpreterPath": "",
   "python.languageServer": "Pylance",
   "python.missingPackage.severity": "Warning",
-  "python.REPL.enableREPLSmartSend": false
+  "python.REPL.enableREPLSmartSend": false,
+  "editor.inlayHints.enabled": "off"
 }
