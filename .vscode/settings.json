@@ -19,5 +19,7 @@
   "python.languageServer": "Pylance",
   "python.missingPackage.severity": "Warning",
   "python.REPL.enableREPLSmartSend": false,
-  "editor.inlayHints.enabled": "off"
+  "editor.inlayHints.enabled": "off",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 240,
 }

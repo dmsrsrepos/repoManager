@@ -113,7 +113,7 @@ def bundle_repo(repo_name, clone_url, output_dir_path):
                 )
             except subprocess.CalledProcessError as e:
                 print(
-                    f"  解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                    f"  解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)} iiiiiiiiiiiiiiiiiii iiiiii iiiiiiiiiii"
                 )
                 return False
             except subprocess.TimeoutExpired:
