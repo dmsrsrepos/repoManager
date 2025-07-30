@@ -45,7 +45,9 @@ API_TIMEOUT = int(os.getenv("GITHUB_API_TIMEOUT", "30"))
 # 生成带有日期的文件名
 current_date = datetime.now().strftime("%Y%m%d")
 script_dir = os.path.normpath(os.path.dirname(os.path.abspath(__file__)))
-filename = os.path.normpath(os.path.join(script_dir, f"github_repos_{org}_{current_date}.json"))
+filename = os.path.normpath(
+    os.path.join(script_dir, f"github_repos_{org}_{current_date}.json")
+)
 # filename = f"./github_repos_{org}.json"
 
 repos = []
@@ -71,16 +73,22 @@ while True:
         if response.status_code != 200:
             print(f"Error: API request failed with status code {response.status_code}")
             if response.status_code == 403:
-                rate_limit = response.headers.get('X-RateLimit-Remaining', 'unknown')
-                reset_time = response.headers.get('X-RateLimit-Reset', 'unknown')
-                print(f"Warning: Approaching GitHub API rate limit. Remaining requests: {rate_limit}, Reset time: {reset_time}")
+                rate_limit = response.headers.get("X-RateLimit-Remaining", "unknown")
+                reset_time = response.headers.get("X-RateLimit-Reset", "unknown")
+                print(
+                    f"Warning: Approaching GitHub API rate limit. Remaining requests: {rate_limit}, Reset time: {reset_time}"
+                )
+
+            print(f"Error details:{response.text}")
             break
-            
+
         # 验证JSON响应结构
         try:
             current_repos = response.json()
             if not isinstance(current_repos, list):
-                print("Error: Invalid API response format - expected list of repositories")
+                print(
+                    "Error: Invalid API response format - expected list of repositories"
+                )
                 break
         except ValueError:
             print("Error: Failed to parse API response as JSON")
@@ -123,4 +131,4 @@ except Exception as e:
     print(f"Error saving to JSON file: {e}")
 
 
-# main(filename, OUTPUT_DIR)
+main(filename, OUTPUT_DIR)

@@ -204,7 +204,6 @@ def bundle_repo(repo_name, clone_url, output_dir_path):
             except OSError as e:
                 print(f"  删除旧bundle文件失败: {e}")
 
-        print(f"  成功创建bundle: {bundle_path}")
         return True
 
     except Exception as e:
