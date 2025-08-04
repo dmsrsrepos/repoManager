@@ -109,6 +109,7 @@ while True:
             "clone_url": repo["clone_url"],
             # "html_url": repo["html_url"],
             # "updated_at": repo["updated_at"],
+            "git_url": repo["git_url"],
         }
         for repo in current_repos
         if repo["clone_url"]
@@ -131,4 +132,4 @@ except Exception as e:
     print(f"Error saving to JSON file: {e}")
 
 
-main(filename, OUTPUT_DIR)
+# main(filename, OUTPUT_DIR)
