@@ -22,4 +22,8 @@
   "editor.inlayHints.enabled": "off",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 240,
+  "python.experiments.enabled": true,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.shellIntegration.enabled": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
 }
