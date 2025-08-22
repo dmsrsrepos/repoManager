@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from utils import validate_id, handle_api_error
 from user_info import make_api_request
+from projects_info import get_project_ids
 
 
 def fetch_repositories_info(
@@ -29,29 +30,38 @@ def fetch_repositories_info(
     return handle_api_error("INVALID_RESPONSE", Exception("API响应中未找到仓库信息"))
 
 
-def get_all_repos_info() -> List[Dict[str, Any]]:
+def get_all_repos_info(unique: bool = True) -> List[Dict[str, Any]]:
     """
     获取用户所有项目的仓库信息
+    :param unique: 是否去除重复的仓库信息，默认为True
     :return: 所有仓库信息列表
     """
-    from projects_info import get_project_ids
 
     project_ids = get_project_ids()
     print(f"项目ID列表: {project_ids}")
-    repos = []
+    all_repos = []
 
     for project_id in project_ids:
         repos = fetch_repositories_info(project_id)
-        # print(f"项目ID {project_id} 的仓库信息: {repos}")
         if isinstance(repos, list):
-            repos.extend(repos)
+            all_repos.extend(repos)
         elif isinstance(repos, dict):
-            repos.append(repos)
+            all_repos.append(repos)
 
-    return repos
+    if not unique:
+        return all_repos
+
+    seen_ids = set()
+    unique_repos = []
+    for repo in all_repos:
+        if isinstance(repo, dict) and "Id" in repo and repo["Id"] not in seen_ids:
+            seen_ids.add(repo["Id"])
+            unique_repos.append(repo)
+
+    return unique_repos
 
 
-all_repos = get_all_repos_info()
+all_repos = get_all_repos_info(False)
 org = "codingcorp"
 # 获取仓库信息
 # 生成带有日期的文件名
