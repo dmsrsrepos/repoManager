@@ -92,4 +92,4 @@ readFileToJson(codeProfile)
     return { ids, target }
   })
   // .catch(err => console.error(err))
-  .then(_ => console.log('-----------------------------', 'end', '-----------------------------  '))
+  .then(_ => console.log('-----------------------------', 'end', '-----------------------------'))

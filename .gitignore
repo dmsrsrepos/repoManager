@@ -4,4 +4,6 @@ cache
 **/*.json.tmp
 .env 
 **/github_repos_*.json
+**/coding_repos_*.json
 .env.*
+**/__pycache__
