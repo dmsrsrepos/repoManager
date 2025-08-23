@@ -1,7 +1,7 @@
 """
-GitHub仓库打包工具
+Coding仓库打包工具
 
-该模块提供了从GitHub下载、打包和管理多个代码仓库的功能。
+该模块提供了从Coding下载、打包和管理多个代码仓库的功能。
 支持从JSON配置文件读取仓库信息，克隆指定仓库，并将它们打包成单一归档文件。
 主要用于代码仓库的批量管理、备份和分发。
 """
@@ -32,9 +32,13 @@ def read_repos_from_json(json_file_path):
             if not isinstance(repo, dict):
                 print("警告: 跳过非字典格式的仓库数据")
                 continue
-            if "clone_url" in repo and "name" in repo:
-                if isinstance(repo["name"], str) and isinstance(repo["clone_url"], str):
-                    repos.append({"name": repo["name"], "clone_url": repo["clone_url"]})
+            if "DepotSshUrl" in repo and "Name" in repo:
+                if isinstance(repo["Name"], str) and isinstance(
+                    repo["DepotSshUrl"], str
+                ):
+                    repos.append(
+                        {"Name": repo["Name"], "DepotSshUrl": repo["DepotSshUrl"]}
+                    )
                 else:
                     print(f"警告: 仓库数据字段类型不正确: {repo}")
             else:
@@ -52,7 +56,7 @@ def read_repos_from_json(json_file_path):
         return []
 
 
-def bundle_repo(repo_name, clone_url, output_dir):
+def bundle_repo(repo_name, DepotSshUrl, output_dir):
     """将仓库打包成git bundle，支持增量更新"""
     print(f"正在处理仓库: {repo_name}")
 
@@ -94,7 +98,9 @@ def bundle_repo(repo_name, clone_url, output_dir):
                     timeout=300,  # 添加5分钟超时
                 )
             except subprocess.CalledProcessError as e:
-                print(f"  git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}")
+                print(
+                    f"  git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                )
                 return False
             except subprocess.TimeoutExpired:
                 print(f"  git初始化超时，已终止操作")
@@ -120,7 +126,7 @@ def bundle_repo(repo_name, clone_url, output_dir):
 
             try:
                 subprocess.run(
-                    ["git", "remote", "add", "origin", clone_url],
+                    ["git", "remote", "add", "origin", DepotSshUrl],
                     capture_output=True,
                     text=True,
                     check=True,
@@ -156,7 +162,7 @@ def bundle_repo(repo_name, clone_url, output_dir):
             print("  正在克隆仓库...")
             try:
                 clone_process = subprocess.run(
-                    ["git", "clone", "--mirror", clone_url, "."],
+                    ["git", "clone", "--mirror", DepotSshUrl, "."],
                     text=True,
                     capture_output=True,
                     check=True,
@@ -241,17 +247,15 @@ def main(json_file, output_dir):
     # 处理每个仓库
     success_count = 0
     for i, repo in enumerate(repos, 1):
-        if repo["name"] in ignore_repos:
-            print(f"\n[{i}/{len(repos)}] 忽略仓库: {repo['name']}")
+        if repo["Name"] in ignore_repos:
+            print(f"\n[{i}/{len(repos)}] 忽略仓库: {repo['Name']}")
         else:
-            print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['name']}")
-            if bundle_repo(repo["name"], repo["clone_url"], output_dir):
+            print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
+            if bundle_repo(repo["Name"], repo["DepotSshUrl"], output_dir):
                 success_count += 1
-                print(f"处理成功: {repo['name']} - 当前成功数: {success_count}")
+                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
-                print(
-                    f"处理失败: {repo['name']} - {repo['clone_url']}"
-                )
+                print(f"处理失败: {repo['Name']} - {repo['DepotSshUrl']}")
 
     print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
 
@@ -259,7 +263,7 @@ def main(json_file, output_dir):
 if __name__ == "__main__":
     # 检查命令行参数
     if len(sys.argv) < 3:
-        print("用法: python bundle_github_repos.py <json文件路径> <输出目录>")
+        print("用法: python bundle_Coding_repos.py <json文件路径> <输出目录>")
         sys.exit(1)
 
     json_file = os.path.abspath(sys.argv[1])
