@@ -161,7 +161,7 @@ def main(json_file, output_dir):
                 success_count += 1
             else:
                 print(
-                    f"\n[{i}/{len(repos)}][{success_count}] 处理失败: {repo['name']}:{repo["clone_url"]}"
+                    f"\n[{i}/{len(repos)}][{success_count}] 处理失败: {repo['name']}:{repo['clone_url']}"
                 )
 
     print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
