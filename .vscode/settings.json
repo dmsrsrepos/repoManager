@@ -24,8 +24,9 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true
+    "**/Thumbs.db": true,
+    "**/__pycache__": true
   },
   "explorerExclude.backup": {},
-  "explorer.excludeGitIgnore": true
+  "explorer.excludeGitIgnore": false
 }
