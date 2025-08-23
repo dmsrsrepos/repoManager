@@ -18,5 +18,14 @@
   "python.defaultInterpreterPath": "",
   "python.languageServer": "Pylance",
   "python.missingPackage.severity": "Warning",
-  "python.REPL.enableREPLSmartSend": false
+  "python.REPL.enableREPLSmartSend": false,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "explorerExclude.backup": {},
+  "explorer.excludeGitIgnore": true
 }
