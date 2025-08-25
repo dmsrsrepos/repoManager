@@ -252,6 +252,7 @@ def main(json_file, output_dir):
         else ["BACKUP-CHINA"]
     )
 
+    erRepos = []
     # 处理每个仓库
     success_count = 0
     for i, repo in enumerate(repos, 1):
@@ -264,7 +265,17 @@ def main(json_file, output_dir):
                 print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
                 print(f"处理失败: {repo['Name']} - {repo['DepotSshUrl']}")
+                erRepos.append(repo)
 
+    current_date = datetime.now().strftime("%Y%m%d")
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    filename = os.path.join(script_dir, f"coding_repos_error_{current_date}.log")
+    # 将仓库信息保存到JSON文件
+    try:
+        with open(filename, mode="+at", encoding="utf-8") as f:
+            json.dump(erRepos, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"Error saving to log file: {e}")
     print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
 
 

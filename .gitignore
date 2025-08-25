@@ -7,3 +7,4 @@ cache
 **/coding_repos_*.json
 .env.*
 **/__pycache__
+*.log
