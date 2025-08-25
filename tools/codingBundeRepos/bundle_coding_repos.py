@@ -162,7 +162,15 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
             print("  正在克隆仓库...")
             try:
                 clone_process = subprocess.run(
-                    ["git", "clone", "--mirror", DepotSshUrl, "."],
+                    [
+                        "git",
+                        "clone",
+                        "--mirror",
+                        DepotSshUrl,
+                        ".",
+                        "--depth",
+                        "1",
+                    ],
                     text=True,
                     capture_output=True,
                     check=True,
