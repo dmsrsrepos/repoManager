@@ -13,6 +13,7 @@ import sys
 import tempfile
 import shutil
 from datetime import datetime
+from concurrent.futures import ProcessPoolExecutor, as_completed
 
 
 def read_repos_from_json(json_file_path):
@@ -37,7 +38,11 @@ def read_repos_from_json(json_file_path):
                     repo["DepotSshUrl"], str
                 ):
                     repos.append(
-                        {"Name": repo["Name"], "DepotSshUrl": repo["DepotSshUrl"]}
+                        {
+                            "Name": repo["Name"],
+                            "DepotSshUrl": repo["DepotSshUrl"],
+                            "DepotHttpsUrl": repo["DepotHttpsUrl"],
+                        }
                     )
                 else:
                     print(f"警告: 仓库数据字段类型不正确: {repo}")
@@ -95,16 +100,18 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     check=True,
-                    timeout=300,  # 添加5分钟超时
+                    timeout=60,  # 调整为1分钟超时
                 )
             except subprocess.CalledProcessError as e:
-                print(
-                    f"  git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                error_msg = (
+                    f"git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
                 )
-                return False
+                print(f"  {error_msg}")
+                return False, error_msg
             except subprocess.TimeoutExpired:
-                print(f"  git初始化超时，已终止操作")
-                return False
+                error_msg = "git初始化超时，已终止操作"
+                print(f"  {error_msg}")
+                return False, error_msg
 
             # 分步执行命令并添加错误处理
             try:
@@ -113,16 +120,16 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                     capture_output=True,
                     text=True,
                     check=True,
-                    timeout=600,  # 添加10分钟超时
+                    timeout=300,  # 调整为5分钟超时
                 )
             except subprocess.CalledProcessError as e:
-                print(
-                    f"  解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-                )
-                return False
+                error_msg = f"解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                print(f"  {error_msg}")
+                return False, error_msg
             except subprocess.TimeoutExpired:
-                print(f"  解包bundle文件超时，已终止操作")
-                return False
+                error_msg = "解包bundle文件超时，已终止操作"
+                print(f"  {error_msg}")
+                return False, error_msg
 
             try:
                 subprocess.run(
@@ -130,33 +137,39 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                     capture_output=True,
                     text=True,
                     check=True,
-                    timeout=300,  # 添加5分钟超时
+                    timeout=60,  # 调整为1分钟超时
                 )
             except subprocess.CalledProcessError as e:
-                print(
-                    f"  添加远程仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                error_msg = (
+                    f"添加远程仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
                 )
-                return False
+                print(f"  {error_msg}")
+                return False, error_msg
             except subprocess.TimeoutExpired:
-                print(f"  添加远程仓库超时，已终止操作")
-                return False
+                error_msg = "添加远程仓库超时，已终止操作"
+                print(f"  {error_msg}")
+                return False, error_msg
 
             # 获取所有分支和标签的更新
             try:
                 fetch_process = subprocess.run(
-                    ["git", "fetch", "--all", "--tags", "--force"],
+                    ["git", "fetch", "--all", "--tags", "--force", "--depth", "1"],
                     text=True,
                     capture_output=True,
                     check=True,
-                    timeout=1800,  # 添加30分钟超时
+                    timeout=900,  # 调整为15分钟超时
                 )
                 # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
             except subprocess.CalledProcessError as e:
-                print(f"  获取更新失败: {e.stderr if hasattr(e, 'stderr') else str(e)}")
-                return False
+                error_msg = (
+                    f"获取更新失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                )
+                print(f"  {error_msg}")
+                return False, error_msg
             except subprocess.TimeoutExpired:
-                print(f"  获取更新超时，已终止操作")
-                return False
+                error_msg = "获取更新超时，已终止操作"
+                print(f"  {error_msg}")
+                return False, error_msg
         else:
             # 如果不存在bundle文件，直接克隆仓库
             print("  正在克隆仓库...")
@@ -174,15 +187,19 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                     text=True,
                     capture_output=True,
                     check=True,
-                    timeout=1800,  # 添加30分钟超时
+                    timeout=900,  # 调整为15分钟超时
                 )
                 # 如果执行到这里，说明命令成功执行
             except subprocess.CalledProcessError as e:
-                print(f"  克隆仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}")
-                return False
+                error_msg = (
+                    f"克隆仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+                )
+                print(f"  {error_msg}")
+                return False, error_msg
             except subprocess.TimeoutExpired:
-                print(f"  克隆仓库超时，已终止操作")
-                return False
+                error_msg = "克隆仓库超时，已终止操作"
+                print(f"  {error_msg}")
+                return False, error_msg
 
         # 创建新的bundle文件名
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -198,15 +215,19 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                 capture_output=True,
                 text=True,
                 check=True,
-                timeout=1800,  # 添加30分钟超时
+                timeout=900,  # 调整为15分钟超时
             )
             print(f"  成功创建bundle: {bundle_path}")
         except subprocess.CalledProcessError as e:
-            print(f"  创建bundle失败: {e.stderr if hasattr(e, 'stderr') else str(e)}")
-            return False
+            error_msg = (
+                f"创建bundle失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+            )
+            print(f"  {error_msg}")
+            return False, error_msg
         except subprocess.TimeoutExpired:
-            print(f"  创建bundle超时，已终止操作")
-            return False
+            error_msg = "创建bundle超时，已终止操作"
+            print(f"  {error_msg}")
+            return False, error_msg
 
         # 只有在成功创建新bundle后才删除旧bundle
         if existing_bundle:
@@ -217,11 +238,12 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                 print(f"  删除旧bundle文件失败: {e}")
 
         print(f"  成功创建bundle: {bundle_path}")
-        return True
+        return True, ""
 
     except Exception as e:
-        print(f"  处理仓库时出错: {e}")
-        return False
+        error_msg = f"处理仓库时出错: {e}"
+        print(f"  {error_msg}")
+        return False, error_msg
 
     finally:
         # 清理临时目录
@@ -272,7 +294,7 @@ def main(json_file, output_dir):
     filename = os.path.join(script_dir, f"coding_repos_error_{current_date}.log")
     # 将仓库信息保存到JSON文件
     try:
-        with open(filename, mode="+at", encoding="utf-8") as f:
+        with open(filename, mode="a", encoding="utf-8") as f:
             json.dump(erRepos, f, indent=2, ensure_ascii=False)
     except Exception as e:
         print(f"Error saving to log file: {e}")

@@ -4,6 +4,7 @@ import http.client
 import json
 import socket
 import time
+import sys
 from typing import Dict, Any, Tuple
 from dotenv import load_dotenv
 
@@ -61,13 +62,15 @@ def make_api_request(
 
     payload = json.dumps(payload_data)
 
-    conn = None
+    global cached_conn
     max_retries = 3
     retry_delay = 1
 
     for attempt in range(max_retries):
         try:
-            conn = http.client.HTTPSConnection("e.coding.net", timeout=timeout)
+            if not hasattr(sys, 'cached_conn'):
+                sys.cached_conn = http.client.HTTPSConnection("e.coding.net", timeout=timeout)
+            conn = sys.cached_conn
             conn.request(
                 "POST", f"/open-api/?action={action}", body=payload, headers=headers
             )
@@ -102,10 +105,6 @@ def make_api_request(
 
         except Exception as e:
             return False, handle_api_error("UNKNOWN_ERROR", e)
-
-        finally:
-            if conn:
-                conn.close()
 
     return False, handle_api_error(
         "MAX_RETRIES_EXCEEDED", Exception(f"请求失败，已达到最大重试次数{max_retries}")
