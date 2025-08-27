@@ -65,7 +65,7 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
     """克隆或拉取仓库"""
     print(f"正在处理仓库: {repo_name}")
     # 确保目标目录的父目录存在
-    os.makedirs(os.path.dirname(repo_clone_dir), exist_ok=True)
+    os.makedirs(repo_clone_dir, exist_ok=True)
     # 创建目标目录路径
     repo_dir = os.path.join(repo_clone_dir, repo_name)
 
@@ -74,10 +74,12 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
         print("  仓库已存在，执行 git pull...")
         try:
             os.chdir(repo_dir)
-            pull_process = subprocess.run(
+            subprocess.run(
                 ["git", "pull", "--all", "--tags", "--force"],
+                stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
                 text=True,
-                capture_output=True,
+                
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
@@ -94,18 +96,21 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
     else:
         print("  仓库不存在，执行 git clone...")
         try:
-            import shlex
-
-            clone_process = subprocess.run(
+            subprocess.run(
                 [
                     "git",
                     "clone",
                     # "--mirror",
                     DepotSshUrl,
                     os.path.normpath(repo_dir),
+                    "--depth",
+                    "1",
                 ],
+                stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
                 text=True,
-                capture_output=True,
+                
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
@@ -157,7 +162,10 @@ def main(json_file, output_dir):
             print(f"\n[{i}/{len(repos)}] 忽略仓库: {repo['Name']}")
         else:
             print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
-            if clone_or_pull_repo(repo["Name"], repo["DepotSshUrl"], output_dir):
+            success, error_msg = clone_or_pull_repo(
+                repo["Name"], repo["DepotSshUrl"], output_dir
+            )
+            if success:
                 success_count += 1
                 print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
