@@ -13,160 +13,7 @@ import sys
 import tempfile
 import shutil
 from datetime import datetime
-from concurrent.futures import ProcessPoolExecutor, as_completed
-
-
-def read_repos_from_json(json_file_path):
-    """从JSON文件中读取仓库信息"""
-    try:
-        with open(json_file_path, "r", encoding="utf-8") as f:
-            repos_data = json.load(f)
-
-        # 验证JSON数据格式
-        if not isinstance(repos_data, list):
-            print("错误: JSON文件格式不正确，应为列表格式")
-            return []
-
-        # 提取所有仓库的clone_url
-        repos = []
-        for repo in repos_data:
-            if not isinstance(repo, dict):
-                print("警告: 跳过非字典格式的仓库数据")
-                continue
-            repos.append(repo)
-
-        return repos
-    except json.JSONDecodeError as e:
-        print(f"JSON解析错误: {e}")
-        return []
-    except FileNotFoundError:
-        print(f"错误: 文件未找到: {json_file_path}")
-        return []
-    except OSError as e:
-        print(f"读取JSON文件时出错: {e}")
-        return []
-
-
-def clone_or_pull_repo(repo_name, repo_Url, repo_clone_dir):
-    """克隆或拉取仓库"""
-    print(f"正在处理仓库: {repo_name}")
-    # 确保目标目录的父目录存在
-    os.makedirs(repo_clone_dir, exist_ok=True)
-    # 创建目标目录路径
-    repo_dir = os.path.join(repo_clone_dir, repo_name)
-
-    # 检查目标目录是否存在
-    if os.path.exists(repo_dir):
-        print("  仓库已存在，执行 git pull...")
-        try:
-            os.chdir(repo_dir)
-            subprocess.run(
-                ["git", "pull", "--all", "--tags", "--force", "--depth", "1"],
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stdin=subprocess.PIPE,
-                text=True,
-                check=True,
-                timeout=900,  # 调整为15分钟超时
-            )
-            print(f"  成功更新仓库: {repo_name}")
-            return True, ""
-        except subprocess.CalledProcessError as e:
-            error_msg = f"拉取仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except subprocess.TimeoutExpired:
-            error_msg = "拉取仓库超时，已终止操作"
-            print(f"  {error_msg}")
-            return False, error_msg
-    else:
-        print("  仓库不存在，执行 git clone...")
-        try:
-            subprocess.run(
-                [
-                    "git",
-                    "clone",
-                    # "--mirror",
-                    repo_Url,
-                    os.path.normpath(repo_dir),
-                    "--depth",
-                    "1",
-                ],
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stdin=subprocess.PIPE,
-                text=True,
-                check=True,
-                timeout=900,  # 调整为15分钟超时
-            )
-            print(f"  成功克隆仓库: {repo_name}")
-            return True, ""
-        except subprocess.CalledProcessError as e:
-            error_msg = f"克隆仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except subprocess.TimeoutExpired:
-            error_msg = "克隆仓库超时，已终止操作"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except OSError as e:
-            error_msg = f"创建目录失败: {e}"
-            print(f"  {error_msg}")
-            return False, error_msg
-
-
-def main(json_file, output_dir):
-
-    # 确保输出目录存在
-    try:
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
-    except OSError as e:
-        print(f"无法创建输出目录 {output_dir}: {e}")
-        sys.exit(1)
-
-    # 读取仓库信息
-    repos = read_repos_from_json(json_file)
-    if not repos:
-        print("没有找到仓库信息")
-        sys.exit(1)
-
-    print(f"找到 {len(repos)} 个仓库")
-    # 从环境变量或配置文件读取忽略仓库列表
-    ignore_repos = (
-        os.getenv("IGNORE_REPOS", "").split(",")
-        if os.getenv("IGNORE_REPOS")
-        else ["BACKUP-CHINA"]
-    )
-
-    erRepos = []
-    # 处理每个仓库
-    success_count = 0
-    for i, repo in enumerate(repos, 1):
-        if repo["Name"] in ignore_repos:
-            print(f"\n[{i}/{len(repos)}] 忽略仓库: {repo['Name']}")
-        else:
-            print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
-            success, error_msg = clone_or_pull_repo(
-                repo["Name"], repo["DepotHttpsUrl"], output_dir
-            )
-            if success:
-                success_count += 1
-                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
-            else:
-                print(f"处理失败: {repo['Name']} - {repo['DepotHttpsUrl']}")
-                erRepos.append(repo)
-
-    current_date = datetime.now().strftime("%Y%m%d")
-    script_dir = os.path.dirname(os.path.abspath(__file__))
-    filename = os.path.join(script_dir, f"coding_repos_error_{current_date}.log")
-    # 将仓库信息保存到JSON文件
-    try:
-        with open(filename, mode="a", encoding="utf-8") as f:
-            json.dump(erRepos, f, indent=2, ensure_ascii=False)
-    except Exception as e:
-        print(f"Error saving to log file: {e}")
-    print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
+from tools.py_utils import clone_or_pull_repo, read_repos_from_json
 
 
 if __name__ == "__main__":
@@ -189,4 +36,10 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"Error saving to JSON file: {e}")
 
-    main(filename, OUTPUT_DIR)
+    repos = [
+        {"Name": repo["name"], "Url": repo["DepotHttpsUrl"]}
+        for repo in all_repos
+        if isinstance(repo, dict)
+    ]
+
+    clone_or_pull_repo(repos, OUTPUT_DIR)
