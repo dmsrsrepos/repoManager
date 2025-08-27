@@ -33,21 +33,7 @@ def read_repos_from_json(json_file_path):
             if not isinstance(repo, dict):
                 print("警告: 跳过非字典格式的仓库数据")
                 continue
-            if "DepotSshUrl" in repo and "Name" in repo:
-                if isinstance(repo["Name"], str) and isinstance(
-                    repo["DepotSshUrl"], str
-                ):
-                    repos.append(
-                        {
-                            "Name": repo["Name"],
-                            "DepotSshUrl": repo["DepotSshUrl"],
-                            "DepotHttpsUrl": repo.get("DepotHttpsUrl", ""),
-                        }
-                    )
-                else:
-                    print(f"警告: 仓库数据字段类型不正确: {repo}")
-            else:
-                print(f"警告: 仓库数据缺少必要字段: {repo}")
+            repos.append(repo)
 
         return repos
     except json.JSONDecodeError as e:
@@ -61,7 +47,7 @@ def read_repos_from_json(json_file_path):
         return []
 
 
-def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
+def clone_or_pull_repo(repo_name, repo_Url, repo_clone_dir):
     """克隆或拉取仓库"""
     print(f"正在处理仓库: {repo_name}")
     # 确保目标目录的父目录存在
@@ -75,11 +61,11 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
         try:
             os.chdir(repo_dir)
             subprocess.run(
-                ["git", "pull", "--all", "--tags", "--force"],
+                ["git", "pull", "--all", "--tags", "--force", "--depth", "1"],
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
                 text=True,
-                
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
@@ -101,7 +87,7 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
                     "git",
                     "clone",
                     # "--mirror",
-                    DepotSshUrl,
+                    repo_Url,
                     os.path.normpath(repo_dir),
                     "--depth",
                     "1",
@@ -110,7 +96,6 @@ def clone_or_pull_repo(repo_name, DepotSshUrl, repo_clone_dir):
                 stdout=subprocess.PIPE,
                 stdin=subprocess.PIPE,
                 text=True,
-                
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
@@ -163,13 +148,13 @@ def main(json_file, output_dir):
         else:
             print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
             success, error_msg = clone_or_pull_repo(
-                repo["Name"], repo["DepotSshUrl"], output_dir
+                repo["Name"], repo["DepotHttpsUrl"], output_dir
             )
             if success:
                 success_count += 1
                 print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
-                print(f"处理失败: {repo['Name']} - {repo['DepotSshUrl']}")
+                print(f"处理失败: {repo['Name']} - {repo['DepotHttpsUrl']}")
                 erRepos.append(repo)
 
     current_date = datetime.now().strftime("%Y%m%d")

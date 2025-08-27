@@ -33,35 +33,21 @@ def read_repos_from_json(json_file_path):
             if not isinstance(repo, dict):
                 print("警告: 跳过非字典格式的仓库数据")
                 continue
-            if "DepotSshUrl" in repo and "Name" in repo:
-                if isinstance(repo["Name"], str) and isinstance(
-                    repo["DepotSshUrl"], str
-                ):
-                    repos.append(
-                        {
-                            "Name": repo["Name"],
-                            "DepotSshUrl": repo["DepotSshUrl"],
-                            "DepotHttpsUrl": repo["DepotHttpsUrl"],
-                        }
-                    )
-                else:
-                    print(f"警告: 仓库数据字段类型不正确: {repo}")
-            else:
-                print(f"警告: 仓库数据缺少必要字段: {repo}")
+            repos.append(repo)
 
         return repos
     except json.JSONDecodeError as e:
         print(f"JSON解析错误: {e}")
         return []
     except FileNotFoundError:
-        print(f"错误: 文件未找到: {json_file}")
+        print(f"错误: 文件未找到: {json_file_path}")
         return []
     except OSError as e:
         print(f"读取JSON文件时出错: {e}")
         return []
 
 
-def bundle_repo(repo_name, DepotSshUrl, output_dir):
+def bundle_repo(repo_name, repo_Url, output_dir):
     """将仓库打包成git bundle，支持增量更新"""
     print(f"正在处理仓库: {repo_name}")
 
@@ -97,8 +83,9 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
             try:
                 subprocess.run(
                     ["git", "init"],
-                    stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stdin=subprocess.PIPE,
                     check=True,
                     timeout=60,  # 调整为1分钟超时
                 )
@@ -117,7 +104,9 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
             try:
                 subprocess.run(
                     ["git", "bundle", "unbundle", existing_bundle],
-                    
+                    stderr=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stdin=subprocess.PIPE,
                     text=True,
                     check=True,
                     timeout=300,  # 调整为5分钟超时
@@ -133,8 +122,10 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
 
             try:
                 subprocess.run(
-                    ["git", "remote", "add", "origin", DepotSshUrl],
-                    
+                    ["git", "remote", "add", "origin", repo_Url],
+                    stderr=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stdin=subprocess.PIPE,
                     text=True,
                     check=True,
                     timeout=60,  # 调整为1分钟超时
@@ -154,8 +145,10 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
             try:
                 fetch_process = subprocess.run(
                     ["git", "fetch", "--all", "--tags", "--force", "--depth", "1"],
+                    stderr=subprocess.PIPE,
+                    stdout=subprocess.PIPE,
+                    stdin=subprocess.PIPE,
                     text=True,
-                    
                     check=True,
                     timeout=900,  # 调整为15分钟超时
                 )
@@ -179,7 +172,7 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                         "git",
                         "clone",
                         "--mirror",
-                        DepotSshUrl,
+                        repo_Url,
                         ".",
                         "--depth",
                         "1",
@@ -188,7 +181,6 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                     stdout=subprocess.PIPE,
                     stdin=subprocess.PIPE,
                     text=True,
-                    
                     check=True,
                     timeout=900,  # 调整为15分钟超时
                 )
@@ -218,7 +210,6 @@ def bundle_repo(repo_name, DepotSshUrl, output_dir):
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stdin=subprocess.PIPE,
-                
                 text=True,
                 check=True,
                 timeout=900,  # 调整为15分钟超时
@@ -289,13 +280,13 @@ def main(json_file, output_dir):
         else:
             print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
             success, error_msg = bundle_repo(
-                repo["Name"], repo["DepotSshUrl"], output_dir
+                repo["Name"], repo["DepotHttpsUrl"], output_dir
             )
             if success:
                 success_count += 1
                 print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
-                print(f"处理失败: {repo['Name']} - {repo['DepotSshUrl']}")
+                print(f"处理失败: {repo['Name']} - {repo['DepotHttpsUrl']}")
                 erRepos.append(repo)
 
     current_date = datetime.now().strftime("%Y%m%d")

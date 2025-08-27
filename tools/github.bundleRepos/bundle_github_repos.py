@@ -62,22 +62,25 @@ def bundle_repo(repo_name, clone_url, output_dir):
             # 从bundle文件中获取对象和引用
             subprocess.run(
                 ["git", "bundle", "unbundle", existing_bundle],
-                stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
             )
 
             # 添加远程源
             subprocess.run(
                 ["git", "remote", "add", "origin", clone_url],
-                stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
             )
 
             # 获取所有分支和标签的更新
             fetch_process = subprocess.run(
                 ["git", "fetch", "--all", "--tags", "--force"],
-                stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
                 text=True,
             )
 
@@ -89,8 +92,9 @@ def bundle_repo(repo_name, clone_url, output_dir):
             print(f"  正在克隆仓库...")
             clone_process = subprocess.run(
                 ["git", "clone", "--mirror", clone_url, "."],
-                stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stdin=subprocess.PIPE,
                 text=True,
             )
 
@@ -107,8 +111,9 @@ def bundle_repo(repo_name, clone_url, output_dir):
         print(f"  正在创建bundle...")
         bundle_process = subprocess.run(
             ["git", "bundle", "create", bundle_path, "--all"],
-            stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stdin=subprocess.PIPE,
             text=True,
         )
 
