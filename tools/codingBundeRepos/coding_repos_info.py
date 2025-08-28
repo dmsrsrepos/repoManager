@@ -1,10 +1,6 @@
 from typing import Dict, Any, List, Optional, Union
-import json
-import os
-from datetime import datetime
-from utils import validate_id, handle_api_error
-from user_info import make_api_request
-from projects_info import get_project_ids
+from coding_utils import validate_id, handle_api_error,make_api_request
+from coding_projects_info import get_project_ids
 
 
 def fetch_repositories_info(
@@ -59,3 +55,10 @@ def get_all_repos_info(unique: bool = True) -> List[Dict[str, Any]]:
             unique_repos.append(repo)
 
     return unique_repos
+
+if __name__ == "__main__":
+
+    all_repos = get_all_repos_info(False)  
+
+    print("仓库数量:", len(all_repos))  
+    print("所有仓库信息:", all_repos)

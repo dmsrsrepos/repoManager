@@ -8,16 +8,11 @@ Coding仓库打包工具
 
 import json
 import os
-import subprocess
-import sys
-import tempfile
-import shutil
 from datetime import datetime
-from tools.py_utils import clone_or_pull_repo, read_repos_from_json
-
+from repos_utils.clone_repos import clone_or_pull_repos
+from coding_fetch_repos_info import get_all_repos_info
 
 if __name__ == "__main__":
-    from repositories_info import get_all_repos_info
 
     all_repos = get_all_repos_info(False)
     org = "codingcorp"
@@ -37,9 +32,10 @@ if __name__ == "__main__":
         print(f"Error saving to JSON file: {e}")
 
     repos = [
-        {"Name": repo["name"], "Url": repo["DepotHttpsUrl"]}
+        {"Name": repo["Name"], "Url": repo["DepotHttpsUrl"]}
         for repo in all_repos
         if isinstance(repo, dict)
     ]
 
-    clone_or_pull_repo(repos, OUTPUT_DIR)
+    print(f"即将处理 {len(repos)} 个仓库")
+    clone_or_pull_repos(repos, OUTPUT_DIR)

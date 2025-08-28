@@ -1,6 +1,10 @@
 from typing import Dict, Any, List, Optional, Union
-from utils import validate_id, handle_api_error, make_api_request
-from user_info import get_user_id
+from coding_utils import (
+    validate_id,
+    handle_api_error,
+    make_api_request,
+)
+from coding_user_info import get_user_id
 
 
 def fetch_projects_info(
@@ -36,7 +40,6 @@ def get_project_ids() -> List[int]:
     if isinstance(projects, dict):
         projects = [projects]
     return [p["Id"] for p in projects if isinstance(p, dict) and "Id" in p]
-
 
 
 if __name__ == "__main__":

@@ -1,7 +1,8 @@
 {
   "code-runner.executorMap": {
     "typescript": "cd $dir && npx tsx $fullFileName",
-    "powershell": "pwsh -ExecutionPolicy ByPass -File"
+    "powershell": "pwsh -ExecutionPolicy ByPass -File",
+    "python": "set PYTHONIOENCODING=utf-8 && set PYTHONPATH=. && $pythonPath $fullFileName"
   },
   "code-runner.executorMapByFileExtension": {
     ".ts": "cd $dir && npx tsx $fullFileName"
@@ -35,5 +36,24 @@
     "**/node_modules": true
   },
   "explorerExclude.backup": {},
-  "explorer.excludeGitIgnore": false
+  "explorer.excludeGitIgnore": false,
+  "python.terminal.shellIntegration.enabled": true,
+  "python.testing.pytestEnabled": true,
+  "python.useEnvironmentsExtension": true,
+  "python.testing.unittestEnabled": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.globalModuleInstallation": false,
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda",
+  "python-envs.pythonProjects": [],
+  // "code-runner.fileDirectoryAsCwd": true,
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/",
+  },
+  "terminal.integrated.env.linux": {
+    "PYTHONPATH": "${workspaceFolder}/",
+  },
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}/",
+  },
 }

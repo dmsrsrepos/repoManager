@@ -1,5 +1,5 @@
 from typing import Dict, Any
-from utils import handle_api_error, make_api_request
+from coding_utils import handle_api_error, make_api_request
 
 
 def _user_info(user_info: Dict[str, Any]) -> bool:
@@ -44,7 +44,4 @@ def get_user_id() -> int:
 if __name__ == "__main__":
     user_info = fetch_coding_user_info()
     print("用户信息:", user_info)
-    try:
-        print("用户ID:", get_user_id())
-    except ValueError as e:
-        print(f"错误: {e}")
+    print("用户ID:", user_info.get("Id"))

@@ -8,17 +8,15 @@ Coding仓库打包工具
 
 import json
 import os
-import subprocess
-import sys
-import tempfile
-import shutil
 from datetime import datetime
-from py_utils import bundle_repos, read_repos_from_json
+from repos_utils.bundle_repos import bundle_repos
+from coding_repos_info import get_all_repos_info
+from dotenv import load_dotenv, find_dotenv
 
+load_dotenv(find_dotenv(".env.local") or find_dotenv(".env"))
 
 if __name__ == "__main__":
-    from repositories_info import get_all_repos_info
-
+    
     all_repos = get_all_repos_info(False)
     org = "codingcorp"
     OUTPUT_DIR = os.getenv("BUNDLE_OUTPUT_DIR")
@@ -37,9 +35,9 @@ if __name__ == "__main__":
         print(f"Error saving to JSON file: {e}")
 
     repos = [
-        {"Name": repo["name"], "Url": repo["DepotHttpsUrl"]}
+        {"Name": repo["Name"], "Url": repo["DepotHttpsUrl"]}
         for repo in all_repos
         if isinstance(repo, dict)
     ]
-
-    bundle_repos(repos, OUTPUT_DIR)
+    print(f"即将处理 {len(repos)} 个仓库")
+    # bundle_repos(repos, OUTPUT_DIR)
