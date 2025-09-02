@@ -13,10 +13,12 @@ from repos_utils.bundle_repos import bundle_repos
 from coding_repos_info import get_all_repos_info
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv(".env.local") or find_dotenv(".env"))
+
+load_dotenv(find_dotenv(".env.local"))
+load_dotenv()
 
 if __name__ == "__main__":
-    
+
     all_repos = get_all_repos_info(False)
     org = "codingcorp"
     OUTPUT_DIR = os.getenv("BUNDLE_OUTPUT_DIR")
@@ -40,4 +42,4 @@ if __name__ == "__main__":
         if isinstance(repo, dict)
     ]
     print(f"即将处理 {len(repos)} 个仓库")
-    # bundle_repos(repos, OUTPUT_DIR)
+    bundle_repos(repos, OUTPUT_DIR)

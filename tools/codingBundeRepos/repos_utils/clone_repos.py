@@ -27,7 +27,7 @@ def clone_or_pull_repo(repo_name: str, repo_Url: str, repo_clone_dir: str) -> tu
         try:
             os.chdir(repo_dir)
             subprocess.run(
-                ["git", "pull", "--all", "--tags", "--force", "--depth", "1"],
+                ["git", "pull", "--all", "--tags", "--force"],
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
                 stdin=subprocess.PIPE,
@@ -38,7 +38,7 @@ def clone_or_pull_repo(repo_name: str, repo_Url: str, repo_clone_dir: str) -> tu
             print(f"  成功更新仓库: {repo_name}")
             return True, ""
         except subprocess.CalledProcessError as e:
-            error_msg = f"拉取仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+            error_msg = f"拉取仓库失败:Path:{repo_dir} | Error： {e.stderr if hasattr(e, 'stderr') else str(e)}"
             print(f"  {error_msg}")
             return False, error_msg
         except subprocess.TimeoutExpired:
@@ -112,13 +112,13 @@ def clone_or_pull_repos(repos: list[dict[str, str]], output_dir: str) -> None:
         else:
             print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
             success, error_msg = clone_or_pull_repo(
-                repo["Name"], repo["DepotHttpsUrl"], output_dir
+                repo["Name"], repo["Url"], output_dir
             )
             if success:
                 success_count += 1
                 print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
             else:
-                print(f"处理失败: {repo['Name']} - {repo['DepotHttpsUrl']}")
+                print(f"处理失败: {repo['Name']} - {repo['Url']}")
                 erRepos.append(repo)
 
     current_date = datetime.now().strftime("%Y%m%d")

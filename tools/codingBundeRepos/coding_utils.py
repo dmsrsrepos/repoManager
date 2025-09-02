@@ -8,7 +8,8 @@ import sys
 from typing import Dict, Any, Tuple
 from dotenv import load_dotenv, find_dotenv
 
-load_dotenv(find_dotenv(".env.local") or find_dotenv(".env"))
+load_dotenv(find_dotenv(".env.local"))
+load_dotenv()
 
 MAX_RETRIES = 3
 RETRY_DELAY = 2  # 重试延迟（秒）
