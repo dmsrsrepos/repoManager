@@ -25,7 +25,8 @@ def bundle_repo(repo_name: str, repo_Url: str, output_dir: str) -> tuple[bool, s
         print(f"  找到现有bundle文件: {os.path.basename(existing_bundle)}")
 
         for i, expired_file in enumerate(existing_bundles[1:], 1):
-            os.remove(expired_file)
+            # os.remove(expired_file)
+            os.unlink(expired_file)  # 直接永久删除
             print(
                 f"    已删除旧bundle文件: {os.path.basename(expired_file)},"
                 f"序号：{i}/{len(existing_bundles)-1}"
@@ -189,7 +190,9 @@ def bundle_repo(repo_name: str, repo_Url: str, output_dir: str) -> tuple[bool, s
         # 只有在成功创建新bundle后才删除旧bundle
         if existing_bundle:
             try:
-                os.remove(existing_bundle)
+                # os.remove(existing_bundle)
+                os.unlink(existing_bundle)  # 直接永久删除
+                # shutil.rmtree(existing_bundle)  # 直接永久删除目录
                 print(f"  已删除旧bundle文件: {os.path.basename(existing_bundle)}")
             except OSError as e:
                 print(f"  删除旧bundle文件失败: {e}")
