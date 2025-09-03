@@ -215,7 +215,7 @@ def bundle_repos(repos: list[dict[str, str]], output_dir: str) -> None:
             os.makedirs(output_dir)
     except OSError as e:
         print(f"无法创建输出目录 {output_dir}: {e}")
-        sys.exit(1) 
+        sys.exit(1)
 
     if not repos:
         print("没有找到仓库信息")
@@ -237,12 +237,10 @@ def bundle_repos(repos: list[dict[str, str]], output_dir: str) -> None:
             print(f"\n[{i}/{len(repos)}] 忽略仓库: {repo['Name']}")
         else:
             print(f"\n[{i}/{len(repos)}] 处理仓库: {repo['Name']}")
-            success, error_msg = bundle_repo(
-                repo["Name"], repo["Url"], output_dir
-            )
+            success, error_msg = bundle_repo(repo["Name"], repo["Url"], output_dir)
             if success:
                 success_count += 1
-                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
+                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}/{i}")
             else:
                 print(f"处理失败: {repo['Name']} - {repo['Url']}")
                 erRepos.append(repo)
