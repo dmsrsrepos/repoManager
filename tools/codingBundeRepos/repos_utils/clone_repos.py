@@ -13,7 +13,9 @@ import sys
 from datetime import datetime
 
 
-def clone_or_pull_repo(repo_name: str, repo_Url: str, repo_clone_dir: str) -> tuple[bool, str]:
+def clone_or_pull_repo(
+    repo_name: str, repo_Url: str, repo_clone_dir: str
+) -> tuple[bool, str]:
     """克隆或拉取仓库"""
     print(f"正在处理仓库: {repo_name}")
     # 确保目标目录的父目录存在
@@ -116,14 +118,15 @@ def clone_or_pull_repos(repos: list[dict[str, str]], output_dir: str) -> None:
             )
             if success:
                 success_count += 1
-                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}")
+                print(f"处理成功: {repo['Name']} - 当前成功数: {success_count}/{i}")
             else:
                 print(f"处理失败: {repo['Name']} - {repo['Url']}")
+                repo["Error"] = error_msg
                 erRepos.append(repo)
 
     current_date = datetime.now().strftime("%Y%m%d")
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    filename = os.path.join(script_dir, f"coding_repos_error_{current_date}.log")
+    filename = os.path.join(script_dir, f"clone_repos_error_{current_date}.log")
     # 将仓库信息保存到JSON文件
     try:
         with open(filename, mode="a", encoding="utf-8") as f:
