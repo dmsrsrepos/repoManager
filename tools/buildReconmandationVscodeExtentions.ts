@@ -23,7 +23,7 @@
 import * as fs from 'node:fs'
 import { execSync } from 'child_process'
 import JSON5 from 'json5'
-
+import { glob } from 'glob'
 function _getGitRoot(): string {
   try {
     const gitRoot = execSync('git rev-parse --show-toplevel').toString().trim()
@@ -68,28 +68,38 @@ async function findInstalledExtensions(data): Promise<string[]> {
 
 console.log('-----------------------------', 'start', '-----------------------------')
 const codeProfile = './tswindows.code-profile'
-const codeWorkspace = './../ripplejourney.github.io.code-workspace'
-const extensionWorkspace = './../.vscode/extensions.json'
+
+const vscodeExtensionsPattern = './**/.vscode/extensions.json'
+const vscodeExtensions = await glob(vscodeExtensionsPattern, { cwd: process.cwd(), absolute: true })
+
+const codeWorkspacePathPattern = '../**/*.code-workspace'
+const codeWorkspacePaths = await glob(codeWorkspacePathPattern, { cwd: process.cwd(), absolute: true })
 
 readFileToJson(codeProfile)
   .then(async (data) => {
     return await findInstalledExtensions(data)
   })
   .then(async (ids) => {
-    if (fs.existsSync(codeWorkspace)) {
-      const target = await readFileToJson(codeWorkspace)
-      target.extensions.recommendations = ids
-      await writeJsonToFile(codeWorkspace, target)
-    }
+
+    codeWorkspacePaths.forEach(async (codeWorkspace) => {
+      if (fs.existsSync(codeWorkspace)) {
+        const target = await readFileToJson(codeWorkspace)
+        target.extensions.recommendations = ids
+        await writeJsonToFile(codeWorkspace, target)
+      }
+    })
     return ids
   })
   .then(async (ids) => {
-    if (!fs.existsSync(extensionWorkspace))
-      fs.writeFileSync(extensionWorkspace, '{}')
-    const target = await readFileToJson(extensionWorkspace)
-    target.recommendations = ids
-    await writeJsonToFile(extensionWorkspace, target)
-    return { ids, target }
+    vscodeExtensions.forEach(async (extensionWorkspace) => {
+      if (!fs.existsSync(extensionWorkspace))
+        fs.writeFileSync(extensionWorkspace, '{}')
+      const target = await readFileToJson(extensionWorkspace)
+      target.recommendations = ids
+      await writeJsonToFile(extensionWorkspace, target)
+    })
+
+    return { ids }
   })
   // .catch(err => console.error(err))
   .then(_ => console.log('-----------------------------', 'end', '-----------------------------'))

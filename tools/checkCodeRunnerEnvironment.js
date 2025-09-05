@@ -116,7 +116,7 @@ function tryMerge(currSettings, newSettings) {
 }
 
 console.log('-----------------------------', 'start', '-----------------------------')
-const codeWorkspacePath = '../**/*.code-workspace'
+const codeWorkspacePathPattern = '../**/*.code-workspace'
 const vscodeSettingsPath = path.resolve(process.cwd(), '../.vscode/settings.json')
 const vscodeExtensionsPath = path.resolve(process.cwd(), '../.vscode/extensions.json')
 function main() {
@@ -148,7 +148,7 @@ function main() {
   handle
     .then(async (vscodeSettings) => {
       return {
-        workspaceFiles: await glob(codeWorkspacePath, { cwd: process.cwd(), absolute: true }),
+        workspaceFiles: await glob(codeWorkspacePathPattern, { cwd: process.cwd(), absolute: true }),
         vscodeSettings,
         vscodeExtensions: await readFileToJson(vscodeExtensionsPath)
       }
@@ -183,7 +183,7 @@ function main() {
       }
       else {
 
-        console.log('----  no code-workspace file found', 'root:', process.cwd(), 'pattern:', codeWorkspacePath, '-----------------------------  ')
+        console.log('----  no code-workspace file found', 'root:', process.cwd(), 'pattern:', codeWorkspacePathPattern, '-----------------------------  ')
       }
     })
     .then(() => console.log('-----------------------------  over  -----------------------------'))
