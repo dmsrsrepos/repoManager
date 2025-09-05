@@ -2747,6 +2747,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\animated-unocss"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\animated-unocss"
         ]
       }
     },
@@ -2827,6 +2830,9 @@
         ],
         "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\integrations"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\integrations"
         ]
       }
     },
@@ -2846,6 +2852,9 @@
           "G:\\code\\vPress\\nolebase"
         ],
         "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\nolebase"
+        ],
+        "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\nolebase"
         ]
       }
@@ -2881,6 +2890,9 @@
       "fromPaths": {
         "PC15K": [
           "G:\\code\\vPress\\radash"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\radash"
         ]
       }
     },
@@ -2927,6 +2939,9 @@
         },
         "APCAPx9Y1rTzjeE0": {
           "url": "git@github.com:ripplejourney/ripplejourney.github.io.git"
+        },
+        "APCAPoykidLPMOO0": {
+          "url": "https://github.com/VitePressAwesome/sugar-blog.git"
         }
       },
       "fromPaths": {
@@ -2934,6 +2949,9 @@
           "G:\\code\\vPress\\test\\cnjimbo.github.io"
         ],
         "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\cnjimbo.github.io"
+        ],
+        "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\cnjimbo.github.io"
         ]
       }
@@ -4113,6 +4131,9 @@
         ],
         "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\experimentation"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\experimentation"
         ]
       }
     },
@@ -4129,6 +4150,9 @@
           "G:\\code\\vPress\\modern-typescript-monorepo-example"
         ],
         "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\modern-typescript-monorepo-example"
+        ],
+        "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\modern-typescript-monorepo-example"
         ]
       }
@@ -4147,6 +4171,9 @@
         ],
         "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\radash-study"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\radash-study"
         ]
       }
     },
@@ -4164,6 +4191,9 @@
         ],
         "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\vPress\\unocss"
+        ],
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vPress\\unocss"
         ]
       }
     },
@@ -4180,6 +4210,9 @@
           "G:\\code\\vPress\\vitepress-theme-open17"
         ],
         "APCAPx9Y1rTzjeE": [
+          "C:\\AppData\\code\\vPress\\vitepress-theme-open17"
+        ],
+        "APCAPoykidLPMOO": [
           "C:\\AppData\\code\\vPress\\vitepress-theme-open17"
         ]
       }
@@ -4837,6 +4870,48 @@
       "fromPaths": {
         "APCAPx9Y1rTzjeE": [
           "C:\\AppData\\code\\comm\\my-repo"
+        ]
+      }
+    },
+    "frontend\\pwa-skeleton": {
+      "__processorName": ".git",
+      "name": "pwa-skeleton",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:bwindels/pwa-skeleton.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\frontend\\pwa-skeleton"
+        ]
+      }
+    },
+    "learn\\examples": {
+      "__processorName": ".git",
+      "name": "examples",
+      "remote": {
+        "origin": {
+          "url": "https://github.com/dotenvx/examples.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\learn\\examples"
+        ]
+      }
+    },
+    "vsextension\\project-config": {
+      "__processorName": ".git",
+      "name": "project-config",
+      "remote": {
+        "origin": {
+          "url": "git@github.com:dmsrsrepos/project-config.git"
+        }
+      },
+      "fromPaths": {
+        "APCAPoykidLPMOO": [
+          "C:\\AppData\\code\\vsextension\\project-config"
         ]
       }
     }
