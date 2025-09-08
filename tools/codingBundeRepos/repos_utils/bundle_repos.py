@@ -4,6 +4,7 @@ import subprocess
 import sys
 import tempfile
 import shutil
+import time
 from datetime import datetime
 
 
@@ -24,8 +25,10 @@ def bundle_repo(
     if existing_bundles:
         existing_bundles.sort(key=os.path.getmtime, reverse=True)
         existing_bundle = existing_bundles[0]
-        if(aways_bundle_new):
-            print(f"  总是创建新的bundle,将在创建成功后删除已找到的bundle文件: {os.path.basename(existing_bundle)}")
+        if aways_bundle_new:
+            print(
+                f"  总是创建新的bundle,将在创建成功后删除已找到的bundle文件: {os.path.basename(existing_bundle)}"
+            )
         else:
             print(f"  找到现有bundle文件: {os.path.basename(existing_bundle)}")
 
@@ -39,6 +42,8 @@ def bundle_repo(
     # 创建临时目录
     temp_dir = tempfile.mkdtemp()
     print(f"  创建临时目录: {temp_dir}")
+
+    all_processes = [subprocess.CompletedProcess]
     try:
         os.chdir(temp_dir)
 
@@ -48,7 +53,7 @@ def bundle_repo(
 
             # 合并初始化、解包和添加远程操作
             try:
-                subprocess.run(
+                init_process = subprocess.run(
                     ["git", "init"],
                     stderr=subprocess.PIPE,
                     stdout=subprocess.PIPE,
@@ -56,6 +61,7 @@ def bundle_repo(
                     check=True,
                     timeout=60,  # 调整为1分钟超时
                 )
+                all_processes.append(init_process)
             except subprocess.CalledProcessError as e:
                 error_msg = (
                     f"git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
@@ -70,7 +76,7 @@ def bundle_repo(
             # 分步执行命令并添加错误处理
             try:
                 print("  开始unbundle...")
-                subprocess.run(
+                unbundle_process = subprocess.run(
                     ["git", "bundle", "unbundle", existing_bundle],
                     stderr=subprocess.PIPE,
                     stdout=subprocess.PIPE,
@@ -79,6 +85,7 @@ def bundle_repo(
                     check=True,
                     timeout=300,  # 调整为5分钟超时
                 )
+                all_processes.append(unbundle_process)
             except subprocess.CalledProcessError as e:
                 error_msg = f"解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
                 print(f"  {error_msg}")
@@ -89,8 +96,8 @@ def bundle_repo(
                 return False, error_msg
 
             try:
-                print(f"  开始add remote${repo_name}...")
-                subprocess.run(
+                print(f"  开始add remote: {repo_Url}...")
+                remote_add_process = subprocess.run(
                     ["git", "remote", "add", "origin", repo_Url],
                     stderr=subprocess.PIPE,
                     stdout=subprocess.PIPE,
@@ -99,6 +106,7 @@ def bundle_repo(
                     check=True,
                     timeout=60,  # 调整为1分钟超时
                 )
+                all_processes.append(remote_add_process)
             except subprocess.CalledProcessError as e:
                 error_msg = (
                     f"添加远程仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
@@ -129,6 +137,7 @@ def bundle_repo(
                     check=True,
                     timeout=900,  # 调整为15分钟超时
                 )
+                all_processes.append(fetch_process)
                 # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
             except subprocess.CalledProcessError as e:
                 error_msg = (
@@ -161,6 +170,7 @@ def bundle_repo(
                     check=True,
                     timeout=900,  # 调整为15分钟超时
                 )
+                all_processes.append(clone_process)
                 # 如果执行到这里，说明命令成功执行
             except subprocess.CalledProcessError as e:
                 error_msg = (
@@ -182,7 +192,7 @@ def bundle_repo(
         print("  正在创建bundle...")
         # 创建包含所有引用的git bundle文件
         try:
-            subprocess.run(
+            unbundle_process = subprocess.run(
                 ["git", "bundle", "create", bundle_path, "--all"],
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
@@ -191,6 +201,9 @@ def bundle_repo(
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
+            all_processes.append(unbundle_process)
+
+            # 如果执行到这里，说明命令成功执行
             print(f"  成功创建bundle: {bundle_path}")
         except subprocess.CalledProcessError as e:
             error_msg = (
@@ -222,9 +235,43 @@ def bundle_repo(
         return False, error_msg
 
     finally:
+        for proc in all_processes:
+            # if proc.poll() is None:
+                # proc.kill()
+                # print("  终止子进程...")
+                proc.terminate()
+                # proc.wait()
         # 清理临时目录
-        print("  清理临时目录...")
-        shutil.rmtree(temp_dir, ignore_errors=True)
+        cleanup_temp_dir(temp_dir)
+
+def cleanup_temp_dir(temp_dir: str, max_retries: int = 10) -> None:
+    """安全清理临时目录，确保所有进程已退出"""
+    for attempt in range(1, max_retries + 1):
+        try:
+            if not os.path.exists(temp_dir):
+                print(f"  临时目录 {temp_dir} 已成功清理")
+                return
+            # 先尝试关闭所有可能的文件句柄
+            import gc
+            gc.collect()
+            # 尝试删除目录
+            try:
+                os.rmdir(temp_dir)
+                print(f"  临时目录 {temp_dir} 已成功清理")
+                return
+            except OSError:
+                # 如果 os.rmdir 失败，尝试 shutil.rmtree
+                shutil.rmtree(temp_dir, ignore_errors=False)
+                print(f"  临时目录 {temp_dir} 已成功清理 (强制删除)")
+                return
+        except PermissionError as e:
+            if attempt == max_retries:
+                print(f"  !! 无法清理临时目录 {temp_dir}，错误: {e}")
+                raise
+            print(
+                f"  清理临时目录失败(尝试 {attempt}/{max_retries})，等待后重试..."
+            )
+            time.sleep(1 * attempt)  # 指数退避
 
 
 def bundle_repos(

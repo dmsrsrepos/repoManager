@@ -22,13 +22,13 @@ def clone_or_pull_repo(
     os.makedirs(repo_clone_dir, exist_ok=True)
     # 创建目标目录路径
     repo_dir = os.path.join(repo_clone_dir, repo_name)
-
+    all_processes = list[subprocess.CompletedProcess]
     # 检查目标目录是否存在
     if os.path.exists(repo_dir):
         print("  仓库已存在，执行 git pull...")
         try:
             os.chdir(repo_dir)
-            subprocess.run(
+            pull_process=subprocess.run(
                 ["git", "pull", "--all", "--tags", "--force"],
                 stderr=subprocess.PIPE,
                 stdout=subprocess.PIPE,
@@ -37,6 +37,9 @@ def clone_or_pull_repo(
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
+            all_processes.append(pull_process)
+
+            # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
             print(f"  成功更新仓库: {repo_name}")
             return True, ""
         except subprocess.CalledProcessError as e:
@@ -50,7 +53,7 @@ def clone_or_pull_repo(
     else:
         print("  仓库不存在，执行 git clone...")
         try:
-            subprocess.run(
+            clone_process=subprocess.run(
                 [
                     "git",
                     "clone",
@@ -67,6 +70,9 @@ def clone_or_pull_repo(
                 check=True,
                 timeout=900,  # 调整为15分钟超时
             )
+            all_processes.append(clone_process)
+
+            # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
             print(f"  成功克隆仓库: {repo_name}")
             return True, ""
         except subprocess.CalledProcessError as e:
