@@ -105,7 +105,14 @@ def bundle_repo(repo_name: str, repo_Url: str, output_dir: str) -> tuple[bool, s
             # 获取所有分支和标签的更新
             try:
                 fetch_process = subprocess.run(
-                    ["git", "fetch", "--all", "--tags", "--force", "--depth", "1"],
+                    [
+                        "git",
+                        "fetch",
+                        "--all",
+                        "--tags",
+                        "--force",
+                        #  "--depth", "1"
+                    ],
                     stderr=subprocess.PIPE,
                     stdout=subprocess.PIPE,
                     stdin=subprocess.PIPE,
@@ -132,7 +139,7 @@ def bundle_repo(repo_name: str, repo_Url: str, output_dir: str) -> tuple[bool, s
                     [
                         "git",
                         "clone",
-                        "--mirror",
+                        # "--mirror",
                         repo_Url,
                         ".",
                         "--depth",
