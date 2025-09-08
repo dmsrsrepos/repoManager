@@ -11,24 +11,27 @@ from datetime import datetime
 
 def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     """
-    执行命令并处理异常
+    执行命令并统一处理错误
     :param command: 命令列表
     :param timeout: 超时时间（秒）
-    :return: (是否成功, 错误信息)
+    :return: (是否成功, 错误信息, 标准输出, 标准错误)
     """
     try:
         result = subprocess.run(
             command,
-            # stderr=subprocess.PIPE,
-            # stdout=subprocess.PIPE,
-            # stdin=subprocess.PIPE,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
             close_fds=True,
             shell=False,
         )
-        return True, ""
+        if result.stdout == None:
+            return True, ""
+        else:
+            return True, result.stdout.strip()
     except subprocess.CalledProcessError as e:
         error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
         return False, error_msg
@@ -86,7 +89,7 @@ def bundle_repo(
     try:
         os.chdir(temp_dir)
 
-        if existing_bundle and not aways_bundle_new:
+        def _try_clone_repo_from_bundle():
             # 如果存在bundle文件，使用它作为基础进行增量更新
             print("  开始进行增量更新...")
 
@@ -97,23 +100,27 @@ def bundle_repo(
             if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
-
+            # print("  clone更新成功")
             # 检查远程仓库是否存在，不存在则添加，存在则更新
             success, error_msg = run_command(["git", "remote", "get-url", "origin"], 60)
+            # print("  检查远程仓库...")
             if success:
                 # 远程仓库已存在，更新 URL
                 success, error_msg = run_command(
                     ["git", "remote", "set-url", "origin", repo_Url], 60
                 )
+                # print("  远程仓库已存在，更新 URL 成功")
             else:
                 # 远程仓库不存在，添加
                 success, error_msg = run_command(
                     ["git", "remote", "add", "origin", repo_Url], 60
                 )
+
+                # print("  远程仓库不存在，添加成功")
             if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
-
+            # print("  远程仓库已设置")
             success, error_msg = run_command(
                 [
                     "git",
@@ -126,10 +133,22 @@ def bundle_repo(
                 ],
                 900,  #
             )
+            # print("  正在拉取更新...")
             if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
-        else:
+            # print("  fetch更新成功")
+            return True, ""
+
+        not_cloned_repo = True
+
+        if existing_bundle and not aways_bundle_new:
+            success, error_msg = _try_clone_repo_from_bundle()
+
+            not_cloned_repo = not success
+            print(f"  增量更新失败，将尝试重新克隆仓库: {error_msg}")
+
+        if aways_bundle_new or not_cloned_repo:
             # 如果不存在bundle文件，直接克隆仓库
             print("  正在克隆仓库...")
             success, error_msg = run_command(
@@ -188,7 +207,7 @@ def remove_readonly(func, path, _):
     func(path)
 
 
-def cleanup_temp_dir(target_dir: str, max_retries: int = 3) -> None:
+def cleanup_temp_dir(target_dir: str) -> None:
     for root, dirs, files in os.walk(target_dir):
         for file in files:
             file_path = os.path.join(root, file)

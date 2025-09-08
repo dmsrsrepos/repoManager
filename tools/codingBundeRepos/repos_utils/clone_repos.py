@@ -18,21 +18,24 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     执行命令并统一处理错误
     :param command: 命令列表
     :param timeout: 超时时间（秒）
-    :return: (是否成功, 错误信息)
+    :return: (是否成功, 错误信息, 标准输出, 标准错误)
     """
     try:
-        subprocess.run(
+        result = subprocess.run(
             command,
-            # stderr=subprocess.PIPE,
-            # stdout=subprocess.PIPE,
-            # stdin=subprocess.PIPE,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
             close_fds=True,
             shell=False,
         )
-        return True, ""
+        if result.stdout == None:
+            return True, ""
+        else:
+            return True, result.stdout.strip()
     except subprocess.CalledProcessError as e:
         error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
         return False, error_msg
@@ -42,6 +45,21 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     except Exception as e:
         error_msg = f"未知错误: {str(e)}"
         return False, error_msg
+
+
+def is_shallow_repository(repo_dir: str) -> bool:
+    """
+    检查仓库是否为浅克隆（shallow repository）
+    :param repo_dir: 仓库目录路径
+    :return: 是否为浅克隆
+    """
+    try:
+        success, output = run_command(
+            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
+        )
+        return success and output.strip() == "true"
+    except Exception:
+        return False
 
 
 def clone_or_pull_repo(
@@ -58,18 +76,12 @@ def clone_or_pull_repo(
         print("  仓库已存在，执行 git pull...")
         try:
             os.chdir(repo_dir)
-            success, error_msg = run_command(
-                [
-                    "git",
-                    "pull",
-                    "--all",
-                    "--tags",
-                    #
-                    "--unshallow",
-                    "--force",
-                ],
-                900,
-            )
+            is_shallow = is_shallow_repository(repo_dir)
+            pull_command = ["git", "pull", "--all", "--tags", "--force"]
+            if is_shallow:
+                pull_command.append("--unshallow")
+
+            success, error_msg = run_command(pull_command, 900)
             if success:
                 print(f"  成功更新仓库: {repo_name}")
                 return True, ""
