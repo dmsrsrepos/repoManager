@@ -1,5 +1,6 @@
 import json
 import os
+import stat
 import subprocess
 import sys
 import tempfile
@@ -40,14 +41,15 @@ def bundle_repo(
                 f"序号：{i}/{len(existing_bundles)-1}"
             )
 
-    search_dir = os.path.join(tempfile.gettempdir(),'repositoryMananger')
+    search_dir = os.path.join(tempfile.gettempdir(), "repositoryMananger")
     if not os.path.exists(search_dir):
         os.makedirs(search_dir)
-    prefix = "myRepository_"
+    prefix = "tempRepo_"
     suffix = "_gitRepo"
+    final_prefix = os.path.normpath(f"{prefix}{repo_name}_")
     # 创建临时目录
-    temp_dir = tempfile.mkdtemp(prefix=prefix, suffix=suffix, dir=search_dir)
-    print(f"  创建临时目录: {temp_dir}")
+    temp_dir = tempfile.mkdtemp(prefix=final_prefix, suffix=suffix, dir=search_dir)
+    # print(f"  创建临时目录: {temp_dir}")
 
     all_processes = []
     try:
@@ -112,6 +114,7 @@ def bundle_repo(
                 all_processes.append(unbundle_process)
                 try:
                     stdout, stderr = unbundle_process.communicate(timeout=300)
+                    # time.sleep(30)
                     if unbundle_process.returncode != 0:
                         raise subprocess.CalledProcessError(
                             unbundle_process.returncode,
@@ -187,15 +190,17 @@ def bundle_repo(
 
             # 获取所有分支和标签的更新
             try:
-                print(f"  开始fetch all... {repo_name}...")
+                print(f"  开始 fetch all... {repo_name}...")
                 fetch_process = subprocess.Popen(
                     [
                         "git",
                         "fetch",
                         "--all",
                         "--tags",
-                        # "--force",
-                        #  "--depth", "1"
+                        "--force",
+                        # "--prune",
+                        # "--depth",
+                        # "1",
                     ],
                     stderr=subprocess.PIPE,
                     stdout=subprocess.PIPE,
@@ -360,57 +365,33 @@ def bundle_repo(
         return False, error_msg
 
     finally:
-        for root, dirs, files in os.walk(search_dir):
-            for file in files:
-                file_path = os.path.join(root, file)
-                try:
-                    os.unlink(file_path)
-                    print(f"已删除文件: {file_path}")
-                except OSError as e:
-                    print(f"删除文件失败: {file_path}, 错误: {e}")
-            for dir in dirs:
-                dir_path = os.path.join(root, dir)
-                try:
-                    os.rmdir(dir_path)
-                    print(f"已删除目录: {dir_path}")
-                except OSError as e:
-                    print(f"删除目录失败: {dir_path}, 错误: {e}")
-                    # 清理临时目录
-                    # cleanup_temp_dir(dir_path)
+        cleanup_temp_dir(search_dir)
 
 
-def cleanup_temp_dir(temp_dir: str, max_retries: int = 50) -> None:
-    """安全清理临时目录，确保所有进程已退出"""
-    try:
-        if not os.path.exists(temp_dir):
-            print(f"  临时目录 {temp_dir} 已成功清理")
-            return
-        # 尝试删除目录
-        try:
-            os.unlink(temp_dir)                
-            print(f"  临时目录 {temp_dir} 已成功清理")
-            return
-        except OSError as oe:
+def remove_readonly(func, path, _):
+    """清除只读属性并重试删除操作"""
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
+
+
+def cleanup_temp_dir(target_dir: str, max_retries: int = 3) -> None:
+    for root, dirs, files in os.walk(target_dir):
+        for file in files:
+            file_path = os.path.join(root, file)
             try:
-                os.rmdir(temp_dir)
-                print(f"  临时目录 {temp_dir} 已成功清理 {oe}")
-                return
-            except OSError as oe:
-                    # 如果 os.rmdir 失败，尝试 shutil.rmtree
-                shutil.rmtree(temp_dir, ignore_errors=True)
-                print(f"  临时目录 {temp_dir} 已成功清理 (强制删除) {oe}")
-                return
-            
-    except PermissionError as e:
-        print(f"  无法清理临时目录 {temp_dir}，权限不足: {e}")
-        
-        # if attempt == max_retries:
-        #     print(f"  !! 无法清理临时目录 {temp_dir}，错误: {e}")
-        #     raise
-        # print(
-        #     f"  清理临时目录失败(尝试 {attempt}/{max_retries})，等待{1 * attempt}秒后重试..."
-        # )
-        # time.sleep(1 * attempt)  # 指数退避
+                os.chmod(file_path, stat.S_IWRITE)  # 修改文件权限
+                os.unlink(file_path)
+                # print(f"已删除文件: {file_path}")
+            except OSError as e:
+                # print(f"删除文件失败: {file_path}, 错误: {e}")
+                pass
+        for dir in dirs:
+            dir_path = os.path.join(root, dir)
+            try:
+                shutil.rmtree(dir_path, onerror=remove_readonly)  # 处理只读文件
+            except OSError as e:
+                # print(f"删除目录失败: {dir_path}, 错误: {e}")
+                pass
 
 
 def bundle_repos(
