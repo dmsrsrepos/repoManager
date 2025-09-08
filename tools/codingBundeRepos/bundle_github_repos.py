@@ -8,7 +8,8 @@ load_dotenv()
 
 if __name__ == "__main__":
     from github_repo_list import fetch_repositories_info
-    from repos_utils.bundle_repos import bundle_repos   
+    from repos_utils.bundle_repos import bundle_repos
+
     all_repos, org = fetch_repositories_info()
     # 检查命令行参数
     # 将仓库信息保存到JSON文件
@@ -24,11 +25,11 @@ if __name__ == "__main__":
         print(f"Successfully saved {len(all_repos)} repositories to {filename}")
     except Exception as e:
         print(f"Error saving to JSON file: {e}")
-        
+
     repos = [
         {"Name": repo["name"], "Url": repo["clone_url"]}
         for repo in all_repos
         if isinstance(repo, dict)
     ]
     print(f"即将处理 {len(repos)} 个仓库")
-    bundle_repos(repos, OUTPUT_DIR)
+    bundle_repos(repos, OUTPUT_DIR, True)
