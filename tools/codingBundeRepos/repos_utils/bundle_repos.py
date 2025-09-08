@@ -9,6 +9,33 @@ import time
 from datetime import datetime
 
 
+def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
+    """
+    执行命令并处理异常
+    :param command: 命令列表
+    :param timeout: 超时时间（秒）
+    :return: (是否成功, 错误信息)
+    """
+    try:
+        result = subprocess.run(
+            command,
+            check=True,
+            timeout=timeout,
+            text=True,
+            # stderr=subprocess.PIPE,
+            # stdout=subprocess.PIPE,
+            close_fds=True,
+            shell=False,
+        )
+        return True, ""
+    except subprocess.CalledProcessError as e:
+        error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
+        return False, error_msg
+    except subprocess.TimeoutExpired:
+        error_msg = "命令执行超时，已终止操作"
+        return False, error_msg
+
+
 def bundle_repo(
     repo_name: str, repo_Url: str, output_dir: str, aways_bundle_new: bool = False
 ) -> tuple[bool, str]:
@@ -51,7 +78,7 @@ def bundle_repo(
     temp_dir = tempfile.mkdtemp(prefix=final_prefix, suffix=suffix, dir=search_dir)
     # print(f"  创建临时目录: {temp_dir}")
 
-    all_processes = []
+    # all_processes = []
     try:
         os.chdir(temp_dir)
 
@@ -59,236 +86,61 @@ def bundle_repo(
             # 如果存在bundle文件，使用它作为基础进行增量更新
             print("  开始进行增量更新...")
 
-            # 合并初始化、解包和添加远程操作
-            try:
-                init_process = subprocess.Popen(
-                    ["git", "init"],
-                    stderr=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stdin=subprocess.PIPE,
-                    text=True,
-                    close_fds=True,
-                )
-                all_processes.append(init_process)
-                try:
-                    stdout, stderr = init_process.communicate(timeout=60)
-                    if init_process.returncode != 0:
-                        raise subprocess.CalledProcessError(
-                            init_process.returncode, init_process.args, stdout, stderr
-                        )
-                except subprocess.TimeoutExpired:
-                    init_process.kill()
-                    stdout, stderr = init_process.communicate()
-                    raise subprocess.TimeoutExpired(
-                        init_process.args, 60, stdout, stderr
-                    )
-                finally:
-                    if init_process.stdout:
-                        init_process.stdout.close()
-                    if init_process.stderr:
-                        init_process.stderr.close()
-                    if init_process.stdin:
-                        init_process.stdin.close()
-            except subprocess.CalledProcessError as e:
-                error_msg = (
-                    f"git初始化失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-                )
-                print(f"  {error_msg}")
-                return False, error_msg
-            except subprocess.TimeoutExpired:
-                error_msg = "git初始化超时，已终止操作"
-                print(f"  {error_msg}")
-                return False, error_msg
-
             # 分步执行命令并添加错误处理
-            try:
-                print("  开始unbundle...")
-                unbundle_process = subprocess.Popen(
-                    ["git", "bundle", "unbundle", existing_bundle],
-                    stderr=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stdin=subprocess.PIPE,
-                    text=True,
-                    close_fds=True,
-                )
-                all_processes.append(unbundle_process)
-                try:
-                    stdout, stderr = unbundle_process.communicate(timeout=300)
-                    # time.sleep(30)
-                    if unbundle_process.returncode != 0:
-                        raise subprocess.CalledProcessError(
-                            unbundle_process.returncode,
-                            unbundle_process.args,
-                            stdout,
-                            stderr,
-                        )
-                except subprocess.TimeoutExpired:
-                    unbundle_process.kill()
-                    stdout, stderr = unbundle_process.communicate()
-                    raise subprocess.TimeoutExpired(
-                        unbundle_process.args, 300, stdout, stderr
-                    )
-                finally:
-                    if unbundle_process.stdout:
-                        unbundle_process.stdout.close()
-                    if unbundle_process.stderr:
-                        unbundle_process.stderr.close()
-                    if unbundle_process.stdin:
-                        unbundle_process.stdin.close()
-            except subprocess.CalledProcessError as e:
-                error_msg = f"解包bundle文件失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-                print(f"  {error_msg}")
-                return False, error_msg
-            except subprocess.TimeoutExpired:
-                error_msg = "解包bundle文件超时，已终止操作"
+            success, error_msg = run_command(
+                ["git", "clone", existing_bundle, "."], 300
+            )
+            if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
 
-            try:
-                print(f"  开始add remote: {repo_Url}...")
-                remote_add_process = subprocess.Popen(
-                    ["git", "remote", "add", "origin", repo_Url],
-                    stderr=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stdin=subprocess.PIPE,
-                    text=True,
-                    close_fds=True,
+            # 检查远程仓库是否存在，不存在则添加，存在则更新
+            success, error_msg = run_command(["git", "remote", "get-url", "origin"], 60)
+            if success:
+                # 远程仓库已存在，更新 URL
+                success, error_msg = run_command(
+                    ["git", "remote", "set-url", "origin", repo_Url], 60
                 )
-                all_processes.append(remote_add_process)
-                try:
-                    stdout, stderr = remote_add_process.communicate(timeout=60)
-                    if remote_add_process.returncode != 0:
-                        raise subprocess.CalledProcessError(
-                            remote_add_process.returncode,
-                            remote_add_process.args,
-                            stdout,
-                            stderr,
-                        )
-                except subprocess.TimeoutExpired:
-                    remote_add_process.kill()
-                    stdout, stderr = remote_add_process.communicate()
-                    raise subprocess.TimeoutExpired(
-                        remote_add_process.args, 60, stdout, stderr
-                    )
-                finally:
-                    if remote_add_process.stdout:
-                        remote_add_process.stdout.close()
-                    if remote_add_process.stderr:
-                        remote_add_process.stderr.close()
-                    if remote_add_process.stdin:
-                        remote_add_process.stdin.close()
-            except subprocess.CalledProcessError as e:
-                error_msg = (
-                    f"添加远程仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
+            else:
+                # 远程仓库不存在，添加
+                success, error_msg = run_command(
+                    ["git", "remote", "add", "origin", repo_Url], 60
                 )
-                print(f"  {error_msg}")
-                return False, error_msg
-            except subprocess.TimeoutExpired:
-                error_msg = "添加远程仓库超时，已终止操作"
+            if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
 
-            # 获取所有分支和标签的更新
-            try:
-                print(f"  开始 fetch all... {repo_name}...")
-                fetch_process = subprocess.Popen(
-                    [
-                        "git",
-                        "fetch",
-                        "--all",
-                        "--tags",
-                        "--force",
-                        # "--prune",
-                        # "--depth",
-                        # "1",
-                    ],
-                    stderr=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stdin=subprocess.PIPE,
-                    text=True,
-                    close_fds=True,
-                )
-                all_processes.append(fetch_process)
-                try:
-                    stdout, stderr = fetch_process.communicate(timeout=900)
-                    if fetch_process.returncode != 0:
-                        raise subprocess.CalledProcessError(
-                            fetch_process.returncode, fetch_process.args, stdout, stderr
-                        )
-                except subprocess.TimeoutExpired:
-                    fetch_process.kill()
-                    stdout, stderr = fetch_process.communicate()
-                    raise subprocess.TimeoutExpired(
-                        fetch_process.args, 900, stdout, stderr
-                    )
-                finally:
-                    if fetch_process.stdout:
-                        fetch_process.stdout.close()
-                    if fetch_process.stderr:
-                        fetch_process.stderr.close()
-                    if fetch_process.stdin:
-                        fetch_process.stdin.close()
-
-            except subprocess.CalledProcessError as e:
-                error_msg = (
-                    f"获取更新失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-                )
-                print(f"  {error_msg}")
-                return False, error_msg
-            except subprocess.TimeoutExpired:
-                error_msg = "获取更新超时，已终止操作"
+            success, error_msg = run_command(
+                [
+                    "git",
+                    "fetch",
+                    "--all",
+                    "--tags",
+                    # "--force",
+                    # "--unshallow",
+                    #
+                ],
+                900,  #
+            )
+            if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
         else:
             # 如果不存在bundle文件，直接克隆仓库
             print("  正在克隆仓库...")
-            try:
-                clone_process = subprocess.Popen(
-                    [
-                        "git",
-                        "clone",
-                        # "--mirror",
-                        repo_Url,
-                        ".",
-                        "--depth",
-                        "1",
-                    ],
-                    stderr=subprocess.PIPE,
-                    stdout=subprocess.PIPE,
-                    stdin=subprocess.PIPE,
-                    text=True,
-                    close_fds=True,
-                )
-                all_processes.append(clone_process)
-                try:
-                    stdout, stderr = clone_process.communicate(timeout=900)
-                    if clone_process.returncode != 0:
-                        raise subprocess.CalledProcessError(
-                            clone_process.returncode, clone_process.args, stdout, stderr
-                        )
-                except subprocess.TimeoutExpired:
-                    clone_process.kill()
-                    stdout, stderr = clone_process.communicate()
-                    raise subprocess.TimeoutExpired(
-                        clone_process.args, 900, stdout, stderr
-                    )
-                finally:
-                    if clone_process.stdout:
-                        clone_process.stdout.close()
-                    if clone_process.stderr:
-                        clone_process.stderr.close()
-                    if clone_process.stdin:
-                        clone_process.stdin.close()
-
-                # 如果执行到这里，说明命令成功执行
-            except subprocess.CalledProcessError as e:
-                error_msg = (
-                    f"克隆仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-                )
-                print(f"  {error_msg}")
-                return False, error_msg
-            except subprocess.TimeoutExpired:
-                error_msg = "克隆仓库超时，已终止操作"
+            success, error_msg = run_command(
+                [
+                    "git",
+                    "clone",
+                    repo_Url,
+                    ".",
+                    #
+                    # "--depth",
+                    # "1",
+                ],
+                900,
+            )
+            if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
 
@@ -299,60 +151,18 @@ def bundle_repo(
 
         # 创建bundle
         print("  正在创建bundle...")
-        # 创建包含所有引用的git bundle文件
-        try:
-            unbundle_process = subprocess.Popen(
-                ["git", "bundle", "create", bundle_path, "--all"],
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stdin=subprocess.PIPE,
-                text=True,
-                close_fds=True,
-            )
-            all_processes.append(unbundle_process)
-            try:
-                stdout, stderr = unbundle_process.communicate(timeout=900)
-                if unbundle_process.returncode != 0:
-                    raise subprocess.CalledProcessError(
-                        unbundle_process.returncode,
-                        unbundle_process.args,
-                        stdout,
-                        stderr,
-                    )
-            except subprocess.TimeoutExpired:
-                unbundle_process.kill()
-                stdout, stderr = unbundle_process.communicate()
-                raise subprocess.TimeoutExpired(
-                    unbundle_process.args, 900, stdout, stderr
-                )
-            finally:
-                if unbundle_process.stdout:
-                    unbundle_process.stdout.close()
-                if unbundle_process.stderr:
-                    unbundle_process.stderr.close()
-                if unbundle_process.stdin:
-                    unbundle_process.stdin.close()
-
-            # 如果执行到这里，说明命令成功执行
-            print(f"  成功创建bundle: {bundle_path}")
-        except subprocess.CalledProcessError as e:
-            error_msg = (
-                f"创建bundle失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-            )
-            print(f"  {error_msg}")
-            return False, error_msg
-        except subprocess.TimeoutExpired:
-            error_msg = "创建bundle超时，已终止操作"
+        success, error_msg = run_command(
+            ["git", "bundle", "create", bundle_path, "--all"], 900
+        )
+        if not success:
             print(f"  {error_msg}")
             return False, error_msg
 
         # 只有在成功创建新bundle后才删除旧bundle
         if existing_bundle:
             try:
-                print(f"  已删除旧bundle文件: {os.path.basename(existing_bundle)}")
-                # os.remove(existing_bundle)
                 os.unlink(existing_bundle)  # 直接永久删除
-                # shutil.rmtree(existing_bundle)  # 直接永久删除目录
+                print(f"  已删除旧bundle文件: {os.path.basename(existing_bundle)}")
             except OSError as e:
                 print(f"  删除旧bundle文件失败: {e}")
 
