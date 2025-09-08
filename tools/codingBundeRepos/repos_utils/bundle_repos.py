@@ -19,11 +19,12 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     try:
         result = subprocess.run(
             command,
-            check=True,
-            timeout=timeout,
-            text=True,
             # stderr=subprocess.PIPE,
             # stdout=subprocess.PIPE,
+            # stdin=subprocess.PIPE,
+            text=True,
+            check=True,
+            timeout=timeout,
             close_fds=True,
             shell=False,
         )
@@ -33,6 +34,9 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
         return False, error_msg
     except subprocess.TimeoutExpired:
         error_msg = "命令执行超时，已终止操作"
+        return False, error_msg
+    except Exception as e:
+        error_msg = f"未知错误: {str(e)}"
         return False, error_msg
 
 
@@ -69,8 +73,8 @@ def bundle_repo(
             )
 
     search_dir = os.path.join(tempfile.gettempdir(), "repositoryMananger")
-    if not os.path.exists(search_dir):
-        os.makedirs(search_dir)
+    # 确保临时目录存在
+    os.makedirs(search_dir, exist_ok=True)
     prefix = "tempRepo_"
     suffix = "_gitRepo"
     final_prefix = os.path.normpath(f"{prefix}{repo_name}_")
@@ -210,8 +214,7 @@ def bundle_repos(
 
     # 确保输出目录存在
     try:
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        os.makedirs(output_dir, exist_ok=True)
     except OSError as e:
         print(f"无法创建输出目录 {output_dir}: {e}")
         sys.exit(1)

@@ -3,6 +3,7 @@ import shutil
 import tempfile
 import stat
 
+
 def remove_readonly(func, path, _):
     """清除只读属性并重试删除操作"""
     os.chmod(path, stat.S_IWRITE)
@@ -10,8 +11,8 @@ def remove_readonly(func, path, _):
 
 
 search_dir = os.path.join(tempfile.gettempdir(), "repositoryMananger")
-if not os.path.exists(search_dir):
-    os.makedirs(search_dir)
+
+os.makedirs(search_dir, exist_ok=True)
 prefix = "myRepository_"
 suffix = "_gitRepo"
 # 创建临时目录

@@ -13,6 +13,37 @@ import sys
 from datetime import datetime
 
 
+def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
+    """
+    执行命令并统一处理错误
+    :param command: 命令列表
+    :param timeout: 超时时间（秒）
+    :return: (是否成功, 错误信息)
+    """
+    try:
+        subprocess.run(
+            command,
+            # stderr=subprocess.PIPE,
+            # stdout=subprocess.PIPE,
+            # stdin=subprocess.PIPE,
+            text=True,
+            check=True,
+            timeout=timeout,
+            close_fds=True,
+            shell=False,
+        )
+        return True, ""
+    except subprocess.CalledProcessError as e:
+        error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
+        return False, error_msg
+    except subprocess.TimeoutExpired:
+        error_msg = "命令执行超时，已终止操作"
+        return False, error_msg
+    except Exception as e:
+        error_msg = f"未知错误: {str(e)}"
+        return False, error_msg
+
+
 def clone_or_pull_repo(
     repo_name: str, repo_Url: str, repo_clone_dir: str
 ) -> tuple[bool, str]:
@@ -22,79 +53,61 @@ def clone_or_pull_repo(
     os.makedirs(repo_clone_dir, exist_ok=True)
     # 创建目标目录路径
     repo_dir = os.path.join(repo_clone_dir, repo_name)
-    all_processes = list[subprocess.CompletedProcess]
     # 检查目标目录是否存在
     if os.path.exists(repo_dir):
         print("  仓库已存在，执行 git pull...")
         try:
             os.chdir(repo_dir)
-            pull_process=subprocess.run(
-                ["git", "pull", "--all", "--tags", "--force"],
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stdin=subprocess.PIPE,
-                text=True,
-                check=True,
-                timeout=900,  # 调整为15分钟超时
+            success, error_msg = run_command(
+                [
+                    "git",
+                    "pull",
+                    "--all",
+                    "--tags",
+                    #
+                    "--unshallow",
+                    "--force",
+                ],
+                900,
             )
-            all_processes.append(pull_process)
-
-            # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
-            print(f"  成功更新仓库: {repo_name}")
-            return True, ""
-        except subprocess.CalledProcessError as e:
-            error_msg = f"拉取仓库失败:Path:{repo_dir} | Error： {e.stderr if hasattr(e, 'stderr') else str(e)}"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except subprocess.TimeoutExpired:
-            error_msg = "拉取仓库超时，已终止操作"
+            if success:
+                print(f"  成功更新仓库: {repo_name}")
+                return True, ""
+            else:
+                error_msg = f"拉取仓库失败:Path:{repo_dir} | Error： {error_msg}"
+                print(f"  {error_msg}")
+                return False, error_msg
+        except Exception as e:
+            error_msg = f"拉取仓库失败: {str(e)}"
             print(f"  {error_msg}")
             return False, error_msg
     else:
         print("  仓库不存在，执行 git clone...")
-        try:
-            clone_process=subprocess.run(
-                [
-                    "git",
-                    "clone",
-                    # "--mirror",
-                    repo_Url,
-                    os.path.normpath(repo_dir),
-                    "--depth",
-                    "1",
-                ],
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                stdin=subprocess.PIPE,
-                text=True,
-                check=True,
-                timeout=900,  # 调整为15分钟超时
-            )
-            all_processes.append(clone_process)
-
-            # 如果执行到这里，说明命令成功执行（因为check=True会在失败时抛出异常）
+        success, error_msg = run_command(
+            [
+                "git",
+                "clone",
+                repo_Url,
+                os.path.normpath(repo_dir),
+                "--depth",
+                "1",
+            ],
+            900,
+        )
+        if success:
             print(f"  成功克隆仓库: {repo_name}")
             return True, ""
-        except subprocess.CalledProcessError as e:
-            error_msg = f"克隆仓库失败: {e.stderr if hasattr(e, 'stderr') else str(e)}"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except subprocess.TimeoutExpired:
-            error_msg = "克隆仓库超时，已终止操作"
-            print(f"  {error_msg}")
-            return False, error_msg
-        except OSError as e:
-            error_msg = f"创建目录失败: {e}"
+        else:
+            error_msg = f"克隆仓库失败: {error_msg}"
             print(f"  {error_msg}")
             return False, error_msg
 
 
 def clone_or_pull_repos(repos: list[dict[str, str]], output_dir: str) -> None:
-
+    """批量克隆或拉取仓库"""
     # 确保输出目录存在
     try:
-        if not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        os.makedirs(output_dir, exist_ok=True)
     except OSError as e:
         print(f"无法创建输出目录 {output_dir}: {e}")
         sys.exit(1)
