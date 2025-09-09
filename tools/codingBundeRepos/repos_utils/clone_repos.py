@@ -46,6 +46,7 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
         error_msg = f"未知错误: {str(e)}"
         return False, error_msg
 
+
 def clone_or_pull_repo(
     repo_name: str, repo_Url: str, repo_clone_dir: str
 ) -> tuple[bool, str]:
@@ -191,7 +192,7 @@ def is_shallow_repository(repo_dir: str) -> bool:
     """
     try:
         success, output = run_command_return_std(
-            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
+            ["git", "rev-parse", "--is-shallow-repository"], timeout=900
         )
         return success and output.strip() == "true"
     except Exception:

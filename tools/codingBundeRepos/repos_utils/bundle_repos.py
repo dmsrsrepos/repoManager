@@ -126,7 +126,7 @@ def bundle_repo(
             # print("  远程仓库已更新")
             return True, ""
 
-        need_to_clone_from_repo_url = False
+        need_to_clone_from_repo_url = None
 
         if aways_bundle_new:
             print("  设置为总是创建新的bundle,将删除已找到的bundle文件")
@@ -140,7 +140,9 @@ def bundle_repo(
             else:
                 print(f"  增量更新失败，将尝试重新克隆仓库: {error_msg}")
                 need_to_clone_from_repo_url = True
-
+        else:
+            print("  未找到现有bundle文件，将尝试克隆仓库...")
+            need_to_clone_from_repo_url = True
         if need_to_clone_from_repo_url:
             # 如果不存在bundle文件，直接克隆仓库
             print(f"  正在克隆仓库...{repo_Url}")
@@ -319,10 +321,12 @@ def is_shallow_repository(repo_dir: str) -> bool:
     """
     try:
         success, output = run_command_return_std(
-            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
+            ["git", "rev-parse", "--is-shallow-repository"], timeout=60
         )
+        # print(f"  是否为浅克隆: {output}")
         return success and output.strip() == "true"
-    except Exception:
+    except Exception as e:
+        print(f"  检查是否为浅克隆时出错: {str(e)}")
         return False
 
 
@@ -338,8 +342,9 @@ def _fetch_repository(repo_Url: str, temp_dir: str) -> tuple[bool, str]:
         "--prune",
     ]
     if shallow_fetch:
+        print("  此仓库为浅克隆，将执行 --unshallow 操作...")
         command.append("--unshallow")
-    print(f"  正在 fetch 仓库...{repo_Url}")
+    print(f"  正在fetch仓库...{repo_Url}")
     # print(f"  命令：{command}")
     os.chdir(temp_dir)
     success, error_msg = run_command(command, 900)
