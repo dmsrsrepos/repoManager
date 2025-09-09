@@ -19,9 +19,9 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     try:
         result = subprocess.run(
             command,
-            # stdin=subprocess.PIPE,
-            # stdout=subprocess.PIPE,
-            # stderr=subprocess.PIPE,
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
@@ -90,28 +90,6 @@ def bundle_repo(
         os.chdir(temp_dir)
 
         def _try_clone_repo_from_bundle():
-            # 如果存在bundle文件，使用它作为基础进行增量更新
-
-            # # 初始化临时目录为Git仓库
-            # success, error_msg = run_command(["git", "init"], 60)
-            # if not success:
-            #     print(f"  初始化Git仓库失败: {error_msg}")
-            #     return False, error_msg
-
-            # # 验证bundle文件完整性
-            # success, error_msg = run_command(
-            #     ["git", "bundle", "verify", existing_bundle], 300
-            # )
-            # if not success:
-            #     print(f"  Bundle文件验证失败: {error_msg}")
-            #     # 删除损坏的Bundle文件
-            #     try:
-            #         os.unlink(existing_bundle)
-            #         print(f"    已删除损坏的Bundle文件: {os.path.basename(existing_bundle)}")
-            #     except Exception as e:
-            #         print(f"    删除Bundle文件失败: {str(e)}")
-            #     return False, error_msg
-
             # 分步执行命令并添加错误处理
             print(f"  开始clone bundle... {existing_bundle}")
             success, error_msg = run_command(
@@ -145,6 +123,8 @@ def bundle_repo(
             success, error_msg = _fetch_repository(repo_Url, temp_dir)
             if not success:
                 return False, error_msg
+            # print("  远程仓库已更新")
+            return True, ""
 
         need_to_clone_from_repo_url = False
 
@@ -155,6 +135,7 @@ def bundle_repo(
             print("  找到现有bundle文件，将尝试增量更新...")
             success, error_msg = _try_clone_repo_from_bundle()
             if success:
+                print("  增量更新 bundle 成功...")
                 need_to_clone_from_repo_url = False
             else:
                 print(f"  增量更新失败，将尝试重新克隆仓库: {error_msg}")
@@ -210,7 +191,7 @@ def bundle_repo(
         return True, ""
 
     except Exception as e:
-        error_msg = f"处理仓库时出错: {e}"
+        error_msg = f"处理仓库时出错: {str(e)}"
         print(f"  {error_msg}")
         return False, error_msg
 
@@ -238,7 +219,7 @@ def cleanup_temp_dir(target_dir: str) -> None:
         for dir in dirs:
             dir_path = os.path.join(root, dir)
             try:
-                shutil.rmtree(dir_path, onexc=remove_readonly)  # 处理只读文件
+                shutil.rmtree(dir_path, onerror=remove_readonly)  # 处理只读文件
             except OSError as e:
                 # print(f"删除目录失败: {dir_path}, 错误: {str(e)}")
                 pass
@@ -359,7 +340,7 @@ def _fetch_repository(repo_Url: str, temp_dir: str) -> tuple[bool, str]:
     if shallow_fetch:
         command.append("--unshallow")
     print(f"  正在 fetch 仓库...{repo_Url}")
-    print(f"  命令：{command}")
+    # print(f"  命令：{command}")
     os.chdir(temp_dir)
     success, error_msg = run_command(command, 900)
     if not success:
