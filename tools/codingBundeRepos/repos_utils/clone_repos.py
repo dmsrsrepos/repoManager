@@ -192,8 +192,10 @@ def is_shallow_repository(repo_dir: str) -> bool:
     """
     try:
         success, output = run_command_return_std(
-            ["git", "rev-parse", "--is-shallow-repository"], timeout=900
+            ["git", "rev-parse", "--is-shallow-repository"], timeout=60
         )
+        # print(f"  是否为浅克隆: {output}")
         return success and output.strip() == "true"
-    except Exception:
+    except Exception as e:
+        print(f"  检查是否为浅克隆时出错: {str(e)}")
         return False
