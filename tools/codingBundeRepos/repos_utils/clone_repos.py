@@ -23,9 +23,9 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     try:
         result = subprocess.run(
             command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            # stdin=subprocess.PIPE,
+            # stdout=subprocess.PIPE,
+            # stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
@@ -45,22 +45,6 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     except Exception as e:
         error_msg = f"未知错误: {str(e)}"
         return False, error_msg
-
-
-def is_shallow_repository(repo_dir: str) -> bool:
-    """
-    检查仓库是否为浅克隆（shallow repository）
-    :param repo_dir: 仓库目录路径
-    :return: 是否为浅克隆
-    """
-    try:
-        success, output = run_command(
-            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
-        )
-        return success and output.strip() == "true"
-    except Exception:
-        return False
-
 
 def clone_or_pull_repo(
     repo_name: str, repo_Url: str, repo_clone_dir: str
@@ -165,3 +149,50 @@ def clone_or_pull_repos(repos: list[dict[str, str]], output_dir: str) -> None:
     except Exception as e:
         print(f"Error saving to log file: {e}")
     print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
+
+
+def run_command_return_std(command: list[str], timeout: int = 900) -> tuple[bool, str]:
+    """
+    执行命令并统一处理错误
+    :param command: 命令列表
+    :param timeout: 超时时间（秒）
+    :return: (是否成功, 错误信息, 标准输出, 标准错误)
+    """
+    try:
+        result = subprocess.run(
+            command,
+            # 需要去保 stdout=subprocess.PIPE 存在
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True,
+            timeout=timeout,
+            close_fds=True,
+            shell=False,
+        )
+        return True, result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
+        return False, error_msg
+    except subprocess.TimeoutExpired:
+        error_msg = "命令执行超时，已终止操作"
+        return False, error_msg
+    except Exception as e:
+        error_msg = f"未知错误: {str(e)}"
+        return False, error_msg
+
+
+def is_shallow_repository(repo_dir: str) -> bool:
+    """
+    检查仓库是否为浅克隆（shallow repository）
+    :param repo_dir: 仓库目录路径
+    :return: 是否为浅克隆
+    """
+    try:
+        success, output = run_command_return_std(
+            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
+        )
+        return success and output.strip() == "true"
+    except Exception:
+        return False

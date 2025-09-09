@@ -32,4 +32,4 @@ if __name__ == "__main__":
         if isinstance(repo, dict)
     ]
     print(f"即将处理 {len(repos)} 个仓库")
-    bundle_repos(repos, OUTPUT_DIR, True)
+    bundle_repos(repos, OUTPUT_DIR, False)

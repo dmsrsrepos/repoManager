@@ -19,9 +19,9 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     try:
         result = subprocess.run(
             command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            # stdin=subprocess.PIPE,
+            # stdout=subprocess.PIPE,
+            # stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
@@ -91,9 +91,29 @@ def bundle_repo(
 
         def _try_clone_repo_from_bundle():
             # 如果存在bundle文件，使用它作为基础进行增量更新
-            print("  开始进行增量更新...")
+
+            # # 初始化临时目录为Git仓库
+            # success, error_msg = run_command(["git", "init"], 60)
+            # if not success:
+            #     print(f"  初始化Git仓库失败: {error_msg}")
+            #     return False, error_msg
+
+            # # 验证bundle文件完整性
+            # success, error_msg = run_command(
+            #     ["git", "bundle", "verify", existing_bundle], 300
+            # )
+            # if not success:
+            #     print(f"  Bundle文件验证失败: {error_msg}")
+            #     # 删除损坏的Bundle文件
+            #     try:
+            #         os.unlink(existing_bundle)
+            #         print(f"    已删除损坏的Bundle文件: {os.path.basename(existing_bundle)}")
+            #     except Exception as e:
+            #         print(f"    删除Bundle文件失败: {str(e)}")
+            #     return False, error_msg
 
             # 分步执行命令并添加错误处理
+            print("  开始clone bundle...")
             success, error_msg = run_command(
                 ["git", "clone", existing_bundle, "."], 300
             )
@@ -103,7 +123,7 @@ def bundle_repo(
             # print("  clone更新成功")
             # 检查远程仓库是否存在，不存在则添加，存在则更新
             success, error_msg = run_command(["git", "remote", "get-url", "origin"], 60)
-            # print("  检查远程仓库...")
+            # print(f"  检查远程仓库...{repo_Url}")
             if success:
                 # 远程仓库已存在，更新 URL
                 success, error_msg = run_command(
@@ -121,34 +141,46 @@ def bundle_repo(
                 print(f"  {error_msg}")
                 return False, error_msg
             # print("  远程仓库已设置")
-            success, error_msg = run_command(
-                [
-                    "git",
-                    "fetch",
-                    "--all",
-                    "--tags",
-                    # "--force",
-                    # "--unshallow",
-                    #
-                ],
-                900,  #
-            )
+            shallow_fetch = is_shallow_repository(temp_dir)
+
+            command = [
+                "git",
+                "fetch",
+                "--all",
+                "--tags",
+                "--prune",
+                # "--force",
+                # "--unshallow",
+                #
+            ]
+            if shallow_fetch:
+                command.append("--unshallow")
+            print(f"  正在 fetch 仓库...{repo_Url}")
+            print(f"  命令：{command}")
+            success, error_msg = run_command(command, 900)
+
             # print("  正在拉取更新...")
             if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
-            # print("  fetch更新成功")
+            print("  fetch bundle 成功...")
             return True, ""
 
-        not_cloned_repo = True
+        need_to_clone_from_repo_url = False
 
-        if existing_bundle and not aways_bundle_new:
+        if aways_bundle_new:
+            print("  设置为总是创建新的bundle,将删除已找到的bundle文件")
+            need_to_clone_from_repo_url = True
+        elif existing_bundle:
+            print("  找到现有bundle文件，将尝试增量更新...")
             success, error_msg = _try_clone_repo_from_bundle()
+            if success:
+                need_to_clone_from_repo_url = False
+            else:
+                print(f"  增量更新失败，将尝试重新克隆仓库: {error_msg}")
+                need_to_clone_from_repo_url = True
 
-            not_cloned_repo = not success
-            print(f"  增量更新失败，将尝试重新克隆仓库: {error_msg}")
-
-        if aways_bundle_new or not_cloned_repo:
+        if need_to_clone_from_repo_url:
             # 如果不存在bundle文件，直接克隆仓库
             print("  正在克隆仓库...")
             success, error_msg = run_command(
@@ -158,8 +190,8 @@ def bundle_repo(
                     repo_Url,
                     ".",
                     #
-                    # "--depth",
-                    # "1",
+                    "--depth",
+                    "1",
                 ],
                 900,
             )
@@ -167,6 +199,24 @@ def bundle_repo(
                 print(f"  {error_msg}")
                 return False, error_msg
 
+            shallow_fetch = is_shallow_repository(temp_dir)
+            print("  正在fetch仓库...")
+            command = [
+                "git",
+                "fetch",
+                "--all",
+                "--tags",
+                # "--prune",
+                # "--force",
+                # "--unshallow",
+                #
+            ]
+            if shallow_fetch:
+                command.append("--unshallow")
+            success, error_msg = run_command(command, 900)
+            if not success:
+                print(f"  {error_msg}")
+                return False, error_msg
         # 创建新的bundle文件名
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         bundle_filename = f"{repo_name}_{timestamp}.bundle"
@@ -209,21 +259,21 @@ def remove_readonly(func, path, _):
 
 def cleanup_temp_dir(target_dir: str) -> None:
     for root, dirs, files in os.walk(target_dir):
-        for file in files:
-            file_path = os.path.join(root, file)
-            try:
-                os.chmod(file_path, stat.S_IWRITE)  # 修改文件权限
-                os.unlink(file_path)
-                # print(f"已删除文件: {file_path}")
-            except OSError as e:
-                # print(f"删除文件失败: {file_path}, 错误: {e}")
-                pass
+        # for file in files:
+        #     file_path = os.path.join(root, file)
+        #     try:
+        #         os.chmod(file_path, stat.S_IWRITE)  # 修改文件权限
+        #         os.unlink(file_path)
+        #         # print(f"已删除文件: {file_path}")
+        #     except OSError as e:
+        #         # print(f"删除文件失败: {file_path}, 错误: {str(e)}")
+        #         pass
         for dir in dirs:
             dir_path = os.path.join(root, dir)
             try:
-                shutil.rmtree(dir_path, onerror=remove_readonly)  # 处理只读文件
+                shutil.rmtree(dir_path, onexc=remove_readonly)  # 处理只读文件
             except OSError as e:
-                # print(f"删除目录失败: {dir_path}, 错误: {e}")
+                # print(f"删除目录失败: {dir_path}, 错误: {str(e)}")
                 pass
 
 
@@ -279,3 +329,50 @@ def bundle_repos(
     except Exception as e:
         print(f"Error saving to log file: {e}")
     print(f"\n完成! 成功处理 {success_count}/{len(repos)} 个仓库")
+
+
+def run_command_return_std(command: list[str], timeout: int = 900) -> tuple[bool, str]:
+    """
+    执行命令并统一处理错误
+    :param command: 命令列表
+    :param timeout: 超时时间（秒）
+    :return: (是否成功, 错误信息, 标准输出, 标准错误)
+    """
+    try:
+        result = subprocess.run(
+            command,
+            # 需要去保 stdout=subprocess.PIPE 存在
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True,
+            timeout=timeout,
+            close_fds=True,
+            shell=False,
+        )
+        return True, result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
+        return False, error_msg
+    except subprocess.TimeoutExpired:
+        error_msg = "命令执行超时，已终止操作"
+        return False, error_msg
+    except Exception as e:
+        error_msg = f"未知错误: {str(e)}"
+        return False, error_msg
+
+
+def is_shallow_repository(repo_dir: str) -> bool:
+    """
+    检查仓库是否为浅克隆（shallow repository）
+    :param repo_dir: 仓库目录路径
+    :return: 是否为浅克隆
+    """
+    try:
+        success, output = run_command_return_std(
+            ["git", "rev-parse", "--is-shallow-repository"], cwd=repo_dir
+        )
+        return success and output.strip() == "true"
+    except Exception:
+        return False
