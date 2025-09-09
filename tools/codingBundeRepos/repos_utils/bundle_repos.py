@@ -113,9 +113,9 @@ def bundle_repo(
             #     return False, error_msg
 
             # 分步执行命令并添加错误处理
-            print("  开始clone bundle...")
+            print(f"  开始clone bundle... {existing_bundle}")
             success, error_msg = run_command(
-                ["git", "clone", existing_bundle, "."], 300
+                ["git", "clone", existing_bundle, temp_dir], 300
             )
             if not success:
                 print(f"  {error_msg}")
@@ -141,30 +141,10 @@ def bundle_repo(
                 print(f"  {error_msg}")
                 return False, error_msg
             # print("  远程仓库已设置")
-            shallow_fetch = is_shallow_repository(temp_dir)
 
-            command = [
-                "git",
-                "fetch",
-                "--all",
-                "--tags",
-                "--prune",
-                # "--force",
-                # "--unshallow",
-                #
-            ]
-            if shallow_fetch:
-                command.append("--unshallow")
-            print(f"  正在 fetch 仓库...{repo_Url}")
-            print(f"  命令：{command}")
-            success, error_msg = run_command(command, 900)
-
-            # print("  正在拉取更新...")
+            success, error_msg = _fetch_repository(repo_Url, temp_dir)
             if not success:
-                print(f"  {error_msg}")
                 return False, error_msg
-            print("  fetch bundle 成功...")
-            return True, ""
 
         need_to_clone_from_repo_url = False
 
@@ -182,13 +162,14 @@ def bundle_repo(
 
         if need_to_clone_from_repo_url:
             # 如果不存在bundle文件，直接克隆仓库
-            print("  正在克隆仓库...")
+            print(f"  正在克隆仓库...{repo_Url}")
             success, error_msg = run_command(
                 [
                     "git",
                     "clone",
                     repo_Url,
-                    ".",
+                    temp_dir,
+                    # ".",
                     #
                     "--depth",
                     "1",
@@ -199,21 +180,7 @@ def bundle_repo(
                 print(f"  {error_msg}")
                 return False, error_msg
 
-            shallow_fetch = is_shallow_repository(temp_dir)
-            print("  正在fetch仓库...")
-            command = [
-                "git",
-                "fetch",
-                "--all",
-                "--tags",
-                # "--prune",
-                # "--force",
-                # "--unshallow",
-                #
-            ]
-            if shallow_fetch:
-                command.append("--unshallow")
-            success, error_msg = run_command(command, 900)
+            success, error_msg = _fetch_repository(repo_Url, temp_dir)
             if not success:
                 print(f"  {error_msg}")
                 return False, error_msg
@@ -376,3 +343,27 @@ def is_shallow_repository(repo_dir: str) -> bool:
         return success and output.strip() == "true"
     except Exception:
         return False
+
+
+def _fetch_repository(repo_Url: str, temp_dir: str) -> tuple[bool, str]:
+    """执行 git fetch 操作"""
+    os.chdir(temp_dir)
+    shallow_fetch = is_shallow_repository(temp_dir)
+    command = [
+        "git",
+        "fetch",
+        "--all",
+        "--tags",
+        "--prune",
+    ]
+    if shallow_fetch:
+        command.append("--unshallow")
+    print(f"  正在 fetch 仓库...{repo_Url}")
+    print(f"  命令：{command}")
+    os.chdir(temp_dir)
+    success, error_msg = run_command(command, 900)
+    if not success:
+        print(f"  {error_msg}")
+        return False, error_msg
+    print("  fetch 操作成功...")
+    return True, ""
