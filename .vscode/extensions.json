@@ -96,6 +96,7 @@
     "wmaurer.change-case",
     "yoavbls.pretty-ts-errors",
     "ypresto.vscode-intelli-refactor",
-    "zaaack.markdown-editor"
+    "zaaack.markdown-editor",
+    "dotenv.dotenvx-vscode"
   ]
 }
