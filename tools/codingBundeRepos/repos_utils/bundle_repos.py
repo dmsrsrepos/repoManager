@@ -19,19 +19,21 @@ def run_command(command: list[str], timeout: int = 900) -> tuple[bool, str]:
     try:
         result = subprocess.run(
             command,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            # stdin，stdout，stderr 不指定参数时将会显示命令执行的过程，比如clone的进度等
+            # stdin=subprocess.PIPE,
+            # stdout=subprocess.PIPE,
+            # stderr=subprocess.PIPE,
             text=True,
             check=True,
             timeout=timeout,
             close_fds=True,
             shell=False,
         )
-        if result.stdout == None:
-            return True, ""
-        else:
-            return True, result.stdout.strip()
+        # if result.stdout == None:
+        #     return True, ""
+        # else:
+        #     return True, result.stdout.strip()
+        return True, {result.stdout.strip() if result.stdout else ""}
     except subprocess.CalledProcessError as e:
         error_msg = f"命令执行失败: {e.stderr if e.stderr else str(e)}"
         return False, error_msg
@@ -297,7 +299,7 @@ def run_command_return_std(command: list[str], timeout: int = 900) -> tuple[bool
     try:
         result = subprocess.run(
             command,
-            # 需要去保 stdout=subprocess.PIPE 存在
+            # 需要确保指定stdout=subprocess.PIPE，result.stdout才会有输出值
             stdin=subprocess.PIPE,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
