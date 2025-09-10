@@ -45,9 +45,11 @@ def get_all_repos_info() -> List[Dict[str, Any]]:
             all_repos.extend(formated_repos)
         elif isinstance(formated_repos, dict):
             all_repos.append(formated_repos)
-            
-    save_to_json("coding_repos", all_repos, "origin_all_coding_repos")
-    
+
+    save_to_json(
+        org="tencent_org", all_repos=all_repos, prefix="origin_all_coding_repos"
+    )
+
     formated_repos = [
         {"Name": repo["Name"], "Url": repo["DepotHttpsUrl"]}
         for repo in all_repos
