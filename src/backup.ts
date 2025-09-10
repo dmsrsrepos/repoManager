@@ -72,7 +72,8 @@ async function findRepos(dirFullPath: string, depth: number, ctx: Context): Prom
 }
 
 export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: number): Promise<void> {
-    await JSONFilePreset(getStoreNameByPath(rootDirFullPath), defaultData)
+    const fileName = getStoreNameByPath(rootDirFullPath)
+    await JSONFilePreset(fileName, defaultData)
         .then(async db => {
             const ctx: Context = {
                 curDirFullPath: rootDirFullPath,
@@ -86,7 +87,7 @@ export async function findAndBackupRepos(rootDirFullPath: string, maxDepth: numb
         })
 
         .then(ctx => {
-            console.log('\r\n\r\n', 'Done! Check the ' + ctx.rootDirFullPath + ' file for the results.')
+            console.log('\r\n\r\n', 'Done! Collected repos in ' + ctx.rootDirFullPath + ' to save to file: ' + fileName)
             return ctx
         })
 
