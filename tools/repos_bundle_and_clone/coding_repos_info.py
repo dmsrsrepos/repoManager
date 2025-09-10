@@ -1,6 +1,8 @@
 from typing import Dict, Any, List, Optional, Union
-from coding_utils import validate_id, handle_api_error,make_api_request
+from coding_utils import validate_id, handle_api_error, make_api_request
 from coding_projects_info import get_project_ids
+from util_filter_repos import filter_repos
+from util_repo import save_to_json
 
 
 def fetch_repositories_info(
@@ -26,7 +28,7 @@ def fetch_repositories_info(
     return handle_api_error("INVALID_RESPONSE", Exception("API响应中未找到仓库信息"))
 
 
-def get_all_repos_info(unique: bool = True) -> List[Dict[str, Any]]:
+def get_all_repos_info() -> List[Dict[str, Any]]:
     """
     获取用户所有项目的仓库信息
     :param unique: 是否去除重复的仓库信息，默认为True
@@ -38,27 +40,26 @@ def get_all_repos_info(unique: bool = True) -> List[Dict[str, Any]]:
     all_repos = []
 
     for project_id in project_ids:
-        repos = fetch_repositories_info(project_id)
-        if isinstance(repos, list):
-            all_repos.extend(repos)
-        elif isinstance(repos, dict):
-            all_repos.append(repos)
+        formated_repos = fetch_repositories_info(project_id)
+        if isinstance(formated_repos, list):
+            all_repos.extend(formated_repos)
+        elif isinstance(formated_repos, dict):
+            all_repos.append(formated_repos)
+            
+    save_to_json("coding_repos", all_repos, "origin_all_coding_repos")
+    
+    formated_repos = [
+        {"Name": repo["Name"], "Url": repo["DepotHttpsUrl"]}
+        for repo in all_repos
+        if isinstance(repo, dict)
+    ]
 
-    if not unique:
-        return all_repos
+    return filter_repos(formated_repos)
 
-    seen_ids = set()
-    unique_repos = []
-    for repo in all_repos:
-        if isinstance(repo, dict) and "Id" in repo and repo["Id"] not in seen_ids:
-            seen_ids.add(repo["Id"])
-            unique_repos.append(repo)
-
-    return unique_repos
 
 if __name__ == "__main__":
 
-    all_repos = get_all_repos_info(False)  
+    all_repos = get_all_repos_info(False)
 
-    print("仓库数量:", len(all_repos))  
+    print("仓库数量:", len(all_repos))
     print("所有仓库信息:", all_repos)

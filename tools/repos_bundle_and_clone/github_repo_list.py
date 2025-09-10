@@ -2,8 +2,13 @@ import requests
 import json
 import os
 from dotenv import load_dotenv, find_dotenv
+
+from util_filter_repos import filter_repos
+from util_repo import save_to_json
+
 load_dotenv(find_dotenv(".env.local"))
 load_dotenv()
+
 
 # filename = f"./github_repos_{org}.json"
 def fetch_repositories_info():
@@ -16,7 +21,7 @@ def fetch_repositories_info():
         raise ValueError("WORK_GITHUB_TOKEN environment variable is not set.")
     # print(access_token)
     # 生成带有日期的文件名
-   
+
     repos = []
     page = 1
     per_page = 100  # 每页最大数量
@@ -32,7 +37,6 @@ def fetch_repositories_info():
                 "Accept": "application/vnd.github.v3+json",
             },
         )
-
 
         if response.status_code != 200:
             print(f"Error: {response.status_code} - {response.text}")
@@ -59,9 +63,16 @@ def fetch_repositories_info():
         page += 1
 
     print(f"Total private repos: {len(repos)}")
-    # print(repos)
 
-    return repos, org
+    save_to_json(org, repos, "origin_all_github_repos")
+
+    formated_repos = [
+        {"Name": repo["name"], "Url": repo["clone_url"]}
+        for repo in repos
+        if isinstance(repo, dict)
+    ]
+    return filter_repos(formated_repos), org
+
 
 if __name__ == "__main__":
     repos, org = fetch_repositories_info()
