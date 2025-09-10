@@ -21,6 +21,7 @@
   */
 // 最后将输出内容复制到code-workspace的对应位置
 import * as fs from 'node:fs'
+import * as path from 'node:path'
 import { execSync } from 'child_process'
 import JSON5 from 'json5'
 import { glob } from 'glob'
@@ -69,11 +70,13 @@ async function findInstalledExtensions(data): Promise<string[]> {
 console.log('-----------------------------', 'start', '-----------------------------')
 const codeProfile = './tswindows.code-profile'
 
-const vscodeExtensionsPattern = './**/.vscode/extensions.json'
-const vscodeExtensions = await glob(vscodeExtensionsPattern, { cwd: process.cwd(), absolute: true })
+const vscodeExtensionsPattern = '**/.vscode/extensions.json'
 
-const codeWorkspacePathPattern = '../**/*.code-workspace'
-const codeWorkspacePaths = await glob(codeWorkspacePathPattern, { cwd: process.cwd(), absolute: true })
+const rootPath = path.dirname(path.dirname(process.cwd()))
+const vscodeExtensions = await glob(vscodeExtensionsPattern, { cwd: rootPath, absolute: true })
+
+const codeWorkspacePathPattern = '**/*.code-workspace'
+const codeWorkspacePaths = await glob(codeWorkspacePathPattern, { cwd: rootPath, absolute: true })
 
 readFileToJson(codeProfile)
   .then(async (data) => {

@@ -75,19 +75,14 @@ def bundle_repo(
                 f"序号：{i}/{len(existing_bundles)-1}"
             )
 
-    search_dir = os.path.join(tempfile.gettempdir(), "repositoryMananger")
+    temp_root_dir = os.path.join(tempfile.gettempdir(), "repositoryMananger")
     # 确保临时目录存在
-    os.makedirs(search_dir, exist_ok=True)
-    prefix = "tempRepo_"
-    suffix = "_gitRepo"
-    final_prefix = os.path.normpath(f"{prefix}{repo_name}_")
-    # 创建临时目录
-    temp_dir = tempfile.mkdtemp(prefix=final_prefix, suffix=suffix, dir=search_dir)
-    # print(f"  创建临时目录: {temp_dir}")
+    os.makedirs(temp_root_dir, exist_ok=True)
 
-    # all_processes = []
+    # 创建临时目录
+    temp_dir = mkdtemp_chdir(repo_name, temp_root_dir)
+    # print(f"  创建临时目录: {temp_dir}")
     try:
-        os.chdir(temp_dir)
 
         def _try_clone_repo_from_bundle():
             # 分步执行命令并添加错误处理
@@ -144,8 +139,9 @@ def bundle_repo(
             print("  未找到现有bundle文件，将尝试克隆仓库...")
             need_to_clone_from_repo_url = True
         if need_to_clone_from_repo_url:
+            temp_dir = mkdtemp_chdir(repo_name, temp_root_dir)
             # 如果不存在bundle文件，直接克隆仓库
-            print(f"  正在克隆仓库...{repo_Url}")
+            print(f"  正在浅克隆仓库...{repo_Url}")
             success, error_msg = run_command(
                 [
                     "git",
@@ -198,7 +194,17 @@ def bundle_repo(
         return False, error_msg
 
     finally:
-        cleanup_temp_dir(search_dir)
+        cleanup_temp_dir(temp_root_dir)
+
+def mkdtemp_chdir(repo_name, temp_root_dir):
+    """创建临时目录，并切换到该目录"""
+    temp_dir = tempfile.mkdtemp(
+            prefix=os.path.normpath(f"tempRepo_{repo_name}_"),
+            suffix="_gitRepo",
+            dir=temp_root_dir,
+            )
+    os.chdir(temp_dir)
+    return temp_dir
 
 
 def remove_readonly(func, path, _):
