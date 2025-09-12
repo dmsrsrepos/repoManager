@@ -2,7 +2,7 @@ git config --global core.longpaths true
 git config --global http.postBuffer 1048576000
 
 #作用：将 VS Code 设置为 Git 的默认编辑器（需安装 VS Code）。
-git config --global core.editor "code --wait" 
+git config --global core.editor 'code --wait' 
 
 # Windows 用户设置为 true ，自动将换行符转换为 CRLF 。
 git config --global core.autocrlf true
@@ -17,5 +17,5 @@ git config --global core.preloadindex true
 git config --global core.fscache true
 git config --global gc.auto 256
 
-git config --global user.name "calmripple"
-git config --global user.email "calmripple@outlook.com"
+git config --global user.name 'calmripple'
+git config --global user.email 'calmripple@dmsrs.org'
