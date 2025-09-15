@@ -1,33 +1,32 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "github>renovatebot/.github",
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'github>renovatebot/.github',
   ],
-  "semanticCommitScope": "deps",
-  "automergeType": "pr",
-  "baseBranches": [
-    "$default"
+  semanticCommitScope: 'deps',
+  automergeType: 'pr',
+  baseBranchPatterns: [
+    '$default',
   ],
-  "packageRules": [
+  packageRules: [
     {
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
+      matchUpdateTypes: [
+        'minor',
+        'patch',
       ],
-      "groupName": "minor & patch deps",
-      "minimumReleaseAge": "3 days"
+      groupName: 'minor & patch deps',
+      minimumReleaseAge: '3 days',
     },
     {
-      "matchUpdateTypes": [
-        "major",
+      matchUpdateTypes: [
+        'major',
       ],
-      "groupName": "major deps",
-      "minimumReleaseAge": "7 days"
+      groupName: 'major deps',
+      minimumReleaseAge: '7 days',
     },
   ],
-  "automerge": true,
-  "major": {
-    "automerge": false,
-    // "groupName": "major",
+  automerge: true,
+  major: {
+    automerge: false,
   },
 }
