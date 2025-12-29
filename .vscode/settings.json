@@ -43,8 +43,7 @@
   "python.testing.unittestEnabled": true,
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.globalModuleInstallation": false,
-  "python-envs.defaultEnvManager": "ms-python.python:conda",
-  "python-envs.defaultPackageManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "",
   "python-envs.pythonProjects": [],
   "terminal.integrated.env.osx": {
     "PYTHONPATH": "${workspaceFolder}/"
@@ -58,5 +57,6 @@
   "editor.tokenColorCustomizations": {
     "comments": "",
     "textMateRules": []
-  }
+  },
+  "python.terminal.useEnvFile": true
 }
