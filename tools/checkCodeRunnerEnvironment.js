@@ -122,7 +122,10 @@ const vscodeExtensionsPath = path.resolve(process.cwd(), '../.vscode/extensions.
 function main() {
   const defaultSettings = {
     'code-runner.executorMap': {
-      typescript: 'cd $dir && npx tsx $fullFileName'
+      "typescript": "cd $dir && npx tsx $fullFileName",
+      "powershell": "pwsh -ExecutionPolicy ByPass -File",
+      "python": "$env:PYTHONIOENCODING=\"utf-8\"; $env:PYTHONPATH=\".\"; & \"$pythonPath\" $fullFileName"
+
     },
     'code-runner.executorMapByFileExtension': {
       '.ts': 'cd $dir && npx tsx $fullFileName'

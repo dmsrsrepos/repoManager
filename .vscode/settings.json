@@ -2,7 +2,7 @@
   "code-runner.executorMap": {
     "typescript": "cd $dir && npx tsx $fullFileName",
     "powershell": "pwsh -ExecutionPolicy ByPass -File",
-    "python": "set PYTHONIOENCODING=utf-8 && set PYTHONPATH=. && $pythonPath $fullFileName"
+    "python": "$env:PYTHONIOENCODING=\"utf-8\"; $env:PYTHONPATH=\".\"; & \"$pythonPath\" $fullFileName"
   },
   "code-runner.executorMapByFileExtension": {
     ".ts": "cd $dir && npx tsx $fullFileName"
@@ -49,6 +49,11 @@
       "path": "${workspaceFolder}",
       "envManager": "ms-python.python:venv",
       "packageManager": "ms-python.python:pip"
+    },
+    {
+      "path": "",
+      "envManager": "ms-python.python:venv",
+      "packageManager": ""
     }
   ],
   "terminal.integrated.env.osx": {
@@ -67,5 +72,6 @@
   "npm.packageManager": "pnpm",
   "npm.runSilent": true,
   "typescript.check.npmIsInstalled": true,
-  "npm.enableRunFromFolder": true
+  "npm.enableRunFromFolder": true,
+  "arrayIndexInlay.enabled": false
 }
