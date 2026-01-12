@@ -16,7 +16,6 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.currentLine.pullRequests.enabled": false,
   "python.createEnvironment.contentButton": "show",
-
   "python.languageServer": "Pylance",
   "python.missingPackage.severity": "Warning",
   "python.REPL.enableREPLSmartSend": false,
@@ -65,7 +64,7 @@
   "terminal.integrated.env.windows": {
     "PYTHONPATH": "${workspaceFolder}/"
   },
-  "editor.tokenColorCustomizations": { 
+  "editor.tokenColorCustomizations": {
     "textMateRules": []
   },
   "python.terminal.useEnvFile": true,

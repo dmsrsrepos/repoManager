@@ -117,8 +117,8 @@ function tryMerge(currSettings, newSettings) {
 
 console.log('-----------------------------', 'start', '-----------------------------')
 const codeWorkspacePathPattern = '../**/*.code-workspace'
-const vscodeSettingsPath = path.resolve(process.cwd(), '../.vscode/settings.json')
-const vscodeExtensionsPath = path.resolve(process.cwd(), '../.vscode/extensions.json')
+const vscodeSettingsPath = path.resolve(process.cwd(), '.vscode/settings.json')
+const vscodeExtensionsPath = path.resolve(process.cwd(), '.vscode/extensions.json')
 function main() {
   const defaultSettings = {
     'code-runner.executorMap': {
