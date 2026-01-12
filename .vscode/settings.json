@@ -16,7 +16,7 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.currentLine.pullRequests.enabled": false,
   "python.createEnvironment.contentButton": "show",
-  "python.defaultInterpreterPath": "",
+
   "python.languageServer": "Pylance",
   "python.missingPackage.severity": "Warning",
   "python.REPL.enableREPLSmartSend": false,
@@ -44,7 +44,13 @@
   "python.terminal.activateEnvInCurrentTerminal": true,
   "python.globalModuleInstallation": false,
   "python-envs.defaultPackageManager": "",
-  "python-envs.pythonProjects": [],
+  "python-envs.pythonProjects": [
+    {
+      "path": "${workspaceFolder}",
+      "envManager": "ms-python.python:venv",
+      "packageManager": "ms-python.python:pip"
+    }
+  ],
   "terminal.integrated.env.osx": {
     "PYTHONPATH": "${workspaceFolder}/"
   },
@@ -54,9 +60,12 @@
   "terminal.integrated.env.windows": {
     "PYTHONPATH": "${workspaceFolder}/"
   },
-  "editor.tokenColorCustomizations": {
-    "comments": "",
+  "editor.tokenColorCustomizations": { 
     "textMateRules": []
   },
-  "python.terminal.useEnvFile": true
+  "python.terminal.useEnvFile": true,
+  "npm.packageManager": "pnpm",
+  "npm.runSilent": true,
+  "typescript.check.npmIsInstalled": true,
+  "npm.enableRunFromFolder": true
 }
